@@ -9,10 +9,14 @@ Admin template for web apps.
 * Made to be as fast and light-weight as possible.
 * Uses modern CSS (e.g. variables, grid, functions, level 4 selectors).
 * Easy to adjust to new projects.
-* Component-based – only use what you need.
+* [Component-based](https://johnmodig.github.io/JM-Admin.Template/documentation/components.html) – only use what you need.
 * CSS *mostly* – javascript is rarely used and only for progressive enhancement.
 * Aims to use plain ubloated Html with only a few CSS classes.
 
 ### In production
 
 * Nowhere, yet.
+
+### Demo and documentation
+
+* https://johnmodig.github.io/JM-Admin.Template/documentation/
