@@ -307,7 +307,8 @@ body {
   font-family: var(--font-body);
   min-height: 100vh;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  -webkit-text-size-adjust: 100%; }
 
 h1, h2, h3, h4, h5 {
   font-weight: 600;
