@@ -47,6 +47,11 @@ details {
             margin-top: var(--margin-paragraph-bottom) !important;
         }
 
+        /* Remove the default disclosure arrow on iOS */
+        &::-webkit-details-marker {
+            display: none;
+        }
+
         &:has(>*) {
             &:after {
                 content: none;
@@ -139,10 +144,5 @@ details {
             height: 0;
             margin: var(--padding-buttons) 0;
         }
-    }
-
-    /* Remove the default disclosure arrow on iOS */
-    &::-webkit-details-marker {
-        display: none;
     }
 }
