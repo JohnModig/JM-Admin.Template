@@ -140,4 +140,9 @@ details {
             margin: var(--padding-buttons) 0;
         }
     }
+
+    /* Remove the default disclosure arrow on iOS */
+    &::-webkit-details-marker {
+        display: none;
+    }
 }
