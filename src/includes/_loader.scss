@@ -1,0 +1,40 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Loader
+
+    Mandatory code to be included in the main scss file.
+
+    Animated graphics to display while loading content.
+
+\*---------------------------------------------------------------------------*/
+
+.loading:after {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    width: 1em;
+    height: 1em;
+    border: #{m}in(4px, .15em) solid rgba(0, 0, 0, 0.2);
+    border-bottom-color: var(--color-link);
+    border-radius: 50%;
+    animation: loading-rotation 1s linear infinite;
+    margin: 0 0 0 .5em;
+
+    &:is(article, aside, section, div, form) {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 5px auto;
+        border-width: 4px;
+    }
+}
+
+@keyframes loading-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,197 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Slider
+
+    Optional component.
+
+    Scroll through elements horizontally, with navigation and progress 
+    indicator. This component is usually used to create carousel slideshows 
+    or to divide long forms into smaller sections.
+
+\*---------------------------------------------------------------------------*/
+
+.slider {
+    --slider-gap: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    overflow-x: auto;
+    position: relative;
+    column-gap: var(--slider-gap);
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    & > * {
+        flex-shrink: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        transform-origin: center center;
+        transform: scale(1);
+        scroll-snap-align: center;
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+    // Navigation
+    & + nav {
+        // Navigation - style: "bullets" (default)
+        display: block;
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        background-color: transparent;
+        border: none;
+        margin: var(--margin-paragraph-bottom) 0 var(--margin-paragraph-bottom) 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        --slider-navigation-size: 14px;
+
+        a.bullet {
+            display: inline-block;
+            width: var(--slider-navigation-size);
+            height: var(--slider-navigation-size);
+            font-size: var(--slider-navigation-size);
+            line-height: var(--slider-navigation-size);
+            box-sizing: border-box;
+            border: none;
+            border-radius: 50%;
+            color: transparent;
+            overflow: hidden;
+            background-color: var(--color-text-semi-transparent);
+            opacity: 0.5;
+            margin: 0 10px;
+
+            &.selected {
+                opacity: 0.75;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &:focus-visible {
+                    opacity: 1;
+                }
+            }
+
+            &:hover {
+                opacity: 0.75;
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &:focus-visible {
+                outline: none;
+                opacity: 0.75;
+            }
+        }
+
+        // Navigation - style: "prevNext"
+        &.prevNext {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .disabled {
+                display: none;
+                pointer-events: none;
+            }
+
+            a.prev.disabled {
+                display: inline-flex;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+// Progress
+p.slider-steps {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1ch;
+    flex-wrap: wrap;
+
+    a {
+        display: inline-block;
+        vertical-align: middle;
+
+        &.bullet {
+            font-weight: 600;
+            line-height: 1em;
+            min-width: 1em;
+            text-align: center;
+            border: var(--border-medium);
+            border-radius: 50%;
+            color: var(--color-text-light);
+            background-color: var(--color-header-background);
+            padding: 2px;
+            text-decoration: none;
+
+            &.visited {
+                color: white;
+                background-color: var(--color-text-semi-transparent);
+
+                & + a.name {
+                    color: var(--color-text);
+                }
+
+                & + span.connection {
+                    opacity: 1;
+                }
+            }
+
+            &.current {
+                color: white;
+                background-color: var(--color-link);
+
+                & + a.name {
+                    color: var(--color-link);
+                }
+            }
+        }
+
+        &.name {
+            color: var(--color-text-light);
+
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+
+    span.icon-arrow_forward {
+        opacity: 0.5;
+
+        &:before {
+            font-size: inherit;
+            line-height: 1;
+        }
+    }
+
+    span.connection {
+        display: block;
+        margin: 0 -1ch;
+        border-top: var(--border-medium);
+        border-top-width: 3px;
+        height: 1px;
+        width: 1em;
+        overflow: hidden;
+        opacity: 0.5;
+    }
+}

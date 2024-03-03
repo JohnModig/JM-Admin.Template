@@ -1,0 +1,236 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Data table
+
+    Mandatory code to be included in the main scss file.
+
+    Display sets of data across rows and columns.
+
+\*---------------------------------------------------------------------------*/
+
+// Breakpoints
+@import "../includes/breakpoints";
+
+// Data table
+div.data {
+    --columns: 100;
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr) repeat(var(--columns), minmax(min-content, max-content));
+    grid-template-rows: auto;
+    grid-row-gap: 0;
+    grid-column-gap: 0;
+    background-color: transparent;
+    border-radius: var(--border-radius-button);
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+    align-items: stretch; // Equal heights for cells
+    // Item (or "row") - needed for clarity and styling
+    div.item {
+        display: contents; // Ignoring the element
+        // Cells
+        & > * {
+            background-color: white;
+            padding: var(--padding-buttons);
+            margin-bottom: 0;
+            border-bottom: var(--border-light);
+            // Row break and borders
+            &:first-child {
+                grid-column: 1;
+                border-left: var(--border-light);
+            }
+
+            &:last-child {
+                border-right: var(--border-light);
+            }
+            // Sorted column (padding to align with icon in heading)
+            &.sorted {
+                padding-left: calc(1.1428em*1.5 + var(--padding-buttons))
+            }
+
+            & > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &:first-child > * {
+            border-top: var(--border-light);
+        }
+        // Icons
+        [class^="icon-"], [class*=" icon-"] {
+            &:before {
+                vertical-align: top;
+            }
+        }
+        // Hover effect
+        &:hover {
+            & > * {
+                background-color: rgba(27, 31, 36, 0.03);
+            }
+        }
+        // Border-radius
+        &:first-child {
+
+            & > *:first-child {
+                border-top-left-radius: var(--border-radius-button);
+            }
+
+            & > *:last-child {
+                border-top-right-radius: var(--border-radius-button);
+            }
+        }
+
+        &:last-child {
+            & > *:first-child {
+                border-bottom-left-radius: var(--border-radius-button);
+            }
+
+            & > *:last-child {
+                border-bottom-right-radius: var(--border-radius-button);
+            }
+        }
+        // Header cells
+        &.headings {
+            & > * {
+                font-weight: 600;
+            }
+
+            a {
+                color: var(--color-text);
+            }
+        }
+        // Context menu
+        & > details {
+            &:last-child {
+                text-align: right;
+
+                & > nav {
+                    right: var(--padding-buttons);
+
+                    a {
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+    // Header
+    & > header {
+        grid-column: 1 / -1; // Full width
+        padding: var(--padding-buttons); // Same as cells
+        border-left: var(--border-light);
+        border-right: var(--border-light);
+
+        &:first-child {
+            border-top: var(--border-light);
+            border-top-right-radius: var(--border-radius-button);
+            border-top-left-radius: var(--border-radius-button);
+        }
+    }
+    // Data list
+    &.list {
+        grid-template-columns: repeat(var(--columns), minmax(min-content, max-content));
+    }
+    // Collapse columns on small screens
+    @include for-phone-only {
+        &.collapse {
+            display: block;
+
+            div.item {
+                display: block;
+                position: relative;
+                border-top: none;
+                border-right: var(--border-light);
+                border-bottom: var(--border-light);
+                border-left: var(--border-light);
+                padding-top: var(--padding-buttons);
+                padding-bottom: calc(var(--padding-buttons) - 0.15em);
+
+                & > * {
+                    border: none;
+                    padding-top: 0;
+                    padding-bottom: 0.15em;
+                    text-align: left !important;
+
+                    &.sorted {
+                        padding-left: var(--padding-buttons);
+                    }
+
+                    &[data-collapse]:before {
+                        content: attr(data-collapse) ': ';
+                        color: var(--color-text-light);
+                        font-size: .75rem;
+                    }
+                }
+
+                &:hover {
+                    background-color: rgba(27, 31, 36, 0.03);
+
+                    & > * {
+                        background-color: transparent;
+                    }
+                }
+
+                &:first-child {
+                    border-top: var(--border-light);
+                    border-top-right-radius: var(--border-radius-button);
+                    border-top-left-radius: var(--border-radius-button);
+
+                    & > *:first-child {
+                        border-top-right-radius: var(--border-radius-button);
+                        border-top-left-radius: var(--border-radius-button);
+                    }
+                }
+
+                &:last-child {
+                    border-bottom-right-radius: var(--border-radius-button);
+                    border-bottom-left-radius: var(--border-radius-button);
+
+                    & > *:last-child {
+                        border-bottom-right-radius: var(--border-radius-button);
+                        border-bottom-left-radius: var(--border-radius-button);
+                    }
+                }
+
+                &.headings {
+                    display: none;
+
+                    &:first-child + div.item {
+                        border-top: var(--border-light);
+                        border-top-right-radius: var(--border-radius-button);
+                        border-top-left-radius: var(--border-radius-button);
+
+                        & > *:first-child {
+                            border-top-right-radius: var(--border-radius-button);
+                            border-top-left-radius: var(--border-radius-button);
+                        }
+                    }
+                }
+                // Context menu
+                & > details:last-child {
+                    position: absolute;
+                    top: var(--padding-buttons);
+                    right: var(--padding-buttons);
+                    padding: 0;
+                    background-color: transparent;
+
+                    & > nav {
+                        right: 0;
+                    }
+                }
+
+                &:has(>details:last-child) {
+                    & > *:first-child {
+                        padding-right: calc(var(--padding-buttons)*2 + 1em);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Pagination
+div.data + section.align.pagination {
+    padding-right: var(--padding-buttons);
+}

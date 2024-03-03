@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Horizontal labels</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Component: choices.js -->
+    <link href="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css" rel="stylesheet" />
+    <link href="../dist/css/components/choices.min.css" rel="stylesheet" />
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-horizontal-labels.html">Horizontal labels</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+				<a class="icon-bookmark" href="component-align.html">Align</a>
+				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+				<h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark current" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Horizontal labels <sup>Optional</sup></h2>
+            <p>
+                Styles for text labels related to form elements.
+            </p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>CSS only, no Javascript.</li>
+                    <li>Works with all variants of <a href="component-form.html">basic form elements</a>.</li>
+                    <li>Supports <a href="component-advanced-input-box.html">advanced input box</a>.</li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-settings">Configuration</h5></header>
+                <ul>
+                    <li>Sass file: components/_horizontal-labels.scss</li>
+                    <li>Include the Sass file in theme.scss: <code class="language-css">@import "components/horizontal-labels";</code></li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-check">Implementation</h5></header>
+                <ol>
+                    <li>Use a wrapper element with <code class="language-html">class=&quot;horizontal-label&quot;</code>.</li>
+                    <li>Place the <code class="language-html">&lt;label&gt;</code> inside the wrapper element, followed by a paragraph (<code class="language-html">&lt;p&gt;</code>) containing the input element.</li>
+                    <li>The label should have a <code class="language-html">for</code> attribute (referencing the input element).</li>
+                </ol>
+            </section>
+            <h3>Examples</h3>
+            <p>
+                Text input:
+            </p>
+            <div class="horizontal-label">
+                <label for="component1">Label</label>
+                <p>
+                    <input id="component1" type="text" />
+                </p>
+            </div>
+            <hr />
+            <p>
+                Multiple text inputs with labels of different length:
+            </p>
+            <div class="horizontal-label">
+                <label for="component2_1">Label</label>
+                <p>
+                    <input id="component2_1" type="text" />
+                </p>
+                <label for="component2_2">Label long</label>
+                <p>
+                    <input id="component2_2" type="text" />
+                </p>
+                <label for="component2_3">Label extra long</label>
+                <p>
+                    <input id="component2_3" type="text" />
+                </p>
+            </div>
+            <hr />
+            <p>
+                Label with icon:
+            </p>
+            <div class="horizontal-label">
+                <label for="component2" class="icon-mail">Label</label>
+                <p>
+                    <input id="component2" type="text" />
+                </p>
+            </div>
+            <p>
+                Text input with icon label:
+            </p>
+            <div class="horizontal-label">
+                <label for="component3">Label</label>
+                <p>
+                    <label class="icon-mail">
+                        <input id="component3" type="text" />
+                    </label>
+                </p>
+            </div>
+            <p>
+                Text input with icon label and icon link:
+            </p>
+            <div class="horizontal-label">
+                <label for="component4">Label</label>
+                <p>
+                    <label class="icon-mail">
+                        <input id="component4" type="text" />
+                        <a href="" class="icon-help"></a>
+                    </label>
+                </p>
+            </div>
+            <p>
+                Text input with validation:
+            </p>
+            <div class="horizontal-label">
+                <label for="component5">Label</label>
+                <p>
+                    <input id="component5" type="text" name="component5" data-val="true" data-val-required="This field is required." placeholder="Label" />
+                    <span class="field-validation-valid" data-valmsg-for="component5" data-valmsg-replace="true"></span>
+                </p>
+            </div>
+            <p>
+                Select:
+            </p>
+            <div class="horizontal-label">
+                <label for="component6">Label</label>
+                <p>
+                    <select id="component6"><option>Option 1</option><option>Option 2</option><option>Option 3</option></select>
+                </p>
+            </div>
+            <p>Textarea with icon label:</p>
+            <div class="horizontal-label">
+                <label for="component7">Label</label>
+                <p>
+                    <label class="icon-edit">
+                        <textarea id="component7" rows="4"></textarea>
+                    </label>
+                </p>
+            </div>
+            <p>
+                Tag list (<a href="component-advanced-input-box.html">advanced input box</a>):
+            </p>
+            <div class="horizontal-label">
+                <label for="advancedInputBox1">Label</label>
+                <p>
+                    <label class="icon-sell">
+                        <input id="advancedInputBox1" type="text" />
+                    </label>
+                </p>
+            </div>
+            <p>
+                Multiple select (<a href="component-advanced-input-box.html">advanced input box</a>):
+            </p>
+            <div class="horizontal-label">
+                <label for="advancedInputBox2">Label</label>
+                <p>
+                    <label class="icon-filter_list">
+                        <select id="advancedInputBox2" multiple><option>Option 1</option><option>Option 2</option><option>Option 3</option><option>Option 4</option></select>
+                    </label>
+                </p>
+            </div>
+            <hr />
+            <h5>Collapse</h5>
+            <p>
+                On small screens: The label is placed above the paragraph.
+            </p>
+            <div class="horizontal-label collapse">
+                <label for="component8">Label</label>
+                <p>
+                    <label class="icon-edit">
+                        <textarea id="component8" rows="4"></textarea>
+                    </label>
+                </p>
+            </div>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Component: choices.js -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/scripts/choices.min.js"></script>
+    <script>
+        const advancedInputBox1 = new Choices('#advancedInputBox1', {
+            duplicateItemsAllowed: false,
+            removeItemButton: true
+        });
+        const advancedInputBox2 = new Choices('#advancedInputBox2', {
+            removeItemButton: true
+        });
+    </script>
+    <!-- End component -->
+    <!-- Component: Validation -->
+    <script src="../dist/javascript/validation.min.js"></script>
+    <!-- End component -->
+    <!-- Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Example, validation -->
+    <script>
+        window.addEventListener("load", (event) => {
+            let els = document.querySelectorAll(validation.settings.elementsSelector);
+            for (var el of els) {
+                validation.elements.validate(el);
+            }
+        });
+    </script>
+    <!-- Example, collapse help text -->
+    <script>
+        // Help text for examples
+        const examples = {
+            timer: null,
+            writeResizeText: () => {
+                let els = document.querySelectorAll('main div.horizontal-label.collapse');
+                for (var i = 0; i < els.length; i++) {
+                    let oldText = els[i].previousElementSibling && els[i].previousElementSibling.hasAttribute('data-resize');
+                    if (window.getComputedStyle(els[i]).display === 'block' && oldText === true) {
+                        els[i].previousElementSibling.remove();
+                    }
+                    else if (window.getComputedStyle(els[i]).display !== 'block' && oldText === false) {
+                        els[i].insertAdjacentHTML('beforebegin', '<p class="comment icon-lightbulb" data-resize>Resize the browser window smaller to see the collapsing effect.</p>');
+                    }
+                }
+            }
+        }
+        examples.writeResizeText();
+        window.addEventListener('resize', function () {
+            clearTimeout(examples.timer);
+            examples.timer = setTimeout(examples.writeResizeText, 100);
+        });
+    </script>
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

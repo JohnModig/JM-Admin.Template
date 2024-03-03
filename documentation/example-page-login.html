@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Example page: Login</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Component: Dialog -->
+    <!-- Only used for text about this page -->
+    <link href="../dist/css/components/dialog.min.css" rel="stylesheet" />
+    <!-- End component -->
+</head>
+<body>
+
+    <!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+        <label for="side-navigation" role="button" class="icon-clear"></label>
+        <a class="icon-visibility current" href="index.html">Documentation</a>
+        <hr />
+        <h5>GitHub</h5>
+        <a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+        <a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+    </nav>
+    <!-- End component -->
+    <!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a>Example pages</a>
+            <span>/</span>
+            <a href="example-page-login.html">Login</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+        <!-- Optional component: Horizontal tabs -->
+        <div class="horizontal-tabs">
+            <nav>
+                <details class="current">
+                    <summary class="icon-lightbulb">Example pages</summary>
+                    <nav>
+                        <a href="example-page-data.html">Data</a>
+                        <a href="example-page-login.html" class="current">Login</a>
+                        <a href="example-page-cards.html">Cards</a>
+                        <a href="example-page-headlines.html">Headlines</a>
+                    </nav>
+                </details>
+                <a href="components.html" class="icon-bookmark">Components</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+            </nav>
+        </div>
+        <!-- End component -->
+    </header>
+
+    <!-- Main -->
+    <main class="centered-content">
+        <article>
+            <h2 class="text-center">
+                Login
+            </h2>
+            <h2 class="text-center">
+                <!-- Link to dialog about this page -->
+                <sup class="icon-lightbulb"><a href="#" data-dialog="#about" title="Read more">About this page</a></sup>
+            </h2>
+            <hr />
+            <h3 class="text-center">Horizontal labels 1</h3>
+            <p class="comment text-center">Rememeber checkbox, forgot password link under form.</p>
+            <section class="content centered">
+                <form>
+                    <div class="horizontal-label">
+                        <label for="username_example_1">Username</label>
+                        <p>
+                            <input id="username_example_1" type="text" name="username_example_1" data-val="true" data-val-required="Username is required." />
+                            <span class="field-validation-valid" data-valmsg-for="username_example_1" data-valmsg-replace="true"></span>
+                        </p>
+                        <label for="password_example_1">Password</label>
+                        <p>
+                            <label><input id="password_example_1" type="password" name="password_example_1" data-val="true" data-val-required="Password is required." /><a href="#" class="icon-visibility" title="Show / hide password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; return false;"></a></label>
+                            <span class="field-validation-valid" data-valmsg-for="password_example_1" data-valmsg-replace="true"></span>
+                        </p>
+                        <p>
+                            <label><input type="checkbox" id="remember_example_1" name="remember_example_1" checked="">Remember me</label>
+                        </p>
+                        <p>
+                            <button class="info full-width">Sign in</button>
+                        </p>
+                    </div>
+                </form>
+            </section>
+            <p class="text-center"><a href="">Forgot password?</a></p>
+            <hr />
+            <h3 class="text-center">Horizontal labels 2</h3>
+            <p class="comment text-center">Collapses on small screens, rememeber checkbox, forgot password link next to it.</p>
+            <section class="content centered">
+                <form>
+                    <div class="horizontal-label collapse">
+                        <label for="username_example_2">Username</label>
+                        <p>
+                            <input class="wide" id="username_example_2" type="text" name="username_example_2" data-val="true" data-val-required="Username is required." />
+                            <span class="field-validation-valid" data-valmsg-for="username_example_2" data-valmsg-replace="true"></span>
+                        </p>
+                        <label for="password_example_2">Password</label>
+                        <p>
+                            <label><input class="full-width" id="password_example_2" type="password" name="password_example_2" data-val="true" data-val-required="Password is required." /><a href="#" class="icon-visibility" title="Show / hide password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; return false;"></a></label>
+                            <span class="field-validation-valid" data-valmsg-for="password_example_2" data-valmsg-replace="true"></span>
+                        </p>
+                        <p class="align vertical-center">
+                            <label><input type="checkbox" id="remember_example_2" name="remember_example_2" checked="">Remember me</label>
+                            <a class="right" href="">Forgot password?</a>
+                        </p>
+                        <p>
+                            <button class="info full-width">Sign in</button>
+                        </p>
+                    </div>
+                </form>
+            </section>
+            <hr />
+            <h3 class="text-center">Horizontal labels 3</h3>
+            <p class="comment text-center">Collapses on small screens, no rememeber checkbox, forgot password link next to sign up button.</p>
+            <section class="content centered">
+                <form>
+                    <div class="horizontal-label collapse">
+                        <label for="username_example_3">Username</label>
+                        <p>
+                            <input class="wide" id="username_example_3" type="text" name="username_example_3" data-val="true" data-val-required="Username is required." />
+                            <span class="field-validation-valid" data-valmsg-for="username_example_3" data-valmsg-replace="true"></span>
+                        </p>
+                        <label for="password_example_3">Password</label>
+                        <p>
+                            <label><input class="full-width" id="password_example_3" type="password" name="password_example_3" data-val="true" data-val-required="Password is required." /><a href="#" class="icon-visibility" title="Show / hide password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; return false;"></a></label>
+                            <span class="field-validation-valid" data-valmsg-for="password_example_3" data-valmsg-replace="true"></span>
+                        </p>
+                        <div class="flex-grid vertical-center">
+                            <p><button class="info full-width">Sign in</button></p>
+                            <p class="text-right"><a href="">Forgot password?</a></p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <hr />
+            <h3 class="text-center">Vertical labels 1</h3>
+            <p class="comment text-center">Rememeber checkbox, forgot password link next to it.</p>
+            <section class="content centered">
+                <form class="vertical-label">
+                    <label for="username_example_4">Username</label>
+                    <p>
+                        <input class="wide" id="username_example_4" type="text" name="username_example_4" data-val="true" data-val-required="Username is required." />
+                        <span class="field-validation-valid" data-valmsg-for="username_example_4" data-valmsg-replace="true"></span>
+                    </p>
+                    <label for="password_example_4">Password</label>
+                    <p>
+                        <label><input class="full-width" id="password_example_4" type="password" name="password_example_4" data-val="true" data-val-required="Password is required." /><a href="#" class="icon-visibility" title="Show / hide password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; return false;"></a></label>
+                        <span class="field-validation-valid" data-valmsg-for="password_example_4" data-valmsg-replace="true"></span>
+                    </p>
+                    <p class="align vertical-center">
+                        <label><input type="checkbox" id="remember_example_4" name="remember_example_2" checked="">Remember me</label>
+                        <a class="right" href="">Forgot password?</a>
+                    </p>
+                    <p>
+                        <button class="info full-width">Sign in</button>
+                    </p>
+                </form>
+            </section>
+            <hr />
+            <h3 class="text-center">Vertical labels 2</h3>
+            <p class="comment text-center">No rememeber checkbox, forgot password link next to sign up button.</p>
+            <section class="content centered">
+                <form class="vertical-label">
+                    <label for="username_example_5">Username</label>
+                    <p>
+                        <input class="wide" id="username_example_5" type="text" name="username_example_5" data-val="true" data-val-required="Username is required." />
+                        <span class="field-validation-valid" data-valmsg-for="username_example_5" data-valmsg-replace="true"></span>
+                    </p>
+                    <label for="password_example_5">Password</label>
+                    <p>
+                        <label><input class="full-width" id="password_example_5" type="password" name="password_example_5" data-val="true" data-val-required="Password is required." /><a href="#" class="icon-visibility" title="Show / hide password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; return false;"></a></label>
+                        <span class="field-validation-valid" data-valmsg-for="password_example_5" data-valmsg-replace="true"></span>
+                    </p>
+                    <div class="flex-grid vertical-center">
+                        <p><button class="info full-width">Sign in</button></p>
+                        <p class="text-right"><a href="">Forgot password?</a></p>
+                    </div>
+                </form>
+            </section>
+            <hr />
+            <h3 class="text-center">Vertical labels 3</h3>
+            <p class="comment text-center">No rememeber checkbox, small forgot password link next to label.</p>
+            <section class="content centered">
+                <form class="vertical-label">
+                    <label for="username_example_6">Username</label>
+                    <p>
+                        <input class="wide" id="username_example_6" type="text" name="username_example_6" data-val="true" data-val-required="Username is required." />
+                        <span class="field-validation-valid" data-valmsg-for="username_example_6" data-valmsg-replace="true"></span>
+                    </p>
+                    <div class="align">
+                        <label for="password_example_6">Password</label>
+                        <p class="right small">
+                            <a href="">Forgot password?</a>
+                        </p>
+                    </div>
+                    <p>
+                        <label><input class="full-width" id="password_example_6" type="password" name="password_example_6" data-val="true" data-val-required="Password is required." /><a href="#" class="icon-visibility" title="Show / hide password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; return false;"></a></label>
+                        <span class="field-validation-valid" data-valmsg-for="password_example_6" data-valmsg-replace="true"></span>
+                    </p>
+                    <p>
+                        <button class="info full-width">Sign in</button>
+                    </p>
+                </form>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="index.html" class="image">
+            <img alt="Logotype"
+                 src="images/logo.svg"
+                 style="height: 1.25rem; opacity: 0.6;" />
+            JM Admin
+        </a>
+        <span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+    </footer>
+
+    <!-- Dialog: About this page -->
+    <dialog id="about">
+        <h3>Example page: Login</h3>
+        <p>
+            Displaying login forms in different styles.
+        </p>
+        <details>
+            <summary><a class="button icon-info">Components used on this page</a></summary>
+            <ul>
+                <li><a href="component-layout.html">Layout</a></li>
+                <li><a href="component-align.html">Align</a></li>
+                <li><a href="component-form.html">Basic form elements</a></li>
+                <li><a href="component-horizontal-labels.html">Horizontal labels</a></li>
+                <li><a href="component-vertical-labels.html">Vertical labels</a></li>
+                <li><a href="component-validation.html">Validation</a></li>
+            </ul>
+        </details>
+    </dialog>
+
+    <!-- Component: Validation -->
+    <script src="../dist/javascript/validation.min.js"></script>
+    <!-- End component -->
+    <!--Component: Dialog -->
+    <!-- Only used for text about this page -->
+    <script src="../dist/javascript/dialog.min.js"></script>
+    <!-- End component -->
+    <!-- Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+</body>
+</html>

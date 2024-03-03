@@ -1,0 +1,183 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Tooltip
+
+    A simple tooltip – additional text to show when focusing on an element.
+
+    Features:
+
+    - CSS only.
+    
+    - Can be applied to any Html element. *
+
+    - Tooltip is visible on focus and hover. Works with keyboard, mouse and 
+      touch.
+
+    - Implement by setting the data-tooltip attribute of the Html tag.
+    
+    - Apply options by setting the data-tooltip-options attribute. Multiple 
+      options can be used, separated by spaces.
+
+    - Inspired by Wenk (https://github.com/tiaanduplessis/wenk)
+    
+    This component is just for displaying simple text. If you need Html or 
+    more content, consider using the dialog component instead.
+
+    * Works best with an inline wrapping element, such as <span>, <label>, 
+      <abbr> or <dfn>.
+
+\*---------------------------------------------------------------------------*/
+
+
+// Breakpoints
+@import "../includes/breakpoints";
+
+$TopVisible: calc(-100% - 10px);
+
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+
+    // Better positioning for inline elements
+    &:is(span,dfn,abbr,del,em,strong) {
+        display: inline-block;
+    }
+
+    // Override browser font style
+    &:is(dfn){
+        font-style: inherit;
+    }
+
+    // Tooltip box
+    &:after {
+        position: absolute;
+        font-size: 0.875rem;
+        font-weight: normal;
+        border-radius: var(--border-radius-button);
+        content: attr(data-tooltip);
+        padding: 12px;
+        background-color: var(--color-text);
+        color: white;
+        line-height: 1.3;
+        text-align: center;
+        z-index: 1;
+        display: block;
+        top: 0;
+        left: 50%;
+        white-space: pre;
+        width: auto;
+        box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+    }
+    // Arrow
+    &:before {
+        content: "";
+        position: absolute;
+        top: 19px;
+        left: 50%;
+        font-size: 10px;
+        line-height: 10px;
+        height: 10px;
+        width: 0;
+        overflow: hidden;
+        z-index: 1;
+        display: block;
+        border-width: 5px;
+        border-style: solid;
+        border-color: var(--color-text) transparent transparent transparent;
+    }
+    // Both
+    &:after, &:before {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, -100%);
+        transition: all .2s;
+    }
+
+    &:focus-visible {
+        outline: var(--outline-buttons);
+    }
+    // Position: center (default)
+    &:focus, &:hover {
+        overflow: visible;
+
+        &:after, &:before {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, $TopVisible);
+        }
+    }
+    // Position: left
+    &[data-tooltip-options~="left"] {
+
+        &:after {
+            left: 0;
+            transform: translate(0, -100%);
+        }
+
+        &:focus, &:hover {
+            &:after {
+                transform: translate(0, $TopVisible);
+            }
+        }
+    }
+    // Position: right
+    &[data-tooltip-options~="right"] {
+
+        &:after {
+            left: 100%;
+            transform: translate(-100%, -100%);
+        }
+
+        &:focus, &:hover {
+            &:after {
+                transform: translate(-100%, $TopVisible);
+            }
+        }
+    }
+    // Text align: left
+    &[data-tooltip-options~="text-left"]:after {
+        text-align: left;
+    }
+    // Text align: right
+    &[data-tooltip-options~="text-right"]:after {
+        text-align: right;
+    }
+    // Wrap long strings
+    &[data-tooltip-options~="wrap"]:after {
+        white-space: pre-wrap;
+        word-break: break-word;
+        width: 200px;
+    }
+
+    @include for-phone-only {
+        &[data-tooltip-options~="left-for-small"] {
+            &:after {
+                left: 0;
+                transform: translate(0, -100%);
+            }
+
+            &:focus, &:hover {
+                &:after {
+                    transform: translate(0px, $TopVisible);
+                }
+            }
+        }
+
+        &[data-tooltip-options~="right-for-small"] {
+            &:after {
+                left: 100%;
+                transform: translate(-100%, -100%);
+            }
+
+            &:focus, &:hover {
+                &:after {
+                    transform: translate(-100%, $TopVisible);
+                }
+            }
+        }
+    }
+}
+
+[data-tooltip=""]:after {
+    visibility: hidden !important;
+}

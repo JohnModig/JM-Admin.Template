@@ -1,0 +1,178 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Choices
+
+    Optional component, to be included in the html file.
+
+    These styles override the external components styles, so they fit the 
+    theme better.
+
+\*---------------------------------------------------------------------------*/
+
+// Widths
+.choices, .choices__list--dropdown, .choices__list[aria-expanded], .choices__inner {
+    box-sizing: border-box;
+    width: 100%;
+}
+// Separate sections
+.choices {
+    font-size: .875rem;
+    line-height: 1;
+    // Reset:
+    margin: 0;
+}
+.choices__inner {
+    // Reset:
+    min-height: 0;
+    // Better vertical centering:
+    display: inline-flex;
+    align-items: center;
+    // Same as input[type="text"]:
+    background-color: var(--color-header-background);
+    border: var(--border-light);
+    border-radius: var(--border-radius-button);
+    padding: calc(var(--padding-buttons) * 0.8571) var(--padding-buttons);
+    margin: 0;
+}
+.choices__input {
+    padding: 0 0 0 5px; // Left: same as gap
+    font-size: .875rem;
+    line-height: 1;
+    // Reset
+    background-color: transparent !important;
+    box-shadow: none !important;
+    margin: 0;
+}
+.is-open .choices__inner {
+    border-radius: var(--border-radius-button) var(--border-radius-button) 0 0;
+}
+.is-flipped.is-open .choices__inner {
+    border-radius: 0 0 var(--border-radius-button) var(--border-radius-button);
+}
+.choices__list--dropdown, .choices__list[aria-expanded] {
+    border: var(--border-light);
+    border-bottom-left-radius: var(--border-radius-button);
+    border-bottom-right-radius: var(--border-radius-button);
+}
+.is-flipped .choices__list--dropdown, .is-flipped .choices__list[aria-expanded] {
+    border-radius: var(--border-radius-button) var(--border-radius-button) 0 0;
+}
+.choices__list {
+    padding: 0;
+}
+.choices__list--multiple {
+    // Reset:
+    padding: 0;
+    // Better margins:
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.choices__list--multiple .choices__item {
+    // Reset:
+    margin: 0;
+    // Theme color:
+    background-color: var(--color-tag-background);
+    border: 1px solid var(--color-link);
+    color: var(--color-link);
+}
+.choices__list--multiple .choices__item.is-highlighted {
+    // Theme color:
+    background-color: var(--color-link);
+    color: white;
+}
+[dir=rtl] .choices__list--multiple .choices__item {
+    // Reset:
+    margin: 0;
+}
+.choices__list--dropdown, .choices__list[aria-expanded] {
+    z-index: 2;
+}
+// Remove item button
+button.choices__button {
+    padding: 0 !important;
+    border: none !important;
+    background-color: rgba(0,0,0,0.4) !important;
+    height: 16px !important;
+    width: 16px !important;
+    line-height: 16px !important;
+    border-radius: 50% !important;
+    margin: -2px -2px -1px 5px !important;
+    vertical-align: middle !important;
+}
+.choices__item.is-highlighted {
+    button.choices__button {
+        // Color
+        filter: none;
+    }
+}
+// Icon label (left)
+label:not([for])[class^="icon-"]:has(>.choices), label:not([for]):has(>.choices)[class*=" icon-"] {
+
+    &:before {
+        margin-top: calc(1px + var(--padding-buttons));
+    }
+}
+label:not([for])[class^="icon-"], label:not([for])[class*=" icon-"] {
+    & > .choices .choices__inner {
+        padding-left: calc(var(--padding-buttons) * 2 + 1rem);
+    }
+}
+// Icon link (right)
+label {
+    &:has(>.choices) {
+        position: relative;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    & > .choices {
+        & + a[class^="icon-"]:empty, & + a[class*=" icon-"]:empty {
+            display: inline-flex;
+            position: absolute;
+            right: calc(var(--padding-buttons) + 1px);
+            margin: 0;
+            margin-top: calc(1px + var(--padding-buttons));
+            text-decoration: none;
+            border-radius: var(--border-radius-button);
+
+            &:before {
+                font-size: 1rem;
+                color: var(--color-text-light);
+                margin: 0;
+            }
+
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+
+            &:hover {
+
+                &:before {
+                    color: var(--color-link);
+                }
+            }
+        }
+
+        &:has(+a[class^="icon-"]:empty, +a[class*=" icon-"]:empty)>.choices__inner {
+            padding-right: calc(var(--padding-buttons) * 2 + 1rem);
+        }
+    }
+}
+// Validation
+$color-error: rgb(176,16,48);
+.choices__inner:has(.input-validation-error) {
+    border-color: transparentize($color-error, 0.5);
+    background-color: transparentize($color-error, 0.95) !important;
+
+    & > .choices__list--multiple .choices__item {
+        background-color: transparentize($color-error, 0.9);
+        border-color: transparentize($color-error, 0.5);
+        color: $color-error;
+
+        &.is-highlighted {
+            background-color: transparentize($color-error, 0.1);
+            color: white;
+        }
+    }
+}

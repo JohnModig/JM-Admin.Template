@@ -1,0 +1,103 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Alert
+
+    Optional component, to be included in the main scss file.
+
+    Colored element to display a highlighted message. The element may be 
+    closed on click. This component is usually used to display a message or
+    notification.
+
+    Features:
+
+    - Can be used to style any Html element.
+
+    - Closing function (removes the element).
+
+\*---------------------------------------------------------------------------*/
+
+// Colors
+@import "../includes/colors";
+
+.alert {
+
+    &.success {
+        color: darken($color-success, 3);
+        background-color: change-color($color-success, $alpha: 0.10);
+        border-color: change-color(darken($color-success, 4), $alpha: 0.5);
+        // Colors for certain elements
+        header {
+            background-color: change-color($color-success, $alpha: 0.15);
+        }
+        // Links
+        &:is(a) {
+            &:hover, &:focus {
+                background-color: $color-success;
+                color: white;
+            }
+        }
+    }
+
+    &.error {
+        color: darken($color-error, 3);
+        background-color: change-color($color-error, $alpha: 0.10);
+        border-color: change-color(darken($color-error, 2), $alpha: 0.5);
+        // Colors for certain elements
+        header {
+            background-color: change-color($color-error, $alpha: 0.15);
+            border-bottom-color: change-color(darken($color-warning, 2), $alpha: 0.3);
+        }
+        // Links
+        &:is(a) {
+            &:hover, &:focus {
+                background-color: $color-error;
+                color: white;
+            }
+        }
+    }
+
+    &.warning {
+        color: darken($color-warning, 13);
+        background-color: change-color($color-warning, $alpha: 0.15);
+        border-color: change-color(darken($color-warning, 8), $alpha: 0.5);
+        // Colors for certain elements
+        header {
+            background-color: change-color($color-warning, $alpha: 0.20);
+            border-bottom-color: change-color(darken($color-warning, 8), $alpha: 0.3);
+        }
+        // Links
+        &:is(a) {
+            &:hover, &:focus {
+                background-color: $color-warning;
+                color: white;
+            }
+        }
+    }
+
+    &.info {
+        color: darken($color-info, 3);
+        background-color: change-color($color-info, $alpha: 0.10);
+        border-color: change-color(darken($color-info, 2), $alpha: 0.5);
+        // Colors for certain elements
+        header {
+            background-color: change-color($color-info, $alpha: 0.15);
+        }
+        // Initially, links have a similar color (blue) as the info text. So it's hard to see that they are links if they are inside an info alert element. Set another color to prevent this.
+        a:not(.close[class^="icon-"]:empty, .close[class*=" icon-"]:empty) {
+            color: var(--color-text);
+        }
+        // Links
+        &:is(a) {
+            &:hover, &:focus {
+                background-color: $color-info;
+                color: white;
+            }
+        }
+    }
+
+    &.fade-out {
+        // Fade out
+        transition: opacity 0.4s ease-in;
+        opacity: 0;
+    }
+}

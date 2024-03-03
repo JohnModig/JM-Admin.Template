@@ -1,0 +1,115 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Breakpoints visibility
+
+    Mandatory code to be included in the main scss file.
+
+    Show content depending on screen width, according to the breakpoints. 
+    The content will be hidden if the breakpoint is not matched. Works with 
+    all breakpoints in the theme.
+
+\*---------------------------------------------------------------------------*/
+
+// Breakpoints
+@import "../includes/breakpoints";
+
+// Variable
+@mixin hide {
+    display: none !important;
+}
+
+.show-for-phone-only {
+    @include for-tablet-portrait-up {
+        @include hide;
+    }
+}
+
+.show-for-tablet-portrait-up {
+    @include for-phone-only {
+        @include hide;
+    }
+}
+
+.show-for-tablet-portrait-only {
+    @include for-phone-only {
+        @include hide;
+    }
+
+    @include for-tablet-landscape-up {
+        @include hide;
+    }
+}
+
+.show-for-tablet-landscape-up {
+    @include for-phone-only {
+        @include hide;
+    }
+
+    @include for-tablet-portait-only {
+        @include hide;
+    }
+}
+
+.show-for-tablet-landscape-only {
+    @include for-phone-only {
+        @include hide;
+    }
+
+    @include for-tablet-portait-only {
+        @include hide;
+    }
+
+    @include for-desktop-up {
+        @include hide;
+    }
+}
+
+.show-for-desktop-up {
+    @include for-phone-only {
+        @include hide;
+    }
+
+    @include for-tablet-portait-only {
+        @include hide;
+    }
+
+    @include for-tablet-landscape-only {
+        @include hide;
+    }
+}
+
+.show-for-desktop-only {
+    @include for-phone-only {
+        display: none !important;
+    }
+
+    @include for-tablet-portait-only {
+        display: none !important;
+    }
+
+    @include for-tablet-landscape-only {
+        display: none !important;
+    }
+
+    @include for-big-desktop-up {
+        display: none !important;
+    }
+}
+
+.show-for-big-desktop-up {
+    @include for-phone-only {
+        display: none !important;
+    }
+
+    @include for-tablet-portait-only {
+        display: none !important;
+    }
+
+    @include for-tablet-landscape-only {
+        display: none !important;
+    }
+
+    @include for-desktop-only {
+        display: none !important;
+    }
+}

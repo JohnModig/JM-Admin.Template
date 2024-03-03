@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Details</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-details.html">Details</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+                <a class="icon-bookmark" href="component-align.html">Align</a>
+                <a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+                <a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+                <a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark current" href="component-details.html">Details</a>
+                <a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+				<h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+                <a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Details</h2>
+            <p>
+                Content that the user can show and hide on demand. This component is usually used for content that does not need to be displayed initially.
+            </p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>CSS only.</li>
+                    <li>Uses Html <code class="language-html">&lt;details&gt;</code> tag.</li>
+                    <li>The <code class="language-html">&lt;summary&gt;</code> tag can contain a heading element (e.g. <code class="language-html">&lt;h1&gt;</code>, <code class="language-html">&lt;h2&gt;</code>, <code class="language-html">&lt;h3&gt;</code>, <code class="language-html">&lt;h4&gt;</code>, <code class="language-html">&lt;h5&gt;</code>) and/or Html that can be used within a paragraph.</li>
+                    <li>The <code class="language-html">&lt;summary&gt;</code> tag or its child element can have an icon, via the themes icon font (<code class="language-html">class=&quot;icon-</code>&hellip;).</li>
+                    <li>The content can be visible initially using the <code class="language-html">open</code> attribute.</li>
+                </ul>
+            </section>
+            <h3>Examples</h3>
+            <p class="comment icon-info">View source for Html code.</p>
+            <hr />
+            <h5>Summary elements</h5>
+            <!-- Example: No child element -->
+            <details>
+                <summary>Default</summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Strong -->
+            <details>
+                <summary><strong>Strong</strong></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Heading 1 -->
+            <details>
+                <summary><h1>Heading 1</h1></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Heading 2 -->
+            <details>
+                <summary><h2>Heading 2</h2></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Heading 3 -->
+            <details>
+                <summary><h3>Heading 3</h3></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Heading 4 -->
+            <details>
+                <summary><h4>Heading 4</h4></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Heading 5 -->
+            <details>
+                <summary><h5>Heading 5</h5></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Paragraph -->
+            <details>
+                <summary><p>Paragraph</p></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Comment -->
+            <details>
+                <summary><p class="comment">Comment</p></summary>
+                <p class="comment">Details content.</p>
+            </details>
+            <!-- Example: Empty -->
+            <details>
+                <summary></summary>
+                <p class="comment">Details content.</p>
+            </details>
+            <hr />
+            <h5>Icons</h5>
+            <!-- Example: No child element, icon -->
+            <details>
+                <summary class="icon-star">Default</summary>
+                <p class="comment">Details content.</p>
+            </details>
+            <!-- Example: Strong, icon -->
+            <details>
+                <summary class="icon-star"><strong>Strong</strong></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Heading 1, icon -->
+            <details>
+                <summary><h1 class="icon-star">Heading 1</h1></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Heading 2, icon -->
+            <details>
+                <summary><h2 class="icon-star">Heading 2</h2></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Heading 3, icon -->
+            <details>
+                <summary><h3 class="icon-star">Heading 3</h3></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Heading 4, icon -->
+            <details>
+                <summary><h4 class="icon-star">Heading 4</h4></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Heading 5, icon -->
+            <details>
+                <summary><h5 class="icon-star">Heading 5</h5></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Paragraph, icon -->
+            <details>
+                <summary><p class="icon-star">Paragraph</p></summary>
+                <p>Details content.</p>
+            </details>
+            <!-- Example: Comment, icon -->
+            <details>
+                <summary><p class="comment icon-star">Comment</p></summary>
+                <p class="comment">Details content.</p>
+            </details>
+            <!-- Example: Empty, icon -->
+            <details>
+                <summary class="icon-star"></summary>
+                <p class="comment">Details content.</p>
+            </details>
+            <hr />
+            <h5>Open</h5>
+            <!-- Example: No child element, open -->
+            <details open>
+                <summary>Default</summary>
+                <p>Details content.</p>
+            </details>
+            <hr />
+            <h5>Menu</h5>
+            <p>The menu is positioned on top of other elements.</p>
+            <!-- Example: Menu -->
+            <details>
+                <summary>Default</summary>
+                <nav>
+                    <a href="">Option 1</a>
+                    <a href="">Option 2</a>
+                    <a href="">Option 3</a>
+                </nav>
+            </details>
+            <!-- Example: Menu, icon -->
+            <details>
+                <summary><p class="icon-star">Paragraph</p></summary>
+                <nav>
+                    <a href="">Option 1</a>
+                    <a href="">Option 2</a>
+                    <a href="">Option 3</a>
+                </nav>
+            </details>
+            <!-- Example: Menu, empty -->
+            <details>
+                <summary></summary>
+                <nav>
+                    <a href="">Option&nbsp;1</a>
+                    <a href="">Option&nbsp;2</a>
+                    <a href="">Option&nbsp;3</a>
+                </nav>
+            </details>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

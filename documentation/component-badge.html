@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Badge</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-badge.html">Badge</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+                <a class="icon-bookmark" href="component-align.html">Align</a>
+                <a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+                <a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+                <a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+                <a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+                <h5>Optional</h5>
+                <a class="icon-bookmark current" href="component-badge.html">Badge</a>
+                <a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+                <h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+                <a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Badge <sup>Optional</sup></h2>
+            <p>
+                A block style label, link or navigation. This component is usually used to
+                indicate a status, notification or event related to the current page.
+            </p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>Can be text (<code class="language-html">&lt;span&gt;</code>), a link (<code class="language-html">&lt;a&gt;</code>) or grouped links (<code class="language-html">&lt;details&gt;</code>), displayed in a dropdown menu.</li>
+                    <li>Can have an icon, via the themes icon font (<code class="language-html">class=&quot;icon-</code>&hellip;).</li>
+                    <li>Can include a separate label (<code class="language-html">&lt;label&gt;</code>), usually used to display values.</li>
+                    <li>Can include a separate link (<code class="language-html">&lt;a&gt;</code>), usually used for removal, help or other related actions.</li>
+                    <li>Can include a separate notification text (<code class="language-html">&lt;span class=&quot;notification&quot;&gt;</code>).</li>
+                    <li>Can be text only, icon only or both. All variants works with the optional label, link and notification text.</li>
+                    <li>Supports <a href="component-alert.html">alert</a> colors.</li>
+                    <li>CSS only, no Javascript. Opening/closing of the dropdown menu works with keyboard, mouse and touch.</li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-settings">Configuration</h5></header>
+                <ul>
+                    <li>Sass file: components/_badge.scss</li>
+                    <li>Include the Sass file in theme.scss: <code class="language-css">@import "components/badge";</code></li>
+                </ul>
+            </section>
+            <h3>Examples</h3>
+            <p>
+                Variants: Icon only, text only, icon and text, icon only with label, icon and text with label.
+            </p>
+            <p class="comment icon-info">View source for Html code.</p>
+            <!-- Examples: Text -->
+            <h5>Text:</h5>
+            <section class="badges">
+                <!-- Icon only -->
+                <span class="badge icon-language"></span>
+                <!-- Text only -->
+                <span class="badge">Html</span>
+                <!-- Icon and text -->
+                <span class="badge icon-language">Html</span>
+                <!-- Icon only with label -->
+                <span class="badge icon-language"><label>Html</label></span>
+                <!-- Icon and text with label -->
+                <span class="badge icon-language">Language<label>Html</label></span>
+            </section>
+            <!-- Examples: Text with inline link -->
+            <h5>Text with inline link:</h5>
+            <section class="badges">
+                <!-- Icon only -->
+                <span class="badge icon-language"><a href="">3</a></span>
+                <!-- Text only -->
+                <span class="badge">Html<a href="" class="icon-clear"></a></span>
+                <!-- Icon and text -->
+                <span class="badge icon-language">Html<a href="" class="icon-clear"></a></span>
+                <!-- Icon only with label -->
+                <span class="badge icon-language"><label>Html</label><a href="" class="icon-clear"></a></span>
+                <!-- Icon and text with label -->
+                <span class="badge icon-language">Language<label>Html</label><a href="" class="icon-clear"></a></span>
+            </section>
+            <!-- Examples: Links -->
+            <h5>Link:</h5>
+            <section class="badges">
+                <!-- Icon only -->
+                <a href="" class="badge icon-language"></a>
+                <!-- Text only -->
+                <a href="" class="badge">Html</a>
+                <!-- Icon and text -->
+                <a href="" class="badge icon-language">Html</a>
+                <!-- Icon only with label -->
+                <a href="" class="badge icon-language"><label>Html</label></a>
+                <!-- Icon and text with label -->
+                <a href="" class="badge icon-language">Language<label>Html</label></a>
+            </section>
+            <!-- Examples: Links with notification text -->
+            <h5>Link with notification text:</h5>
+            <section class="badges">
+                <!-- Icon only -->
+                <a href="" class="badge icon-language"><span class="notification">3</span></a>
+                <!-- Text only -->
+                <a href="" class="badge">Html<span class="notification">3</span></a>
+                <!-- Icon and text -->
+                <a href="" class="badge icon-language">Html<span class="notification">3</span></a>
+                <!-- Icon only with label -->
+                <a href="" class="badge icon-language"><label>Html</label><span class="notification">3</span></a>
+                <!-- Icon and text with label -->
+                <a href="" class="badge icon-language">Language<label>Html</label><span class="notification">3</span></a>
+            </section>
+            <!-- Examples: Grouped links -->
+            <h5>Grouped links:</h5>
+            <section class="badges">
+                <!-- Empty: used for context menu -->
+                <details class="badge">
+                    <summary></summary>
+                    <nav>
+                        <a href="">Html</a>
+                        <a href="">Scss</a>
+                        <a href="">Javascript</a>
+                    </nav>
+                </details>
+                <!-- Icon only -->
+                <details class="badge">
+                    <summary class="icon-language"></summary>
+                    <nav>
+                        <a href="">Html</a>
+                        <a href="">Scss</a>
+                        <a href="">Javascript</a>
+                    </nav>
+                </details>
+                <!-- Text only -->
+                <details class="badge">
+                    <summary>Language</summary>
+                    <nav>
+                        <a href="">Html</a>
+                        <a href="">Scss</a>
+                        <a href="">Javascript</a>
+                    </nav>
+                </details>
+                <!-- Icon and text -->
+                <details class="badge">
+                    <summary class="icon-language">Language</summary>
+                    <nav>
+                        <a href="">Html</a>
+                        <a href="">Scss</a>
+                        <a href="">Javascript</a>
+                    </nav>
+                </details>
+                <!-- Icon only with label -->
+                <details class="badge">
+                    <summary class="icon-language"><label>Html</label></summary>
+                    <nav>
+                        <a href="">Html</a>
+                        <a href="">Scss</a>
+                        <a href="">Javascript</a>
+                    </nav>
+                </details>
+                <!-- Icon and text with label -->
+                <details class="badge">
+                    <summary class="icon-language">Language<label>Html</label></summary>
+                    <nav>
+                        <a href="">Html</a>
+                        <a href="">Scss</a>
+                        <a href="">Javascript</a>
+                    </nav>
+                </details>
+            </section>
+            <hr />
+            <p class="comment icon-lightbulb">For colored variants, see <a href="component-alert.html">Alert</a>.</p>
+            <hr />
+            <h4>Wrapper element</h4>
+            <p>
+                To add vertical space between multiple adjacent badges, place them in a <code class="language-html">&lt;section class=&quot;badges&quot;&gt;</code> element.
+            </p>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

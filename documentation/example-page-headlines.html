@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Example page: Headlines</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Component: Dialog -->
+    <!-- Only used for text about this page -->
+    <link href="../dist/css/components/dialog.min.css" rel="stylesheet" />
+    <!-- End component -->
+</head>
+<body>
+
+    <!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+        <label for="side-navigation" role="button" class="icon-clear"></label>
+        <a class="icon-visibility current" href="index.html">Documentation</a>
+        <hr />
+        <h5>GitHub</h5>
+        <a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+        <a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+    </nav>
+    <!-- End component -->
+    <!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a>Example pages</a>
+            <span>/</span>
+            <a href="example-page-headlines.html">Headlines</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+        <!-- Optional component: Horizontal tabs -->
+        <div class="horizontal-tabs">
+            <nav>
+                <details class="current">
+                    <summary class="icon-lightbulb">Example pages</summary>
+                    <nav>
+                        <a href="example-page-data.html">Data</a>
+                        <a href="example-page-login.html">Login</a>
+                        <a href="example-page-cards.html">Cards</a>
+                        <a href="example-page-headlines.html" class="current">Headlines</a>
+                    </nav>
+                </details>
+                <a href="components.html" class="icon-bookmark">Components</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+            </nav>
+        </div>
+        <!-- End component -->
+    </header>
+
+
+    <!-- Main -->
+    <main class="sidebar-header-content">
+
+        <section class="header">
+            <h2>
+                Projects 
+                <!-- Link to dialog about this page -->
+                <sup class="icon-lightbulb"><a href="#" data-dialog="#about" title="Read more">About this page</a></sup>
+            </h2>
+        </section>
+
+        <article>
+            <form class="align vertical-center">
+                <label class="icon-search grow-horizontal"><input class="full-width" style="min-width: 9em;" type="search" placeholder="Find projects" name="q"></label>
+                <label class="icon-filter_list">
+                    <select name="type">
+                        <option value="">All types</option>
+                        <option>Website</option>
+                        <option>Webshop</option>
+                        <option>PWA</option>
+                        <option>App</option>
+                        <option>Marketing</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+                <label class="icon-arrow_downward">
+                    <select name="sort">
+                        <optgroup label="Sort">
+                            <option selected>Updated</option>
+                            <option>Created</option>
+                            <option>Name</option>
+                            <option>Alerts</option>
+                        </optgroup>
+                    </select>
+                </label>
+                <p class="grow-horizontal text-right">
+                    <a class="icon-add button success right" href="">New</a>
+                </p>
+            </form>
+
+            <hr />
+
+            <section class="align header">
+                <h3>
+                    <a href="">Acme Corp website</a>
+                    <sup>Public</sup>
+                </h3>
+                <a href="" class="badge icon-notifications" title="3 alerts"><span class="notification">3</span></a>
+                <details class="badge">
+                    <summary>Project</summary>
+                    <nav>
+                        <a href="">Details</a>
+                        <a href="">Edit</a>
+                        <a href="">Members</a>
+                    </nav>
+                </details>
+            </section>
+            <p>
+                Company website for Acme Corp. This is a newly-launched live version, with updated CMS and new design. The project was initiated by John Stone, Head of Marketing and Mia Wong, CEO.
+            </p>
+            <section class="align">
+                <a href="" class="tag alert success">live</a>
+                <a href="" class="tag highlighted">website</a>
+                <span class="tag highlighted">.net</span>
+                <span class="tag highlighted">c#</span>
+                <span class="tag highlighted">ms sql</span>
+            </section>
+            <p class="comment align" style="--column-gap: 1.25rem;">
+                <span class="icon-check">Published</span>
+                <span class="icon-person">4 Members</span>
+                <span class="icon-schedule">Updated 1 h 4 min ago</span>
+            </p>
+
+            <hr />
+
+            <section class="align header">
+                <h3>
+                    <a href="">Acme Corp app</a>
+                    <sup>Internal</sup>
+                </h3>
+                <a href="" class="badge icon-notifications" title="1 alert"><span class="notification">1</span></a>
+                <details class="badge">
+                    <summary>Project</summary>
+                    <nav>
+                        <a href="">Details</a>
+                        <a href="">Edit</a>
+                        <a href="">Members</a>
+                    </nav>
+                </details>
+            </section>
+            <p>
+                Progressive web app for Acme Corp. The app will be used internally by the company employees to manage their CMS, CRM and other internal systems while they are working remotely, via their phones. Technical project involving many APIs and high security. The project was initiated by by John Stone, Head of Marketing. Currently under development, with a goal to launch in a couple of months.
+            </p>
+            <section class="align">
+                <a href="" class="tag alert warning">in development</a>
+                <a href="" class="tag highlighted">pwa</a>
+                <span class="tag highlighted">javascript</span>
+                <span class="tag highlighted">api</span>
+                <span class="tag highlighted">phone</span>
+            </section>
+            <p class="comment align" style="--column-gap: 1.25rem;">
+                <span class="icon-clear">Not published</span>
+                <span class="icon-person">3 Members</span>
+                <span class="icon-schedule">Updated 12 aug 15:02</span>
+            </p>
+
+            <hr />
+
+            <section class="align header">
+                <h3>
+                    <a href="">Genco Pura webshop</a>
+                    <sup>Public</sup>
+                </h3>
+                <details class="badge">
+                    <summary>Project</summary>
+                    <nav>
+                        <a href="">Details</a>
+                        <a href="">Edit</a>
+                        <a href="">Members</a>
+                    </nav>
+                </details>
+            </section>
+            <p>
+                Update to the company’s current webshop, both front-end redesign and new functions for the back office. The project was initiated by Peter Stanbrige, Head of sales. It involves working with their current e-commerce platform and with an external designer, Natalie Lee-Walsh.
+            </p>
+            <section class="align">
+                <a href="" class="tag alert success">live</a>
+                <a href="" class="tag highlighted">webshop</a>
+                <span class="tag highlighted">bigcommerce</span>
+                <span class="tag highlighted">api</span>
+                <span class="tag highlighted">ruby</span>
+            </section>
+            <p class="comment align" style="--column-gap: 1.25rem;">
+                <span class="icon-check">Published</span>
+                <span class="icon-person">5 Members</span>
+                <span class="icon-schedule">Updated 12 aug 14:58</span>
+            </p>
+
+            <hr />
+
+            <section class="align header">
+                <h3>
+                    <a href="">Genco Pura Novello 24 marketing campaign</a>
+                    <sup>Public</sup>
+                </h3>
+                <details class="badge">
+                    <summary>Project</summary>
+                    <nav>
+                        <a href="">Details</a>
+                        <a href="">Edit</a>
+                        <a href="">Members</a>
+                    </nav>
+                </details>
+            </section>
+            <p>
+                Marketing campaign for the company in all their sales channels; retail, e-commerce and social media. An annual major event for both B2B and B2C. The project was initiated by Eugenia Anderson, Head of Marketing and involves creating digital ads for many platforms.
+            </p>
+            <section class="align">
+                <a href="" class="tag alert success">live</a>
+                <a href="" class="tag highlighted">ads</a>
+                <span class="tag highlighted">social media</span>
+                <span class="tag highlighted">html</span>
+                <span class="tag highlighted">css</span>
+                <span class="tag highlighted">design</span>
+            </section>
+            <p class="comment align" style="--column-gap: 1.25rem;">
+                <span class="icon-check">Published</span>
+                <span class="icon-person">4 Members</span>
+                <span class="icon-schedule">Updated 9 jan 10:01</span>
+            </p>
+
+            <hr />
+
+            <!-- Pagination -->
+            <section class="align pagination">
+                <p class="small">1-4 of 16</p>
+                <span class="icon-first_page semi-transparent"></span>
+                <span class="icon-keyboard_arrow_left semi-transparent"></span>
+                <a href="" class="icon-keyboard_arrow_right"></a>
+                <a href="" class="icon-last_page"></a>
+            </section>
+
+        </article>
+
+        <aside>
+            <section class="text-center">
+                <a href="" class="image">
+                    <img class="round" alt="User"
+                         src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=310"
+                         srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=310 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=620 2x">
+                </a>
+            </section>
+            <h1 class="text-center no-margin-bottom">Trevor Virtue</h1>
+            <h3 class="text-center light thin">Project Manager</h3>
+            <p class="text-center">
+                <a href="" class="button">Edit profile</a>
+            </p>
+            <p class="text-center icon-location_on">
+                Stockholm, Sweden
+            </p>
+            <hr />
+            <p class="small align center" style="--column-gap: 1.25rem;">
+                <span class="icon-star"><strong>16</strong> Projects</span>
+                <span class="icon-notifications"><strong>4</strong> Alerts</span>
+            </p>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="index.html" class="image">
+            <img alt="Logotype"
+                 src="images/logo.svg"
+                 style="height: 1.25rem; opacity: 0.6;" />
+            JM Admin
+        </a>
+        <span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+    </footer>
+
+    <!-- Dialog: About this page -->
+    <dialog id="about">
+        <h3>Example page: Headlines</h3>
+        <p>
+            Layout displaying a list of records with longer texts. This example: List projects belonging to a specific user.
+        </p>
+        <details>
+            <summary><a class="button icon-info">Components used on this page</a></summary>
+            <ul>
+                <li><a href="component-layout.html">Layout</a></li>
+                <li><a href="component-align.html">Align</a></li>
+                <li><a href="component-tag.html">Tag</a></li>
+                <li><a href="component-details.html">Details</a></li>
+                <li><a href="component-alert.html">Alert</a></li>
+                <li><a href="component-form.html">Basic form elements</a></li>
+            </ul>
+        </details>
+    </dialog>
+
+    <!-- Component: Alert -->
+    <script src="../dist/javascript/alert.min.js"></script>
+    <!-- End component -->
+    <!--Component: Dialog -->
+    <!-- Only used for text about this page -->
+    <script src="../dist/javascript/dialog.min.js"></script>
+    <!-- End component -->
+    <!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+
+</body>
+</html>

@@ -1,0 +1,648 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Align</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <style>
+        /* Note: The styles below are just for this page, to show guides and visualize how the component works. */
+        /* Examples: all */
+        main .align > * {
+            background-color: var(--color-header-background);
+            border: var(--border-light);
+            padding: 4px;
+            text-align: center;
+        }
+        main div.no-guides .align:before { content: none !important; }
+        main div.no-guides .align:after { content: none !important; }
+        main div.no-guides .align div:before { content: none !important; }
+        main div.no-guides .align div:after { content: none !important; }
+        main div.no-guides .align p:before { content: none !important; }
+        main div.no-guides .align p:after { content: none !important; }
+        /* Examples: Horizontal */
+        /* - Guides */
+        .examples-horizontal .align { position: relative; }
+        .examples-horizontal .align:before {
+            content: "";
+            display: block;
+            position: relative;
+            top: 3px;
+            width: 100%;
+            height: 1px;
+            margin: 0 0 4px 0;
+            background-color: var(--color-link);
+            opacity: 0.25;
+        }
+        .examples-horizontal .align:after {
+            content: "";
+            display: block;
+            width: 7px;
+            height: 7px;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-style: solid;
+            border-width: 0 0 1px 1px;
+            border-color: var(--color-link);
+            opacity: 0.6;
+            transform: rotate(45deg);
+        }
+        .examples-horizontal .align.right:after {
+            left: auto; 
+            right: 0;
+            transform: rotate(-135deg);
+        }
+        .examples-horizontal .align.center div:first-child:before {
+            content: "";
+            display: block;
+            width: 7px;
+            height: 7px;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-style: solid;
+            border-width: 0 0 1px 1px;
+            border-color: var(--color-link);
+            opacity: 0.6;
+            transform: rotate(-135deg);
+        }
+        /* Examples: Vertical */
+        /* - Height */
+        .examples-vertical .align div { padding: 0; }
+        .examples-vertical .align div p { line-height: 1; }
+        .examples-vertical .align div:nth-child(1) p { font-size: 18px; padding: 20px; }
+        .examples-vertical .align div:nth-child(2) p { font-size: 16px; padding: 15px; }
+        .examples-vertical .align div:nth-child(3) p { font-size: 14px; padding: 10px; }
+        .examples-vertical .align div:nth-child(4) p { font-size: 12px; padding: 5px; }
+        .examples-vertical .align div:nth-child(5) p { font-size: 10px; padding: 2px; }
+        /* - Guides */
+        .examples-vertical .align { position: relative; }
+        .examples-vertical .align:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 36px;
+            width: 100%;
+            height: 1px;
+            background-color: var(--color-link);
+            opacity: 0.25;
+        }
+        .examples-vertical .align.vertical-top:after { top: 0px; }
+        .examples-vertical .align.vertical-center:after { top: 30px; }
+        .examples-vertical .align.vertical-bottom:after { top: 58px; }
+        /* Examples: Gap */
+        /* - Width */
+        .examples-gap .align div { min-width: 25%; }
+        /* Examples: Wrap */
+        /* - Width */
+        .examples-wrap .align div { min-width: 25%; }
+        .examples-wrap .align.no-wrap { overflow-x: auto; padding-bottom: var(--padding-buttons); }
+        /* Examples: Individual horizontal */
+        /* - Guides */
+        .examples-individual .align > div:is(.left, .right, .center) p:after { 
+            display: block;
+            opacity: 0.6;
+            color: var(--color-link);
+            font-size: 1.125rem;
+            margin: 0;
+        }
+        .examples-individual .align > div.left p:after { content: '\2190'; }
+        .examples-individual .align > div.right p:after { content: '\2192'; }
+        .examples-individual .align > div.center p:after { content: '\2194'; }
+        /* Examples: Individual vertical */
+        /* - Guides */
+        .examples-individual .align > div:is(.vertical-top, .vertical-center, .vertical-bottom) p { 
+            line-height: 1.125rem;
+        }
+        .examples-individual .align > div:is(.vertical-top, .vertical-center, .vertical-bottom) p:before { 
+            display: inline-block;
+            opacity: 0.6;
+            color: var(--color-link);
+            font-size: inherit;
+            font-size: 1.125rem;
+            line-height: 1.125rem;
+            margin: 0 0.25em 0 0;
+        }
+        .examples-individual .align > div.vertical-top p:before { content: '\2191'; vertical-align: top;  }
+        .examples-individual .align > div.vertical-center p:before { content: '\2195'; }
+        .examples-individual .align > div.vertical-bottom p:before { content: '\2193'; vertical-align: bottom; }
+        /* Examples: Individual grow */
+        /* - Height */
+        .examples-grow .align:not(:first-of-type) div { padding: 0; }
+        .examples-grow .align:not(:first-of-type) div p { line-height: 1; }
+        .examples-grow .align:not(:first-of-type) div:nth-child(1) p { font-size: 18px; padding: 20px; }
+        .examples-grow .align:not(:first-of-type) div:nth-child(2) p { font-size: 16px; padding: 15px; }
+        .examples-grow .align:not(:first-of-type) div:nth-child(3) p { font-size: 14px; padding: 10px; }
+        .examples-grow .align:not(:first-of-type) div:nth-child(4) p { font-size: 12px; padding: 5px; }
+        .examples-grow .align:not(:first-of-type) div:nth-child(5) p { font-size: 10px; padding: 2px; }
+        /* - Guides */
+        .examples-grow .align:not(:first-of-type) { position: relative; }
+        .examples-grow .align div { position: relative; }
+        .examples-grow .align:not(:first-of-type):after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-style: solid;
+            border-width: 1px 0 1px 0;
+            border-color: var(--color-link);
+            opacity: 0.25;
+        }
+        .examples-grow .align > div.grow-horizontal:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            left: 2px;
+            height: 1px;
+            border-top: 1px dashed var(--color-link);
+            opacity: 0.6;
+        }
+        .examples-grow .align > div.grow-vertical:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 2px;
+            bottom: 2px;
+            left: 50%;
+            width: 1px;
+            border-left: 1px dashed var(--color-link);
+            opacity: 0.6;
+        }
+        /* Examples: Shorthands */
+        /* - Text */
+        .examples-shorthands .align.header > div:first-child > p {
+            text-align: left;
+        }
+    </style>
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-align.html">Align</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+                <a class="icon-bookmark current" href="component-align.html">Align</a>
+                <a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />				<h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+                <a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Align</h2>
+            <p>
+                Styles to control the positioning of items.
+            </p>
+            <details>
+                <summary>
+                    <p class="icon-help">Read more</p>
+                </summary>
+                <section class="content alert info">
+                    <p>
+                        Alignment creates order and visual appeal in a design. It helps the reader understand the elements and their relationships.
+                    </p>
+                    <p>
+                        Aligning elements in web design can be challenging, but this component makes it easy and templated. Just add some class names to a wrapper element to align the items inside it. For more advanced designs, you can add class names to the individual items. There are also some <a href="#shorthand">shorthand class names</a> to reduce the code for often used layouts.
+                    </p>
+                </section>
+            </details>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>CSS only, no Javascript.</li>
+                    <li>Can be applied to any Html tag.</li>
+                    <li>Implement by setting the <code class="language-html">class="align"</code> attribute of the Html tag.</li>
+                    <li>Items can be aligned both horizontal and vertical.</li>
+                    <li>Items can be defined to wrap on overflow, or not.</li>
+                    <li>Gap (space between items) can be styled inline using custom properties; <code class="language-css">--column-gap</code> and <code class="language-css">--row-gap</code>.</li>
+                    <li>Items can be aligned individually (both horizontal and vertical).</li>
+                    <li>Items can be grown individually (both horizontal and vertical) to fill all remaining space.</li>
+                </ul>
+            </section>
+
+            <h3>Examples</h3>
+            <p class="comment icon-info">View source for Html code.</p>
+
+            <hr />
+
+            <div class="examples-horizontal">
+                <h5>Align horizontal</h5>
+                <p class="comment"><label><input type="checkbox" onchange="this.closest('div').classList.toggle('no-guides');" checked />Show guides</label></p>
+                <p>Left <span class="comment">(default)</span></p>
+                <section class="align">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+                <p>Center</p>
+                <section class="align center">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+                <p>Right</p>
+                <section class="align right">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+            </div>
+
+            <hr />
+
+            <div class="examples-vertical">
+                <h5>Align vertical</h5>
+                <p class="comment"><label><input type="checkbox" onchange="this.closest('div').classList.toggle('no-guides');" checked />Show guides</label></p>
+                <p>Baseline <span class="comment">(default)</span></p>
+                <section class="align">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+                <p>Top</p>
+                <section class="align vertical-top">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+                <p>Center</p>
+                <section class="align vertical-center">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+                <p>Bottom</p>
+                <section class="align vertical-bottom">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+            </div>
+
+            <hr />
+
+            <div class="examples-gap">
+                <h5>Gap</h5>
+                <p>Small column and row gap <span class="comment">(default)</span></p>
+                <section class="align">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                    <div><p>Item 6</p></div>
+                </section>
+                <p>No column gap</p>
+                <section class="align" style="--column-gap: 0;">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                    <div><p>Item 6</p></div>
+                </section>
+                <p>No column or row gap</p>
+                <section class="align" style="--column-gap: 0; --row-gap: 0;">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                    <div><p>Item 6</p></div>
+                </section>
+                <p>Specified column gap</p>
+                <section class="align" style="--column-gap: 20px;">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                    <div><p>Item 6</p></div>
+                </section>
+                <p>Specified column and row gap</p>
+                <section class="align" style="--column-gap: 20px; --row-gap: 20px;">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                    <div><p>Item 6</p></div>
+                </section>
+            </div>
+
+            <hr />
+
+            <div class="examples-wrap">
+                <h5>Wrap on overflow</h5>
+                <p>Wrap <span class="comment">(default)</span></p>
+                <section class="align">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                    <div><p>Item 6</p></div>
+                </section>
+                <p>No wrap</p>
+                <section class="align no-wrap">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                    <div><p>Item 6</p></div>
+                </section>
+                <p>Wrap reverse</p>
+                <section class="align wrap-reverse">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                    <div><p>Item 6</p></div>
+                </section>
+            </div>
+
+            <hr />
+
+            <div class="examples-individual examples-horizontal">
+                <h5>Individually aligned horizontal</h5>
+                <p class="comment"><label><input type="checkbox" onchange="this.closest('div').classList.toggle('no-guides');" checked />Show guides</label></p>
+                <p>Right <span class="comment">(Item 4)</span></p>
+                <section class="align">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div class="right"><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+                <p>Center <span class="comment">(Item 3)</span></p>
+                <section class="align">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div class="center"><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+                <p>Left <span class="comment">(Item 2)</span></p>
+                <section class="align right">
+                    <div><p>Item 1</p></div>
+                    <div class="left"><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+            </div>
+
+            <hr />
+
+            <div class="examples-individual examples-vertical">
+                <h5>Individually aligned vertical</h5>
+                <p class="comment"><label><input type="checkbox" onchange="this.closest('div').classList.toggle('no-guides');" checked />Show guides</label></p>
+                <p>Top <span class="comment">(Item 5)</span></p>
+                <section class="align vertical-bottom">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div class="vertical-top"><p>Item 5</p></div>
+                </section>
+                <p>Center <span class="comment">(Item 5)</span></p>
+                <section class="align vertical-bottom">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div class="vertical-center"><p>Item 5</p></div>
+                </section>
+                <p>Bottom <span class="comment">(Item 5)</span></p>
+                <section class="align vertical-top">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div class="vertical-bottom"><p>Item 5</p></div>
+                </section>
+            </div>
+
+            <hr />
+
+            <div class="examples-individual examples-grow">
+                <h5>Individual grow</h5>
+                <p class="comment">The item will grow to fill the remaining space, if there is any.</p>
+                <p class="comment"><label><input type="checkbox" onchange="this.closest('div').classList.toggle('no-guides');" checked />Show guides</label></p>
+                <p>Grow horizontal <span class="comment">(Item 5)</span></p>
+                <section class="align">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div class="grow-horizontal"><p>Item 5</p></div>
+                </section>
+                <p>Grow vertical <span class="comment">(Item 5)</span></p>
+                <section class="align vertical-top">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div class="grow-vertical"><p>Item 5</p></div>
+                </section>
+                <p>Grow both horizontal and vertical <span class="comment">(Item 5)</span></p>
+                <section class="align vertical-top">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div class="grow-horizontal grow-vertical"><p>Item 5</p></div>
+                </section>
+            </div>
+
+            <hr />
+
+            <div class="examples-shorthands" id="shorthand">
+                <h3>Shorthands</h3>
+                <p>A faster way to write common combinations of rules.</p>
+                <hr />
+                <h5>Header</h5>
+                <p>A common and versatile alignment, often used in a header element, with a title text to the left and links in the upper right corner.</p>
+                <p class="icon-info">Class name: <code class="language-css">header</code>. Same as using these settings:</p>
+                <ul>
+                    <li>Align horizontal: Right &rarr;</li>
+                    <li>Align vertical: Top &uarr;</li>
+                    <li>Column gap: Small &#x21A6;</li>
+                    <li>Row gap: Small &#x21A7;</li>
+                    <li>Wrap: Wrap &#x21B2;</li>
+                    <li>First item: Grow horizontal &#x21E0;</li>
+                </ul>
+                <section class="align header">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+                
+                <hr />
+
+                <h5>Pagination</h5>
+                <p>Used for pagination. All elements are right aligned, with a summary text separated from following icon links.</p>
+                <p class="icon-info">Class name: <code class="language-css">pagination</code>. Same as using these settings:</p>
+                <ul>
+                    <li>Align horizontal: Right &rarr;</li>
+                    <li>Align vertical: Center &#x2195;</li>
+                    <li>Column gap: Medium &#x21A6;</li>
+                    <li>Row gap: Small &#x21A7;</li>
+                    <li>Wrap: Wrap &#x21B2;</li>
+                    <li>First item, if not empty: Large margin right &#x21A6;</li>
+                </ul>
+                <section class="align pagination">
+                    <div><p>Item 1</p></div>
+                    <div><p>Item 2</p></div>
+                    <div><p>Item 3</p></div>
+                    <div><p>Item 4</p></div>
+                    <div><p>Item 5</p></div>
+                </section>
+            </div>
+
+            <hr />
+
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

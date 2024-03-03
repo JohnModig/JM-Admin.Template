@@ -1,0 +1,73 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Tag
+
+    Optional component, to be included in the main scss file.
+
+    A small label or link. This component is usually used to flag or indicate 
+    a status to a subject.
+
+    Features:
+
+    - Can be text only (<span>) or a link (<a>).
+
+    - Can have an icon, via the themes icon font (class="icon-…).
+
+    - Can be in highlighted color (class="highlighted").
+
+    - Supports alert colors.
+
+\*---------------------------------------------------------------------------*/
+
+.tag:where(span:not(.token), a) {
+    display: inline-block;
+    color: var(--color-text-light);
+    padding: 1px 10px 2px 10px;
+    font-size: .75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    background-color: var(--color-link-background-hover);
+    border-radius: 1em;
+    border: none;
+    vertical-align: middle;
+    margin: 0;
+    // Icons
+    &[class^="icon-"], &[class*=" icon-"] {
+        &:before {
+            line-height: 1rem;
+            vertical-align: text-bottom;
+        }
+    }
+
+    &.highlighted {
+        background-color: var(--color-tag-background);
+        color: var(--color-link);
+    }
+}
+
+.tag:where(a) {
+    outline-offset: -1px;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        background-color: var(--color-text-semi-transparent);
+        color: white;
+        text-decoration: none;
+    }
+
+    &:where([class^="icon-"], &[class*=" icon-"]) {
+
+        &:empty {
+            &:hover, &:focus {
+                color: white;
+            }
+        }
+    }
+
+    &.highlighted {
+        &:hover, &:focus {
+            background-color: var(--color-link);
+            color: white;
+        }
+    }
+}

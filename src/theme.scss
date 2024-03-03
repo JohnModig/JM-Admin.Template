@@ -1,0 +1,626 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    JM Admin
+
+    Admin template for web apps.
+
+    https://github.com/JohnModig/JM-Admin.Template
+
+\*---------------------------------------------------------------------------*/
+
+// Breakpoints
+@import "includes/breakpoints";
+
+// Icon font
+@import "includes/icons";
+
+// Colors
+@import "includes/colors";
+
+// Global variables
+
+:root {
+    // Colors
+    --color-text: $color-text;
+    --color-text-light: adjust-color($color-text, $lightness: 19, $saturation: -10);
+    --color-text-semi-transparent: change-color($color-text, $alpha: 0.65);
+    --color-link: #0969da;
+    --color-link-background-hover: rgba(208, 215, 222, 0.32);
+    --color-tag-background: #ddf4ff;
+    --color-header-background: #f6f8fa;
+    --color-top-header-background: var(--color-header-background);
+    --color-top-header-foreground: var(--color-text);
+    --color-top-header-link-background-hover: var(--color-link-background-hover);
+    --color-top-header-link-foreground-hover: var(--color-text);
+    --color-scrollbar-foreground: rgba(0,0,0,0.15);
+    --color-scrollbar-background: transparent;
+    --color-success: $color-success;
+    --color-error: $color-error;
+    --color-info: $color-info;
+    --color-warning: $color-warning;
+    // Borders
+    --border-light: 1px solid rgba(27, 31, 36, 0.15);
+    --border-medium: 1px solid rgba(27, 31, 36, 0.3);
+    --border-solid: 2px solid #d0d7de;
+    --border-radius-button: 6px;
+    // Fonts
+    --font-monospace: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+    --font-body: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+    // Padding and margins
+    --padding-container-horizontal: 22px;
+    --padding-container-vertical: 15px;
+    --padding-buttons: .4375rem;
+    --grid-gap: 10px;
+    --margin-paragraph-bottom: 1.125rem;
+    // Outlines
+    --outline-buttons: 2px solid var(--color-link);
+    // Box shadows
+    --box-shadow-light: 0 1px 2px rgba(0,0,0,0.06);
+    --box-shadow-medium: 0 1px 5px rgba(0,0,0,0.12);
+    // Sizes
+    --size-container-max-width: 1300px;
+
+    @include for-phone-only {
+        --padding-container-horizontal: 10px;
+        --padding-container-vertical: 10px;
+    }
+}
+
+// Layout: Basic elements
+
+body {
+    position: relative;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    // Sticky footer
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+// Typography
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+    line-height: 1.3;
+}
+p, ul, ol {
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+h1 {
+    font-size: 1.375rem;
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+h2 {
+    font-size: 1.25rem;
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+h3 {
+    font-size: 1.125rem;
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+h4 {
+    font-size: 1rem;
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+h5 {
+    font-size: .875rem;
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+sup, sub {
+    font-size: #{m}ax(0.6em, 10px);
+}
+ul, ol {
+    padding: 0 0 0 1.5em;
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+
+    & > li:not(:last-child) {
+        margin-bottom: var(--margin-paragraph-bottom);
+    }
+}
+p {
+    &.comment {
+        font-size: .75rem;
+        color: var(--color-text-light);
+    }
+}
+strong {
+    font-weight: 600;
+}
+span {
+    &.comment {
+        font-size: #{m}ax(.75em, .75rem);
+        font-weight: 400;
+        filter: brightness(2);
+    }
+}
+:is(h1, h2, h3, h4, h5) {
+
+    strong {
+        font-weight: 700;
+    }
+
+    sup {
+        display: inline-block;
+        vertical-align: top;
+        color: var(--color-text-light);
+        line-height: 1;
+        padding: calc(var(--padding-buttons) / 2) var(--padding-buttons);
+        border: var(--border-light);
+        border-radius: calc(var(--padding-buttons) / 2 + 0.5em);
+        margin-left: 0.25em;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+code {
+    // !important rule to override Prism styles
+    font-family: var(--font-monospace) !important;
+    font-weight: normal;
+    font-size: #{m}ax(0.9286em, 11px) !important;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: var(--color-link-background-hover) !important;
+    color: var(--color-text);
+    margin: -1px 0;
+    padding: 1px 0.25em !important;
+    white-space: pre !important;
+    border-radius: 2px !important;
+    overflow-y: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+article > code {
+    // !important rule to override Prism styles
+    display: block;
+    font-size: .8125rem !important;
+    line-height: 1.3 !important;
+    padding: var(--padding-buttons) !important;
+    border-radius: var(--border-radius-button) !important;
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+hr {
+    height: 1px;
+    overflow: hidden;
+    margin: var(--margin-paragraph-bottom) 0 var(--margin-paragraph-bottom) 0; // Set top margin to collapse with preceding typography elements
+    padding: 0;
+    border: none;
+    border-bottom: var(--border-light);
+}
+
+// Small font size
+.small {
+    font-size: .75rem;
+}
+
+// Light text color
+.light {
+    color: var(--color-text-light);
+}
+
+// Thin text weight
+.thin {
+    font-weight: 100;
+}
+
+// No margin bottom
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+// Semi transparent
+.semi-transparent {
+    opacity: 0.5;
+}
+
+// Links
+a {
+    color: var(--color-link);
+    text-decoration: none;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+
+    &:focus-visible {
+        outline: var(--outline-buttons);
+    }
+}
+:is(h1, h2, h3, h4, h5) a {
+    color: inherit;
+}
+
+// Alignment
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+
+// Icons
+:is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label) {
+    // Icons
+    &[class^="icon-"], &[class*=" icon-"] {
+        &:before {
+            font-size: 1.1428em;
+            display: inline-block;
+            vertical-align: baseline;
+            color: inherit;
+            opacity: 0.8;
+        }
+
+        &:not(:empty):before {
+            margin-right: .375em;
+        }
+    }
+}
+a {
+    &:where([class^="icon-"], &[class*=" icon-"]) {
+        &:empty {
+            text-decoration: none;
+            color: inherit;
+
+            &:hover, &:focus {
+                text-decoration: none;
+                color: var(--color-link);
+            }
+        }
+    }
+}
+:is(sub, sup) {
+    &[class^="icon-"], &[class*=" icon-"] {
+        &:not(:empty):before {
+            margin-right: .25em;
+        }
+    }
+}
+
+// Images
+main img {
+    max-width: 100%;
+    &.round {
+        border-radius: 50%;
+    }
+}
+
+// Align
+@import "includes/align";
+
+// Details
+@import "includes/details";
+
+// Forms
+@import "includes/forms";
+
+// Loader
+@import "includes/loader";
+
+// Data table
+@import "includes/data-table";
+
+// Breakpoints visibility
+@import "includes/breakpoints-visibility";
+
+// Top header
+@import "includes/top-header";
+
+
+// Header (all)
+header {
+    // position: relative; - Don't use, it makes overflow-y: hidden
+    background-color: var(--color-header-background);
+    border-bottom: var(--border-light);
+    font-size: .875rem;
+    margin: 0;
+}
+
+// Header in main area or dialog
+main header, dialog header {
+    & > * {
+        margin-bottom: 0;
+    }
+
+    // Links
+    a {
+        color: inherit;
+    }
+}
+
+// Main area
+main {
+    padding: var(--padding-container-vertical) var(--padding-container-horizontal);
+    width: 100%;
+    box-sizing: border-box;
+    max-width: var(--size-container-max-width);
+    margin: 0 auto;
+    display: block;
+    // Sticky footer
+    flex: 1 0 auto;
+    align-content: flex-start;
+    // Margins between child elements when not using grid layout
+    & > * + * {
+        margin-top: var(--margin-paragraph-bottom);
+    }
+    // Grid layout mixin
+    @mixin main-grid-layout {
+        display: grid;
+        grid-column-gap: var(--padding-container-horizontal);
+        grid-row-gap: var(--margin-paragraph-bottom);
+        // Reset margins
+        & > * + * {
+            margin-top: 0;
+        }
+
+        & > * {
+            margin: 0;
+        }
+    }
+    // Layout: Header, content, sidebar
+    @include for-tablet-portrait-up {
+        &.header-content-sidebar {
+            // Grid layout
+            @include main-grid-layout;
+            grid-template-columns: 2fr #{m}inmax(200px, 1fr);
+            grid-template-areas: "header header" "article sidebar";
+        }
+    }
+    // Layout: Header, sidebar, content
+    @include for-tablet-portrait-up {
+        &.header-sidebar-content {
+            // Grid layout
+            @include main-grid-layout;
+            grid-template-columns: #{m}inmax(200px, 1fr) 2fr;
+            grid-template-areas: "header header" "sidebar article";
+        }
+    }
+    // Layout: Sidebar, header, content
+    @include for-tablet-portrait-up {
+        &.sidebar-header-content {
+            // Grid layout
+            @include main-grid-layout;
+            grid-template-columns: #{m}inmax(200px, 1fr) 3fr;
+            grid-template-areas: "sidebar header" "sidebar article";
+        }
+    }
+    // Layout: Header, badges, content, sidebar
+    &.header-badges-content-sidebar {
+        @include for-tablet-portrait-up {
+            // Grid layout
+            @include main-grid-layout;
+            grid-template-columns: 2fr #{m}inmax(200px, 1fr);
+            grid-template-areas: "header badges" "article sidebar";
+
+            & > section.badges {
+                text-align: right;
+
+                &:after {
+                    content: "";
+                    height: 0;
+                    overflow: auto;
+                    border-bottom: var(--border-light);
+                    width: var(--padding-container-horizontal);
+                    position: absolute;
+                    bottom: -1px;
+                    left: calc(1px - var(--padding-container-horizontal) - 1px);
+                }
+            }
+        }
+
+        @include for-phone-only {
+            & > section:first-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    }
+    // Layout: Navigation, content
+    &.navigation-content {
+        @include for-tablet-portrait-up {
+            // Grid layout
+            @include main-grid-layout;
+            grid-template-columns: #{m}inmax(max-content, 1fr) 3fr;
+            grid-template-areas: "sidebar article";
+        }
+
+        @include for-phone-only {
+            & > aside {
+                border-bottom: var(--border-light);
+                padding-bottom: var(--margin-paragraph-bottom);
+            }
+        }
+    }
+    // Layout: Centered content (vertical and horizontal)
+    &.centered-content {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+
+        *:first-child {
+            margin-top: 0;
+        }
+
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+    // Header section
+    & > section.header {
+        grid-area: header;
+        border-bottom: var(--border-light);
+        padding-bottom: var(--margin-paragraph-bottom);
+    }
+    // Badges section
+    & > section.badges {
+        grid-area: badges;
+        position: relative;
+        border-bottom: var(--border-light);
+        padding-bottom: var(--margin-paragraph-bottom);
+    }
+    // Article (for main content)
+    article {
+        grid-area: article;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    // Sidebar
+    aside {
+        grid-area: sidebar;
+
+        & > nav {
+            padding: 0 8px;
+
+            & > a {
+                display: block;
+                position: relative;
+                font-size: .875rem;
+                padding: var(--padding-buttons);
+                color: var(--color-text);
+                border-radius: var(--border-radius-button);
+
+                &:hover, &:focus {
+                    background-color: var(--color-link-background-hover);
+                    text-decoration: none;
+                }
+
+                &.current {
+                    background-color: var(--color-link-background-hover);
+                    font-weight: 600;
+
+                    &:after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        overflow: hidden;
+                        left: -8px;
+                        top: 3px;
+                        bottom: 3px;
+                        width: 4px;
+                        background-color: var(--color-link);
+                        border-radius: 2px;
+                    }
+                }
+            }
+
+            & > h5 {
+                font-size: .75rem;
+                color: var(--color-text-light);
+                padding: var(--padding-buttons);
+                margin: 0;
+            }
+
+            & > hr {
+                height: calc(var(--padding-buttons) * 2);
+                line-height: calc(var(--padding-buttons) * 2);
+                font-size: calc(var(--padding-buttons) * 2);
+                margin: 0 -8px calc(var(--padding-buttons) * 2) -8px;
+            }
+        }
+    }
+    // Sections
+    section {
+        margin: 0 0 var(--margin-paragraph-bottom) 0;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        &.content {
+            padding: var(--margin-paragraph-bottom) var(--padding-buttons);
+            border: var(--border-light);
+            border-radius: var(--border-radius-button);
+
+            & > header:first-child {
+                margin: calc(1px - var(--margin-paragraph-bottom) - 1px) calc(1px - var(--padding-buttons) - 1px) var(--margin-paragraph-bottom) calc(1px - var(--padding-buttons) - 1px);
+                padding: var(--padding-buttons) calc(var(--padding-buttons) + 1px);
+                border-top-right-radius: var(--border-radius-button);
+                border-top-left-radius: var(--border-radius-button);
+            }
+        }
+
+        &.centered {
+            margin-right: auto;
+            margin-left: auto;
+            width: fit-content;
+            block-size: fit-content;
+        }
+    }
+    // Margins
+    article, aside, section {
+        *:first-child {
+            margin-top: 0;
+        }
+
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Footer
+body > footer {
+    padding: calc(var(--padding-container-vertical) * 3) var(--padding-container-horizontal) var(--padding-container-vertical) var(--padding-container-horizontal);
+    display: flex;
+    gap: var(--padding-container-horizontal);
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--color-text-light);
+
+    & > * {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 1ch;
+    }
+
+    a {
+        color: var(--color-text-light);
+
+        &:hover, &:focus {
+            color: var(--color-link);
+        }
+    }
+}
+
+/*-----------------------
+    Components
+-----------------------*/
+
+// Horizontal tabs
+@import "components/horizontal-tabs";
+
+// Badge
+@import "components/badge";
+
+// Tag
+@import "components/tag";
+
+// Side navigation
+@import "components/side-navigation";
+
+// Overlay labels
+@import "components/overlay-labels";
+
+// Vertical labels
+@import "components/vertical-labels";
+
+// Horizontal labels
+@import "components/horizontal-labels";
+
+// Flex grid
+@import "components/flex-grid";
+
+// Alert
+@import "components/alert";

@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Slider</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Component: slider.js -->
+    <link href="../dist/css/components/slider.min.css" rel="stylesheet" />
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-slider.html">Slider</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+				<a class="icon-bookmark" href="component-align.html">Align</a>
+				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark current" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+				<h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Slider <sup>Optional</sup></h2>
+            <p>
+                Scroll through elements horizontally, with navigation and progress indicator.
+                This component is usually used to create carousel slideshows or to divide long forms into smaller sections.
+            </p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>Automatically creates a navigation with optional styles; &quot;bullets&quot; or &quot;previous and next buttons&quot;.</li>
+                    <li>Automatically creates a progress indicator with optional description of the steps.</li>
+                    <li>Can be scrolled automatically.</li>
+                    <li>Can be translated into other languages.</li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-settings">Configuration</h5></header>
+                <ul>
+                    <li>Sass file: components/_slider.scss</li>
+                    <li>Javascript file: components/_slider.js</li>
+                    <li>Include the compiled css file in the Html: <code class="language-html">&lt;link href=&quot;/css/components/slider.min.css&quot; rel=&quot;stylesheet&quot; /&gt;</code></li>
+                    <li>Include the compiled javascript file in the Html: <code class="language-html">&lt;script src=&quot;/javascript/slider.min.js&quot;&gt;&lt;/script&gt;</code></li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-check">Implementation <sup>Javascript</sup></h5></header>
+                <h5>Basic</h5>
+                <p>Create a <code class="language-javascript">Slider</code> object with default configuration:</p>
+                <p><code class="language-javascript">const mySlider = new Slider('#mySlider');</code></p>
+                <h5>Advanced</h5>
+                <p>Create a <code class="language-javascript">Slider</code> object with detailed configuration:</p>
+                <p><code class="language-javascript">const mySlider = new Slider({
+    element: '#mySlider',
+    gap: '100px',
+    navigationStyle: 'prevNext',
+    steps: ['Introduktion', 'Detaljer', 'Summering'],
+    appendElement: 'a.success',
+    text: {
+        Slide: 'Bild',
+        Previous: 'Föregående',
+        Next: 'Nästa'
+    }
+ });</code></p>
+            </section>
+            <h3>Examples</h3>
+            <p class="comment icon-info">View source for Html code.</p>
+            <hr />
+            <p>
+                Default:
+            </p>
+            <!-- Example: Default -->
+            <div id="component1">
+                <div>
+                    <h1 class="text-center">Slide 1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare mattis felis, a bibendum est. Proin imperdiet auctor tristique. Nulla varius tortor velit, id varius ipsum euismod eu. Morbi posuere gravida augue, eget blandit neque iaculis in. Sed finibus sapien sit amet tristique efficitur. Morbi consectetur enim ut erat aliquet tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id lobortis libero. Donec ultricies imperdiet porttitor. Nunc suscipit diam in dui efficitur, quis sagittis risus blandit. Nulla felis lorem, egestas eget ultricies faucibus, rhoncus id erat.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 2</h1>
+                    <p>
+                        Quisque molestie ante id sem vestibulum, hendrerit tincidunt arcu tincidunt. Aliquam consectetur blandit imperdiet. Morbi consequat lorem tincidunt risus molestie fringilla. Sed vitae pretium mi. Nulla accumsan nisi non nulla iaculis, ac scelerisque nisi ullamcorper. Vivamus dictum laoreet lectus. Nullam finibus lobortis elit nec viverra. Cras volutpat, risus et placerat volutpat, odio nunc ultricies purus, vitae suscipit lacus eros et leo. Nam maximus ullamcorper neque, quis elementum lacus imperdiet vel. Integer sed purus diam. Donec tincidunt bibendum lorem.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 3</h1>
+                    <p>
+                        Quisque vitae dignissim mauris. Etiam nec nunc tellus. Etiam scelerisque enim in dictum dignissim. Cras lobortis eget metus id dignissim. Morbi rutrum turpis vitae orci aliquam, ac fringilla neque commodo. In nec odio eget nibh dapibus ultrices. Suspendisse tincidunt finibus egestas. Sed euismod justo lacus, id tincidunt justo sodales non.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <p>
+                Gap (space between slides):
+            </p>
+            <!-- Example: Gap -->
+            <div id="component2">
+                <div>
+                    <h1 class="text-center">Slide 1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare mattis felis, a bibendum est. Proin imperdiet auctor tristique. Nulla varius tortor velit, id varius ipsum euismod eu. Morbi posuere gravida augue, eget blandit neque iaculis in. Sed finibus sapien sit amet tristique efficitur. Morbi consectetur enim ut erat aliquet tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id lobortis libero. Donec ultricies imperdiet porttitor. Nunc suscipit diam in dui efficitur, quis sagittis risus blandit. Nulla felis lorem, egestas eget ultricies faucibus, rhoncus id erat.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 2</h1>
+                    <p>
+                        Quisque molestie ante id sem vestibulum, hendrerit tincidunt arcu tincidunt. Aliquam consectetur blandit imperdiet. Morbi consequat lorem tincidunt risus molestie fringilla. Sed vitae pretium mi. Nulla accumsan nisi non nulla iaculis, ac scelerisque nisi ullamcorper. Vivamus dictum laoreet lectus. Nullam finibus lobortis elit nec viverra. Cras volutpat, risus et placerat volutpat, odio nunc ultricies purus, vitae suscipit lacus eros et leo. Nam maximus ullamcorper neque, quis elementum lacus imperdiet vel. Integer sed purus diam. Donec tincidunt bibendum lorem.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 3</h1>
+                    <p>
+                        Quisque vitae dignissim mauris. Etiam nec nunc tellus. Etiam scelerisque enim in dictum dignissim. Cras lobortis eget metus id dignissim. Morbi rutrum turpis vitae orci aliquam, ac fringilla neque commodo. In nec odio eget nibh dapibus ultrices. Suspendisse tincidunt finibus egestas. Sed euismod justo lacus, id tincidunt justo sodales non.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <p>
+                Autoplay:
+            </p>
+            <!-- Example: Autoplay -->
+            <div id="component3">
+                <div>
+                    <h1 class="text-center">Slide 1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare mattis felis, a bibendum est. Proin imperdiet auctor tristique. Nulla varius tortor velit, id varius ipsum euismod eu. Morbi posuere gravida augue, eget blandit neque iaculis in. Sed finibus sapien sit amet tristique efficitur. Morbi consectetur enim ut erat aliquet tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id lobortis libero. Donec ultricies imperdiet porttitor. Nunc suscipit diam in dui efficitur, quis sagittis risus blandit. Nulla felis lorem, egestas eget ultricies faucibus, rhoncus id erat.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 2</h1>
+                    <p>
+                        Quisque molestie ante id sem vestibulum, hendrerit tincidunt arcu tincidunt. Aliquam consectetur blandit imperdiet. Morbi consequat lorem tincidunt risus molestie fringilla. Sed vitae pretium mi. Nulla accumsan nisi non nulla iaculis, ac scelerisque nisi ullamcorper. Vivamus dictum laoreet lectus. Nullam finibus lobortis elit nec viverra. Cras volutpat, risus et placerat volutpat, odio nunc ultricies purus, vitae suscipit lacus eros et leo. Nam maximus ullamcorper neque, quis elementum lacus imperdiet vel. Integer sed purus diam. Donec tincidunt bibendum lorem.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 3</h1>
+                    <p>
+                        Quisque vitae dignissim mauris. Etiam nec nunc tellus. Etiam scelerisque enim in dictum dignissim. Cras lobortis eget metus id dignissim. Morbi rutrum turpis vitae orci aliquam, ac fringilla neque commodo. In nec odio eget nibh dapibus ultrices. Suspendisse tincidunt finibus egestas. Sed euismod justo lacus, id tincidunt justo sodales non.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <p>
+                Previous and next buttons:
+            </p>
+            <!-- Example: Previous and next buttons -->
+            <div id="component4">
+                <div>
+                    <h1 class="text-center">Slide 1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare mattis felis, a bibendum est. Proin imperdiet auctor tristique. Nulla varius tortor velit, id varius ipsum euismod eu. Morbi posuere gravida augue, eget blandit neque iaculis in. Sed finibus sapien sit amet tristique efficitur. Morbi consectetur enim ut erat aliquet tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id lobortis libero. Donec ultricies imperdiet porttitor. Nunc suscipit diam in dui efficitur, quis sagittis risus blandit. Nulla felis lorem, egestas eget ultricies faucibus, rhoncus id erat.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 2</h1>
+                    <p>
+                        Quisque molestie ante id sem vestibulum, hendrerit tincidunt arcu tincidunt. Aliquam consectetur blandit imperdiet. Morbi consequat lorem tincidunt risus molestie fringilla. Sed vitae pretium mi. Nulla accumsan nisi non nulla iaculis, ac scelerisque nisi ullamcorper. Vivamus dictum laoreet lectus. Nullam finibus lobortis elit nec viverra. Cras volutpat, risus et placerat volutpat, odio nunc ultricies purus, vitae suscipit lacus eros et leo. Nam maximus ullamcorper neque, quis elementum lacus imperdiet vel. Integer sed purus diam. Donec tincidunt bibendum lorem.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 3</h1>
+                    <p>
+                        Quisque vitae dignissim mauris. Etiam nec nunc tellus. Etiam scelerisque enim in dictum dignissim. Cras lobortis eget metus id dignissim. Morbi rutrum turpis vitae orci aliquam, ac fringilla neque commodo. In nec odio eget nibh dapibus ultrices. Suspendisse tincidunt finibus egestas. Sed euismod justo lacus, id tincidunt justo sodales non.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <p>
+                Progress indicator with steps:
+            </p>
+            <!-- Example: Progress indicator with steps -->
+            <div id="component5">
+                <div>
+                    <h1 class="text-center">Slide 1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare mattis felis, a bibendum est. Proin imperdiet auctor tristique. Nulla varius tortor velit, id varius ipsum euismod eu. Morbi posuere gravida augue, eget blandit neque iaculis in. Sed finibus sapien sit amet tristique efficitur. Morbi consectetur enim ut erat aliquet tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id lobortis libero. Donec ultricies imperdiet porttitor. Nunc suscipit diam in dui efficitur, quis sagittis risus blandit. Nulla felis lorem, egestas eget ultricies faucibus, rhoncus id erat.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 2</h1>
+                    <p>
+                        Quisque molestie ante id sem vestibulum, hendrerit tincidunt arcu tincidunt. Aliquam consectetur blandit imperdiet. Morbi consequat lorem tincidunt risus molestie fringilla. Sed vitae pretium mi. Nulla accumsan nisi non nulla iaculis, ac scelerisque nisi ullamcorper. Vivamus dictum laoreet lectus. Nullam finibus lobortis elit nec viverra. Cras volutpat, risus et placerat volutpat, odio nunc ultricies purus, vitae suscipit lacus eros et leo. Nam maximus ullamcorper neque, quis elementum lacus imperdiet vel. Integer sed purus diam. Donec tincidunt bibendum lorem.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 3</h1>
+                    <p>
+                        Quisque vitae dignissim mauris. Etiam nec nunc tellus. Etiam scelerisque enim in dictum dignissim. Cras lobortis eget metus id dignissim. Morbi rutrum turpis vitae orci aliquam, ac fringilla neque commodo. In nec odio eget nibh dapibus ultrices. Suspendisse tincidunt finibus egestas. Sed euismod justo lacus, id tincidunt justo sodales non.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <p>
+                Progress indicator with named steps:
+            </p>
+            <!-- Example: Progress indicator with named steps -->
+            <div id="component6">
+                <div>
+                    <h1 class="text-center">Slide 1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare mattis felis, a bibendum est. Proin imperdiet auctor tristique. Nulla varius tortor velit, id varius ipsum euismod eu. Morbi posuere gravida augue, eget blandit neque iaculis in. Sed finibus sapien sit amet tristique efficitur. Morbi consectetur enim ut erat aliquet tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id lobortis libero. Donec ultricies imperdiet porttitor. Nunc suscipit diam in dui efficitur, quis sagittis risus blandit. Nulla felis lorem, egestas eget ultricies faucibus, rhoncus id erat.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 2</h1>
+                    <p>
+                        Quisque molestie ante id sem vestibulum, hendrerit tincidunt arcu tincidunt. Aliquam consectetur blandit imperdiet. Morbi consequat lorem tincidunt risus molestie fringilla. Sed vitae pretium mi. Nulla accumsan nisi non nulla iaculis, ac scelerisque nisi ullamcorper. Vivamus dictum laoreet lectus. Nullam finibus lobortis elit nec viverra. Cras volutpat, risus et placerat volutpat, odio nunc ultricies purus, vitae suscipit lacus eros et leo. Nam maximus ullamcorper neque, quis elementum lacus imperdiet vel. Integer sed purus diam. Donec tincidunt bibendum lorem.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 3</h1>
+                    <p>
+                        Quisque vitae dignissim mauris. Etiam nec nunc tellus. Etiam scelerisque enim in dictum dignissim. Cras lobortis eget metus id dignissim. Morbi rutrum turpis vitae orci aliquam, ac fringilla neque commodo. In nec odio eget nibh dapibus ultrices. Suspendisse tincidunt finibus egestas. Sed euismod justo lacus, id tincidunt justo sodales non.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <p>
+                Appended element (visible on last slide):
+            </p>
+            <!-- Example: Appended element -->
+            <div id="component7">
+                <div>
+                    <h1 class="text-center">Slide 1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare mattis felis, a bibendum est. Proin imperdiet auctor tristique. Nulla varius tortor velit, id varius ipsum euismod eu. Morbi posuere gravida augue, eget blandit neque iaculis in. Sed finibus sapien sit amet tristique efficitur. Morbi consectetur enim ut erat aliquet tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id lobortis libero. Donec ultricies imperdiet porttitor. Nunc suscipit diam in dui efficitur, quis sagittis risus blandit. Nulla felis lorem, egestas eget ultricies faucibus, rhoncus id erat.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 2</h1>
+                    <p>
+                        Quisque molestie ante id sem vestibulum, hendrerit tincidunt arcu tincidunt. Aliquam consectetur blandit imperdiet. Morbi consequat lorem tincidunt risus molestie fringilla. Sed vitae pretium mi. Nulla accumsan nisi non nulla iaculis, ac scelerisque nisi ullamcorper. Vivamus dictum laoreet lectus. Nullam finibus lobortis elit nec viverra. Cras volutpat, risus et placerat volutpat, odio nunc ultricies purus, vitae suscipit lacus eros et leo. Nam maximus ullamcorper neque, quis elementum lacus imperdiet vel. Integer sed purus diam. Donec tincidunt bibendum lorem.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 3</h1>
+                    <p>
+                        Quisque vitae dignissim mauris. Etiam nec nunc tellus. Etiam scelerisque enim in dictum dignissim. Cras lobortis eget metus id dignissim. Morbi rutrum turpis vitae orci aliquam, ac fringilla neque commodo. In nec odio eget nibh dapibus ultrices. Suspendisse tincidunt finibus egestas. Sed euismod justo lacus, id tincidunt justo sodales non.
+                    </p>
+                    <a href="" class="button success icon-check">Save</a>
+                </div>
+            </div>
+            <hr />
+            <p>
+                Other language (Swedish):
+            </p>
+            <!-- Example: Other language -->
+            <div id="component8">
+                <div>
+                    <h1 class="text-center">Slide 1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare mattis felis, a bibendum est. Proin imperdiet auctor tristique. Nulla varius tortor velit, id varius ipsum euismod eu. Morbi posuere gravida augue, eget blandit neque iaculis in. Sed finibus sapien sit amet tristique efficitur. Morbi consectetur enim ut erat aliquet tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id lobortis libero. Donec ultricies imperdiet porttitor. Nunc suscipit diam in dui efficitur, quis sagittis risus blandit. Nulla felis lorem, egestas eget ultricies faucibus, rhoncus id erat.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 2</h1>
+                    <p>
+                        Quisque molestie ante id sem vestibulum, hendrerit tincidunt arcu tincidunt. Aliquam consectetur blandit imperdiet. Morbi consequat lorem tincidunt risus molestie fringilla. Sed vitae pretium mi. Nulla accumsan nisi non nulla iaculis, ac scelerisque nisi ullamcorper. Vivamus dictum laoreet lectus. Nullam finibus lobortis elit nec viverra. Cras volutpat, risus et placerat volutpat, odio nunc ultricies purus, vitae suscipit lacus eros et leo. Nam maximus ullamcorper neque, quis elementum lacus imperdiet vel. Integer sed purus diam. Donec tincidunt bibendum lorem.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 3</h1>
+                    <p>
+                        Quisque vitae dignissim mauris. Etiam nec nunc tellus. Etiam scelerisque enim in dictum dignissim. Cras lobortis eget metus id dignissim. Morbi rutrum turpis vitae orci aliquam, ac fringilla neque commodo. In nec odio eget nibh dapibus ultrices. Suspendisse tincidunt finibus egestas. Sed euismod justo lacus, id tincidunt justo sodales non.
+                    </p>
+                    <a href="" class="button success icon-check">Spara</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Component: slider.js -->
+    <script src="../dist/javascript/slider.min.js"></script>
+    <script>
+
+        // Example: Default
+        const component1 = new Slider('#component1');
+
+        // Example: Gap
+        const component2 = new Slider({
+            element: '#component2',
+            gap: '100px'
+        });
+
+        // Example: Autoplay
+        const component3 = new Slider({
+            element: '#component3',
+            gap: '100px',
+            autoplay: true,
+            delay: 6000
+        });
+
+        // Example: Previous and next buttons
+        const component4 = new Slider({
+            element: '#component4',
+            gap: '100px',
+            navigationStyle: 'prevNext'
+        });
+
+        // Example: Progress indicator with steps
+        const component5 = new Slider({
+            element: '#component5',
+            gap: '100px',
+            navigationStyle: 'prevNext',
+            steps: []
+        });
+
+        // Example: Progress indicator with named steps
+        const component6 = new Slider({
+            element: '#component6',
+            gap: '100px',
+            navigationStyle: 'prevNext',
+            steps: ['Introduction', 'Details', 'Summary']
+        });
+
+        // Example: Appended element
+        const component7 = new Slider({
+            element: '#component7',
+            gap: '100px',
+            navigationStyle: 'prevNext',
+            steps: ['Introduction', 'Details', 'Summary'],
+            appendElement: 'a.success'
+        });
+
+        // Example: Other language
+        const component8 = new Slider({
+            element: '#component8',
+            gap: '100px',
+            navigationStyle: 'prevNext',
+            steps: ['Introduktion', 'Detaljer', 'Summering'],
+            appendElement: 'a.success',
+            text: {
+                Slide: 'Bild',
+                Previous: 'Föregående',
+                Next: 'Nästa'
+            }
+        });
+    </script>
+    <!-- End component -->
+    <!-- Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism (with autoloader) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

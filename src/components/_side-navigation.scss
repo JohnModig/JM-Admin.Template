@@ -1,0 +1,177 @@
+/*---------------------------------------------------------------------------*\
+    
+    Side navigation
+
+    Optional component, to be included in the main scss file.
+
+    Drawer style navigation, which slides in from the side of the page. This 
+    component is used for an extra layer of navigation links, usually for top 
+    level or external links. The menu is not visible on page load and requires 
+    a click to open.
+    
+    CSS only, no Javascript. Opening/closing works with keyboard, mouse and 
+    touch.
+
+\*---------------------------------------------------------------------------*/
+
+// Breakpoints
+@import "../includes/breakpoints";
+
+#side-navigation {
+    // Navigation
+    & + nav {
+        --color-link-current-border: #1c7c37;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: auto;
+        min-width: 5rem;
+        max-width: 90vw;
+        min-height: #{m}ax(100vh,100%);
+        box-sizing: border-box;
+        background: white;
+        border-top: var(--border-medium);
+        border-right: var(--border-medium);
+        border-bottom: var(--border-medium);
+        border-radius: 0 var(--border-radius-button) var(--border-radius-button) 0;
+        padding: var(--padding-container-vertical) var(--padding-container-horizontal);
+        box-shadow: var(--box-shadow-medium);
+        transform: translate(-100%, 0);
+        z-index: 9;
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--padding-buttons);
+
+        & > label {
+            cursor: pointer;
+
+            &:empty {
+                font-size: 18px;
+                line-height: 1 !important;
+                border-radius: var(--border-radius-button);
+                text-align: center;
+                align-self: flex-end;
+            }
+        }
+
+        a, label {
+            display: block;
+            margin: 0;
+            color: var(--color-text-light);
+            text-decoration: none;
+            padding: var(--padding-buttons);
+            border-radius: var(--border-radius-button);
+            line-height: inherit !important;
+
+            &:hover, &:focus {
+                background-color: var(--color-link-background-hover);
+                text-decoration: none;
+            }
+        }
+
+        a {
+            visibility: hidden; // Make unfocusable when menu is hidden
+            position: relative;
+
+            &.current {
+                background-color: var(--color-link-background-hover);
+                font-weight: 600;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    overflow: hidden;
+                    left: -8px;
+                    top: 3px;
+                    bottom: 3px;
+                    width: 4px;
+                    background-color: var(--color-link-current-border);
+                    border-radius: 2px;
+                }
+            }
+        }
+
+        h5 {
+            color: var(--color-text-light);
+            padding: var(--padding-buttons);
+            margin: 0;
+        }
+
+        & > hr {
+            height: calc(var(--padding-buttons) * 2);
+            line-height: calc(var(--padding-buttons) * 2);
+            font-size: calc(var(--padding-buttons) * 2);
+            margin: 0 0 var(--padding-buttons) 0;
+        }
+    }
+    // Opening and closing
+
+    $component-transition: .2s transform ease;
+    position: absolute;
+    z-index: -1;
+
+    &:checked + nav {
+        transition: $component-transition;
+        transform: none;
+
+        a {
+            visibility: visible; // Make focusable when menu is visible
+        }
+    }
+
+    &:focus + nav {
+        transition: $component-transition;
+    }
+
+    &:focus-visible ~ header label[for='side-navigation'] {
+        background-color: var(--color-link-background-hover);
+        outline: var(--outline-buttons);
+        color: var(--color-text);
+        border-color: var(--color-text-light);
+    }
+
+    &:focus-visible + nav label[for='side-navigation'] {
+        background-color: var(--color-link-background-hover);
+        outline: var(--outline-buttons);
+        color: var(--color-text);
+    }
+}
+
+// Trigger button in top header
+header label[for='side-navigation'] {
+    display: inline-block;
+    padding: 0;
+    font-size: 20px;
+    line-height: 32px;
+    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+    color: inherit;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-top-header-foreground); // Fallback
+    border-color: color-mix(in srgb, var(--color-top-header-foreground) 40%, transparent);
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: var(--border-radius-button);
+    cursor: pointer;
+    opacity: 0.8;
+
+    &:hover, &:focus {
+        color: var(--color-top-header-link-foreground-hover);
+        background-color: var(--color-top-header-link-background-hover);
+        border-color: var(--color-top-header-link-background-hover); // Fallback
+        border-color: color-mix(in srgb, var(--color-top-header-link-foreground-hover) 40%, transparent);
+        text-decoration: none;
+        opacity: 1;
+    }
+
+    & + a {
+        margin-left: calc(var(--grid-gap) + var(--padding-buttons));
+
+        @include for-phone-only {
+            margin-left: var(--grid-gap);
+        }
+    }
+}

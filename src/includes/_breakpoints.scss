@@ -1,0 +1,35 @@
+/*---------------------------------------------------------------------------*\
+    
+    Breakpoints
+
+    Mandatory code to be included in the main scss file.
+
+    Handles the breakpoints as SASS mixins. Influenced by David Gilbertson: 
+    https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+
+\*---------------------------------------------------------------------------*/
+
+@mixin for-phone-only {
+  @media screen and (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media screen and (min-width: 600px) { @content; }
+}
+@mixin for-tablet-portait-only {
+  @media screen and (min-width: 600px) and (max-width: 899px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media screen and (min-width: 900px) { @content; }
+}
+@mixin for-tablet-landscape-only {
+  @media screen and (min-width: 900px) and (max-width: 1199px) { @content; }
+}
+@mixin for-desktop-up {
+  @media screen and (min-width: 1200px) { @content; }
+}
+@mixin for-desktop-only {
+  @media screen and (min-width: 1200px) and (max-width: 1799px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media screen and (min-width: 1800px) { @content; }
+}

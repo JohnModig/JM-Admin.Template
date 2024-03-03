@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Advanced input box</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Component: choices.js -->
+    <link href="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css" rel="stylesheet" />
+    <link href="../dist/css/components/choices.min.css" rel="stylesheet" />
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-advanced-input-box.html">Advanced input box</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+				<a class="icon-bookmark" href="component-align.html">Align</a>
+				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+				<h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark current" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Advanced input box &ndash; choices.js <sup>Optional</sup></h2>
+            <p>
+                External component. Highly confirgurable replacement for select box and text input. Demo of original component: <a href="https://choices-js.github.io/Choices/">https://choices-js.github.io/Choices/</a>
+            </p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>Enhanced UI for multiple select box (<code class="language-html">&lt;select multiple&gt;</code>).</li>
+                    <li>Enhanced UI for text box (<code class="language-html">&lt;input type=&quot;text&quot;&gt;</code>).</li>
+                    <li>Make options searchable.</li>
+                    <li>Displays comma separated strings as multiple options.</li>
+                    <li>Shows help text.</li>
+                    <li>Limit inputs to a number of options.</li>
+                    <li>Theme styles, like <a href="component-form.html">basic form elements</a>.</li>
+                    <li>Can have an icon label and/or icon link, like <a href="component-form.html">basic form elements</a>.</li>
+                    <li>Supports <a href="component-validation.html">validation</a>.</li>
+                    <li>&hellip;and more. See all features: <a href="https://github.com/Choices-js/Choices">https://github.com/Choices-js/Choices</a></li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-settings">Configuration</h5></header>
+                <ul>
+                    <li>Include the component css file in the Html: <code class="language-html">&lt;link href=&quot;https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css&quot; rel=&quot;stylesheet&quot; /&gt;</code></li>
+                    <li>Include the theme css file in the Html: <code class="language-html">&lt;link href=&quot;/css/components/choices.min.css&quot; rel=&quot;stylesheet&quot; /&gt;</code></li>
+                    <li>Include the component javascript file in the Html: <code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/scripts/choices.min.js&quot;&gt;&lt;/script&gt;</code></li>
+                    <li>Configure according to the documentation: <a href="https://github.com/Choices-js/Choices">https://github.com/Choices-js/Choices</a></li>
+                </ul>
+            </section>
+            <h3>Examples</h3>
+            <p>
+                Multiple select:
+            </p>
+            <p>
+                <select id="component1" multiple><option>Option 1</option><option>Option 2</option><option>Option 3</option></select>
+            </p>
+            <p class="comment icon-lightbulb">The components width is always 100% of the parent element.</p>
+            <p>
+                Multiple select with limited width:
+            </p>
+            <p style="max-width: 220px;">
+                <select id="component2" multiple><option>Option 1</option><option>Option 2</option><option>Option 3</option></select>
+            </p>
+            <p>
+                Multiple select with icon label:
+            </p>
+            <p style="max-width: 220px;">
+                <label class="icon-filter_list"><select id="component3" multiple><option>Option 1</option><option>Option 2</option><option>Option 3</option></select></label>
+            </p>
+            <p>
+                Multiple select with icon link:
+            </p>
+            <p style="max-width: 220px;">
+                <label><select id="component4" multiple><option>Option 1</option><option>Option 2</option><option>Option 3</option><option>Option 4</option></select><a href="" class="icon-help"></a></label>
+            </p>
+            <p>
+                Multiple select with icon label and icon link:
+            </p>
+            <p style="max-width: 220px;">
+                <label class="icon-filter_list"><select id="component5" multiple><option>Option 1</option><option>Option 2</option><option>Option 3</option><option>Option 4</option></select><a href="" class="icon-help"></a></label>
+            </p>
+            <p>
+                Tag list (comma separated strings):
+            </p>
+            <p>
+                <input id="component6" type="text" />
+            </p>
+            <p>
+                Tag list, only unique values:
+            </p>
+            <p>
+                <input id="component7" type="text" value="a,b,c" />
+            </p>
+            <p>
+                Tag list, only unique values, max 3 values, remove buttons, other language (Swedish):
+            </p>
+            <p>
+                <input id="component8" type="text" value="a,b" />
+            </p>
+            <p>
+                Tag list with <a href="component-validation.html">validation</a> <code class="language-csharp">[Required]</code>:
+            </p>
+            <p>
+                <input type="text" id="component9" name="component9" data-val="true" data-val-required="This field is required." />
+                <span class="field-validation-valid" data-valmsg-for="component9" data-valmsg-replace="true"></span>
+            </p>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Component: choices.js -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/scripts/choices.min.js"></script>
+    <script>
+        const component1 = new Choices('#component1');
+        const component2 = new Choices('#component2');
+        const component3 = new Choices('#component3');
+        const component4 = new Choices('#component4');
+        const component5 = new Choices('#component5');
+        const component6 = new Choices('#component6');
+        const component7 = new Choices('#component7', { duplicateItemsAllowed: false });
+        const component8 = new Choices('#component8', {
+            maxItemCount: 3,
+            duplicateItemsAllowed: false,
+            removeItemButton: true,
+            addItemText: function (value) {
+                return ('Tryck Enter för att lägga till <b>' + String(value) + '</b>');
+            },
+            maxItemText: function (maxItemCount) {
+                return ('Max ' + String(maxItemCount) + ' värden kan läggas till');
+            },
+            uniqueItemText: 'Endast unika värden kan läggas till'
+        });
+        const component9 = new Choices('#component9');
+    </script>
+    <!-- End component -->
+    <!-- Component: Validation -->
+    <script src="../dist/javascript/validation.min.js"></script>
+    <script>
+        window.addEventListener("load", (event) => {
+            let els = document.querySelectorAll(validation.settings.elementsSelector);
+            for (var el of els) {
+                validation.elements.validate(el);
+            }
+        });
+    </script>
+    <!-- End component -->
+    <!-- Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism (with autoloader) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

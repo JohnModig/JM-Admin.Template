@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Loader</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Component: Tooltip -->
+    <link href="../dist/css/components/tooltip.min.css" rel="stylesheet" />
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-tooltip.html">Tooltip</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+				<a class="icon-bookmark" href="component-align.html">Align</a>
+				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark current" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+				<h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Tooltip <sup>Optional</sup></h2>
+            <p>
+                A simple tooltip &ndash; additional text to show when focusing on an element.
+            </p>
+            <p class="comment icon-lightbulb">This component is just for displaying simple text. If you need Html or more content, consider using the <a href="component-dialog.html">dialog</a> component instead.</p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>CSS only.</li>
+                    <li>Can be applied to any Html element. *</li>
+                    <li>Tooltip is visible on focus and hover. Works with keyboard, mouse and touch.</li>
+                    <li>Implement by setting the <code class="language-html">data-tooltip</code> attribute of the Html element.</li>
+                    <li>Apply options by setting the <code class="language-html">data-tooltip-options</code> attribute. Multiple options can be used, separated by spaces.</li>
+                    <li>Set <code class="language-html">tabindex="0"</code> on elements that aren't focusable.</li>
+                </ul>
+                <hr />
+                <p class="comment">* Works best with an inline wrapping element, such as <code class="language-html">&lt;span&gt;</code>, <code class="language-html">&lt;label&gt;</code>, <code class="language-html">&lt;abbr&gt;</code> or <code class="language-html">&lt;dfn&gt;</code>.</p>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-settings">Configuration</h5></header>
+                <ul>
+                    <li>Sass file: components/_tooltip.scss</li>
+                    <li>Include the compiled css file in the Html: <code class="language-html">&lt;link href=&quot;/css/components/tooltip.min.css&quot; rel=&quot;stylesheet&quot; /&gt;</code></li>
+                </ul>
+            </section>
+            <h3>Examples</h3>
+            <p class="comment icon-info">View source for Html code.</p>
+            <hr />
+            <h5>Position</h5>
+            <!-- Example: Position center -->
+            <p>
+                Center: <span tabindex="0" data-tooltip="Tooltip">test</span>
+            </p>
+            <!-- Example: Position right -->
+            <p>
+                Right: <span tabindex="0" data-tooltip="Tooltip" data-tooltip-options="right">test</span>
+            </p>
+            <!-- Example: Position left -->
+            <p>
+                Left: <span tabindex="0" data-tooltip="Tooltip" data-tooltip-options="left">test</span>
+            </p>
+            <!-- Example: Position right for small screens only -->
+            <p>
+                Right for small screens only: <span tabindex="0" data-tooltip="Tooltip" data-tooltip-options="right-for-small">test</span>
+            </p>
+            <!-- Example: Position left for small screens only -->
+            <p>
+                Left for small screens only: <span tabindex="0" data-tooltip="Tooltip" data-tooltip-options="left-for-small">test</span>
+            </p>
+            <hr />
+            <h5>Text align</h5>
+            <p class="comment icon-lightbulb">For multi-line text.</p>
+            <!-- Example: Text align center -->
+            <p>Center: <span tabindex="0" data-tooltip="Tooltip
+New line of text">test</span></p>
+            <!-- Example: Text align right -->
+            <p>Right: <span tabindex="0" data-tooltip-options="text-right" data-tooltip="Tooltip
+New line of text">test</span></p>
+            <!-- Example: Text align left -->
+            <p>Left: <span tabindex="0" data-tooltip-options="text-left" data-tooltip="Tooltip
+New line of text">test</span></p>
+            <hr />
+            <h5>Wrapping</h5>
+            <!-- Example: Line break -->
+            <p>Line break: <span tabindex="0" data-tooltip="Tooltip
+New line of text">test</span>
+            </p>
+            <!-- Example: Wrap long strings -->
+            <p>
+                Wrap long strings: <span tabindex="0" data-tooltip="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" data-tooltip-options="wrap">test</span>
+            </p>
+            <!-- Example: Wrap long strings (no spaces) -->
+            <p>
+                Wrap long strings (no spaces): <span tabindex="0" data-tooltip="LoremipsumdolorsitametconsecteturadipiscingelitSuspendisseetipsuminterdumultriciespuruseufringillaexNullamscelerisqueante" data-tooltip-options="wrap">test</span>
+            </p>
+            <hr />
+            <h5>Elements</h5>
+            <!-- Example: Heading -->
+            <h3>Heading: <span tabindex="0" data-tooltip="Tooltip">test</span></h3>
+            <!-- Example: Paragraph definition -->
+            <p>
+                Paragraph definition: <dfn tabindex="0" data-tooltip="Tooltip">test</dfn>
+            </p>
+            <!-- Example: Paragraph abbreviation -->
+            <p>
+                Paragraph abbreviation: <abbr tabindex="0" data-tooltip="Tooltip">test</abbr>
+            </p>
+            <!-- Example: Icon -->
+            <p>
+                Icon: <span tabindex="0" data-tooltip="Tooltip"><span class="icon-language"></span></span>
+            </p>
+            <!-- Example: Badge -->
+            <p>
+                <a href="component-badge.html">Badge</a>: <span tabindex="0" data-tooltip="Tooltip"><span class="badge icon-language"></span></span>
+            </p>
+            <!-- Example: Badge label -->
+            <p>
+                <a href="component-badge.html">Badge</a> label: <span class="badge icon-language"><label tabindex="0" data-tooltip="Tooltip">Test</label></span>
+            </p>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

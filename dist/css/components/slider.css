@@ -1,0 +1,138 @@
+﻿/*---------------------------------------------------------------------------*    
+    Slider
+
+    Optional component.
+
+    Scroll through elements horizontally, with navigation and progress 
+    indicator. This component is usually used to create carousel slideshows 
+    or to divide long forms into smaller sections.
+
+\*---------------------------------------------------------------------------*/
+.slider {
+  --slider-gap: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  overflow-x: auto;
+  position: relative;
+  column-gap: var(--slider-gap);
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; }
+  .slider::-webkit-scrollbar {
+    display: none; }
+  .slider > * {
+    flex-shrink: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    transform-origin: center center;
+    transform: scale(1);
+    scroll-snap-align: center; }
+    .slider > * > *:last-child {
+      margin-bottom: 0; }
+  .slider + nav {
+    display: block;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    background-color: transparent;
+    border: none;
+    margin: var(--margin-paragraph-bottom) 0 var(--margin-paragraph-bottom) 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    --slider-navigation-size: 14px; }
+    .slider + nav a.bullet {
+      display: inline-block;
+      width: var(--slider-navigation-size);
+      height: var(--slider-navigation-size);
+      font-size: var(--slider-navigation-size);
+      line-height: var(--slider-navigation-size);
+      box-sizing: border-box;
+      border: none;
+      border-radius: 50%;
+      color: transparent;
+      overflow: hidden;
+      background-color: var(--color-text-semi-transparent);
+      opacity: 0.5;
+      margin: 0 10px; }
+      .slider + nav a.bullet.selected {
+        opacity: 0.75; }
+        .slider + nav a.bullet.selected:hover {
+          opacity: 1; }
+        .slider + nav a.bullet.selected:focus-visible {
+          opacity: 1; }
+      .slider + nav a.bullet:hover {
+        opacity: 0.75; }
+      .slider + nav a.bullet:focus {
+        outline: none; }
+      .slider + nav a.bullet:focus-visible {
+        outline: none;
+        opacity: 0.75; }
+    .slider + nav.prevNext {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start; }
+      .slider + nav.prevNext .disabled {
+        display: none;
+        pointer-events: none; }
+      .slider + nav.prevNext a.prev.disabled {
+        display: inline-flex;
+        visibility: hidden;
+        pointer-events: none; }
+
+p.slider-steps {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1ch;
+  flex-wrap: wrap; }
+  p.slider-steps a {
+    display: inline-block;
+    vertical-align: middle; }
+    p.slider-steps a.bullet {
+      font-weight: 600;
+      line-height: 1em;
+      min-width: 1em;
+      text-align: center;
+      border: var(--border-medium);
+      border-radius: 50%;
+      color: var(--color-text-light);
+      background-color: var(--color-header-background);
+      padding: 2px;
+      text-decoration: none; }
+      p.slider-steps a.bullet.visited {
+        color: white;
+        background-color: var(--color-text-semi-transparent); }
+        p.slider-steps a.bullet.visited + a.name {
+          color: var(--color-text); }
+        p.slider-steps a.bullet.visited + span.connection {
+          opacity: 1; }
+      p.slider-steps a.bullet.current {
+        color: white;
+        background-color: var(--color-link); }
+        p.slider-steps a.bullet.current + a.name {
+          color: var(--color-link); }
+    p.slider-steps a.name {
+      color: var(--color-text-light); }
+      p.slider-steps a.name:focus {
+        text-decoration: none; }
+  p.slider-steps span.icon-arrow_forward {
+    opacity: 0.5; }
+    p.slider-steps span.icon-arrow_forward:before {
+      font-size: inherit;
+      line-height: 1; }
+  p.slider-steps span.connection {
+    display: block;
+    margin: 0 -1ch;
+    border-top: var(--border-medium);
+    border-top-width: 3px;
+    height: 1px;
+    width: 1em;
+    overflow: hidden;
+    opacity: 0.5; }

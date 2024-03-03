@@ -1,0 +1,49 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Horizontal labels
+
+    Mandatory code to be included in the main scss file.
+
+    Styles for text labels related to form elements.
+
+    - Influenced by Tailwind CSS inline form:  
+      (https://v1.tailwindcss.com/components/forms).
+
+\*---------------------------------------------------------------------------*/
+
+// Breakpoints
+@import "../includes/breakpoints";
+
+.horizontal-label {
+    display: grid;
+    align-items: start;
+    grid-column-gap: calc(var(--padding-buttons) * 2);
+    grid-template-columns: minmax(0,max-content) minmax(1ch, auto);
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+    font-size: .875rem;
+
+    & > label {
+        display: inline-block;
+        font-weight: 600;
+        line-height: 1.3;
+        color: var(--color-text-light);
+        padding: calc(var(--padding-buttons) * 0.8571) 0 0 0;
+        margin: 0;
+    }
+
+    & > *:not(label) + *:not(label) {
+        grid-column: 2;
+    }
+
+    @include for-phone-only {
+        &.collapse {
+            display: block;
+
+            & > label {
+                display: block;
+                padding: 0;
+                margin: 0 0 var(--padding-buttons) 0;
+            }
+        }
+    }
+}

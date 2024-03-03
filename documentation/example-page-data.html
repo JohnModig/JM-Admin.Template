@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Example page: Data</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Component: Dialog -->
+    <!-- Only used for text about this page -->
+    <link href="../dist/css/components/dialog.min.css" rel="stylesheet" />
+    <!-- End component -->
+    <!-- Component: choices.js -->
+    <link href="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css" rel="stylesheet" />
+    <link href="../dist/css/components/choices.min.css" rel="stylesheet" />
+    <!-- End component -->
+</head>
+<body>
+
+    <!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+        <label for="side-navigation" role="button" class="icon-clear"></label>
+        <a class="icon-visibility current" href="index.html">Documentation</a>
+        <hr />
+        <h5>GitHub</h5>
+        <a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+        <a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+    </nav>
+    <!-- End component -->
+    <!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a>Example pages</a>
+            <span>/</span>
+            <a href="example-page-data.html">Data</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+        <!-- Optional component: Horizontal tabs -->
+        <div class="horizontal-tabs">
+            <nav>
+                <details class="current">
+                    <summary class="icon-lightbulb">Example pages</summary>
+                    <nav>
+                        <a href="example-page-data.html" class="current">Data</a>
+                        <a href="example-page-login.html">Login</a>
+                        <a href="example-page-cards.html">Cards</a>
+                        <a href="example-page-headlines.html">Headlines</a>
+                    </nav>
+                </details>
+                <a href="components.html" class="icon-bookmark">Components</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+            </nav>
+        </div>
+        <!-- End component -->
+    </header>
+
+    <!-- Main -->
+    <main class="header-badges-content-sidebar">
+
+        <!-- Header -->
+        <section class="header">
+            <h2>
+                App users
+                <!-- Link to dialog about this page -->
+                <sup class="icon-lightbulb"><a href="#" data-dialog="#about" title="Read more">About this page</a></sup>
+            </h2>
+        </section>
+
+        <section class="badges">
+            <a href="" class="badge icon-notifications"><span class="notification">3</span></a>
+            <a class="badge icon-print" href="">Print</a>
+            <details class="badge">
+                <summary class="icon-download">Export</summary>
+                <nav>
+                    <a href="">Pdf</a>
+                    <a href="">Csv</a>
+                    <a href="">Excel</a>
+                    <a href="">Json</a>
+                </nav>
+            </details>
+        </section>
+
+        <article>
+            <section class="content alert success align header">
+                <p class="icon-check">
+                    New record created.
+                </p>
+                <p>
+                    <a href="#" class="close icon-clear" title="Close"></a>
+                </p>
+            </section>
+            <div class="data collapse">
+                <!-- Header-->
+                <header class="align header">
+                    <h5 class="icon-person">Users</h5>
+                    <a href="" class="icon-add">Add</a>
+                </header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Name</a></div>
+                    <div><a href="">Role</a></div>
+                    <div class="text-center"><a href="">Active</a></div>
+                    <div class="text-right"><a href="" class="icon-arrow_downward">Modified</a></div>
+                    <div></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>John Stone <sup class="alert success">New</sup></div>
+                    <div class="small">Admin</div>
+                    <div class="text-center small"><span class="icon-check"></span><span class="show-for-phone-only"> Active</span></div>
+                    <div class="sorted text-right small light" data-collapse="Modified">Just now</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a class="icon-visibility" href="">View</a>
+                            <a class="icon-edit" href="">Edit</a>
+                            <a class="icon-delete" href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Mia Wong</div>
+                    <div class="small">Admin</div>
+                    <div class="text-center small"><span class="icon-clear"></span><span class="show-for-phone-only"> Inactive</span></div>
+                    <div class="sorted text-right small light" data-collapse="Modified">1 h 4 min ago</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a class="icon-visibility" href="">View</a>
+                            <a class="icon-edit" href="">Edit</a>
+                            <a class="icon-delete" href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Peter Stanbrige</div>
+                    <div class="small">Sales</div>
+                    <div class="text-center small"><span class="icon-check"></span><span class="show-for-phone-only"> Active</span></div>
+                    <div class="sorted text-right small light" data-collapse="Modified">12 aug 15:02</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a class="icon-visibility" href="">View</a>
+                            <a class="icon-edit" href="">Edit</a>
+                            <a class="icon-delete" href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Natalie Lee-Walsh</div>
+                    <div class="small">Sales</div>
+                    <div class="text-center small"><span class="icon-check"></span><span class="show-for-phone-only"> Active</span></div>
+                    <div class="sorted text-right small light" data-collapse="Modified">12 aug 14:58</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a class="icon-visibility" href="">View</a>
+                            <a class="icon-edit" href="">Edit</a>
+                            <a class="icon-delete" href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Eugenia Anderson</div>
+                    <div class="small">Sales</div>
+                    <div class="text-center small"><span class="icon-check"></span><span class="show-for-phone-only"> Active</span></div>
+                    <div class="sorted text-right small light" data-collapse="Modified">9 jan 10:01</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a class="icon-visibility" href="">View</a>
+                            <a class="icon-edit" href="">Edit</a>
+                            <a class="icon-delete" href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <section class="align pagination">
+                <p class="small">1-5 of 16</p>
+                <span class="icon-first_page semi-transparent"></span>
+                <span class="icon-keyboard_arrow_left semi-transparent"></span>
+                <a href="" class="icon-keyboard_arrow_right"></a>
+                <a href="" class="icon-last_page"></a>
+            </section>
+
+        </article>
+
+        <aside>
+            <form>
+                <p>
+                    <label class="icon-search"><input name="q" type="search" placeholder="Search"></label>
+                </p>
+                <details>
+                    <summary><p class="icon-filter_list">Filter</p></summary>
+                    <p class="overlay-label">
+                        <select name="roles" multiple><option>Admin</option><option>Sales</option><option>Content editor</option><option>Developer</option></select><span>Roles</span>
+                    </p>
+                    <p class="overlay-label">
+                        <select name="active" multiple><option value="true">Yes</option><option value="false">No</option></select><span>Active</span>
+                    </p>
+                    <p>
+                        <label class="icon-check"><input type="submit" value="Apply" /></label>
+                        <a href="example-page-data.html" class="button transparent icon-restart">Reset</a>
+                    </p>
+                </details>
+            </form>
+            <hr />
+            <details>
+                <summary><p class="icon-schedule">Latest modifications</p></summary>
+                <div class="data list">
+                    <!-- Item -->
+                    <div class="item">
+                        <p class="small"><strong>1h 3m ago</strong></p>
+                        <p class="small">John Modig</p>
+                    </div>
+                    <!-- Item -->
+                    <div class="item">
+                        <p class="small"><strong>1h 22m ago</strong></p>
+                        <p class="small">John Modig</p>
+                    </div>
+                    <!-- Item -->
+                    <div class="item">
+                        <p class="small"><strong>2h 17m ago</strong></p>
+                        <p class="small">John Modig</p>
+                    </div>
+                </div>
+            </details>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="index.html" class="image">
+            <img alt="Logotype"
+                 src="images/logo.svg"
+                 style="height: 1.25rem; opacity: 0.6;" />
+            JM Admin
+        </a>
+        <span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+    </footer>
+
+    <!-- Dialog: About this page -->
+    <dialog id="about">
+        <h3>Example page: Data</h3>
+        <p>
+            Layout displaying sets of data across rows and columns. This example: List users for a web app, with a new user just created.
+        </p>
+        <details>
+            <summary><a class="button icon-info">Components used on this page</a></summary>
+            <ul>
+                <li><a href="component-layout.html">Layout</a></li>
+                <li><a href="component-align.html">Align</a></li>
+                <li><a href="component-data-table.html">Data table</a></li>
+                <li><a href="component-badge.html">Badges</a></li>
+                <li><a href="component-details.html">Details</a></li>
+                <li><a href="component-alert.html">Alert</a></li>
+                <li><a href="component-overlay-labels.html">Overlay labels</a></li>
+                <li><a href="component-form.html">Basic form elements</a></li>
+                <li><a href="component-advanced-input-box.html">Advanced input box</a></li>
+            </ul>
+        </details>
+    </dialog>
+
+    <!--Component: Data table -->
+    <script src="../dist/javascript/data-table.min.js"></script>
+    <!-- End component -->
+    <!-- Component: Alert -->
+    <script src="../dist/javascript/alert.min.js"></script>
+    <!-- End component -->
+    <!-- Component: choices.js -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/scripts/choices.min.js"></script>
+    <script>
+        // Advanced input boxes
+        const advancedInputBox1 = new Choices('select[name="roles"]', { removeItemButton: true });
+        const advancedInputBox2 = new Choices('select[name="active"]', { removeItemButton: true });
+        // Show/hide apply buttons
+        let toggleApplyButtons = () => {
+            let els = document.querySelectorAll('aside form details select, aside form details input:not([type=submit])');
+            if (els.length > 0)
+                els[0].closest('details').lastElementChild.style.display = Array.from(els).some(el => el.value !== '') ? '' : 'none';
+        }
+        advancedInputBox1.passedElement.element.addEventListener('change', toggleApplyButtons);
+        advancedInputBox2.passedElement.element.addEventListener('change', toggleApplyButtons);
+        toggleApplyButtons();
+    </script>
+    <!-- End component -->
+    <!--Component: Dialog -->
+    <!-- Only used for text about this page -->
+    <script src="../dist/javascript/dialog.min.js"></script>
+    <!-- End component -->
+    <!-- Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Form</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-form.html">Basic form elements</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+				<a class="icon-bookmark" href="component-align.html">Align</a>
+				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+				<h5>Forms</h5>
+                <a class="icon-bookmark current" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Basic form elements</h2>
+            <p>
+                Styles for basic form elements.
+            </p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>Elements inherit font styles from their parent element.</li>
+                    <li>Supports the themes icon font.</li>
+                    <li>Can have an icon label (left aligned, wrap element in <code class="language-html">&lt;label class=&quot;icon-&hellip;&quot;&gt;</code>).</li>
+                    <li>Can have an icon link (right aligned, wrap element in <code class="language-html">&lt;label&gt;</code>).</li>
+                    <li>CSS only, no Javascript.</li>
+                </ul>
+            </section>
+            <h3>Examples</h3>
+            <p>
+                Text input:
+            </p>
+            <p>
+                <input type="text" />
+            </p>
+            <p>
+                Disabled text input:
+            </p>
+            <p>
+                <input type="text" value="Text" disabled />
+            </p>
+            <p>
+                Readonly text input:
+            </p>
+            <p>
+                <input type="text" value="Text" readonly />
+            </p>
+            <p>
+                Wide text input:
+            </p>
+            <p>
+                <input type="text" class="wide" />
+            </p>
+            <p>
+                Full width text input:
+            </p>
+            <p>
+                <input type="text" class="full-width" />
+            </p>
+            <p>
+                Search input with icon label:
+            </p>
+            <p>
+                <label class="icon-search"><input type="search" /></label>
+            </p>
+            <p>
+                Search input with icon label and placeholder text:
+            </p>
+            <p>
+                <label class="icon-search"><input type="search" placeholder="Search" /></label>
+            </p>
+            <p>
+                Search input with icon label, placeholder text and icon link:
+            </p>
+            <p>
+                <label class="icon-search"><input type="search" placeholder="Search" /><a href="" class="icon-help"></a></label>
+            </p>
+            <p>
+                Password input:
+            </p>
+            <p>
+                <input type="password" />
+            </p>
+            <p>
+                Number input:
+            </p>
+            <p>
+                <input type="number" value="0" />
+            </p>
+            <p>
+                Range input:
+            </p>
+            <p style="max-width: 200px;">
+                <input type="range" min="0" max="100" value="60" />
+            </p>
+            <p>
+                Range input with data labels:
+            </p>
+            <p style="max-width: 200px;">
+                <input type="range" min="0" max="5" list="range1" value="3" />
+                <datalist id="range1">
+                    <option value="0" label="0"></option>
+                    <option value="1" label="1"></option>
+                    <option value="2" label="2"></option>
+                    <option value="3" label="3"></option>
+                    <option value="4" label="4"></option>
+                    <option value="5" label="5"></option>
+                </datalist>
+            </p>
+            <p>
+                Email input:
+            </p>
+            <p>
+                <input type="email" />
+            </p>
+            <!-- Not supported by Firefox or Safari
+    <p>
+        Month input:
+    </p>
+    <p>
+        <input type="month" />
+    </p>
+    -->
+            <p>
+                Date input:
+            </p>
+            <p>
+                <input type="date" />
+            </p>
+            <p>
+                Time input:
+            </p>
+            <p>
+                <input type="time" />
+            </p>
+            <p>
+                Date and time input:
+            </p>
+            <p>
+                <input type="datetime-local" />
+            </p>
+            <p>
+                Radio buttons:
+            </p>
+            <p>
+                <input name="radio1" type="radio" />
+                <input name="radio1" type="radio" checked />
+            </p>
+            <p>
+                Checkbox:
+            </p>
+            <p>
+                <input type="checkbox" checked />
+            </p>
+            <p>
+                Checkbox with label:
+            </p>
+            <p>
+                <label><input type="checkbox" checked />Click me</label>
+            </p>
+            <p>
+                Color picker:
+            </p>
+            <p>
+                <input type="color" />
+            </p>
+            <p>
+                Text input and button with icon:
+            </p>
+            <p>
+                <input type="text" />&nbsp;<button class="icon-edit"></button>
+            </p>
+            <p>
+                Text input and button with text:
+            </p>
+            <p>
+                <input type="text" />&nbsp;<button>Submit</button>
+            </p>
+            <p>
+                Text input and button with icon label and text:
+            </p>
+            <p>
+                <input type="text" />&nbsp;<button class="icon-edit">Submit</button>
+            </p>
+            <p>
+                Text input and submit input button with icon label and text:
+            </p>
+            <p>
+                <input type="text" />&nbsp;<label class="icon-edit"><input type="submit" value="Submit" /></label>
+            </p>
+            <p>
+                Text input and button with icon label in headline:
+            </p>
+            <h3>
+                Headline <input type="text" />&nbsp;<button class="icon-edit"></button>
+            </h3>
+            <p>
+                Button and link button:
+            </p>
+            <p>
+                <button class="icon-edit">Button</button>
+                <a href="" class="button icon-edit">Link</a>
+            </p>
+            <p>
+                Transparent button and button with right aligned icon:
+            </p>
+            <p>
+                <button class="transparent icon-arrow_back">Back</button>
+                <button class="right-icon icon-arrow_forward">Next</button>
+            </p>
+            <p>
+                Colored buttons: Success, error, warning, info:
+            </p>
+            <p>
+                <button class="success icon-check">Done</button>
+                <button class="error icon-clear">Cancel</button>
+                <button class="warning icon-warning">Ignore</button>
+                <button class="info icon-launch">Open</button>
+            </p>
+            <p>
+                Full width button:
+            </p>
+            <p style="max-width: 400px;">
+                <button class="full-width">Button</button>
+            </p>
+            <p>
+                Select:
+            </p>
+            <p>
+                <select><option>Option 1</option><option>Option 2</option><option>Option 3</option></select>
+            </p>
+            <p>
+                Select with icon label:
+            </p>
+            <p>
+                <label class="icon-filter"><select><option>Option 1</option><option>Option 2</option><option>Option 3</option></select></label>
+            </p>
+            <p>
+                Select with icon label and icon link:
+            </p>
+            <p>
+                <label class="icon-filter"><select><option>Option 1</option><option>Option 2</option><option>Option 3</option></select><a href="" class="icon-help"></a></label>
+            </p>
+            <p>
+                Multiple select:
+            </p>
+            <p>
+                <select size="3" multiple><option>Option 1</option><option>Option 2</option><option>Option 3</option></select>
+            </p>
+            <p>
+                Multiple select with icon label:
+            </p>
+            <p>
+                <label class="icon-filter_list"><select size="3" multiple><option>Option 1</option><option>Option 2</option><option>Option 3</option></select></label>
+            </p>
+            <p>
+                Multiple select with icon label and icon link:
+            </p>
+            <p>
+                <label class="icon-filter_list"><select size="3" multiple><option>Option 1</option><option>Option 2</option><option>Option 3</option><option>Option 4</option></select><a href="" class="icon-help"></a></label>
+            </p>
+            <p class="comment icon-lightbulb">For a more configurable UI, see: <a href="component-advanced-input-box.html">Advanced input box</a></p>
+            <p>
+                Form with many elements:
+            </p>
+            <form>
+                <input type="text" /> <input type="text" /> <input type="text" /> <input type="text" />
+                <input type="text" /> <input type="text" /> <input type="text" /> <input type="text" />
+                <input type="text" /> <input type="text" /> <input type="text" /> <input type="text" />
+            </form>
+            <p>Textarea:</p>
+            <p>
+                <textarea rows="4"></textarea>
+            </p>
+            <p>Textarea with icon label:</p>
+            <p>
+                <label class="icon-edit"><textarea rows="4"></textarea></label>
+            </p>
+            <p>Textarea with icon link:</p>
+            <p>
+                <label><textarea rows="4"></textarea><a href="" class="icon-help"></a></label>
+            </p>
+            <p>Textarea with icon label and icon link:</p>
+            <p>
+                <label class="icon-edit"><textarea rows="4"></textarea><a href="" class="icon-help"></a></label>
+            </p>
+            <p class="comment icon-info">View source for Html code.</p>
+            <hr />
+            <h4>Wrapper element</h4>
+            <p>
+                To add vertical space between multiple adjacent input elements, place them in a <code class="language-html">&lt;form&gt;</code> element.
+            </p>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

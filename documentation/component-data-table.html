@@ -1,0 +1,634 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Data table</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-data-table.html">Data table</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+				<a class="icon-bookmark" href="component-align.html">Align</a>
+				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark current" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+				<h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Data table</h2>
+            <p>
+                Display sets of data across rows and columns.
+            </p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>CSS only, based on <code class="language-css">grid</code> layout.</li>
+                    <li>Columns are automatically configured.</li>
+                    <li>The first column is for <em>key</em> (e.g. name). Other columns are for <em>values</em> (e.g. date) or <em>related data</em> (e.g. link).</li>
+                    <li>The first column takes up remaining space. Other columns can only be as wide as their content.</li>
+                    <li>Javascript for progressive enhancement. <sup><a href="#javascript">Note</a></sup></li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-check">Implementation</h5></header>
+                <ul>
+                    <li>Include the compiled javascript file in the Html: <code class="language-html">&lt;script src=&quot;/javascript/data-table.min.js&quot;&gt;&lt;/script&gt;</code></li>
+                </ul>
+            </section>
+            <h3>Examples</h3>
+            <p class="comment icon-info">View source for Html code.</p>
+            <hr />
+            <!-- Example: Default -->
+            <h5>Default data table</h5>
+            <p>
+                Full width.
+            </p>
+            <div class="data">
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div>A2</div>
+                    <div>A3</div>
+                    <div>A4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div>B2</div>
+                    <div>B3</div>
+                    <div>B4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div>C2</div>
+                    <div>C3</div>
+                    <div>C4</div>
+                </div>
+            </div>
+            <!-- Example: Heading cells -->
+            <h5>Headings</h5>
+            <p>
+                For column descriptions. Can contain links and indications for sorting.
+            </p>
+            <div class="data">
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div><a href="">Value</a></div>
+                    <div><a href="" class="icon-arrow_downward">Number</a></div>
+                    <div><a href="">Date</a></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div>A2</div>
+                    <div class="sorted">A3</div>
+                    <div>A4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div>B2</div>
+                    <div class="sorted">B3</div>
+                    <div>B4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div>C2</div>
+                    <div class="sorted">C3</div>
+                    <div>C4</div>
+                </div>
+            </div>
+            <!-- Example: Header -->
+            <h5>Header</h5>
+            <p>
+                The header spans all columns.
+            </p>
+            <div class="data">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div><a href="">Value</a></div>
+                    <div><a href="" class="icon-arrow_downward">Number</a></div>
+                    <div><a href="">Date</a></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div>A2</div>
+                    <div class="sorted">A3</div>
+                    <div>A4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div>B2</div>
+                    <div class="sorted">B3</div>
+                    <div>B4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div>C2</div>
+                    <div class="sorted">C3</div>
+                    <div>C4</div>
+                </div>
+            </div>
+            <!-- Example: Header with links -->
+            <h5>Header with links</h5>
+            <p>
+                <a href="component-align.html">Right aligned links</a>, single and <a href="component-details.html">grouped links</a>, with <a href="component-icons.html">icons</a>.
+            </p>
+            <div class="data">
+                <!-- Header-->
+                <header class="align header">
+                    <h5>Header</h5>
+                    <a href="" class="icon-add">Add</a>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">Link&nbsp;1</a>
+                            <a href="">Link&nbsp;2</a>
+                            <a href="">Link&nbsp;3</a>
+                        </nav>
+                    </details>
+                </header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div><a href="">Value</a></div>
+                    <div><a href="" class="icon-arrow_downward">Number</a></div>
+                    <div><a href="">Date</a></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div>A2</div>
+                    <div class="sorted">A3</div>
+                    <div>A4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div>B2</div>
+                    <div class="sorted">B3</div>
+                    <div>B4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div>C2</div>
+                    <div class="sorted">C3</div>
+                    <div>C4</div>
+                </div>
+            </div>
+            <!-- Example: Pagination -->
+            <h5>Pagination</h5>
+            <p>Influenced by <a href="https://m2.material.io/components/data-tables">Material Design</a>.</p>
+            <div class="data">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div><a href="">Value</a></div>
+                    <div><a href="" class="icon-arrow_downward">Number</a></div>
+                    <div><a href="">Date</a></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div>A2</div>
+                    <div class="sorted">A3</div>
+                    <div>A4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div>B2</div>
+                    <div class="sorted">B3</div>
+                    <div>B4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div>C2</div>
+                    <div class="sorted">C3</div>
+                    <div>C4</div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <section class="align pagination">
+                <p class="small">1-3 of 16</p>
+                <span class="icon-first_page semi-transparent"></span>
+                <span class="icon-keyboard_arrow_left semi-transparent"></span>
+                <a href="" class="icon-keyboard_arrow_right"></a>
+                <a href="" class="icon-last_page"></a>
+            </section>
+            <!-- Example: Text size and color -->
+            <h5>Text size and color</h5>
+            <p>Columns can be displayed in smaller sizes and/or lighter color (for lesser important properties).</p>
+            <div class="data">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div><a href="">Value</a></div>
+                    <div><a href="" class="icon-arrow_downward">Number</a></div>
+                    <div><a href="">Date</a></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div>A2</div>
+                    <div class="sorted small">A3 small</div>
+                    <div class="small light">A4 small light</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div>B2</div>
+                    <div class="sorted small">B3</div>
+                    <div class="small light">B4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div>C2</div>
+                    <div class="sorted small">C3</div>
+                    <div class="small light">C4</div>
+                </div>
+            </div>
+            <!-- Example: Text alignment -->
+            <h5>Text alignment</h5>
+            <p>Numbers are usually aligned right.</p>
+            <div class="data">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div class="text-center"><a href="">Value</a></div>
+                    <div class="text-right"><a href="" class="icon-arrow_downward">Number</a></div>
+                    <div class="text-right"><a href="">Date</a></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div class="text-center">A2 center</div>
+                    <div class="sorted text-right">A3 right</div>
+                    <div class="text-right">A4 right</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div class="text-center">B2</div>
+                    <div class="sorted text-right">B3</div>
+                    <div class="text-right">B4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div class="text-center">C2</div>
+                    <div class="sorted text-right">C3</div>
+                    <div class="text-right">C4</div>
+                </div>
+            </div>
+            <!-- Example: Context menu -->
+            <h5>Context menu</h5>
+            <p>For action links.</p>
+            <div class="data">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div class="text-center"><a href="">Value</a></div>
+                    <div class="text-right"><a href="" class="icon-arrow_downward">Number</a></div>
+                    <div class="text-right"><a href="">Date</a></div>
+                    <div></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div class="text-center">A2 center</div>
+                    <div class="sorted text-right">A3 right</div>
+                    <div class="text-right">A4 right</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div class="text-center">B2</div>
+                    <div class="sorted text-right">B3</div>
+                    <div class="text-right">B4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div class="text-center">C2</div>
+                    <div class="sorted text-right">C3</div>
+                    <div class="text-right">C4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+            </div>
+            <!-- Example: Collapse -->
+            <h5>Collapse</h5>
+            <p>
+                On small screens:
+            </p>
+            <ul>
+                <li>Columns collapse to full width rows.</li>
+                <li>Headings are hidden.</li>
+                <li>Headings are replaced with a menu in the header for sorting <sup>(via <a href="#javascript">Javascript</a>)</sup>.</li>
+                <li>All elements are left aligned.</li>
+                <li>Context menues are positioned in upper right corner.</li>
+                <li>A text label can be added to a cell via the <code class="language-html">data-collapse</code> attribute.</li>
+            </ul>
+            <div class="data collapse">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div class="text-center"><a href="">Value</a></div>
+                    <div class="text-right"><a href="" class="icon-arrow_downward">Number</a></div>
+                    <div class="text-right"><a href="">Date</a></div>
+                    <div></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div class="text-center" data-collapse="Value">A2 center</div>
+                    <div class="sorted text-right" data-collapse="Number">A3 right</div>
+                    <div class="text-right" data-collapse="Date">A4 right</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div class="text-center" data-collapse="Value">B2</div>
+                    <div class="sorted text-right" data-collapse="Number">B3</div>
+                    <div class="text-right" data-collapse="Date">B4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div class="text-center" data-collapse="Value">C2</div>
+                    <div class="sorted text-right" data-collapse="Number">C3</div>
+                    <div class="text-right" data-collapse="Date">C4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+            </div>
+            <!-- Example: Data list -->
+            <h5>Data list</h5>
+            <p>
+                For simpler (and shorter) content, such as time tables or price lists.
+                Not full width. All columns can only be as wide as their content.
+                Date data list can have the same options (headings, header etc) as for other data tables.
+            </p>
+            <div class="data list">
+                <!-- Headings -->
+                <div class="item headings">
+                    <div>Key</div>
+                    <div>Value</div>
+                    <div>Number</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div>A2</div>
+                    <div>A3</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div>B2</div>
+                    <div>B3</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div>C2</div>
+                    <div>C3</div>
+                </div>
+            </div>
+            <hr />
+            <h4><a id="javascript"></a>Javascript</h4>
+            <p>
+                The javascript file adds progressive enhancement for the component. Supports multiple components, so the script is only needed once on each page.
+            </p>
+            <p>
+                The component works without javascript, but the javascript adds the some additional functionality and style:
+            </p>
+            <h5>
+                Data tables
+            </h5>
+            <ul>
+                <li>Add inline style (explicit number of columns) on data table to create a robust design and prevent layout problems (e.g. if the header overflows).</li>
+            </ul>
+            <h5>
+                Context menues (<code class="language-html">&lt;details&gt;</code>)
+            </h5>
+            <ul>
+                <li>Only one menu in the data table can be opened at the same time.</li>
+                <li>Menues are opened on hover (besides click).</li>
+                <li>Generates a menu for sorting in the header for small screens (on collapsible data tables with header and headings).</li>
+            </ul>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Component: Data table -->
+    <script src="../dist/javascript/data-table.min.js"></script>
+    <!-- End component -->
+    <!-- Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <script>
+        // Help text for examples
+        const examples = {
+            timer: null,
+            writeResizeText: () => {
+                let els = document.querySelectorAll('main div.data.collapse');
+                for (var i = 0; i < els.length; i++) {
+                    let oldText = els[i].previousElementSibling && els[i].previousElementSibling.hasAttribute('data-resize');
+                    if (window.getComputedStyle(els[i]).display === 'block' && oldText === true) {
+                        els[i].previousElementSibling.remove();
+                    }
+                    else if (window.getComputedStyle(els[i]).display !== 'block' && oldText === false) {
+                        els[i].insertAdjacentHTML('beforebegin', '<p class="comment icon-lightbulb" data-resize>Resize the browser window smaller to see the collapsing effect.</p>');
+                    }
+                }
+            }
+        }
+        examples.writeResizeText();
+        window.addEventListener('resize', function () {
+            clearTimeout(examples.timer);
+            examples.timer = setTimeout(examples.writeResizeText, 100);
+        });
+    </script>
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

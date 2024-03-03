@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Example page: Cards</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Component: Dialog -->
+    <!-- Only used for text about this page -->
+    <link href="../dist/css/components/dialog.min.css" rel="stylesheet" />
+    <!-- End component -->
+</head>
+<body>
+
+    <!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+        <label for="side-navigation" role="button" class="icon-clear"></label>
+        <a class="icon-visibility current" href="index.html">Documentation</a>
+        <hr />
+        <h5>GitHub</h5>
+        <a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+        <a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+    </nav>
+    <!-- End component -->
+    <!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a>Example pages</a>
+            <span>/</span>
+            <a href="example-page-cards.html">Cards</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+        <!-- Optional component: Horizontal tabs -->
+        <div class="horizontal-tabs">
+            <nav>
+                <details class="current">
+                    <summary class="icon-lightbulb">Example pages</summary>
+                    <nav>
+                        <a href="example-page-data.html">Data</a>
+                        <a href="example-page-login.html">Login</a>
+                        <a href="example-page-cards.html" class="current">Cards</a>
+                        <a href="example-page-headlines.html">Headlines</a>
+                    </nav>
+                </details>
+                <a href="components.html" class="icon-bookmark">Components</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+            </nav>
+        </div>
+        <!-- End component -->
+    </header>
+
+    <!-- Main -->
+    <main class="sidebar-header-content">
+
+        <section class="header">
+            <h2 class="text-center">
+                CMS help center
+            </h2>
+            <h2 class="text-center">
+                <!-- Link to dialog about this page -->
+                <sup class="icon-lightbulb"><a href="#" data-dialog="#about" title="Read more">About this page</a></sup>
+            </h2>
+            <form class="text-center">
+                <label class="icon-search"><input type="search" name="q" placeholder="Search articles" /></label>
+            </form>
+        </section>
+
+        <article>
+
+            <div class="flex-grid vertical-stretch" style="--min-column-width: max(18ch, 30%);">
+                <section class="content">
+                    <h3 class="icon-launch">Getting started</h3>
+                    <p class="comment">
+                        Learn how to set up your first project, depending on what you want to use the CMS for.
+                    </p>
+                    <a href="" class="button">Learn more</a>
+                </section>
+                <section class="content">
+                    <h3 class="icon-settings">Installation</h3>
+                    <p class="comment">
+                        Get an overview of the CMS pipline. Learn how the routing, controllers and services work.
+                    </p>
+                    <a href="" class="button">Learn more</a>
+                </section>
+                <section class="content">
+                    <h3 class="icon-check">Requirements</h3>
+                    <p class="comment">
+                        Find requirements for both local development and hosting as well as guides for upgrading the CMS.
+                    </p>
+                    <a href="" class="button">Learn more</a>
+                </section>
+                <section class="content">
+                    <h3 class="icon-shield">Backoffice</h3>
+                    <p class="comment">
+                        Learn about the different sections found in the CMS backoffice and get an overview of the available features.
+                    </p>
+                    <a href="" class="button">Learn more</a>
+                </section>
+                <section class="content">
+                    <h3 class="icon-insert_chart">Data</h3>
+                    <p class="comment">
+                        Learn how to create different types of data directly from the CMS backoffice.
+                    </p>
+                    <a href="" class="button">Learn more</a>
+                </section>
+                <section class="content">
+                    <h3 class="icon-grid_view">Design</h3>
+                    <p class="comment">
+                        Get to know the different options the CMS backoffice provides for designing your website.
+                    </p>
+                    <a href="" class="button">Learn more</a>
+                </section>
+            </div>
+
+        </article>
+
+        <aside>
+            <section class="text-center">
+                <a href="" class="image">
+                    <img class="round" alt="User"
+                         src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=310"
+                         srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=310 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=620 2x">
+                </a>
+            </section>
+            <h1 class="text-center no-margin-bottom">Trevor Virtue</h1>
+            <h3 class="text-center light thin">Project Manager</h3>
+            <p class="text-center">
+                <a href="" class="button">Edit profile</a>
+            </p>
+            <p class="text-center icon-location_on">
+                Stockholm, Sweden
+            </p>
+            <hr />
+            <p class="text-center">
+                <a href="" class="tag icon-sell"><strong>16</strong> Tickets</a>
+                <a href="" class="tag icon-notifications highlighted"><strong>2</strong> New replies</a>
+            </p>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="index.html" class="image">
+            <img alt="Logotype"
+                 src="images/logo.svg"
+                 style="height: 1.25rem; opacity: 0.6;" />
+            JM Admin
+        </a>
+        <span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+    </footer>
+
+    <!-- Dialog: About this page -->
+    <dialog id="about">
+        <h3>Example page: Cards</h3>
+        <p>
+            Layout displaying records in a grid of rectangles. This example: A help center for a CMS, with topics from a knowledge base and support related to a specific user.
+        </p>
+        <details>
+            <summary><a class="button icon-info">Components used on this page</a></summary>
+            <ul>
+                <li><a href="component-layout.html">Layout</a></li>
+                <li><a href="component-align.html">Align</a></li>
+                <li><a href="component-flex-grid.html">Flex grid</a></li>
+                <li><a href="component-tag.html">Tag</a></li>
+                <li><a href="component-form.html">Basic form elements</a></li>
+            </ul>
+        </details>
+    </dialog>
+
+    <!--Component: Dialog -->
+    <!-- Only used for text about this page -->
+    <script src="../dist/javascript/dialog.min.js"></script>
+    <!-- End component -->
+    <!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+
+</body>
+</html>

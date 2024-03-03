@@ -1,0 +1,114 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Align
+
+    Mandatory code to be included in the main scss file.
+
+    Styles to control the positioning of items.
+
+\*---------------------------------------------------------------------------*/
+
+.align {
+    --column-gap: var(--padding-buttons);
+    --row-gap: var(--padding-buttons);
+    display: flex !important;
+    column-gap: var(--column-gap);
+    row-gap: var(--row-gap);
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: flex-start;
+    // Horizontal
+    &.center {
+        justify-content: center;
+    }
+
+    &.right {
+        justify-content: flex-end;
+    }
+    // Vertical
+    &.vertical-top {
+        align-items: flex-start;
+    }
+
+    &.vertical-center {
+        align-items: center;
+    }
+
+    &.vertical-bottom {
+        align-items: flex-end;
+    }
+    // Wrap
+    &.no-wrap {
+        flex-wrap: nowrap;
+    }
+
+    &.wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+    // Individually aligned
+    // See: https://stackoverflow.com/questions/32551291/in-css-flexbox-why-are-there-no-justify-items-and-justify-self-properties
+    & > * {
+        flex: 0 1 fit-content;
+        margin-bottom: 0;
+        // Horizontal
+        &.left {
+            margin-right: auto;
+        }
+
+        &.right {
+            margin-left: auto;
+        }
+
+        &.center {
+            margin-right: auto;
+            margin-left: auto;
+        }
+        // Vertical
+        &.vertical-top {
+            align-self: flex-start;
+        }
+
+        &.vertical-center {
+            align-self: center;
+        }
+
+        &.vertical-bottom {
+            align-self: flex-end;
+        }
+        // Grow
+        &.grow-horizontal {
+            flex-grow: 1;
+            flex-basis: min-content;
+        }
+
+        &.grow-vertical {
+            align-self: stretch;
+        }
+    }
+    // Shorthands
+    &.header {
+        align-items: flex-start; // Same as vertical-top
+        justify-content: flex-end; // Same as horizontal right
+        & > * {
+            &:first-child {
+                flex-grow: 1; // Same as grow horizontal
+                flex-basis: min-content; // Same as grow horizontal
+            }
+        }
+    }
+
+    &.pagination {
+        --column-gap: 0.75rem;
+        align-items: center; // Same as vertical-center
+        justify-content: flex-end; // Same as horizontal right
+        & > * {
+            &:first-child:not(:empty) {
+                margin-right: 2.25rem;
+            }
+        }
+    }
+    // Details
+    &.right > details:last-child > nav, &.header > details:last-child > nav, & > details.right:last-child > nav, & > details.grow-horizontal:last-child > nav {
+        right: 0;
+    }
+}

@@ -1,0 +1,519 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Forms
+
+    Mandatory code to be included in the main scss file.
+
+    Styles for form elements.
+
+\*---------------------------------------------------------------------------*/
+
+input, button, textarea, select, a.button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-flex;
+    color: var(--color-text);
+    padding: calc(var(--padding-buttons) * 0.8571) var(--padding-buttons);
+    font-family: var(--font-body);
+    font-size: .875rem;
+    font-weight: normal;
+    line-height: 1.1rem;
+    background-color: var(--color-header-background);
+    border-radius: var(--border-radius-button);
+    border: var(--border-light);
+    vertical-align: middle;
+    column-gap: var(--padding-buttons);
+    margin: 0;
+    box-sizing: border-box;
+    text-align: left;
+    max-width: 100%;
+
+    &:disabled {
+        color: var(--color-text-semi-transparent);
+    }
+
+    &:focus {
+        background-color: white;
+        border-color: transparent;
+        box-shadow: var(--box-shadow-medium);
+        outline: var(--outline-buttons);
+        outline-offset: -0.5px; // Needed to be consistent in Firefox
+    }
+
+    &:hover {
+        box-shadow: var(--box-shadow-medium);
+    }
+}
+input, textarea, select {
+    &::placeholder {
+        color: var(--color-text-semi-transparent);
+        opacity: 1;
+        font-size: inherit;
+        font-weight: normal;
+    }
+
+    &:read-only:focus {
+        background-color: var(--color-header-background);
+    }
+}
+a.button {
+    text-decoration: none;
+}
+input {
+    &[type="number"] {
+        padding-right: 0;
+        width: 4em;
+        box-sizing: content-box;
+    }
+
+    &[type="checkbox"] {
+        padding: 0;
+        width: 1.1rem;
+        height: 1.1rem;
+        cursor: pointer;
+
+        &:checked {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' width='24' height='24' fill='%2324292f'><path d='M382-221.912 135.912-468l75.653-75.653L382-373.218l366.435-366.435L824.088-664 382-221.912Z'></path></svg>");
+            background-size: 1em;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &[type="radio"] {
+        padding: 0;
+        width: 1.1rem;
+        height: 1.1rem;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:checked {
+            background-image: radial-gradient(transparent 0%, transparent 30%, var(--color-text-light) 40%);
+
+            &:hover, &:focus {
+                background-image: radial-gradient(white 0%, white 30%, var(--color-text-light) 45%);
+            }
+        }
+    }
+
+    &:is([type="text"], [type="search"], [type="email"], [type="password"], [type="tel"], [type="url"]) {
+        width: 200px;
+
+        &.wide {
+            width: 18rem;
+        }
+
+        &.full-width {
+            width: 100%;
+        }
+    }
+
+    &[type="color"] {
+        padding: 0;
+        box-sizing: content-box;
+    }
+
+    &[type="range"] {
+        appearance: auto; // Needed to get progress color
+        padding: 0;
+        background-color: transparent !important;
+        cursor: pointer;
+        border: none;
+        box-shadow: none !important;
+        color: var(--color-text-light);
+        box-sizing: border-box;
+        width: 100%;
+        accent-color: var(--color-text-light);
+
+        &::-webkit-slider-runnable-track {
+            border: var(--border-light);
+            border-radius: 3px;
+            height: 6px;
+        }
+
+        &::-webkit-slider-thumb {
+            margin-top: -6px;
+            background-color: var(--color-text-light);
+            border-radius: 50%;
+            border: none;
+            height: 16px;
+            width: 16px;
+        }
+
+        &:focus {
+            outline: none;
+
+            &::-webkit-slider-thumb {
+                outline: var(--outline-buttons);
+                outline-offset: -0.5px;
+                box-shadow: var(--box-shadow-medium);
+            }
+        }
+
+        &:hover {
+            &::-webkit-slider-thumb {
+                box-shadow: var(--box-shadow-medium);
+            }
+        }
+
+        & + datalist {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+            font-size: .75rem;
+            box-sizing: border-box;
+            width: 100%; // Same as input
+            padding: 0 8px; // Thumb size / 2
+            option {
+                text-align: center;
+                white-space: normal;
+                overflow-wrap: anywhere;
+                padding: 2px 4px 0 4px;
+                grid-column: span 2;
+
+                &:first-child {
+                    padding-left: 0;
+                    text-align: left;
+                    margin-left: -2px;
+                    grid-column: span 1;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                    text-align: right;
+                    margin-right: -2px;
+                    grid-column: span 1;
+                }
+            }
+        }
+    }
+}
+textarea {
+    width: 100%;
+    min-height: calc(var(--padding-buttons) + 1rem + var(--padding-buttons));
+}
+textarea, select {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+
+    &::-webkit-scrollbar {
+        height: 5px;
+        width: 5px;
+        border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-scrollbar-foreground);
+        border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--color-scrollbar-background);
+    }
+}
+button, input[type="submit"], a.button {
+    text-align: center;
+    width: auto;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: .75rem;
+
+    &:hover {
+        background-color: var(--color-link-background-hover);
+    }
+
+    &:focus {
+        background-color: var(--color-link-background-hover);
+        border-color: transparent;
+        outline: var(--outline-buttons);
+        box-shadow: var(--box-shadow-medium);
+    }
+
+    &.transparent {
+        font-weight: 400;
+        background-color: transparent;
+    }
+
+    &.right-icon {
+        flex-direction: row-reverse;
+    }
+
+    &.success {
+        background-color: var(--color-success);
+        color: white;
+    }
+
+    &.error {
+        background-color: var(--color-error);
+        color: white;
+    }
+
+    &.warning {
+        background-color: var(--color-warning);
+        color: white;
+    }
+
+    &.info {
+        background-color: var(--color-info);
+        color: white;
+    }
+}
+button, a.button {
+    &[class^="icon-"], &[class*=" icon-"], & span[class^="icon-"] {
+
+        &:before {
+            display: inline-block;
+            font-size: 1rem;
+            line-height: 1rem;
+            vertical-align: text-bottom;
+            margin: 0;
+        }
+
+        &:empty:before {
+            line-height: 1.1rem;
+            vertical-align: baseline;
+        }
+    }
+    &.full-width {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+select {
+    cursor: pointer;
+    // Single select
+    &:not([multiple]) {
+        // Arrow - SVG background image
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2324292f'><path d='M7.406 8.578l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+        background-size: 1em;
+        background-position: calc(100% - var(--padding-buttons)) 50%;
+        background-repeat: no-repeat;
+        padding-right: calc(var(--padding-buttons) * 2 + 1em);
+
+        &:hover, &:focus {
+            background-color: var(--color-link-background-hover);
+        }
+
+        option {
+            background: white;
+            /* Not working - some option properties are styled by the OS
+            &:first-child {
+                padding-top: var(--padding-buttons);
+                border-top-left-radius: var(--border-radius-button);
+                border-top-right-radius: var(--border-radius-button);
+            }
+
+            &:last-child {
+                padding-bottom: var(--padding-buttons);
+                border-bottom-left-radius: var(--border-radius-button);
+                border-bottom-right-radius: var(--border-radius-button);
+            }
+            */
+        }
+    }
+    // Multiple select
+    &[multiple] {
+        padding: calc(var(--padding-buttons) * 0.8571 - 3px) 0;
+        overflow: visible auto;
+
+        option {
+            padding: 2px var(--padding-buttons);
+            background-color: transparent;
+
+            &:checked {
+                background-color: white;
+                border: var(--border-medium);
+                border-radius: 1em;
+            }
+        }
+    }
+}
+/*
+    Input elements cannot have :before or :after content. 
+    So to apply an icon, wrap the element in a <label> tag.
+*/
+// Icon label (left)
+label:not([for])[class^="icon-"], label:not([for])[class*=" icon-"] {
+
+    &:before {
+        position: absolute;
+        margin: 0 0 0 calc(var(--padding-buttons) + 1px);
+        font-size: 1rem;
+        color: var(--color-text-light);
+        z-index: 1;
+    }
+
+    & > input, & > textarea, & > select {
+        padding-left: calc(var(--padding-buttons) * 2 + 1rem);
+    }
+
+    &:has(>textarea) {
+        &:before {
+            margin-top: var(--padding-buttons);
+        }
+    }
+
+    &:has(>select[multiple]) {
+        &:before {
+            margin-top: var(--padding-buttons);
+        }
+    }
+}
+// Icon link (right)
+label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    cursor: text;
+    vertical-align: top; // Needed for wrapped select input[type=submit] etc
+
+    & + a.button {
+        vertical-align: top; // Same as label (see above)
+    }
+
+    &:has(>input[type="submit"], >select) {
+        cursor: pointer;
+    }
+
+    &:has(>textarea) {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    &:has(>input.full-width) {
+        width: 100%;
+    }
+
+    &:has(>select[multiple]) {
+        align-items: flex-start;
+    }
+
+    & > input, & > textarea, & > select {
+        & + a[class^="icon-"]:empty, & + a[class*=" icon-"]:empty {
+            display: inline-flex;
+            position: absolute;
+            right: calc(var(--padding-buttons) + 1px);
+            margin: 0;
+            text-decoration: none;
+            border-radius: var(--border-radius-button);
+
+            &:before {
+                font-size: 1rem;
+                color: var(--color-text-light);
+                margin: 0;
+            }
+
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+
+            &:hover {
+
+                &:before {
+                    color: var(--color-link);
+                }
+            }
+        }
+
+        &:has(+a[class^="icon-"]:empty, +a[class*=" icon-"]:empty) {
+            padding-right: calc(var(--padding-buttons) * 2 + 1rem);
+        }
+    }
+
+    & > textarea {
+        & + a[class^="icon-"]:empty, & + a[class*=" icon-"]:empty {
+            margin-top: var(--padding-buttons);
+        }
+    }
+
+    & > select[multiple] {
+        & + a[class^="icon-"]:empty, & + a[class*=" icon-"]:empty {
+            margin-top: var(--padding-buttons);
+        }
+    }
+
+    & > select:not([multiple]) {
+        &:has(+a[class^="icon-"]:empty, +a[class*=" icon-"]:empty) {
+            padding-right: calc(var(--padding-buttons) * 3 + 1rem + 1em);
+            background-position-x: calc(100% - 1rem - var(--padding-buttons) * 2);
+        }
+    }
+    // Labels with checkbox and radio buttons inline
+    & > :is(input[type="checkbox"], input[type="radio"]) {
+        margin-right: 1ch;
+    }
+}
+// Margins between elements on line wrap
+form {
+    font-size: .875rem;
+    line-height: calc(var(--padding-buttons) + 1.1rem + var(--padding-buttons) + 4px); // Border + margin between elements on line wrap
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+// Validation
+$color-error: rgb(176,16,48);
+input, textarea, select {
+    &.input-validation-error {
+        border-color: transparentize($color-error, 0.5);
+        background-color: transparentize($color-error, 0.95) !important;
+        outline-color: transparentize($color-error, 0.1);
+    }
+}
+span.field-validation-error {
+    color: $color-error;
+    font-size: .75rem;
+    display: block;
+    margin: 0.5em 0 0 0.5em;
+
+    &:before {
+        font-family: 'jm-admin' !important;
+        content: "\e902";
+        display: inline-block;
+        margin: 0 0.5em 0 0;
+        font-size: .875rem;
+        line-height: 1;
+        opacity: .8;
+    }
+}
+// Inline position
+.validation-inline span.field-validation-error {
+    display: inline-block;
+}
+// Validation: Icon label (left)
+label:not([for])[class^="icon-"], label:not([for])[class*=" icon-"] {
+    &:has(> input.input-validation-error, > textarea.input-validation-error, > select.input-validation-error) {
+        &:before {
+            color: transparentize($color-error, 0.2);
+        }
+    }
+}
+// Header for textarea
+header {
+    &:has(+textarea) {
+        display: block;
+        padding: calc(var(--padding-buttons)*.8571) var(--padding-buttons);
+        border-top-right-radius: var(--border-radius-button);
+        border-top-left-radius: var(--border-radius-button);
+        border: var(--border-light);
+        margin: 0;
+    }
+
+    & + textarea {
+        display: block;
+        border-top: none;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        resize: vertical;
+        outline-offset: -2px;
+        margin: 0 0 var(--margin-paragraph-bottom) 0;
+
+        & + span.field-validation-error {
+            display: block;
+            margin: calc(0.5em - var(--margin-paragraph-bottom)) 0 var(--margin-paragraph-bottom) 0;
+        }
+    }
+}

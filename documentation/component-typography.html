@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Typography</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-typography.html">Typography</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+                <a class="icon-bookmark" href="component-align.html">Align</a>
+                <a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+                <a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark current" href="component-typography.html">Typography</a>
+                <a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+				<h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+                <a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Typography</h2>
+            <p>
+                Styles for typographic elements.
+            </p>
+            <h3>Examples</h3>
+            <p class="comment icon-info">View source for Html code.</p>
+            <hr />
+            <h5>Headings</h5>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <hr />
+            <h5>Paragraphs</h5>
+            <p>Paragraph</p>
+            <p class="comment">Comment</p>
+            <hr />
+            <h5>Lists</h5>
+            <ul>
+                <li>Unordered list 1</li>
+                <li>Unordered list 2</li>
+                <li>Unordered list 3</li>
+            </ul>
+            <ol>
+                <li>Ordered list 1</li>
+                <li>Ordered list 2</li>
+                <li>Ordered list 3</li>
+            </ol>
+            <hr />
+            <h5>Inline styles</h5>
+            <h1>Heading 1 <sup>superscript</sup></h1>
+            <h2>Heading 2 <sup>superscript</sup></h2>
+            <h3>Heading 3 <sup>superscript</sup></h3>
+            <h4>Heading 4 <sup>superscript</sup></h4>
+            <h5>Heading 5 <sup>superscript</sup></h5>
+            <p>Paragraph <sup>superscript</sup></p>
+            <p>Paragraph <sub>subscript</sub></p>
+            <p>Paragraph <strong>strong</strong></p>
+            <p>Paragraph <em>emphasis</em></p>
+            <p>Paragraph <a href="">link</a></p>
+            <p>Paragraph <span class="comment">inline comment</span></p>
+            <hr />
+            <h5>Icons</h5>
+            <h1 class="icon-star">Heading 1 <sup class="icon-check">superscript</sup></h1>
+            <h2 class="icon-star">Heading 2 <sup class="icon-check">superscript</sup></h2>
+            <h3 class="icon-star">Heading 3 <sup class="icon-check">superscript</sup></h3>
+            <h4 class="icon-star">Heading 4 <sup class="icon-check">superscript</sup></h4>
+            <h5 class="icon-star">Heading 5 <sup class="icon-check">superscript</sup></h5>
+            <p class="icon-star">Paragraph <sup class="icon-check">superscript</sup></p>
+            <p class="icon-star comment">Comment</p>
+            <p class="small icon-info">For more options, see <a href="component-icons.html">Icons</a>.</p>
+            <hr />
+            <h5>Code</h5>
+            <p>Inline: <code class="language-html">&lt;code&gt;</code></p>
+            <p>Block:</p>
+            <code class="language-html">&lt;code&gt;</code>
+            <p class="comment icon-info">Syntax highlighting via <a href="https://prismjs.com/">Prism</a>.</p>
+            <hr />
+            <h5>Text alignment</h5>
+            <p>Text aligned left.</p>
+            <p class="text-center">Text aligned center.</p>
+            <p class="text-right">Text aligned right.</p>
+            <hr />
+            <h5>Items alignment</h5>
+            <section class="align header">
+                <p>Text to the left, links to the right</p>
+                <p><a href="" class="icon-star"></a></p>
+                <p><a href="" class="icon-star"></a></p>
+                <p><a href="" class="icon-star"></a></p>
+            </section>
+            <p class="small icon-info">For more options, see <a href="component-align.html">Align</a>.</p>
+            <p class="comment icon-grid_view">For grid layout, see <a href="component-flex-grid.html">Flex grid</a>.</p>
+            <hr />
+            <h5>Margin, color, weight and size</h5>
+            <p class="no-margin-bottom">No margin (bottom).</p>
+            <p class="semi-transparent">Semi-transparent (50%).</p>
+            <p class="light">Light color.</p>
+            <p class="thin">Thin weight.</p>
+            <p class="small">Small size.</p>
+            <p class="comment icon-info">For message colors, see <a href="component-alert.html">Alert</a>.</p>
+            <hr />
+            <h5>Wrappers</h5>
+            <p>Content section:</p>
+            <section class="content">
+                <p>This is a paragraph.</p>
+            </section>
+            <p>Content section with header:</p>
+            <section class="content">
+                <header>
+                    <h5>Heading 5</h5>
+                </header>
+                <p>This is a paragraph.</p>
+            </section>
+            <p>Centered content section:</p>
+            <p class="comment icon-info">The section's width will fit the content.</p>
+            <section class="content centered">
+                <p>This is a paragraph.</p>
+                <p>
+                    This is another paragraph.
+                </p>
+            </section>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

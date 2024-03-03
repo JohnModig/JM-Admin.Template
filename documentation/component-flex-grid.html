@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Flex grid</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <style>
+        /* Examples */
+        main .flex-grid > * {
+            background-color: var(--color-header-background);
+            border: var(--border-light);
+            padding: 2em 1em;
+            text-align: center;
+        }
+    </style>
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-flex-grid.html">Flex grid</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+				<a class="icon-bookmark" href="component-align.html">Align</a>
+				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark current" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+				<h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Flex grid <sup>Optional</sup></h2>
+            <p>
+                An intrinsically responsive grid layout. This component is usually used
+                for layout of content in the body of a page.
+            </p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>CSS only, no Javascript.</li>
+                    <li>Columns are automatically created, no class names needed.</li>
+                    <li>Each column will resize at the same rate, and will begin to break to a new row if the width reaches the minimum width value.</li>
+                    <li>No &quot;orphan&quot; columns. If the last column will break to a new row, it will fill any available space.</li>
+                    <li>Minimum width and gap can be styled inline using custom properties; <code class="language-css">--min-column-width</code>, <code class="language-css">--column-gap</code> and <code class="language-css">--row-gap</code>.</li>
+                    <li>Influenced by <a href="https://smolcss.dev/#smol-flexbox-grid">Stephanie Eckles SmolCSS</a>.</li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-settings">Configuration</h5></header>
+                <ul>
+                    <li>Sass file: components/_flex-grid.scss</li>
+                    <li>Include the Sass file in theme.scss: <code class="language-css">@import "components/flex-grid";</code></li>
+                </ul>
+            </section>
+            <h3>Examples</h3>
+            <p class="comment icon-info">View source for Html code.</p>
+            <hr />
+            <p>Default</p>
+            <div class="flex-grid">
+                <div><p>Item 1</p></div>
+                <div><p>Item 2</p></div>
+                <div><p>Item 3</p></div>
+                <div><p>Item 4</p></div>
+                <div><p>Item 5</p></div>
+            </div>
+            <p>No column gap</p>
+            <div class="flex-grid" style="--column-gap: 0;">
+                <div><p>Item 1</p></div>
+                <div><p>Item 2</p></div>
+                <div><p>Item 3</p></div>
+                <div><p>Item 4</p></div>
+                <div><p>Item 5</p></div>
+            </div>
+            <p>No column or row gap</p>
+            <div class="flex-grid" style="--column-gap: 0; --row-gap: 0;">
+                <div><p>Item 1</p></div>
+                <div><p>Item 2</p></div>
+                <div><p>Item 3</p></div>
+                <div><p>Item 4</p></div>
+                <div><p>Item 5</p></div>
+            </div>
+            <p>Custom minimum column width (200px)</p>
+            <div class="flex-grid" style="--min-column-width: 200px;">
+                <div><p>Item 1</p></div>
+                <div><p>Item 2</p></div>
+                <div><p>Item 3</p></div>
+                <div><p>Item 4</p></div>
+                <div><p>Item 5</p></div>
+            </div>
+            <p class="comment icon-lightbulb">Resize the browser window to see the responsive effect.</p>
+            <hr />
+            <h5>Vertical alignment</h5>
+            <p>Elements aligned to baseline <span class="comment">(default)</span></p>
+            <div class="flex-grid">
+                <div style="padding: 2em 0;"><p>Item 1</p></div>
+                <div style="padding: 1.5em 0;"><p>Item 2</p></div>
+                <div style="padding: 1em 0;"><p>Item 3</p></div>
+                <div style="padding: 0.5em 0;"><p>Item 4</p></div>
+                <div style="padding: 0;"><p>Item 5</p></div>
+            </div>
+            <p>Elements aligned top</p>
+            <div class="flex-grid vertical-top">
+                <div style="padding: 2em 0;"><p>Item 1</p></div>
+                <div style="padding: 1.5em 0;"><p>Item 2</p></div>
+                <div style="padding: 1em 0;"><p>Item 3</p></div>
+                <div style="padding: 0.5em 0;"><p>Item 4</p></div>
+                <div style="padding: 0;"><p>Item 5</p></div>
+            </div>
+            <p>Elements aligned center</p>
+            <div class="flex-grid vertical-center">
+                <div style="padding: 2em 0;"><p>Item 1</p></div>
+                <div style="padding: 1.5em 0;"><p>Item 2</p></div>
+                <div style="padding: 1em 0;"><p>Item 3</p></div>
+                <div style="padding: 0.5em 0;"><p>Item 4</p></div>
+                <div style="padding: 0;"><p>Item 5</p></div>
+            </div>
+            <p>Elements aligned bottom</p>
+            <div class="flex-grid vertical-bottom">
+                <div style="padding: 2em 0;"><p>Item 1</p></div>
+                <div style="padding: 1.5em 0;"><p>Item 2</p></div>
+                <div style="padding: 1em 0;"><p>Item 3</p></div>
+                <div style="padding: 0.5em 0;"><p>Item 4</p></div>
+                <div style="padding: 0;"><p>Item 5</p></div>
+            </div>
+            <p>Elements stretched to equal heights</p>
+            <p class="comment icon-info">All auto-sized items will be enlarged vertically to fill the container.</p>
+            <div class="flex-grid vertical-stretch">
+                <div style="padding: 2em 0;"><p>Item 1</p></div>
+                <div style="padding: 1.5em 0;"><p>Item 2</p></div>
+                <div style="padding: 1em 0;"><p>Item 3</p></div>
+                <div style="padding: 0.5em 0;"><p>Item 4</p></div>
+                <div style="padding: 0;"><p>Item 5</p></div>
+            </div>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

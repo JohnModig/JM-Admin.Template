@@ -1,0 +1,65 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Flex grid
+
+    Optional component, to be included in the main scss file.
+
+    An intrinsically responsive grid layout. This component is usually used 
+    for layout of content in the body of a page.
+
+    Features:
+
+    - CSS only, no Javascript.
+
+    - Columns are automatically created, no class names needed.
+
+    - Each column will resize at the same rate, and will begin to break to a 
+      new row if the width reaches the minimum width value.
+
+    - No "orphan" columns. If the last column will break to a new row, it 
+      will fill any available space.
+
+    - Minimum width and gap can be styled inline using custom properties;
+      --min-column-width, --column-gap and --row-gap
+
+    - Influenced by Stephanie Eckles: 
+      https://smolcss.dev/#smol-flexbox-grid
+
+\*---------------------------------------------------------------------------*/
+
+.flex-grid {
+    --min-column-width: 15ch;
+    --column-gap: var(--padding-container-horizontal);
+    --row-gap: var(--margin-paragraph-bottom);
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--column-gap);
+    row-gap: var(--row-gap);
+    margin: 0 0 var(--margin-paragraph-bottom) 0;
+    align-items: baseline;
+
+    & > * {
+        flex: 1 1 var(--min-column-width);
+        margin-bottom: 0;
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &.vertical-top {
+        align-items: flex-start;
+    }
+
+    &.vertical-center {
+        align-items: center;
+    }
+
+    &.vertical-bottom {
+        align-items: flex-end;
+    }
+
+    &.vertical-stretch {
+        align-items: stretch;
+    }
+}

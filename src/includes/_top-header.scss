@@ -1,0 +1,113 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Top header
+
+    Mandatory code to be included in the main scss file.
+
+    Styles for the header displayed at the top of each page. This area 
+    usually contains logotype and important links, e.g. user profile.
+
+\*---------------------------------------------------------------------------*/
+
+// Breakpoints
+@import "../includes/breakpoints";
+
+// Top header
+body > header {
+    position: static; // position: relative; - Don't use, it places it on top of horizontal tabs
+    padding: var(--padding-container-vertical) var(--padding-container-horizontal);
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    grid-column-gap: var(--grid-gap);
+    grid-row-gap: var(--padding-container-vertical);
+    background: var(--color-top-header-background);
+    color: var(--color-top-header-foreground);
+
+    img {
+        vertical-align: middle;
+    }
+
+    a.image {
+        padding: 0;
+        border-radius: 0;
+
+        &:hover, &:focus {
+            background-color: transparent !important;
+        }
+    }
+
+    & > div > a, & > div > nav > a, summary {
+        color: var(--color-top-header-foreground) !important;
+        text-decoration: none;
+        padding: var(--padding-buttons);
+        border-radius: var(--border-radius-button);
+        line-height: inherit !important;
+
+        &:hover, &:focus {
+            color: var(--color-top-header-link-foreground-hover) !important;
+            background-color: var(--color-top-header-link-background-hover) !important;
+            text-decoration: none;
+        }
+    }
+
+    & > div {
+
+        &:nth-child(2) {
+
+            & > a {
+
+                &:last-of-type {
+                    font-weight: 600;
+                }
+            }
+
+            @include for-phone-only {
+                span:first-of-type {
+                    display: block;
+                    height: 0;
+                    line-height: 0;
+                    font-size: 0;
+                }
+
+                & > a {
+                    padding: 0.12em 0.25em;
+                    line-height: 1.1em;
+
+                    &:first-of-type {
+                        font-size: 92.85%;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            white-space: nowrap;
+
+            img {
+                border-radius: 50%;
+            }
+        }
+
+        &.horizontal-tabs {
+            grid-column: 1 / -1;
+            margin: 0 calc(var(--padding-container-horizontal) * -1);
+
+            & > nav {
+                & > a, & > details {
+                    &:first-child {
+                        margin-left: var(--padding-container-horizontal);
+                    }
+
+                    &:last-child {
+                        margin-right: var(--padding-container-horizontal);
+                    }
+                }
+            }
+        }
+    }
+
+    &:has(>div.horizontal-tabs:last-child) {
+        padding-bottom: 0;
+    }
+}

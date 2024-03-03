@@ -1,0 +1,44 @@
+[
+  {
+    "outputFileName": "dist/javascript/horizontal-tabs.min.js",
+    "inputFiles": [
+      "src/components/_horizontal-tabs.js"
+    ]
+  },
+  {
+    "outputFileName": "dist/javascript/validation.min.js",
+    "inputFiles": [
+      "src/components/_validation.js"
+    ]
+  },
+  {
+    "outputFileName": "dist/javascript/extended-textareas.min.js",
+    "inputFiles": [
+      "src/components/_extended-textareas.js"
+    ]
+  },
+  {
+    "outputFileName": "dist/javascript/dialog.min.js",
+    "inputFiles": [
+      "src/components/_dialog.js"
+    ]
+  },
+  {
+    "outputFileName": "dist/javascript/data-table.min.js",
+    "inputFiles": [
+      "src/components/_data-table.js"
+    ]
+  },
+  {
+    "outputFileName": "dist/javascript/slider.min.js",
+    "inputFiles": [
+      "src/components/_slider.js"
+    ]
+  },
+  {
+    "outputFileName": "dist/javascript/alert.min.js",
+    "inputFiles": [
+      "src/components/_alert.js"
+    ]
+  }
+]

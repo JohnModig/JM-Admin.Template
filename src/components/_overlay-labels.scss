@@ -1,0 +1,145 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Overlay labels
+
+    Mandatory code to be included in the main scss file.
+
+    Styles for text labels related to form elements.
+
+    - Influenced by Material design 
+      (https://m2.material.io/components/text-fields).
+
+\*---------------------------------------------------------------------------*/
+
+// Position: inline ("normal" placeholder look when the input element is empty)
+@mixin position-inline {
+    position: absolute;
+    // Position: same as padding for form element
+    top: calc(var(--padding-buttons) * 0.8571);
+    left: var(--padding-buttons);
+    // Font: same as form element
+    font-family: var(--font-body);
+    font-size: .875rem;
+    font-weight: normal;
+    line-height: 1.1rem;
+    // Other properties
+    color: var(--color-text-light);
+    transition: transform 0.1s, left 0.1s;
+    max-width: 100%;
+    overflow: hidden;
+    // Reset from position: top
+    transform: none;
+    padding: 0;
+    margin: 0;
+    &:after {
+        content: none;
+    }
+}
+
+// Position: top (when focused or when the input element has value)
+@mixin position-top {
+    left: var(--padding-buttons) !important;
+    transform: translateY(-100%);
+    font-size: 0.75rem;
+    padding: 0 3px;
+    margin: -1px 0 0 -2px;
+    line-height: 1;
+    // Border cover
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 2px;
+        background-color: var(--color-header-background);
+    }
+}
+
+// Color: focus (when the input element has focus)
+@mixin color-focus {
+    color: var(--color-link);
+
+    &:after {
+        margin: -1px 0 0 0 !important;
+        height: 3px !important;
+        background-color: white !important;
+    }
+}
+
+// Overlay style
+.overlay-label {
+    position: relative;
+
+    :is(input[placeholder], select, textarea[placeholder]) {
+        & ~ span:first-of-type {
+            @include position-inline;
+        }
+        // Hide placeholder text
+        &::placeholder {
+            opacity: 0;
+        }
+        // Position and size
+        &:focus, &:not(:placeholder-shown) {
+            & ~ span:first-of-type {
+                @include position-top;
+            }
+        }
+        // Color
+        &:focus ~ span:first-of-type {
+            @include color-focus;
+        }
+        // Validation
+        $color-error: rgb(176,16,48);
+
+        &.input-validation-error {
+            & ~ span:first-of-type {
+                color: transparentize($color-error, 0.4);
+            }
+
+            &:focus, &:hover, &[value]:not([value=""]), &:not(:placeholder-shown) {
+                & ~ span:first-of-type {
+                    color: transparentize($color-error, 0.1);
+                }
+            }
+        }
+    }
+    // Icon label (left)
+    label:not([for])[class^="icon-"], label:not([for])[class*=" icon-"] {
+        & > input[placeholder], & > select, textarea[placeholder] {
+            & ~ span:first-of-type {
+                left: calc(var(--padding-buttons) * 2 + 1rem);
+            }
+        }
+    }
+    // Choices (advanced input box)
+    .choices {
+        & ~ span:first-of-type {
+            @include position-inline;
+            @include position-top;
+        }
+
+        &[data-type="text"]:not(.is-focused):has(input[value=""]:first-child) {
+            & ~ span:first-of-type {
+                @include position-inline;
+            }
+        }
+
+        &[data-type="select-multiple"]:not(.is-focused):not(:has(option)) {
+            & ~ span:first-of-type {
+                @include position-inline;
+            }
+        }
+    }
+
+    label:not([for])[class^="icon-"], label:not([for])[class*=" icon-"] {
+        & .choices:where([data-type="text"]:not(.is-focused):has(input[value=""]:first-child), [data-type="select-multiple"]:not(.is-focused):not(:has(option))) {
+            & ~ span:first-of-type {
+                left: calc(var(--padding-buttons) * 3 + 0.875rem) !important;
+            }
+        }
+    }
+}

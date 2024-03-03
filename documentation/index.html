@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Documentation</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+        <label for="side-navigation" role="button" class="icon-clear"></label>
+        <a class="icon-visibility current" href="index.html">Documentation</a>
+        <hr />
+        <h5>GitHub</h5>
+        <a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+        <a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+    </nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="header-badges-content-sidebar">
+        <section class="header">
+            <h2>JM Admin</h2>
+        </section>
+        <section class="badges">
+            <span class="badge icon-timer">Fast</span>
+            <span class="badge icon-explore">Light-weight</span>
+            <a class="badge icon-bookmark" href="components.html">Component-based</a>
+        </section>
+        <article>
+            <p>
+                Admin template for web apps.
+            </p>
+            
+            <section class="content">
+                <header>
+                    <h5 class="icon-info">Features</h5>
+                </header>
+                <ul>
+                    <li>Front end only &ndash; use whatever server side language you prefer (or none).</li>
+                    <li>Styling is heavily influenced by <a href="https://github.com/">GitHub.com</a>.</li>
+                    <li>Made to be as fast and light-weight as possible.</li>
+                    <li>Easy to adjust to new projects.</li>
+                    <li><a href="components.html">Component-based</a> &ndash; only use what you need.</li>
+                    <li>Uses modern CSS (e.g. variables, grid, functions, level 4 selectors).</li>
+                    <li>CSS <em>mostly</em> &ndash; javascript is rarely used and only for progressive enhancement.</li>
+                    <li>Aims to use plain unbloated Html with only a few CSS classes.</li>
+                </ul>
+            </section>
+        </article>
+        <aside>
+            <h4>About</h4>
+            <p class="icon-person">For web developers.</p>
+            <p class="icon-import_contacts">Programming languages: Html, CSS, Javascript.</p>
+            <h4>Demo</h4>
+            <p class="icon-lightbulb">View some <a href="example-page-data.html">example pages</a>.</p>
+            <h4>Documentation</h4>
+            <p class="icon-bookmark">Read about <a href="components.html">the components</a>.</p>
+        </aside>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+
+</body>
+</html>

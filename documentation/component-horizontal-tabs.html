@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Horizontal tabs</title>
+    <link href="../dist/CSS/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <style>
+        /* Examples */
+        article > header.horizontal-tabs {
+            border: var(--border-light);
+            border-radius: var(--border-radius-button);
+            margin: 0 0 var(--margin-paragraph-bottom);
+        }
+    </style>
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+    <!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+    <!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-horizontal-tabs.html">Horizontal tabs</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+        <!-- Optional component: Horizontal tabs -->
+        <div class="horizontal-tabs">
+            <nav>
+                <details>
+                    <summary class="icon-lightbulb">Example pages</summary>
+                    <nav>
+                        <a href="example-page-data.html">Data</a>
+                        <a href="example-page-login.html">Login</a>
+                        <a href="example-page-cards.html">Cards</a>
+                        <a href="example-page-headlines.html">Headlines</a>
+                    </nav>
+                </details>
+                <a href="components.html" class="icon-bookmark current">Components</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+            </nav>
+        </div>
+        <!-- End component -->
+    </header>
+    
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+				<a class="icon-bookmark" href="component-align.html">Align</a>
+				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+				<h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark current" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+				<h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Horizontal tabs <sup>Optional</sup></h2>
+            <p>
+                Horizontal tab style navigation, with sideways scrolling when needed. This component is usually displayed in a header section and used for navigation links related to the current page.
+            </p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>Menu items are visible on a single line.</li>
+                    <li>Horizontal &quot;snappy&quot; scrolling if needed.</li>
+                    <li>Menu items can be links (<code class="language-html">&lt;a&gt;</code>) or grouped links (<code class="language-html">&lt;details&gt;</code>), displayed in a dropdown menu.</li>
+                    <li>Menu items have an icon, via the themes icon font (<code class="language-html">class=&quot;icon-</code>&hellip;).</li>
+                    <li>Menu items can be marked to show the current location (<code class="language-html">class=&quot;current&quot;</code>).</li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-settings">Configuration</h5></header>
+                <ul>
+                    <li>Sass file: components/_horizontal-tabs.scss</li>
+                    <li>Include the Sass file in theme.scss: <code class="language-css">@import "components/horizontal-tabs";</code></li>
+                    <li>Javascript file: components/_horizontal-tabs.js</li>
+                    <li>Include the compiled javascript file in the Html: <code class="language-html">&lt;script src=&quot;/javascript/horizontal-tabs.min.js&quot;&gt;&lt;/script&gt;</code></li>
+                </ul>
+            </section>
+            <h3>Examples</h3>
+            <p>
+                Variants: 3 x grouped links, 5 x links.
+            </p>
+            <p class="comment icon-info">View source for Html code.</p>
+            <!-- Examples: Icons and text -->
+            <h5>Icons and text:</h5>
+            <header class="horizontal-tabs">
+                <nav>
+                    <!-- Grouped links -->
+                    <details>
+                        <summary class="icon-language">Group one</summary>
+                        <nav>
+                            <a href="">Link one</a>
+                            <a href="">Link two</a>
+                            <a href="">Link three</a>
+                        </nav>
+                    </details>
+                    <!-- Grouped links -->
+                    <details>
+                        <summary class="icon-language">Group two</summary>
+                        <nav>
+                            <a href="">Link one</a>
+                            <a href="">Link two</a>
+                            <a href="">Link three</a>
+                        </nav>
+                    </details>
+                    <!-- Grouped links -->
+                    <details>
+                        <summary class="icon-language">Group three</summary>
+                        <nav>
+                            <a href="">Link one</a>
+                            <a href="">Link two</a>
+                            <a href="">Link three</a>
+                        </nav>
+                    </details>
+                    <!-- Link -->
+                    <a href="" class="icon-launch">Link one</a>
+                    <!-- Link -->
+                    <a href="" class="icon-launch">Link two</a>
+                    <!-- Link -->
+                    <a href="" class="icon-launch">Link three</a>
+                    <!-- Link -->
+                    <a href="" class="icon-launch">Link four</a>
+                    <!-- Link -->
+                    <a href="" class="icon-launch">Link five</a>
+                </nav>
+            </header>
+            <!-- Examples: Text -->
+            <h5>Text:</h5>
+            <header class="horizontal-tabs">
+                <nav>
+                    <!-- Grouped links -->
+                    <details>
+                        <summary>Group one</summary>
+                        <nav>
+                            <a href="">Link one</a>
+                            <a href="">Link two</a>
+                            <a href="">Link three</a>
+                        </nav>
+                    </details>
+                    <!-- Grouped links -->
+                    <details>
+                        <summary>Group two</summary>
+                        <nav>
+                            <a href="">Link one</a>
+                            <a href="">Link two</a>
+                            <a href="">Link three</a>
+                        </nav>
+                    </details>
+                    <!-- Grouped links -->
+                    <details>
+                        <summary>Group three</summary>
+                        <nav>
+                            <a href="">Link one</a>
+                            <a href="">Link two</a>
+                            <a href="">Link three</a>
+                        </nav>
+                    </details>
+                    <!-- Link -->
+                    <a href="">Link one</a>
+                    <!-- Link -->
+                    <a href="">Link two</a>
+                    <!-- Link -->
+                    <a href="">Link three</a>
+                    <!-- Link -->
+                    <a href="">Link four</a>
+                    <!-- Link -->
+                    <a href="">Link five</a>
+                </nav>
+            </header>
+            <!-- Examples: Current location in group -->
+            <h5>Current location in group:</h5>
+            <header class="horizontal-tabs">
+                <nav>
+                    <!-- Grouped links -->
+                    <details class="current">
+                        <summary class="icon-language">Group</summary>
+                        <nav>
+                            <a href="" class="current">Link one</a>
+                            <a href="">Link two</a>
+                            <a href="">Link three</a>
+                        </nav>
+                    </details>
+                    <!-- Link -->
+                    <a href="" class="icon-launch">Link</a>
+                </nav>
+            </header>
+            <h5>Current location in link:</h5>
+            <header class="horizontal-tabs">
+                <nav>
+                    <!-- Grouped links -->
+                    <details>
+                        <summary class="icon-language">Group</summary>
+                        <nav>
+                            <a href="">Link one</a>
+                            <a href="">Link two</a>
+                            <a href="">Link three</a>
+                        </nav>
+                    </details>
+                    <!-- Link -->
+                    <a href="" class="icon-launch current">Link</a>
+                </nav>
+            </header>
+            <hr />
+            <h4>Javascript</h4>
+            <p>
+                The javascript file adds progressive enhancement for the component. Supports multiple components, so the script is only needed once on each page.
+            </p>
+            <p>
+                The component works without javascript, but the javascript adds the some additional functionality and style for grouped links (<code class="language-html">&lt;details&gt;</code>):
+            </p>
+            <ul>
+                <li>Positioning of the groups, when the menu is scrolled horizontally.</li>
+                <li>Minimum width of the groups.</li>
+            </ul>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!--Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <script>
+        // Help text for examples
+        const examples = {
+            timer: null,
+            writeResizeText: () => {
+                let els = document.querySelectorAll('article>header.horizontal-tabs>nav');
+                for (var i = 0; i < els.length; i++) {
+                    if (els[i].children.length < 3) {
+                        continue;
+                    }
+                    let oldText = els[i].parentElement.nextElementSibling && els[i].parentElement.nextElementSibling.hasAttribute('data-resize');
+                    if (els[i].clientWidth < els[i].parentElement.clientWidth && oldText === false) {
+                        els[i].parentElement.insertAdjacentHTML('afterend', '<p class="comment icon-lightbulb" data-resize>Resize the browser window smaller to see the scrolling effect.</p>');
+                    }
+                    else if (els[i].clientWidth >= els[i].parentElement.clientWidth && oldText === true) {
+                        els[i].parentElement.nextElementSibling.remove();
+                    }
+                }
+            }
+        }
+        examples.writeResizeText();
+        window.addEventListener('resize', function () {
+            clearTimeout(examples.timer);
+            examples.timer = setTimeout(examples.writeResizeText, 100);
+        });
+    </script>
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿[
+  {
+    "outputFile": "dist/css/theme.css",
+    "inputFile": "src/theme.scss"
+  },
+  {
+    "outputFile": "dist/css/components/choices.css",
+    "inputFile": "src/components/_choices.scss"
+  },
+  {
+    "outputFile": "dist/css/components/dialog.css",
+    "inputFile": "src/components/_dialog.scss"
+  },
+  {
+    "outputFile": "dist/css/components/tooltip.css",
+    "inputFile": "src/components/_tooltip.scss"
+  },
+  {
+    "outputFile": "dist/css/components/slider.css",
+    "inputFile": "src/components/_slider.scss"
+  }
+]

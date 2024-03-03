@@ -1,0 +1,212 @@
+﻿/*---------------------------------------------------------------------------*\
+    
+    Badge
+
+    Optional component, to be included in the main scss file.
+
+    Block style label, link or navigation. This component is usually used to 
+    indicate a status, notification or event related to the current page.
+
+    Features:
+
+    - Can be text only (<span>), link (<a>) or grouped links (<details>), displayed 
+      in a dropdown menu.
+
+    - Can have an icon, via the themes icon font (class="icon-…).
+
+    - Can include a separate label (<label>), usually used to display values.
+
+    - Can be text only, icon only or both. All variants works with the 
+      optional label.
+
+    - Supports alert colors.
+    
+    CSS only, no Javascript. Opening/closing of the dropdown menu works with 
+    keyboard, mouse and touch.
+
+\*---------------------------------------------------------------------------*/
+
+span.badge, a.badge, details.badge summary {
+    display: inline-flex;
+    color: var(--color-text);
+    padding: var(--padding-buttons);
+    font-size: .75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    background-color: var(--color-header-background);
+    border-radius: var(--border-radius-button);
+    border: var(--border-light);
+    vertical-align: middle;
+    column-gap: var(--padding-buttons);
+    margin: 0;
+    align-items: flex-start;
+
+    &[class^="icon-"], &[class*=" icon-"] {
+
+        &:before {
+            display: inline-block;
+            font-size: 1rem;
+            line-height: 1rem;
+            vertical-align: text-bottom;
+            margin: 0;
+        }
+    }
+
+    & > label {
+        display: inline-block;
+        font-size: inherit;
+        line-height: inherit;
+        background-color: white;
+        margin: calc(1px - var(--padding-buttons) - 1px) 0 calc(1px - var(--padding-buttons) - 1px) 0;
+        padding: var(--padding-buttons);
+        vertical-align: text-bottom;
+        border-right: var(--border-light);
+        border-left: var(--border-light);
+
+        &:last-child {
+            border-top-right-radius: var(--border-radius-button);
+            border-bottom-right-radius: var(--border-radius-button);
+            border-right: none;
+            margin-right: calc(1px - var(--padding-buttons) - 1px)
+        }
+    }
+
+    & > span {
+        &[class^="icon-"], &[class*=" icon-"] {
+            display: inline-block;
+            font-size: 1rem;
+            line-height: 1rem;
+            height: 1rem;
+            margin: 0;
+            padding: 0;
+            vertical-align: text-bottom;
+        }
+    }
+
+    & > a, & > span.notification {
+        display: inline-block;
+        font-size: 0.75rem;
+        line-height: calc(1rem - 1px);
+        margin: 0;
+        padding: 0 2px;
+        vertical-align: text-bottom;
+        color: inherit;
+        background-color: rgba(0,0,0,0.08);
+        min-width: 1rem;
+        box-sizing: border-box;
+        text-align: center;
+        border-radius: .5rem;
+        text-decoration: none;
+
+        &[class^="icon-"]:before, &[class*=" icon-"]:before {
+            font-size: inherit;
+            line-height: 1rem;
+            color: inherit;
+        }
+    }
+
+    & > a {
+        &:hover, &:focus {
+            background-color: var(--color-link-background-hover);
+        }
+    }
+}
+
+a.badge {
+    outline-offset: -1px;
+
+    &:hover, &:focus {
+        background-color: var(--color-link-background-hover);
+        text-decoration: none;
+
+        & > label {
+            background-color: var(--color-header-background);
+        }
+    }
+
+    & > label {
+        cursor: pointer;
+    }
+}
+
+details.badge {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+
+    summary {
+        cursor: pointer;
+        outline-offset: -1px;
+
+        &:focus-visible {
+            outline: var(--outline-buttons);
+        }
+        // Custom disclosure widget
+        list-style: none;
+
+        &:after {
+            font-family: 'jm-admin' !important;
+            content: "\e906";
+            display: inline-block;
+            transition: .2s transform;
+            transform: translateY(0.1em);
+        }
+        // Only icon (no text)
+        &[class^="icon-"], &[class*=" icon-"] {
+            &:empty:after {
+                transform: none;
+                margin-left: -0.2em;
+            }
+        }
+        // Context menu
+        &:empty:not([class^="icon-"], [class*=" icon-"]):after {
+            content: "\e91c";
+            transition: none !important;
+            transform: none !important;
+        }
+
+        &:hover, &:focus {
+            background-color: var(--color-link-background-hover);
+
+            & > label {
+                background-color: var(--color-header-background);
+            }
+        }
+
+        & > label:last-child {
+            border-right: var(--border-light);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-right: 0;
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    &[open] summary:after {
+        transform: rotate(90deg) translateX(0.1em);
+    }
+    // Only icon (no text)
+    &[open] summary {
+        &[class^="icon-"], &[class*=" icon-"] {
+            &:empty:after {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    nav {
+        margin-top: 1px;
+        width: 100%;
+        min-width: min-content;
+    }
+}
+// Wrapper element
+section.badges {
+    line-height: calc(var(--padding-buttons) + 1rem + 6px); // Margin between badges on line wrap
+    &[class^="icon-"]:before, &[class*=" icon-"]:before {
+        vertical-align: middle;
+        margin-right: 0.25em;
+    }
+}
