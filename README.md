@@ -6,7 +6,7 @@ Admin template for web apps.
 
 * Front end only – use whatever server side language you prefer (or none).
 * Styling is heavily influenced by GitHub.com.
-* Made to be as fast and light-weight as possible.
+* Made to be as fast and light-weight as possible (the full theme CSS file is around 10KB minified and gzipped).
 * Uses modern CSS (e.g. variables, grid, functions, level 4 selectors).
 * Easy to adjust to new projects.
 * [Component-based](https://johnmodig.github.io/JM-Admin.Template/documentation/components.html) – only use what you need.
