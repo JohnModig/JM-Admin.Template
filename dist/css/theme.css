@@ -1391,7 +1391,8 @@ main {
       grid-column-gap: var(--padding-container-horizontal);
       grid-row-gap: var(--margin-paragraph-bottom);
       grid-template-columns: minmax(200px, 1fr) 3fr;
-      grid-template-areas: "sidebar header" "sidebar article"; }
+      grid-template-areas: "sidebar header" "sidebar article";
+      grid-template-rows: auto 1fr; }
       main.sidebar-header-content > * + * {
         margin-top: 0; }
       main.sidebar-header-content > * {

@@ -390,6 +390,7 @@ main {
             @include main-grid-layout;
             grid-template-columns: #{m}inmax(200px, 1fr) 3fr;
             grid-template-areas: "sidebar header" "sidebar article";
+            grid-template-rows: auto 1fr;
         }
     }
     // Layout: Header, badges, content, sidebar
