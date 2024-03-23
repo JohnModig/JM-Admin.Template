@@ -222,6 +222,11 @@ hr {
     opacity: 0.5;
 }
 
+// Limited width for readability
+.readability-width {
+    max-width: 60ch;
+}
+
 // Links
 a {
     color: var(--color-link);
@@ -286,7 +291,7 @@ a {
 }
 
 // Images
-main img {
+img {
     max-width: 100%;
     &.round {
         border-radius: 50%;
@@ -554,6 +559,11 @@ main {
             margin-left: auto;
             width: fit-content;
             block-size: fit-content;
+
+            &.minimum-width {
+                width: min-content;
+                block-size: min-content;
+            }
         }
     }
     // Margins

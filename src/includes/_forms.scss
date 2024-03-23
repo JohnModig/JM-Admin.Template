@@ -27,6 +27,7 @@ input, button, textarea, select, a.button {
     box-sizing: border-box;
     text-align: left;
     max-width: 100%;
+    flex-shrink: 0;
 
     &:disabled {
         color: var(--color-text-semi-transparent);

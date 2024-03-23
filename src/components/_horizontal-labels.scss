@@ -18,7 +18,7 @@
     display: grid;
     align-items: start;
     grid-column-gap: calc(var(--padding-buttons) * 2);
-    grid-template-columns: minmax(0,max-content) minmax(1ch, auto);
+    grid-template-columns: minmax(min-content,max-content) minmax(min-content,auto);
     margin: 0 0 var(--margin-paragraph-bottom) 0;
     font-size: .875rem;
 

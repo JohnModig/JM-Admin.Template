@@ -423,6 +423,9 @@ hr {
 .semi-transparent {
   opacity: 0.5; }
 
+.readability-width {
+  max-width: 60ch; }
+
 a {
   color: var(--color-link);
   text-decoration: none; }
@@ -460,9 +463,9 @@ a:where([class^="icon-"], a[class*=" icon-"]):empty {
 :is(sub, sup)[class^="icon-"]:not(:empty):before, :is(sub, sup)[class*=" icon-"]:not(:empty):before {
   margin-right: .25em; }
 
-main img {
+img {
   max-width: 100%; }
-  main img.round {
+  img.round {
     border-radius: 50%; }
 
 /*---------------------------------------------------------------------------*    
@@ -657,7 +660,8 @@ input, button, textarea, select, a.button {
   margin: 0;
   box-sizing: border-box;
   text-align: left;
-  max-width: 100%; }
+  max-width: 100%;
+  flex-shrink: 0; }
   input:disabled, button:disabled, textarea:disabled, select:disabled, a.button:disabled {
     color: var(--color-text-semi-transparent); }
   input:focus, button:focus, textarea:focus, select:focus, a.button:focus {
@@ -1328,8 +1332,6 @@ body > header {
         font-size: 92.85%; } }
   body > header > div:nth-child(3) {
     white-space: nowrap; }
-    body > header > div:nth-child(3) img {
-      border-radius: 50%; }
   body > header > div.horizontal-tabs {
     grid-column: 1 / -1;
     margin: 0 calc(var(--padding-container-horizontal) * -1); }
@@ -1518,6 +1520,9 @@ main {
       margin-left: auto;
       width: fit-content;
       block-size: fit-content; }
+      main section.centered.minimum-width {
+        width: min-content;
+        block-size: min-content; }
   main article *:first-child, main aside *:first-child, main section *:first-child {
     margin-top: 0; }
   main article *:last-child, main aside *:last-child, main section *:last-child {
@@ -2216,7 +2221,7 @@ header label[for='side-navigation'] {
   display: grid;
   align-items: start;
   grid-column-gap: calc(var(--padding-buttons) * 2);
-  grid-template-columns: minmax(0, max-content) minmax(1ch, auto);
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, auto);
   margin: 0 0 var(--margin-paragraph-bottom) 0;
   font-size: .875rem; }
   .horizontal-label > label {
