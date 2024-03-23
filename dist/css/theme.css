@@ -2231,8 +2231,6 @@ header label[for='side-navigation'] {
     color: var(--color-text-light);
     padding: calc(var(--padding-buttons) * 0.8571) 0 0 0;
     margin: 0; }
-  .horizontal-label > *:not(label) + *:not(label) {
-    grid-column: 2; }
   @media screen and (max-width: 599px) {
     .horizontal-label.collapse {
       display: block; }

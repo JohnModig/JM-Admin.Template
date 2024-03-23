@@ -31,10 +31,6 @@
         margin: 0;
     }
 
-    & > *:not(label) + *:not(label) {
-        grid-column: 2;
-    }
-
     @include for-phone-only {
         &.collapse {
             display: block;
