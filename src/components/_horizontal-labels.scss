@@ -18,17 +18,17 @@
     display: grid;
     align-items: baseline;
     grid-column-gap: calc(var(--padding-buttons) * 2);
-    grid-template-columns: minmax(min-content, max-content) minmax(0, 1fr);
+    grid-template-columns: minmax(min-content, max-content) minmax(min-content, 1fr);
     margin: 0 0 var(--margin-paragraph-bottom) 0;
     font-size: .875rem;
 
     &.center {
-        grid-template-columns: minmax(min-content, max-content) minmax(0, max-content);
+        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
         justify-content: center;
     }
 
     &.right {
-        grid-template-columns: minmax(min-content, max-content) minmax(0, max-content);
+        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
         justify-content: right;
     }
 
@@ -39,6 +39,10 @@
         color: var(--color-text-light);
         padding: calc(var(--padding-buttons) * 0.8571) 0 0 0;
         margin: 0;
+    }
+
+    & > *:not(label) {
+        grid-column: 2;
     }
 
     @include for-phone-only {
