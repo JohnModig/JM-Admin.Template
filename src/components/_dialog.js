@@ -65,7 +65,7 @@ const dialog = {
             dialog.master.focusOnCloseButton(keyboardEvent);
 
             // Fetch
-            fetch(href)
+            fetch(href, { headers: { "X-Requested-With": "Fetch" } })
                 .then((response) => {
                     if (response.ok) {
                         return response.text();
