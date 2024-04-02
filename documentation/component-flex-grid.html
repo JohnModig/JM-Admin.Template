@@ -133,7 +133,7 @@
                     <li>CSS only, no Javascript.</li>
                     <li>Columns are automatically created, no class names needed.</li>
                     <li>Each column will resize at the same rate, and will begin to break to a new row if the width reaches the minimum width value.</li>
-                    <li>No &quot;orphan&quot; columns. If the last column will break to a new row, it will fill any available space.</li>
+                    <li>No &quot;orphan&quot; columns (by default). If the last column will break to a new row, it will fill any available space. This behaviour can be <a href="#example-no-orphan-columns">changed</a>.</li>
                     <li>Minimum width and gap can be styled inline using custom properties; <code class="language-css">--min-column-width</code>, <code class="language-css">--column-gap</code> and <code class="language-css">--row-gap</code>.</li>
                     <li>Influenced by <a href="https://smolcss.dev/#smol-flexbox-grid">Stephanie Eckles SmolCSS</a>.</li>
                 </ul>
@@ -181,6 +181,16 @@
                 <div><p>Item 5</p></div>
             </div>
             <p class="comment icon-lightbulb">Resize the browser window to see the responsive effect.</p>
+            <hr />
+            <h5 id="example-no-orphan-columns">Orphan columns</h5>
+            <p>No &quot;orphan&quot; columns</p>
+            <div class="flex-grid no-orphan-columns" style="--min-column-width: max(170px, 18.5%);">
+                <div><p>Item 1</p></div>
+                <div><p>Item 2</p></div>
+                <div><p>Item 3</p></div>
+                <div><p>Item 4</p></div>
+                <div><p>Item 5</p></div>
+            </div>
             <hr />
             <h5>Vertical alignment</h5>
             <p>Elements aligned to baseline <span class="comment">(default)</span></p>

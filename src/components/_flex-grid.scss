@@ -16,14 +16,15 @@
     - Each column will resize at the same rate, and will begin to break to a 
       new row if the width reaches the minimum width value.
 
-    - No "orphan" columns. If the last column will break to a new row, it 
-      will fill any available space.
+    - No "orphan" columns (by default). If the last column will break to a new row, it 
+      will fill any available space. This behaviour can be changed.
 
     - Minimum width and gap can be styled inline using custom properties;
       --min-column-width, --column-gap and --row-gap
 
     - Influenced by Stephanie Eckles: 
-      https://smolcss.dev/#smol-flexbox-grid
+      https://smolcss.dev/#smol-flexbox-grid 
+      https://moderncss.dev/solutions-to-replace-the-12-column-grid/#grid
 
 \*---------------------------------------------------------------------------*/
 
@@ -61,5 +62,10 @@
 
     &.vertical-stretch {
         align-items: stretch;
+    }
+
+    &.no-orphan-columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(var(--min-column-width), 1fr));
     }
 }
