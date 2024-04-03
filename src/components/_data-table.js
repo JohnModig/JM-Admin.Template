@@ -39,8 +39,13 @@
     // Context menues (<details>)
     els = document.querySelectorAll('div.data details');
     for (var el of els) {
+        // Only match context menues (empty <summary>)
+        var summary = el.querySelector('summary:empty');
+        if (!summary) {
+            continue;
+        }
         // Close when out of focus = only one menu opened at the same time
-        el.querySelector('summary').addEventListener('blur', function () {
+        summary.addEventListener('blur', function () {
             // Don't close if it has a focused child node
             if (this.parentElement.matches(':focus-within')) {
                 return;
