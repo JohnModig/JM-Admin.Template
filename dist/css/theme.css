@@ -1050,8 +1050,9 @@ header + textarea {
 \*---------------------------------------------------------------------------*/
 div.data {
   --columns: 100;
+  --key-column-min-width: min-content;
   display: grid;
-  grid-template-columns: minmax(min-content, 1fr) repeat(var(--columns), minmax(min-content, max-content));
+  grid-template-columns: minmax(var(---key-column-min-width), 1fr) repeat(var(--columns), minmax(min-content, max-content));
   grid-template-rows: auto;
   grid-row-gap: 0;
   grid-column-gap: 0;
