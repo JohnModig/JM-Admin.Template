@@ -78,7 +78,9 @@
         el.addEventListener('click', function (e) {
             let attr = this.getAttribute('open');
             if (attr !== null && attr === 'mouseover') {
-                e.preventDefault();
+                if (e.target.nodeName !== 'A') {
+                    e.preventDefault();
+                }
                 this.setAttribute('open', '');
             }
         });
