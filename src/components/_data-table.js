@@ -90,7 +90,7 @@
         var header = el.querySelector('header:first-child');
         var headerLastLink = el.querySelector('header>a:last-child, header>details:last-child');
         var headings = el.querySelectorAll('div.item.headings:first-of-type a');
-        var sortedHeading = el.querySelector('div.item.headings:first-of-type a[class^="icon-arrow_"], div.item.headings:first-of-type a[class*=" icon-arrow_"]');
+        var sortedHeading = el.querySelector('div.item.headings:first-of-type a[class^="icon-arrow_"], div.item.headings:first-of-type a[class*=" icon-arrow_"], div.item.headings:first-of-type a:has(>[class^="icon-arrow_"])');
         var sortedHeadingNode = Array.from(headings).find((node) => node.isSameNode(sortedHeading) === true);
         if (header === null || headings.length < 1 || sortedHeadingNode === undefined) {
             continue;
@@ -108,13 +108,21 @@
         else if (headings.length > 1) {
             // Multiple sorting links
             // Use a single link for the currently selected option
-            var nodeA = sortedHeadingNode.cloneNode(false);
+            var nodeA = sortedHeadingNode.cloneNode(true);
             // Use same size as existing links
             if (headerLastLink !== null && headerLastLink.classList.contains('small')) {
                 nodeA.classList.add('small');
             }
             nodeA.classList.add('show-for-phone-only');
-            nodeA.textContent = '';
+            // Support icons in first childnode
+            if (nodeA.hasChildNodes() && nodeA.firstChild.textContent == "" && nodeA.firstChild.className.includes('icon-')) {
+                while (nodeA.childNodes.length > 1) {
+                    nodeA.removeChild(nodeA.lastChild);
+                }
+            }
+            else {
+                nodeA.textContent = '';
+            }
             // Insert last or before context menu
             if (headerLastLink !== null && headerLastLink.querySelector('summary:empty') !== null) {
                 headerLastLink.insertAdjacentElement('beforebegin', nodeA);
