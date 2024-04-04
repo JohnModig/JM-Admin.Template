@@ -59,8 +59,8 @@
                 // Already opened, but not by hover
                 return;
             }
-            // Close other opened menues
-            let els = document.querySelectorAll('div.data details[open]');
+            // Close other opened context menues
+            let els = document.querySelectorAll('div.data details[open]:has(summary:empty)');
             for (var el of els) {
                 el.removeAttribute('open');
             }
