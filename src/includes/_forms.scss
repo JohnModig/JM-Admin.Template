@@ -99,6 +99,7 @@ input {
 
     &:is([type="text"], [type="search"], [type="email"], [type="password"], [type="tel"], [type="url"]) {
         width: 200px;
+        min-width: 12ch;
 
         &.wide {
             width: 18rem;

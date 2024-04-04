@@ -716,7 +716,8 @@ input[type="radio"] {
       background-image: radial-gradient(white 0%, white 30%, var(--color-text-light) 45%); }
 
 input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="tel"], [type="url"]) {
-  width: 200px; }
+  width: 200px;
+  min-width: 12ch; }
   input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="tel"], [type="url"]).wide {
     width: 18rem; }
   input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="tel"], [type="url"]).full-width {
