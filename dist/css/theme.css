@@ -1097,6 +1097,8 @@ div.data {
       font-weight: 600; }
     div.data div.item.headings a {
       color: var(--color-text); }
+    div.data div.item a.align {
+      display: inline-flex !important; }
     div.data div.item > details:last-child {
       text-align: right; }
       div.data div.item > details:last-child > nav {

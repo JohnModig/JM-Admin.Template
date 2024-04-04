@@ -101,6 +101,10 @@ div.data {
                 color: var(--color-text);
             }
         }
+        // Aligned links (to inherit text direction)
+        a.align {
+            display: inline-flex !important;
+        }
         // Context menu
         & > details {
             &:last-child {
