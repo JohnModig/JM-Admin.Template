@@ -117,7 +117,7 @@ details {
             display: block;
             color: var(--color-text);
             text-decoration: none;
-            white-space: normal;
+            white-space: nowrap;
             padding: calc(var(--padding-buttons) / 2) var(--padding-buttons);
             border-radius: 0 !important;
             outline-offset: -1px;
