@@ -614,27 +614,34 @@ details {
     line-height: normal;
     z-index: 2;
     width: fit-content; }
-    details > nav a {
-      display: block;
-      color: var(--color-text);
-      text-decoration: none;
-      white-space: nowrap;
+    details > nav > * {
       padding: calc(var(--padding-buttons) / 2) var(--padding-buttons);
-      border-radius: 0 !important;
-      outline-offset: -1px; }
-      details > nav a:first-child {
+      margin: 0;
+      border-radius: 0 !important; }
+      details > nav > *:first-child {
         padding-top: var(--padding-buttons);
         border-top-left-radius: inherit !important;
         border-top-right-radius: inherit !important; }
-      details > nav a:last-child {
+      details > nav > *:last-child {
         padding-bottom: var(--padding-buttons);
         border-bottom-left-radius: inherit !important;
         border-bottom-right-radius: inherit !important; }
+      details > nav > *:is(h5, p) {
+        font-size: inherit; }
+    details > nav > a {
+      display: block; }
+      details > nav > a:hover, details > nav > a:focus {
+        background-color: var(--color-link-background-hover); }
+    details > nav a {
+      color: var(--color-text);
+      text-decoration: none;
+      white-space: nowrap;
+      outline-offset: -1px; }
       details > nav a:hover, details > nav a:focus {
-        background-color: var(--color-link-background-hover);
         text-decoration: none; }
     details > nav > hr {
       height: 0;
+      padding: 0;
       margin: var(--padding-buttons) 0; }
 
 /*---------------------------------------------------------------------------*    

@@ -46,7 +46,6 @@ details {
         & + *:not(nav) {
             margin-top: var(--margin-paragraph-bottom) !important;
         }
-
         /* Remove the default disclosure arrow on iOS */
         &::-webkit-details-marker {
             display: none;
@@ -113,14 +112,10 @@ details {
         z-index: 2;
         width: fit-content;
 
-        a {
-            display: block;
-            color: var(--color-text);
-            text-decoration: none;
-            white-space: nowrap;
+        & > * {
             padding: calc(var(--padding-buttons) / 2) var(--padding-buttons);
+            margin: 0;
             border-radius: 0 !important;
-            outline-offset: -1px;
 
             &:first-child {
                 padding-top: var(--padding-buttons);
@@ -134,14 +129,33 @@ details {
                 border-bottom-right-radius: inherit !important;
             }
 
+            &:is(h5,p) {
+                font-size: inherit;
+            }
+        }
+
+        & > a {
+            display: block;
+
             &:hover, &:focus {
                 background-color: var(--color-link-background-hover);
+            }
+        }
+
+        a {
+            color: var(--color-text);
+            text-decoration: none;
+            white-space: nowrap;
+            outline-offset: -1px;
+
+            &:hover, &:focus {
                 text-decoration: none;
             }
         }
 
         & > hr {
             height: 0;
+            padding: 0;
             margin: var(--padding-buttons) 0;
         }
     }
