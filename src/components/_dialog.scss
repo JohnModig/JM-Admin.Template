@@ -21,8 +21,8 @@ dialog {
         background-color: black;
         opacity: .4;
     }
-
-    form {
+    // Dialog body
+    & > div {
         position: relative;
         padding: var(--padding-container-vertical) var(--padding-container-vertical);
         margin: 0;
@@ -33,52 +33,53 @@ dialog {
         max-width: inherit;
         max-height: inherit;
         border-radius: inherit;
-
-        &:focus {
-            outline: none;
-        }
-
-        & > button:first-child:empty {
+        // Closing form
+        & > form {
             position: absolute;
             top: var(--padding-container-vertical);
             right: var(--padding-container-vertical);
             display: block;
-            font-size: 14px;
-            line-height: 20px;
-            height: 20px;
-            width: 20px;
-            color: rgba(0,0,0,0.6);
-            text-align: center;
-            border-radius: var(--border-radius-button);
-            cursor: pointer;
-            font-family: 'jm-admin' !important;
-            speak: never;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            padding: 0;
+            line-height: normal;
             margin: 0;
-            border: none;
-            background-color: rgba(255,255,255,0.2) !important;
 
-            &:hover, &:focus {
-                background-color: var(--color-link-background-hover) !important;
-                text-decoration: none;
-                color: rgba(0,0,0,0.9) !important;
-            }
+            button:empty {
+                display: block;
+                font-size: 14px;
+                line-height: 20px;
+                height: 20px;
+                width: 20px;
+                border-radius: var(--border-radius-button);
+                cursor: pointer;
+                font-family: 'jm-admin' !important;
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                padding: 0;
+                margin: 0;
+                border: none;
+                background-color: rgba(255,255,255,0.2) !important;
 
-            &:before {
-                content: "\e900"
-            }
-            // Make room for close button on typography
-            & + *:is(h1, h2, h3, h4, h5, p) {
-                padding-right: calc(var(--padding-container-vertical) + 20px);
+                &:hover, &:focus {
+                    background-color: var(--color-link-background-hover) !important;
+                    text-decoration: none;
+                    color: rgba(0,0,0,0.9) !important;
+                }
+
+                &:before {
+                    content: "\e900"
+                }
             }
         }
-        // Media
-        &:has(>img:nth-child(2), >iframe[src*="youtube.com"]:nth-child(2), >iframe[src*="vimeo.com"]:nth-child(2)) {
-            & > button:first-child:empty {
+        // Formatting depending on content
+        &:has(>div>img:only-child, >div>iframe[src*="youtube.com"]:only-child, >div>iframe[src*="vimeo.com"]:only-child) {
+            padding: 0;
+            background-color: black;
+        }
+
+        &:has(>div>img:first-child, >div>iframe[src*="youtube.com"]:first-child, >div>iframe[src*="vimeo.com"]:first-child) {
+            & > form button:empty {
                 color: rgba(255,255,255,0.6);
                 background-color: transparent !important;
 
@@ -89,45 +90,57 @@ dialog {
                 }
             }
         }
-
-        &:has(>img:last-child, >iframe[src*="youtube.com"]:last-child, >iframe[src*="vimeo.com"]:last-child) {
+        // Content wrapper
+        & > div {
             padding: 0;
-            background-color: black;
-        }
+            margin: 0;
 
-        & > img, & > iframe {
-            display: block;
-            margin-bottom: var(--padding-container-vertical);
-        }
+            & > main {
+                padding: 0 !important;
+            }
 
-        img, iframe {
-            max-width: 100%;
-            max-height: calc(100vh - var(--padding-container-vertical));
-            height: auto;
-        }
+            & > img, & > iframe {
+                display: block;
+                margin-bottom: var(--padding-container-vertical);
+            }
 
-        iframe {
-            border: none;
-        }
+            img, iframe {
+                max-width: 100%;
+                max-height: calc(100vh - var(--padding-container-vertical));
+                height: auto;
+            }
 
-        &:has(>iframe[src*="youtube.com"]:last-child,>iframe[src*="vimeo.com"]:last-child) {
-            aspect-ratio: 16 / 9;
-        }
+            iframe {
+                border: none;
+            }
 
-        & > iframe[src*="youtube.com"], & > iframe[src*="vimeo.com"] {
-            aspect-ratio: 16 / 9;
-        }
+            &:has(>iframe[src*="youtube.com"]:last-child,>iframe[src*="vimeo.com"]:last-child) {
+                aspect-ratio: 16 / 9;
+            }
 
-        & > *:last-child {
-            margin-bottom: 0 !important;
-        }
+            & > iframe[src*="youtube.com"], & > iframe[src*="vimeo.com"] {
+                aspect-ratio: 16 / 9;
+            }
 
-        &.loading:after {
-            display: block;
-            width: 40px;
-            height: 40px;
-            margin: 20px;
-            border-width: 4px;
+            & > *:last-child {
+                margin-bottom: 0 !important;
+            }
+
+            &.loading:after {
+                display: block;
+                width: 40px;
+                height: 40px;
+                margin: 20px;
+                border-width: 4px;
+            }
+            // Make room for close button on typography
+            & > *:first-child:is(h1, h2, h3, h4, h5, p) {
+                padding-right: calc(var(--padding-container-vertical) + 20px);
+
+                &.text-center {
+                    padding-left: calc(var(--padding-container-vertical) + 20px);
+                }
+            }
         }
     }
 }

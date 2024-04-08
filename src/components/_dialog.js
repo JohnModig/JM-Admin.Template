@@ -133,7 +133,7 @@ const dialog = {
             // Create Html
             let el = document.createElement('dialog');
             el.id = dialog.master.id;
-            el.innerHTML = '<form method="dialog" tabindex="0"></form>';
+            el.innerHTML = '<div><form method="dialog" tabindex="0"><button></button></form><div></div></div>';
             document.body.insertAdjacentElement('beforeend', el);
             dialog.master.clear();
             // Close dialog when clicking on backdrop
@@ -151,11 +151,11 @@ const dialog = {
             dialog.master.setHtml('');
         },
         setHtml: function (html) {
-            let el = document.querySelector(`#${dialog.master.id}>form`);
+            let el = document.querySelector(`#${dialog.master.id}>div>div`);
             if (!el) {
                 return;
             }
-            el.innerHTML = `<button></button>${html}`;
+            el.innerHTML = html;
         },
         showModal: function () {
             let el = document.getElementById(dialog.master.id);
@@ -165,14 +165,14 @@ const dialog = {
             el.showModal();
         },
         addLoader: function () {
-            let el = document.querySelector(`#${dialog.master.id}>form`);
+            let el = document.querySelector(`#${dialog.master.id}>div>div`);
             if (!el) {
                 return;
             }
             el.classList.add('loading');
         },
         removeLoader: function () {
-            let el = document.querySelector(`#${dialog.master.id}>form`);
+            let el = document.querySelector(`#${dialog.master.id}>div>div`);
             if (!el) {
                 return;
             }

@@ -17,7 +17,7 @@ dialog {
   dialog::backdrop {
     background-color: black;
     opacity: .4; }
-  dialog form {
+  dialog > div {
     position: relative;
     padding: var(--padding-container-vertical) var(--padding-container-vertical);
     margin: 0;
@@ -28,67 +28,74 @@ dialog {
     max-width: inherit;
     max-height: inherit;
     border-radius: inherit; }
-    dialog form:focus {
-      outline: none; }
-    dialog form > button:first-child:empty {
+    dialog > div > form {
       position: absolute;
       top: var(--padding-container-vertical);
       right: var(--padding-container-vertical);
       display: block;
-      font-size: 14px;
-      line-height: 20px;
-      height: 20px;
-      width: 20px;
-      color: rgba(0, 0, 0, 0.6);
-      text-align: center;
-      border-radius: var(--border-radius-button);
-      cursor: pointer;
-      font-family: 'jm-admin' !important;
-      speak: never;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
+      line-height: normal;
+      margin: 0; }
+      dialog > div > form button:empty {
+        display: block;
+        font-size: 14px;
+        line-height: 20px;
+        height: 20px;
+        width: 20px;
+        border-radius: var(--border-radius-button);
+        cursor: pointer;
+        font-family: 'jm-admin' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.2) !important; }
+        dialog > div > form button:empty:hover, dialog > div > form button:empty:focus {
+          background-color: var(--color-link-background-hover) !important;
+          text-decoration: none;
+          color: rgba(0, 0, 0, 0.9) !important; }
+        dialog > div > form button:empty:before {
+          content: "\e900"; }
+    dialog > div:has( > div > img:only-child, > div > iframe[src*="youtube.com"]:only-child, > div > iframe[src*="vimeo.com"]:only-child) {
       padding: 0;
-      margin: 0;
-      border: none;
-      background-color: rgba(255, 255, 255, 0.2) !important; }
-      dialog form > button:first-child:empty:hover, dialog form > button:first-child:empty:focus {
-        background-color: var(--color-link-background-hover) !important;
-        text-decoration: none;
-        color: rgba(0, 0, 0, 0.9) !important; }
-      dialog form > button:first-child:empty:before {
-        content: "\e900"; }
-      dialog form > button:first-child:empty + *:is(h1, h2, h3, h4, h5, p) {
-        padding-right: calc(var(--padding-container-vertical) + 20px); }
-    dialog form:has( > img:nth-child(2), > iframe[src*="youtube.com"]:nth-child(2), > iframe[src*="vimeo.com"]:nth-child(2)) > button:first-child:empty {
+      background-color: black; }
+    dialog > div:has( > div > img:first-child, > div > iframe[src*="youtube.com"]:first-child, > div > iframe[src*="vimeo.com"]:first-child) > form button:empty {
       color: rgba(255, 255, 255, 0.6);
       background-color: transparent !important; }
-      dialog form:has( > img:nth-child(2), > iframe[src*="youtube.com"]:nth-child(2), > iframe[src*="vimeo.com"]:nth-child(2)) > button:first-child:empty:hover, dialog form:has( > img:nth-child(2), > iframe[src*="youtube.com"]:nth-child(2), > iframe[src*="vimeo.com"]:nth-child(2)) > button:first-child:empty:focus {
+      dialog > div:has( > div > img:first-child, > div > iframe[src*="youtube.com"]:first-child, > div > iframe[src*="vimeo.com"]:first-child) > form button:empty:hover, dialog > div:has( > div > img:first-child, > div > iframe[src*="youtube.com"]:first-child, > div > iframe[src*="vimeo.com"]:first-child) > form button:empty:focus {
         background-color: var(--color-link) !important;
         color: white !important;
         outline: none; }
-    dialog form:has( > img:last-child, > iframe[src*="youtube.com"]:last-child, > iframe[src*="vimeo.com"]:last-child) {
+    dialog > div > div {
       padding: 0;
-      background-color: black; }
-    dialog form > img, dialog form > iframe {
-      display: block;
-      margin-bottom: var(--padding-container-vertical); }
-    dialog form img, dialog form iframe {
-      max-width: 100%;
-      max-height: calc(100vh - var(--padding-container-vertical));
-      height: auto; }
-    dialog form iframe {
-      border: none; }
-    dialog form:has( > iframe[src*="youtube.com"]:last-child, > iframe[src*="vimeo.com"]:last-child) {
-      aspect-ratio: 16 / 9; }
-    dialog form > iframe[src*="youtube.com"], dialog form > iframe[src*="vimeo.com"] {
-      aspect-ratio: 16 / 9; }
-    dialog form > *:last-child {
-      margin-bottom: 0 !important; }
-    dialog form.loading:after {
-      display: block;
-      width: 40px;
-      height: 40px;
-      margin: 20px;
-      border-width: 4px; }
+      margin: 0; }
+      dialog > div > div > main {
+        padding: 0 !important; }
+      dialog > div > div > img, dialog > div > div > iframe {
+        display: block;
+        margin-bottom: var(--padding-container-vertical); }
+      dialog > div > div img, dialog > div > div iframe {
+        max-width: 100%;
+        max-height: calc(100vh - var(--padding-container-vertical));
+        height: auto; }
+      dialog > div > div iframe {
+        border: none; }
+      dialog > div > div:has( > iframe[src*="youtube.com"]:last-child, > iframe[src*="vimeo.com"]:last-child) {
+        aspect-ratio: 16 / 9; }
+      dialog > div > div > iframe[src*="youtube.com"], dialog > div > div > iframe[src*="vimeo.com"] {
+        aspect-ratio: 16 / 9; }
+      dialog > div > div > *:last-child {
+        margin-bottom: 0 !important; }
+      dialog > div > div.loading:after {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 20px;
+        border-width: 4px; }
+      dialog > div > div > *:first-child:is(h1, h2, h3, h4, h5, p) {
+        padding-right: calc(var(--padding-container-vertical) + 20px); }
+        dialog > div > div > *:first-child:is(h1, h2, h3, h4, h5, p).text-center {
+          padding-left: calc(var(--padding-container-vertical) + 20px); }
