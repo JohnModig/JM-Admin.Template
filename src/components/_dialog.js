@@ -17,6 +17,8 @@
 
     - Styles for media, e.g. images and video.
 
+    - Executes script tags from relative urls
+
     Configurated via the data-dialog attribute. The attribute can contain: 
 
     - Html
@@ -86,6 +88,10 @@ const dialog = {
                     }
                     dialog.master.removeLoader();
                     dialog.master.focusOnCloseButton(keyboardEvent);
+                    // Is the url relative?
+                    if (new RegExp('^(?:[a-z+]+:)?//', 'i').test(href) === false) {
+                        dialog.master.executeScriptTags();
+                    }
                 })
                 .catch((error) => {
                     dialog.master.removeLoader();
@@ -189,6 +195,20 @@ const dialog = {
             let el = document.querySelector(`#${dialog.master.id} ${focus ? 'button' : 'form'}`)
             if (el) {
                 el.focus();
+            }
+        },
+        executeScriptTags: function () {
+            let els = document.querySelectorAll(`#${dialog.master.id}>div>div script`);
+            for (var el of els) {
+                var script = document.createElement("script");
+                if (el.hasAttribute('src')) {
+                    script.setAttribute('src', el.getAttribute('src'));
+                }
+                else {
+                    script.innerHTML = el.innerHTML;
+                }
+                el.remove();
+                document.querySelector(`#${dialog.master.id}>div>div`).insertAdjacentElement('beforeend', script);
             }
         }
     },
