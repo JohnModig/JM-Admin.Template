@@ -42,6 +42,10 @@ dialog {
             line-height: normal;
             margin: 0;
 
+            &:focus {
+                outline: none;
+            }
+
             button:empty {
                 display: block;
                 font-size: 14px;
@@ -59,12 +63,15 @@ dialog {
                 padding: 0;
                 margin: 0;
                 border: none;
+                border-color: transparent;
                 background-color: rgba(255,255,255,0.2) !important;
+                box-shadow: none;
 
                 &:hover, &:focus {
                     background-color: var(--color-link-background-hover) !important;
                     text-decoration: none;
                     color: rgba(0,0,0,0.9) !important;
+                    box-shadow: none;
                 }
 
                 &:before {
