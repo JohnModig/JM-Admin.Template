@@ -443,6 +443,9 @@ a {
 .text-right {
   text-align: right; }
 
+.text-left {
+  text-align: left; }
+
 :is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label)[class^="icon-"]:before, :is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label)[class*=" icon-"]:before {
   font-size: 1.1428em;
   display: inline-block;
