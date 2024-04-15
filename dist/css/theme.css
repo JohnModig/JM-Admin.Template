@@ -37,7 +37,7 @@
 \*---------------------------------------------------------------------------*/
 @font-face {
   font-family: 'jm-admin';
-  src: url("../fonts/jm-admin.ttf?rc51wx") format("truetype"), url("../fonts/jm-admin.woff?rc51wx") format("woff"), url("../fonts/jm-admin.svg?rc51wx#jm-admin") format("svg");
+  src: url("../fonts/jm-admin.ttf?hchne6") format("truetype"), url("../fonts/jm-admin.woff?hchne6") format("woff"), url("../fonts/jm-admin.svg?hchne6#jm-admin") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block; }
@@ -54,6 +54,9 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icon-send:before {
+  content: "\e163"; }
 
 .icon-call:before {
   content: "\e93d"; }
