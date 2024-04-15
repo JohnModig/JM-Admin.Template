@@ -363,6 +363,10 @@ main {
     & > * + * {
         margin-top: var(--margin-paragraph-bottom);
     }
+    // ...but not when not wanted.
+    & > *.no-margin-bottom + * {
+        margin-top: 0;
+    }
     // Grid layout mixin
     @mixin main-grid-layout {
         display: grid;

@@ -1382,6 +1382,8 @@ main {
   align-content: flex-start; }
   main > * + * {
     margin-top: var(--margin-paragraph-bottom); }
+  main > *.no-margin-bottom + * {
+    margin-top: 0; }
   @media screen and (min-width: 600px) {
     main.header-content-sidebar {
       display: grid;
