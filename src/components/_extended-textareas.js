@@ -26,9 +26,7 @@ const extendedTextareas = {
             el.addEventListener('input', () => {
                 extendedTextareas.elements.resize(el);
             });
-            el.addEventListener('resize', () => {
-                console.log("!");
-            });
+            extendedTextareas.elements.resize(el);
         },
         resize: function (el) {
             el.style.height = '';
