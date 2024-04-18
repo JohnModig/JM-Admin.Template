@@ -15,7 +15,6 @@
 const alert = {
     // Function for closing
     close: function (element) {
-        console.log(element);
         var el = element.closest('.alert');
         if (!el) {
             console.warn('No alert found.');
