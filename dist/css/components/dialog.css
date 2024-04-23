@@ -94,6 +94,8 @@ dialog {
         aspect-ratio: 16 / 9; }
       dialog > div > div > *:last-child {
         margin-bottom: 0 !important; }
+      dialog > div > div > div:only-child > *:last-child {
+        margin-bottom: 0 !important; }
       dialog > div > div.loading:after {
         display: block;
         width: 40px;

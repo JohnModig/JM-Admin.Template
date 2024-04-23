@@ -420,6 +420,9 @@ hr {
 .thin {
   font-weight: 100; }
 
+.normal {
+  font-weight: 400; }
+
 .no-margin-bottom {
   margin-bottom: 0 !important; }
 
