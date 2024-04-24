@@ -133,7 +133,7 @@ dialog {
                 margin-bottom: 0 !important;
             }
 
-            & > div:only-child > *:last-child {
+            & > div:only-child > *:last-child, & > main:only-child > *:last-child {
                 margin-bottom: 0 !important;
             }
 
