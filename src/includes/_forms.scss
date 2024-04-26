@@ -220,6 +220,7 @@ button, input[type="submit"], a.button {
     font-weight: 600;
     font-size: .75rem;
     justify-content: center;
+    align-items: center;
 
     &:hover {
         background-color: var(--color-link-background-hover);
@@ -302,6 +303,11 @@ button, a.button {
 }
 select {
     cursor: pointer;
+
+    &.full-width {
+        width: 100%;
+    }
+
     // Single select
     &:not([multiple]) {
         // Arrow - SVG background image
