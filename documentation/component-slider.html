@@ -146,18 +146,22 @@
                 <p><code class="language-javascript">const mySlider = new Slider('#mySlider');</code></p>
                 <h5>Advanced</h5>
                 <p>Create a <code class="language-javascript">Slider</code> object with detailed configuration:</p>
-                <p><code class="language-javascript">const mySlider = new Slider({
-    element: '#mySlider',
-    gap: '100px',
-    navigationStyle: 'prevNext',
-    steps: ['Introduktion', 'Detaljer', 'Summering'],
-    appendElement: 'a.success',
-    text: {
-        Slide: 'Bild',
-        Previous: 'Föregående',
-        Next: 'Nästa'
-    }
- });</code></p>
+                <p>
+                    <code class="language-javascript">
+                        const mySlider = new Slider({
+                        element: '#mySlider',
+                        gap: '100px',
+                        navigationStyle: 'prevNext',
+                        steps: ['Introduktion', 'Detaljer', 'Summering'],
+                        appendElement: 'a.success',
+                        text: {
+                        Slide: 'Bild',
+                        Previous: 'Föregående',
+                        Next: 'Nästa'
+                        }
+                        });
+                    </code>
+                </p>
             </section>
             <h3>Examples</h3>
             <p class="comment icon-info">View source for Html code.</p>
@@ -263,10 +267,35 @@
             </div>
             <hr />
             <p>
+                Adjust height:
+            </p>
+            <!-- Example: Adjust height -->
+            <div id="component5">
+                <div>
+                    <h1 class="text-center">Slide 1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare mattis felis, a bibendum est. Proin imperdiet auctor tristique. Nulla varius tortor velit, id varius ipsum euismod eu. Morbi posuere gravida augue, eget blandit neque iaculis in. Sed finibus sapien sit amet tristique efficitur. Morbi consectetur enim ut erat aliquet tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras id lobortis libero. Donec ultricies imperdiet porttitor. Nunc suscipit diam in dui efficitur, quis sagittis risus blandit. Nulla felis lorem, egestas eget ultricies faucibus, rhoncus id erat.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 2</h1>
+                    <p>
+                        Quisque molestie ante id sem vestibulum, hendrerit tincidunt arcu tincidunt. Aliquam consectetur blandit imperdiet. Morbi consequat lorem tincidunt risus molestie fringilla. Sed vitae pretium mi. Nulla accumsan nisi non nulla iaculis, ac scelerisque nisi ullamcorper. Vivamus dictum laoreet lectus. Nullam finibus lobortis elit nec viverra. Cras volutpat, risus et placerat volutpat, odio nunc ultricies purus, vitae suscipit lacus eros et leo. Nam maximus ullamcorper neque, quis elementum lacus imperdiet vel. Integer sed purus diam. Donec tincidunt bibendum lorem.
+                    </p>
+                </div>
+                <div>
+                    <h1 class="text-center">Slide 3</h1>
+                    <p>
+                        Quisque vitae dignissim mauris. Etiam nec nunc tellus. Etiam scelerisque enim in dictum dignissim. Cras lobortis eget metus id dignissim. Morbi rutrum turpis vitae orci aliquam, ac fringilla neque commodo. In nec odio eget nibh dapibus ultrices. Suspendisse tincidunt finibus egestas. Sed euismod justo lacus, id tincidunt justo sodales non.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <p>
                 Progress indicator with steps:
             </p>
             <!-- Example: Progress indicator with steps -->
-            <div id="component5">
+            <div id="component6">
                 <div>
                     <h1 class="text-center">Slide 1</h1>
                     <p>
@@ -291,7 +320,7 @@
                 Progress indicator with named steps:
             </p>
             <!-- Example: Progress indicator with named steps -->
-            <div id="component6">
+            <div id="component7">
                 <div>
                     <h1 class="text-center">Slide 1</h1>
                     <p>
@@ -316,7 +345,7 @@
                 Appended element (visible on last slide):
             </p>
             <!-- Example: Appended element -->
-            <div id="component7">
+            <div id="component8">
                 <div>
                     <h1 class="text-center">Slide 1</h1>
                     <p>
@@ -342,7 +371,7 @@
                 Other language (Swedish):
             </p>
             <!-- Example: Other language -->
-            <div id="component8">
+            <div id="component9">
                 <div>
                     <h1 class="text-center">Slide 1</h1>
                     <p>
@@ -406,25 +435,33 @@
             navigationStyle: 'prevNext'
         });
 
-        // Example: Progress indicator with steps
+        // Example: Adjust height
         const component5 = new Slider({
             element: '#component5',
+            gap: '100px',
+            navigationStyle: 'prevNext',
+            adjustHeight: true
+        });
+
+        // Example: Progress indicator with steps
+        const component6 = new Slider({
+            element: '#component6',
             gap: '100px',
             navigationStyle: 'prevNext',
             steps: []
         });
 
         // Example: Progress indicator with named steps
-        const component6 = new Slider({
-            element: '#component6',
+        const component7 = new Slider({
+            element: '#component7',
             gap: '100px',
             navigationStyle: 'prevNext',
             steps: ['Introduction', 'Details', 'Summary']
         });
 
         // Example: Appended element
-        const component7 = new Slider({
-            element: '#component7',
+        const component8 = new Slider({
+            element: '#component8',
             gap: '100px',
             navigationStyle: 'prevNext',
             steps: ['Introduction', 'Details', 'Summary'],
@@ -432,8 +469,8 @@
         });
 
         // Example: Other language
-        const component8 = new Slider({
-            element: '#component8',
+        const component9 = new Slider({
+            element: '#component9',
             gap: '100px',
             navigationStyle: 'prevNext',
             steps: ['Introduktion', 'Detaljer', 'Summering'],

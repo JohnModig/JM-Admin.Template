@@ -35,6 +35,10 @@
         transform: scale(1);
         scroll-snap-align: center;
 
+        &:not(img) {
+            flex-basis: 100%;
+        }
+
         & > *:last-child {
             margin-bottom: 0;
         }
@@ -97,7 +101,6 @@
                 opacity: 0.75;
             }
         }
-
         // Navigation - style: "prevNext"
         &.prevNext {
             display: flex;

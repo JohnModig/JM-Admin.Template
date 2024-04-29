@@ -29,6 +29,8 @@
     transform-origin: center center;
     transform: scale(1);
     scroll-snap-align: center; }
+    .slider > *:not(img) {
+      flex-basis: 100%; }
     .slider > * > *:last-child {
       margin-bottom: 0; }
   .slider + nav {

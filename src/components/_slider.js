@@ -34,6 +34,7 @@ function Slider(config) {
     this.navigationStyle = 'bullets';
     this.appendElement = null;
     this.gap = null;
+    this.adjustHeight = false;
     this.text = {
         Slide: 'Slide',
         Previous: 'Previous',
@@ -145,6 +146,9 @@ function Slider(config) {
                 }
             }
         }
+        if (this.adjustHeight) {
+            this.element.style.height = `${this.slides[currentIndex].offsetHeight}px`;
+        }
     };
 
     // Constructor
@@ -185,6 +189,9 @@ function Slider(config) {
         }
         if ('text' in config && typeof config.text === 'object') {
             this.text = config.text;
+        }
+        if ('adjustHeight' in config && typeof config.adjustHeight === 'boolean') {
+            this.adjustHeight = config.adjustHeight;
         }
     }
     if (!this.element) {
