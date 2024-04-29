@@ -148,6 +148,7 @@ function Slider(config) {
         }
         if (this.adjustHeight) {
             this.element.style.height = `${this.slides[currentIndex].offsetHeight}px`;
+            this.element.style.overflowY = 'hidden';
         }
     };
 
