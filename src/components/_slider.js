@@ -146,11 +146,18 @@ function Slider(config) {
                 }
             }
         }
-        if (this.adjustHeight) {
-            this.element.style.height = `${this.slides[currentIndex].offsetHeight}px`;
-            this.element.style.overflowY = 'hidden';
-        }
     };
+    var adjustHeightToPosition = () => {
+        if (this.slides === null) {
+            return;
+        }
+        if (this.adjustHeight === false) {
+            return;
+        }
+        var currentIndex = getCurrentIndex();
+        this.element.style.height = `${Math.ceil(this.slides[currentIndex].getBoundingClientRect().height)}px`;
+        this.element.style.overflowY = 'hidden';
+    }
 
     // Constructor
     // -----------
@@ -283,13 +290,24 @@ function Slider(config) {
             eventTimer = setTimeout((e) => {
                 this.stop();
                 indicatePosition();
+                adjustHeightToPosition();
                 if (this.autoplay) {
                     this.play();
                 }
             }, 50);
         });
+        // Observe any changes in size 
+        if (this.adjustHeight) {
+            this.resizeObserver = new ResizeObserver((entries) => {
+                adjustHeightToPosition();
+            });
+            for (var i = 0; i < this.slides.length; i++) {
+                this.resizeObserver.observe(this.slides[i]);
+            }
+        }
         // Initial position
         indicatePosition();
+        adjustHeightToPosition();
         // Autoplay
         if (this.autoplay) {
             this.play();
