@@ -37,8 +37,16 @@
         font-weight: 600;
         line-height: 1.3;
         color: var(--color-text-light);
-        padding: calc(var(--padding-buttons) * 0.8571) 0 0 0;
+        padding: 0;
         margin: 0;
+
+        &:has(+ input, + textarea, + select) {
+            padding-top: calc(var(--padding-buttons) * 0.8571);
+        }
+
+        &:has(+ * input, + * textarea, + * select) {
+            padding-top: calc(var(--padding-buttons) * 0.8571);
+        }
     }
 
     & > *:not(label) {
