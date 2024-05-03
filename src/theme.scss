@@ -76,11 +76,12 @@ body {
     text-align: left;
     color: var(--color-text);
     font-family: var(--font-body);
-    // Sticky footer
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     -webkit-text-size-adjust: 100%;
+    // Sticky footer
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 // Typography

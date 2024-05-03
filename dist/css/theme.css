@@ -308,10 +308,11 @@ body {
   text-align: left;
   color: var(--color-text);
   font-family: var(--font-body);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  min-height: 100dvh; }
 
 h1, h2, h3, h4, h5 {
   font-weight: 600;
