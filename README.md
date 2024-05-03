@@ -15,7 +15,7 @@ Admin template for web apps.
 
 ### In production
 
-* Nowhere, yet.
+* Corporate app (not public).
 
 ### Demo and documentation
 
