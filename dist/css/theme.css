@@ -2262,14 +2262,14 @@ header label[for='side-navigation'] {
   display: grid;
   align-items: flex-start;
   grid-column-gap: calc(var(--padding-buttons) * 2);
-  grid-template-columns: minmax(min-content, max-content) minmax(min-content, 1fr);
+  grid-template-columns: minmax(min-content, max-content) minmax(0, 1fr);
   margin: 0 0 var(--margin-paragraph-bottom) 0;
   font-size: .875rem; }
   .horizontal-label.center {
-    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
+    grid-template-columns: minmax(min-content, max-content) minmax(0, max-content);
     justify-content: center; }
   .horizontal-label.right {
-    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
+    grid-template-columns: minmax(min-content, max-content) minmax(0, max-content);
     justify-content: right; }
   .horizontal-label > label {
     display: inline-block;
