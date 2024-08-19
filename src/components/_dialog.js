@@ -162,6 +162,17 @@ const dialog = {
                 return;
             }
             el.innerHTML = html;
+            if (html === '') {
+                return;
+            }
+            // Add event to all elements that refers to a dialog
+            let els = document.querySelectorAll(`#${dialog.master.id} *[${dialog.settings.attribute}]`);
+            for (var elWithAttribute of els) {
+                elWithAttribute.addEventListener("click", function (e) {
+                    dialog.open.fromAttribute(this, e.detail === 0); // Detect keyboard
+                    e.preventDefault();
+                });
+            }
         },
         showModal: function () {
             let el = document.getElementById(dialog.master.id);
