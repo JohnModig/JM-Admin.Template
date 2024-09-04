@@ -48,6 +48,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-fullscreen_exit:before {
+  content: "\e5d1";
+}
+.icon-fullscreen:before {
+  content: "\e5d0";
+}
 .icon-send:before {
   content: "\e163";
 }
