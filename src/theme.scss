@@ -443,13 +443,6 @@ main {
                 }
             }
         }
-
-        @include for-phone-only {
-            & > section:first-child {
-                border-bottom: none;
-                padding-bottom: 0;
-            }
-        }
     }
     // Layout: Navigation, content
     &.navigation-content {
@@ -488,6 +481,11 @@ main {
         grid-area: header;
         border-bottom: var(--border-light);
         padding-bottom: var(--margin-paragraph-bottom);
+
+        @include for-phone-only {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
     }
     // Badges section
     & > section.badges {
@@ -495,6 +493,11 @@ main {
         position: relative;
         border-bottom: var(--border-light);
         padding-bottom: var(--margin-paragraph-bottom);
+
+        @include for-phone-only {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
     }
     // Article (for main content)
     article {

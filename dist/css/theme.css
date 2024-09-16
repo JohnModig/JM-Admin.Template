@@ -1471,10 +1471,6 @@ main {
           position: absolute;
           bottom: -1px;
           left: calc(1px - var(--padding-container-horizontal) - 1px); } }
-  @media screen and (max-width: 599px) {
-    main.header-badges-content-sidebar > section:first-child {
-      border-bottom: none;
-      padding-bottom: 0; } }
   @media screen and (min-width: 600px) {
     main.navigation-content {
       display: grid;
@@ -1504,11 +1500,19 @@ main {
     grid-area: header;
     border-bottom: var(--border-light);
     padding-bottom: var(--margin-paragraph-bottom); }
+    @media screen and (max-width: 599px) {
+      main > section.header {
+        border-bottom: none;
+        padding-bottom: 0; } }
   main > section.badges {
     grid-area: badges;
     position: relative;
     border-bottom: var(--border-light);
     padding-bottom: var(--margin-paragraph-bottom); }
+    @media screen and (max-width: 599px) {
+      main > section.badges {
+        border-bottom: none;
+        padding-bottom: 0; } }
   main article {
     grid-area: article;
     min-width: 0;
