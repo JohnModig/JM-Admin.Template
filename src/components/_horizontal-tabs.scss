@@ -81,9 +81,7 @@ html, body {
         }
 
         & > a, & > details {
-            display: inline-flex;
             position: static;
-            align-items: center;
             margin: 2px 0 0 var(--padding-buttons);
             vertical-align: bottom;
             scroll-snap-align: start;
@@ -92,18 +90,16 @@ html, body {
                 font-size: .8125rem;
             }
         }
-        // Icons
-        & > a, & > details {
-            span[class^="icon-"], span[class*=" icon-"] {
-                display: inline-flex;
-                align-items: center;
-            }
+
+        & > a {
+            display: inline-flex;
+            align-items: center;
         }
 
         & > details {
             summary[class^="icon-"], summary[class*=" icon-"] {
                 display: inline-flex;
-                align-items: baseline;
+                align-items: center;
             }
 
             & > nav {

@@ -1678,21 +1678,19 @@ html, body {
         background-color: var(--color-link-background-hover);
         text-decoration: none; }
     .horizontal-tabs > nav > a, .horizontal-tabs > nav > details {
-      display: inline-flex;
       position: static;
-      align-items: center;
       margin: 2px 0 0 var(--padding-buttons);
       vertical-align: bottom;
       scroll-snap-align: start; }
       @media screen and (max-width: 599px) {
         .horizontal-tabs > nav > a, .horizontal-tabs > nav > details {
           font-size: .8125rem; } }
-    .horizontal-tabs > nav > a span[class^="icon-"], .horizontal-tabs > nav > a span[class*=" icon-"], .horizontal-tabs > nav > details span[class^="icon-"], .horizontal-tabs > nav > details span[class*=" icon-"] {
+    .horizontal-tabs > nav > a {
       display: inline-flex;
       align-items: center; }
     .horizontal-tabs > nav > details summary[class^="icon-"], .horizontal-tabs > nav > details summary[class*=" icon-"] {
       display: inline-flex;
-      align-items: baseline; }
+      align-items: center; }
     .horizontal-tabs > nav > details > nav {
       font-size: inherit;
       min-width: min-content; }
