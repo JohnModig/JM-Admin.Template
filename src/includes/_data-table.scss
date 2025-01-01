@@ -68,7 +68,7 @@ div.data {
         // Hover effect
         &:hover {
             & > * {
-                background-color: rgba(27, 31, 36, 0.03);
+                background-color: rgba(0, 0, 0, 0.02);
             }
         }
         // Border-radius
@@ -239,4 +239,13 @@ div.data {
 // Pagination
 div.data + section.align.pagination {
     padding-right: var(--padding-buttons);
+}
+
+// Cells in dark content section
+section.content.dark {
+    div.data div.item:hover {
+        & > * {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    }
 }

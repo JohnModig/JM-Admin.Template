@@ -128,3 +128,6 @@ label > .choices:has( + a[class^="icon-"]:empty, + a[class*=" icon-"]:empty) > .
     .choices__inner:has(.input-validation-error) > .choices__list--multiple .choices__item.is-highlighted {
       background-color: rgba(176, 16, 48, 0.9);
       color: white; }
+
+section.content.dark .choices__inner {
+  background-color: white !important; }

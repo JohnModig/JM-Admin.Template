@@ -86,6 +86,7 @@
 				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
 				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
                 <a class="icon-bookmark" href="component-typography.html">Typography</a>
+				<a class="icon-bookmark" href="component-content-section.html">Content section</a>
 				<a class="icon-bookmark" href="component-icons.html">Icons</a>
                 <a class="icon-bookmark" href="component-details.html">Details</a>
 				<a class="icon-bookmark" href="component-loader.html">Loader</a>
@@ -371,14 +372,6 @@
                 <label class="icon-filter_list"><select size="3" multiple><option>Option 1</option><option>Option 2</option><option>Option 3</option><option>Option 4</option></select><a href="" class="icon-help"></a></label>
             </p>
             <p class="comment icon-lightbulb">For a more configurable UI, see: <a href="component-advanced-input-box.html">Advanced input box</a></p>
-            <p>
-                Form with many elements:
-            </p>
-            <form>
-                <input type="text" /> <input type="text" /> <input type="text" /> <input type="text" />
-                <input type="text" /> <input type="text" /> <input type="text" /> <input type="text" />
-                <input type="text" /> <input type="text" /> <input type="text" /> <input type="text" />
-            </form>
             <p>Textarea:</p>
             <p>
                 <textarea rows="4"></textarea>
@@ -397,10 +390,40 @@
             </p>
             <p class="comment icon-info">View source for Html code.</p>
             <hr />
-            <h4>Wrapper element</h4>
+            <h4>Wrapper element: form</h4>
             <p>
-                To add vertical space between multiple adjacent input elements, place them in a <code class="language-html">&lt;form&gt;</code> element.
+                To add vertical space between multiple adjacent input elements, place them in a <code class="language-html">&lt;form&gt;</code> element:
             </p>
+            <form>
+                <input type="text" /> <input type="text" /> <input type="text" /> <input type="text" />
+                <input type="text" /> <input type="text" /> <input type="text" /> <input type="text" />
+                <input type="text" /> <input type="text" /> <input type="text" /> <input type="text" />
+            </form>
+            <h4>Wrapper element: dark content section</h4>
+            <p>
+                When placed inside a dark content section, form fields will have a different background color:
+            </p>
+            <section class="dark content">
+                <p>
+                    Text input:
+                </p>
+                <p>
+                    <input type="text" />
+                </p>
+                <p>
+                    Textarea:
+                </p>
+                <p>
+                    <textarea rows="4"></textarea>
+                </p>
+                <p>
+                    Select:
+                </p>
+                <p>
+                    <select><option>Option 1</option><option>Option 2</option><option>Option 3</option></select>
+                </p>
+            </section>
+            <p class="small icon-info">For more options, see <a href="component-content-section.html">Content section</a>.</p>
         </article>
     </main>
 

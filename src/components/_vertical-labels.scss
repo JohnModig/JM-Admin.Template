@@ -27,3 +27,9 @@
         margin: 0 0 var(--padding-buttons) 0;
     }
 }
+// Component in dark content section
+section.content.dark {
+    &.vertical-label label[for], .vertical-label label[for] {
+        color: var(--color-text);
+    }
+}

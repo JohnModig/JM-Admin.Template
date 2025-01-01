@@ -176,3 +176,9 @@ $color-error: rgb(176,16,48);
         }
     }
 }
+// Component in dark content section
+section.content.dark {
+    .choices__inner {
+        background-color: white !important;
+    }
+}

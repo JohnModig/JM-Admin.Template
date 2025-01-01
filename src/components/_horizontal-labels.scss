@@ -65,3 +65,9 @@
         }
     }
 }
+// Component in dark content section
+section.content.dark {
+    &.horizontal-label > label, .horizontal-label > label {
+        color: var(--color-text);
+    }
+}

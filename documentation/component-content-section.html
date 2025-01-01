@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="robots" content="noindex" />
-    <title>JM Admin - Component: Side navigation</title>
+    <title>JM Admin - Component: Content section</title>
     <link href="../dist/css/theme.min.css" rel="stylesheet" />
     <link rel="icon" href="images/logo.svg">
     <link rel="mask-icon" href="images/logo.svg" color="#000000">
@@ -44,7 +44,7 @@
             <span>/</span>
             <a href="components.html">Components</a>
             <span>/</span>
-            <a href="component-side-navigation.html">Side navigation</a>
+            <a href="component-content-section.html">Content section</a>
         </div>
         <div>
             <a href="" class="image">
@@ -82,12 +82,12 @@
                 <hr />
                 <h5>Included</h5>
                 <a class="icon-bookmark" href="component-layout.html">Layout</a>
-				<a class="icon-bookmark" href="component-align.html">Align</a>
-				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
-				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-align.html">Align</a>
+                <a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+                <a class="icon-bookmark" href="component-top-header.html">Top header</a>
                 <a class="icon-bookmark" href="component-typography.html">Typography</a>
-				<a class="icon-bookmark" href="component-content-section.html">Content section</a>
-				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+				<a class="icon-bookmark current" href="component-content-section.html">Content section</a>
+                <a class="icon-bookmark" href="component-icons.html">Icons</a>
                 <a class="icon-bookmark" href="component-details.html">Details</a>
 				<a class="icon-bookmark" href="component-loader.html">Loader</a>
                 <a class="icon-bookmark" href="component-data-table.html">Data table</a>
@@ -96,7 +96,7 @@
                 <a class="icon-bookmark" href="component-badge.html">Badge</a>
 				<a class="icon-bookmark" href="component-tag.html">Tag</a>
                 <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
-                <a class="icon-bookmark current" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
                 <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
                 <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
                 <a class="icon-bookmark" href="component-slider.html">Slider</a>
@@ -109,46 +109,57 @@
                 <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
                 <a class="icon-bookmark" href="component-validation.html">Validation</a>
                 <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
-				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
                 <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
             </nav>
         </aside>
         <article>
-            <h2>Side navigation <sup>Optional</sup></h2>
+            <h2>Content section</h2>
             <p>
-                Drawer style navigation, which slides in from the side of the page. This
-                component is used for an extra layer of navigation links, usually for top
-                level or external links. The menu is not visible on page load and requires
-                a click to open.
+                Styles for a wrapping element with content inside. This component is used to visually group related elements together, i.e. text, images or form fields.
             </p>
-            <section class="content">
-                <header><h5 class="icon-info">Features</h5></header>
-                <ul>
-                    <li>CSS only, no Javascript.</li>
-                    <li>Opening/closing works with keyboard, mouse and touch.</li>
-                </ul>
-            </section>
-            <section class="content">
-                <header><h5 class="icon-settings">Configuration</h5></header>
-                <ul>
-                    <li>Sass file: components/_side-navigation.scss</li>
-                    <li>Include the Sass file in theme.scss: <code class="language-css">@import "components/side-navigation";</code></li>
-                </ul>
-            </section>
-            <h3>Example</h3>
-            <p>
-                Click the menu button in the top left corner on this page.
-            </p>
+            <h3>Examples</h3>
             <p class="comment icon-info">View source for Html code.</p>
             <hr />
-            <h4>Html / Javascript</h4>
-            <p>
-                The component uses a Html checkbox to keep the &quot;state&quot; of opening and closing of the menu drawer.
-            </p>
-            <p>
-                The checkbox uses some small inline javascript to add some additional functionality for keyboard navigation; open/close the menu via the <code>Enter</code> key. Here is the full code:
-            </p>
-            <code class="language-html">&lt;input type=&quot;checkbox&quot; id=&quot;side-navigation&quot; onkeydown=&quot;if (event.keyCode == 13) this.click();&quot; /&gt;</code>
+            <p>Content section:</p>
+            <section class="content">
+                <p>This is a paragraph.</p>
+            </section>
+            <p>Content section with header:</p>
+            <section class="content">
+                <header>
+                    <h5>Heading 5</h5>
+                </header>
+                <p>This is a paragraph.</p>
+            </section>
+            <p>Dark content section:</p>
+            <section class="content dark">
+                <p>This is a paragraph.</p>
+            </section>
+            <p>Centered content section:</p>
+            <p class="comment icon-info">The section's width will fit the content.</p>
+            <section class="content centered">
+                <p>This is a paragraph.</p>
+                <p>
+                    This is another paragraph.
+                </p>
+            </section>
+            <p>Centered content section with minimum width:</p>
+            <p class="comment icon-info">The section's width will shrink to the smallest possible width of the content.</p>
+            <section class="content centered minimum-width">
+                <p>This is a paragraph.</p>
+                <p>
+                    This is another paragraph.
+                </p>
+            </section>
+            <p>Centered content section with limited width for readability:</p>
+            <p class="comment icon-info">The section's width will be limited, so long text inside will be easier to read. This style can be applied to any Html element.</p>
+            <section class="content centered readability-width">
+                <p>This is a paragraph.</p>
+                <p>
+                    This is another paragraph with long text. Typographers have been writing about the relationship between horizontal and vertical eye motion for almost a century. Too long lines with too many words make it harder for the eyes to find the correct spot when they sweep back to the left to pick up the next line of text. To maintain readability, it is imperative to use moderate line lengths within the range of 40–70 characters. Anything longer than that becomes difficult to read.
+                </p>
+            </section>
         </article>
     </main>
 
