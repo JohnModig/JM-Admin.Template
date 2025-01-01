@@ -881,16 +881,16 @@ button, input[type="submit"], a.button {
   button.right-icon, input[type="submit"].right-icon, a.button.right-icon {
     flex-direction: row-reverse; }
   button.success, input[type="submit"].success, a.button.success {
-    background-color: var(--color-success);
+    background-color: var(--color-success) !important;
     color: white; }
   button.error, input[type="submit"].error, a.button.error {
-    background-color: var(--color-error);
+    background-color: var(--color-error) !important;
     color: white; }
   button.warning, input[type="submit"].warning, a.button.warning {
-    background-color: var(--color-warning);
+    background-color: var(--color-warning) !important;
     color: white; }
   button.info, input[type="submit"].info, a.button.info {
-    background-color: var(--color-info);
+    background-color: var(--color-info) !important;
     color: white; }
 
 button, a.button {
@@ -1079,8 +1079,11 @@ header + textarea {
 section.content.dark input, section.content.dark textarea, section.content.dark select {
   background-color: white !important; }
 
+section.content.dark button:not(.info, .success, .warning, .error), section.content.dark a.button:not(.info, .success, .warning, .error) {
+  background-color: white !important; }
+
 section.content.dark button.transparent, section.content.dark input[type="submit"].transparent, section.content.dark a.button.transparent {
-  background-color: rgba(255, 255, 255, 0.7); }
+  background-color: rgba(255, 255, 255, 0.7) !important; }
 
 /*---------------------------------------------------------------------------*    
     Loader

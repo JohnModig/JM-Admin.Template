@@ -243,22 +243,22 @@ button, input[type="submit"], a.button {
     }
 
     &.success {
-        background-color: var(--color-success);
+        background-color: var(--color-success) !important;
         color: white;
     }
 
     &.error {
-        background-color: var(--color-error);
+        background-color: var(--color-error) !important;
         color: white;
     }
 
     &.warning {
-        background-color: var(--color-warning);
+        background-color: var(--color-warning) !important;
         color: white;
     }
 
     &.info {
-        background-color: var(--color-info);
+        background-color: var(--color-info) !important;
         color: white;
     }
 }
@@ -550,9 +550,14 @@ section.content.dark {
         background-color: white !important;
     }
     // Buttons
+    button, a.button {
+        &:not(.info, .success, .warning, .error) {
+            background-color: white !important;
+        }
+    }
     button, input[type="submit"], a.button {
         &.transparent {
-            background-color: rgba(255,255,255,0.7);
+            background-color: rgba(255,255,255,0.7) !important;
         }
     }
 }
