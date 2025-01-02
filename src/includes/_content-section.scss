@@ -9,25 +9,26 @@
 \*---------------------------------------------------------------------------*/
 
 // Sections
-section.content {
-    margin: 0 0 var(--margin-paragraph-bottom) 0;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: var(--margin-paragraph-bottom) var(--padding-buttons);
-    border: var(--border-light);
-    border-radius: var(--border-radius-button);
-    // Header
-    & > header:first-child {
-        margin: calc(1px - var(--margin-paragraph-bottom) - 1px) calc(1px - var(--padding-buttons) - 1px) var(--margin-paragraph-bottom) calc(1px - var(--padding-buttons) - 1px);
-        padding: var(--padding-buttons) calc(var(--padding-buttons) + 1px);
-        border-top-right-radius: var(--border-radius-button);
-        border-top-left-radius: var(--border-radius-button);
+section {
+    &.content {
+        margin: 0 0 var(--margin-paragraph-bottom) 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: var(--margin-paragraph-bottom) var(--padding-buttons);
+        border: var(--border-light);
+        border-radius: var(--border-radius-button);
+        // Header
+        & > header:first-child {
+            margin: calc(1px - var(--margin-paragraph-bottom) - 1px) calc(1px - var(--padding-buttons) - 1px) var(--margin-paragraph-bottom) calc(1px - var(--padding-buttons) - 1px);
+            padding: var(--padding-buttons) calc(var(--padding-buttons) + 1px);
+            border-top-right-radius: var(--border-radius-button);
+            border-top-left-radius: var(--border-radius-button);
+        }
+        // Dark
+        &.dark {
+            background-color: var(--color-header-background);
+        }
     }
-    // Dark
-    &.dark {
-        background-color: var(--color-header-background);
-    }
-
     // Centered
     &.centered {
         margin-right: auto;
@@ -44,7 +45,6 @@ section.content {
     *:first-child {
         margin-top: 0;
     }
-
     *:last-child {
         margin-bottom: 0;
     }

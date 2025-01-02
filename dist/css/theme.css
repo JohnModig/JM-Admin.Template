@@ -512,18 +512,21 @@ section.content {
     border-top-left-radius: var(--border-radius-button); }
   section.content.dark {
     background-color: var(--color-header-background); }
-  section.content.centered {
-    margin-right: auto;
-    margin-left: auto;
-    width: fit-content;
-    block-size: fit-content; }
-    section.content.centered.minimum-width {
-      width: min-content;
-      block-size: min-content; }
-  section.content *:first-child {
-    margin-top: 0; }
-  section.content *:last-child {
-    margin-bottom: 0; }
+
+section.centered {
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
+  block-size: fit-content; }
+  section.centered.minimum-width {
+    width: min-content;
+    block-size: min-content; }
+
+section *:first-child {
+  margin-top: 0; }
+
+section *:last-child {
+  margin-bottom: 0; }
 
 /*---------------------------------------------------------------------------*    
     Align
