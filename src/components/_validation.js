@@ -15,7 +15,7 @@
 
     - Supported advanced input box: choices.js
     
-    - Supported bot protection: Google ReCaptcha v3, Programmatically invoke 
+    - Supported bot protection: Google ReCaptcha v3 (Google Cloud), Programmatically invoke 
       (https://developers.google.com/recaptcha/docs/v3#programmatically_invoke_the_challenge)
 
 \*---------------------------------------------------------------------------*/
@@ -134,7 +134,7 @@ const validation = {
             }
             // Google ReCaptcha v3
             if (typeof (grecaptcha) != "undefined") {
-                let script = document.querySelector("script[src^='https://www.google.com/recaptcha/api.js?render=']");
+                let script = document.querySelector("script[src^='https://www.google.com/recaptcha/enterprise.js?render=']");
                 if (!script) {
                     console.error('ReCaptcha error.');
                     return;
@@ -144,8 +144,8 @@ const validation = {
                 let iEnd = src.indexOf('&');
                 let siteKey = iEnd > iStart ? src.substring(iStart, iEnd) : src.substring(iStart);
                 e.preventDefault();
-                grecaptcha.ready(function () {
-                    grecaptcha.execute(siteKey, { action: 'submit' }).then(function (token) {
+                grecaptcha.enterprise.ready(function () {
+                    grecaptcha.enterprise.execute(siteKey, { action: 'submit' }).then(function (token) {
                         el.insertAdjacentHTML('beforeend', '<input type="hidden" name="g-recaptcha-response" value="' + token + '" />');
                         el.submit();
                     });
