@@ -1,0 +1,665 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex" />
+    <title>JM Admin - Component: Data table bulk actions</title>
+    <link href="../dist/css/theme.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg">
+    <link rel="mask-icon" href="images/logo.svg" color="#000000">
+    <!-- Component: slider.js -->
+    <link href="../dist/css/components/data-table.bulk-actions.min.css" rel="stylesheet" />
+    <!-- End component -->
+    <!-- Syntax highlighting: Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+</head>
+<body>
+
+	<!-- Optional component: Side navigation -->
+    <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
+    <nav>
+		<label for="side-navigation" role="button" class="icon-clear"></label>
+		<a class="icon-visibility current" href="index.html">Documentation</a>
+		<hr />
+		<h5>GitHub</h5>
+		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+	</nav>
+    <!-- End component -->
+
+	<!-- Header -->
+    <header>
+        <div>
+            <!-- Optional component: Side navigation (trigger button) -->
+            <label for="side-navigation" role="button" class="icon-menu"></label>
+            <!-- End component -->
+            <a href="index.html" class="image">
+                <img alt="Logotype"
+                     src="images/logo.svg"
+                     style="height: 2rem;" />
+            </a>
+        </div>
+        <div>
+            <!-- Breadcrumbs -->
+            <a href="index.html">JM Admin</a>
+            <span>/</span>
+            <a href="components.html">Components</a>
+            <span>/</span>
+            <a href="component-data-table.html">Data table</a>
+            <span>/</span>
+            <a href="component-data-table-bulk-actions.html">Bulk actions</a>
+        </div>
+        <div>
+            <a href="" class="image">
+                <img alt="User" class="round"
+                     src="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32"
+                     srcset="https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=32 1x,
+                            https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
+            </a>
+        </div>
+    	<!-- Optional component: Horizontal tabs -->
+		<div class="horizontal-tabs">
+	        <nav>
+	            <details>
+	                <summary class="icon-lightbulb">Example pages</summary>
+	                <nav>
+	                    <a href="example-page-data.html">Data</a>
+	                    <a href="example-page-login.html">Login</a>
+						<a href="example-page-cards.html">Cards</a>
+						<a href="example-page-headlines.html">Headlines</a>
+	                </nav>
+	            </details>
+	            <a href="components.html" class="icon-bookmark current">Components</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+	        </nav>
+		</div>
+		<!-- End component -->
+	</header>
+	
+    <!-- Main -->
+    <main class="navigation-content">
+        <aside>
+            <nav>
+                <a class="icon-help" href="components.html">Overview</a>
+                <hr />
+                <h5>Included</h5>
+                <a class="icon-bookmark" href="component-layout.html">Layout</a>
+                <a class="icon-bookmark" href="component-align.html">Align</a>
+                <a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+                <a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-typography.html">Typography</a>
+                <a class="icon-bookmark" href="component-content-section.html">Content section</a>
+                <a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-details.html">Details</a>
+                <a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+                <hr />
+                <h5>Optional</h5>
+                <a class="icon-bookmark" href="component-badge.html">Badge</a>
+                <a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
+                <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
+                <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
+                <a class="icon-bookmark" href="component-tooltip.html">Tooltip</a>
+                <a class="icon-bookmark" href="component-slider.html">Slider</a>
+                <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
+                <a class="icon-bookmark" href="component-alert.html">Alert</a>
+                <hr />
+                <h5>Forms</h5>
+                <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
+                <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
+                <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
+                <a class="icon-bookmark" href="component-validation.html">Validation</a>
+                <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
+                <a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+				<hr />
+				<h5>Add-ons</h5>
+				<a class="icon-bookmark current" href="component-data-table-bulk-actions.html">Data table bulk actions</a>
+            </nav>
+        </aside>
+        <article>
+            <h2>Data table bulk actions <sup>Add-on</sup></h2>
+            <p>
+                Extended functionality to component: <a href="component-data-table.html">Data table</a>
+            </p>
+            <section class="content">
+                <header><h5 class="icon-info">Features</h5></header>
+                <ul>
+                    <li>Generate a user interface for selecting records.</li>
+                    <li>Enables you to perform actions to multiple records at once.</li>
+                    <li>Send <code>POST</code> requests with data from the <code>data-id</code> attribute of the selected records.</li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-settings">Configuration</h5></header>
+                <ul>
+                    <li>Include the compiled css file in the Html: <code class="language-html">&lt;link href=&quot;/css/components/data-table.bulk-actions.min.css&quot; rel=&quot;stylesheet&quot; /&gt;</code></li>
+                    <li>Include the compiled javascript file in the Html: <code class="language-html">&lt;script src=&quot;/javascript/data-table.bulk-actions.min.js&quot;&gt;&lt;/script&gt;</code></li>
+                </ul>
+            </section>
+            <section class="content">
+                <header><h5 class="icon-check">Implementation <sup>Javascript</sup></h5></header>
+                <h5>Basic</h5>
+                <p>Create a <code class="language-javascript">DataTableBulkActions</code> object with minimal configuration and a single link:</p>
+                <p><code class="language-javascript">const myDataTableBulkActions = new DataTableBulkActions({
+    input: '#myDataTable',
+    links: [
+        {
+            url: '/download',
+            text: 'Download'
+        }
+    ]
+});</code></p>
+                <h5>Advanced</h5>
+                <p>Create a <code class="language-javascript">DataTableBulkActions</code> object with detailed configuration, other language (Swedish) and multiple links:</p>
+                <p><code class="language-javascript">const myDataTableBulkActions = new DataTableBulkActions({
+    input: '#myDataTable',
+    hidden: true,
+    text: {
+        singleSelected: 'vald',
+        multipleSelected: 'valda',
+        noneSelected: 'ingen vald',
+        select: 'Välj',
+        show: 'Visa',
+        hide: 'Dölj'
+    },
+    links: [
+        {
+            url: '/download',
+            text: 'Ladda ned',
+            class: 'icon-download'
+        },
+        {
+            url: '/star',
+            text: 'Lägg till stjärna',
+            class: 'icon-star'
+        },
+        {
+            url: '/delete',
+            text: 'Ta bort',
+            class: 'icon-delete'
+        }
+    ]
+});</code></p>
+            </section>
+            <h3>Examples</h3>
+            <p class="comment icon-info">View source for Html code.</p>
+            <hr />
+            <!-- Example: Always visible -->
+            <h5>
+                Always visible
+            </h5>
+            <div class="data" id="component1">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div><a href="" class="icon-arrow_downward">Value</a></div>
+                    <div class="text-right"><a href="">Number</a></div>
+                    <div class="text-right"><a href="">Date</a></div>
+                    <div></div>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="1">
+                    <div>Cell A1</div>
+                    <div class="sorted" data-collapse="Value">A2</div>
+                    <div class="text-right" data-collapse="Number">A3</div>
+                    <div class="text-right" data-collapse="Date">A4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="2">
+                    <div>Cell B1</div>
+                    <div class="sorted" data-collapse="Value">B2</div>
+                    <div class="text-right" data-collapse="Number">B3</div>
+                    <div class="text-right" data-collapse="Date">B4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="3">
+                    <div>Cell C1</div>
+                    <div class="sorted" data-collapse="Value">C2</div>
+                    <div class="text-right" data-collapse="Number">C3</div>
+                    <div class="text-right" data-collapse="Date">C4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+            </div>
+            <!-- Example: Visible by default -->
+            <h5>
+                Visible by default
+            </h5>
+            <div class="data" id="component2">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div><a href="" class="icon-arrow_downward">Value</a></div>
+                    <div class="text-right"><a href="">Number</a></div>
+                    <div class="text-right"><a href="">Date</a></div>
+                    <div></div>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="1">
+                    <div>Cell A1</div>
+                    <div class="sorted" data-collapse="Value">A2</div>
+                    <div class="text-right" data-collapse="Number">A3</div>
+                    <div class="text-right" data-collapse="Date">A4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="2">
+                    <div>Cell B1</div>
+                    <div class="sorted" data-collapse="Value">B2</div>
+                    <div class="text-right" data-collapse="Number">B3</div>
+                    <div class="text-right" data-collapse="Date">B4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="3">
+                    <div>Cell C1</div>
+                    <div class="sorted" data-collapse="Value">C2</div>
+                    <div class="text-right" data-collapse="Number">C3</div>
+                    <div class="text-right" data-collapse="Date">C4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+            </div>
+            <!-- Example: Hidden by default -->
+            <h5>
+                Hidden by default
+            </h5>
+            <div class="data" id="component3">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div><a href="" class="icon-arrow_downward">Value</a></div>
+                    <div class="text-right"><a href="">Number</a></div>
+                    <div class="text-right"><a href="">Date</a></div>
+                    <div></div>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="1">
+                    <div>Cell A1</div>
+                    <div class="sorted" data-collapse="Value">A2</div>
+                    <div class="text-right" data-collapse="Number">A3</div>
+                    <div class="text-right" data-collapse="Date">A4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="2">
+                    <div>Cell B1</div>
+                    <div class="sorted" data-collapse="Value">B2</div>
+                    <div class="text-right" data-collapse="Number">B3</div>
+                    <div class="text-right" data-collapse="Date">B4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="3">
+                    <div>Cell C1</div>
+                    <div class="sorted" data-collapse="Value">C2</div>
+                    <div class="text-right" data-collapse="Number">C3</div>
+                    <div class="text-right" data-collapse="Date">C4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+            </div>
+            <!-- Example: Collapsed data table, icons on links -->
+            <h5>
+                Collapsed data table, icons on links
+            </h5>
+            <div class="data collapse" id="component4">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div><a href="" class="icon-arrow_downward">Value</a></div>
+                    <div class="text-right"><a href="">Number</a></div>
+                    <div class="text-right"><a href="">Date</a></div>
+                    <div></div>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="1">
+                    <div>Cell A1</div>
+                    <div class="sorted" data-collapse="Value">A2</div>
+                    <div class="text-right" data-collapse="Number">A3</div>
+                    <div class="text-right" data-collapse="Date">A4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="" class="icon-visibility">View</a>
+                            <a href="" class="icon-edit">Edit</a>
+                            <a href="" class="icon-delete">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="2">
+                    <div>Cell B1</div>
+                    <div class="sorted" data-collapse="Value">B2</div>
+                    <div class="text-right" data-collapse="Number">B3</div>
+                    <div class="text-right" data-collapse="Date">B4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="" class="icon-visibility">View</a>
+                            <a href="" class="icon-edit">Edit</a>
+                            <a href="" class="icon-delete">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="3">
+                    <div>Cell C1</div>
+                    <div class="sorted" data-collapse="Value">C2</div>
+                    <div class="text-right" data-collapse="Number">C3</div>
+                    <div class="text-right" data-collapse="Date">C4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="" class="icon-visibility">View</a>
+                            <a href="" class="icon-edit">Edit</a>
+                            <a href="" class="icon-delete">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+            </div>
+            <!-- Example: Different language (Swedish) -->
+            <h5>
+                Different language (Swedish)
+            </h5>
+            <div class="data collapse" id="component5">
+                <!-- Header-->
+                <header><h5>Rubrik</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Nyckelvärde</a></div>
+                    <div><a href="" class="icon-arrow_downward">Värde</a></div>
+                    <div class="text-right"><a href="">Nummer</a></div>
+                    <div class="text-right"><a href="">Datum</a></div>
+                    <div></div>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="1">
+                    <div>Cell A1</div>
+                    <div class="sorted" data-collapse="Värde">A2</div>
+                    <div class="text-right" data-collapse="Nummer">A3</div>
+                    <div class="text-right" data-collapse="Datum">A4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="" class="icon-visibility">Visa</a>
+                            <a href="" class="icon-edit">Ändra</a>
+                            <a href="" class="icon-delete">Ta bort</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="2">
+                    <div>Cell B1</div>
+                    <div class="sorted" data-collapse="Värde">B2</div>
+                    <div class="text-right" data-collapse="Nummer">B3</div>
+                    <div class="text-right" data-collapse="Datum">B4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="" class="icon-visibility">Visa</a>
+                            <a href="" class="icon-edit">Ändra</a>
+                            <a href="" class="icon-delete">Ta bort</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item" data-id="3">
+                    <div>Cell C1</div>
+                    <div class="sorted" data-collapse="Värde">C2</div>
+                    <div class="text-right" data-collapse="Nummer">C3</div>
+                    <div class="text-right" data-collapse="Datum">C4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="" class="icon-visibility">Visa</a>
+                            <a href="" class="icon-edit">Ändra</a>
+                            <a href="" class="icon-delete">Ta bort</a>
+                        </nav>
+                    </details>
+                </div>
+            </div>
+        </article>
+    </main>
+
+	<!-- Footer -->
+	<footer>
+		<a href="index.html" class="image">
+			<img alt="Logotype"
+				src="images/logo.svg"
+				style="height: 1.25rem; opacity: 0.6;" />
+			JM Admin
+		</a>
+		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+	</footer>
+
+	<!-- Component: Data table -->
+    <script src="../dist/javascript/data-table.min.js"></script>
+    <!-- End component -->
+    <!-- Optional component: Horizontal tabs -->
+    <script src="../dist/javascript/horizontal-tabs.min.js"></script>
+    <!-- End component -->
+    <!-- Add-on: Bulk actions -->
+    <script src="../dist/javascript/data-table.bulk-actions.min.js"></script>
+    <script>
+
+        // Example: Always visible
+        const component1 = new DataTableBulkActions({
+            input: '#component1',
+            hideable: false,
+            links: [
+                {
+                    url: '/download',
+                    text: 'Download'
+                },
+                {
+                    url: '/star',
+                    text: 'Add star'
+                },
+                {
+                    url: '/delete',
+                    text: 'Delete'
+                }
+            ]
+        });
+
+        // Example: Visible by default
+        const component2 = new DataTableBulkActions({
+            input: '#component2',
+            links: [
+                {
+                    url: '/download',
+                    text: 'Download'
+                },
+                {
+                    url: '/star',
+                    text: 'Add star'
+                },
+                {
+                    url: '/delete',
+                    text: 'Delete'
+                }
+            ]
+        });
+
+        // Example: Hidden by default
+        const component3 = new DataTableBulkActions({
+            input: '#component3',
+            hidden: true,
+            links: [
+                {
+                    url: '/download',
+                    text: 'Download'
+                },
+                {
+                    url: '/star',
+                    text: 'Add star'
+                },
+                {
+                    url: '/delete',
+                    text: 'Delete'
+                }
+            ]
+        });
+
+        // Example: Collapsed data table, icons on links
+        const component4 = new DataTableBulkActions({
+            input: '#component4',
+            hidden: true,
+            links: [
+                {
+                    url: '/download',
+                    text: 'Download',
+                    class: 'icon-download'
+                },
+                {
+                    url: '/star',
+                    text: 'Add star',
+                    class: 'icon-star'
+                },
+                {
+                    url: '/delete',
+                    text: 'Delete',
+                    class: 'icon-delete'
+                }
+            ]
+        });
+
+        // Example: Different language (Swedish)
+        const component5 = new DataTableBulkActions({
+            input: '#component5',
+            hidden: true,
+            text: {
+                singleSelected: 'vald',
+                multipleSelected: 'valda',
+                noneSelected: 'ingen vald',
+                select: 'Välj',
+                show: 'Visa',
+                hide: 'Dölj'
+            },
+            links: [
+                {
+                    url: '/download',
+                    text: 'Ladda ned',
+                    class: 'icon-download'
+                },
+                {
+                    url: '/star',
+                    text: 'Lägg till stjärna',
+                    class: 'icon-star'
+                },
+                {
+                    url: '/delete',
+                    text: 'Ta bort',
+                    class: 'icon-delete'
+                }
+            ]
+        });
+
+    </script>
+    <!-- End add-on -->
+    <script>
+        // Help text for examples
+        const examples = {
+            timer: null,
+            writeResizeText: () => {
+                let els = document.querySelectorAll('main div.data.collapse');
+                for (var i = 0; i < els.length; i++) {
+                    let oldText = els[i].parentElement.previousElementSibling.previousElementSibling && els[i].parentElement.previousElementSibling.previousElementSibling.hasAttribute('data-resize');
+                    if (window.getComputedStyle(els[i]).display === 'block' && oldText === true) {
+                        els[i].parentElement.previousElementSibling.previousElementSibling.remove();
+                    }
+                    else if (window.getComputedStyle(els[i]).display !== 'block' && oldText === false) {
+                        els[i].parentElement.previousElementSibling.insertAdjacentHTML('beforebegin', '<p class="comment icon-lightbulb" data-resize>Resize the browser window smaller to see the collapsing effect.</p>');
+                    }
+                }
+            }
+        }
+        examples.writeResizeText();
+        window.addEventListener('resize', function () {
+            clearTimeout(examples.timer);
+            examples.timer = setTimeout(examples.writeResizeText, 100);
+        });
+    </script>
+    <!-- Syntax highlighting: Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- End Syntax highlighting -->
+
+</body>
+</html>

@@ -40,5 +40,11 @@
     "inputFiles": [
       "src/components/_alert.js"
     ]
+  },
+  {
+    "outputFileName": "dist/javascript/data-table.bulk-actions.min.js",
+    "inputFiles": [
+      "src/components/_data-table.bulk-actions.js"
+    ]
   }
 ]

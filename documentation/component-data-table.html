@@ -82,19 +82,19 @@
                 <hr />
                 <h5>Included</h5>
                 <a class="icon-bookmark" href="component-layout.html">Layout</a>
-				<a class="icon-bookmark" href="component-align.html">Align</a>
-				<a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
-				<a class="icon-bookmark" href="component-top-header.html">Top header</a>
+                <a class="icon-bookmark" href="component-align.html">Align</a>
+                <a class="icon-bookmark" href="component-breakpoints.html">Breakpoints</a>
+                <a class="icon-bookmark" href="component-top-header.html">Top header</a>
                 <a class="icon-bookmark" href="component-typography.html">Typography</a>
-				<a class="icon-bookmark" href="component-content-section.html">Content section</a>
-				<a class="icon-bookmark" href="component-icons.html">Icons</a>
+                <a class="icon-bookmark" href="component-content-section.html">Content section</a>
+                <a class="icon-bookmark" href="component-icons.html">Icons</a>
                 <a class="icon-bookmark" href="component-details.html">Details</a>
-				<a class="icon-bookmark" href="component-loader.html">Loader</a>
+                <a class="icon-bookmark" href="component-loader.html">Loader</a>
                 <a class="icon-bookmark current" href="component-data-table.html">Data table</a>
                 <hr />
-				<h5>Optional</h5>
+                <h5>Optional</h5>
                 <a class="icon-bookmark" href="component-badge.html">Badge</a>
-				<a class="icon-bookmark" href="component-tag.html">Tag</a>
+                <a class="icon-bookmark" href="component-tag.html">Tag</a>
                 <a class="icon-bookmark" href="component-horizontal-tabs.html">Horizontal tabs</a>
                 <a class="icon-bookmark" href="component-side-navigation.html">Side navigation</a>
                 <a class="icon-bookmark" href="component-dialog.html">Dialog</a>
@@ -103,14 +103,17 @@
                 <a class="icon-bookmark" href="component-flex-grid.html">Flex grid</a>
                 <a class="icon-bookmark" href="component-alert.html">Alert</a>
                 <hr />
-				<h5>Forms</h5>
+                <h5>Forms</h5>
                 <a class="icon-bookmark" href="component-form.html">Basic form elements</a>
                 <a class="icon-bookmark" href="component-advanced-input-box.html">Advanced input box</a>
                 <a class="icon-bookmark" href="component-extended-textareas.html">Extended textareas</a>
                 <a class="icon-bookmark" href="component-validation.html">Validation</a>
                 <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
-				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
+                <a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
                 <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+				<hr />
+				<h5>Add-ons</h5>
+				<a class="icon-bookmark" href="component-data-table-bulk-actions.html">Data table bulk actions</a>
             </nav>
         </aside>
         <article>
@@ -122,10 +125,12 @@
                 <header><h5 class="icon-info">Features</h5></header>
                 <ul>
                     <li>CSS only, based on <code class="language-css">grid</code> layout.</li>
-                    <li>Columns are automatically configured.</li>
-                    <li>The first column is for <em>key</em> (e.g. name). Other columns are for <em>values</em> (e.g. date) or <em>related data</em> (e.g. link).</li>
-                    <li>The first column takes up remaining space. Other columns can only be as wide as their content.</li>
+                    <li>The columns are automatically configured. They can be adjusted to fit the content.</li>
+                    <li>One column is for <em>key</em> (e.g. name), and is called the <code>key column</code>. Other columns are for <em>values</em> (e.g. date) or <em>related data</em> (e.g. link).</li>
+                    <li>The key column takes up remaining space. Other columns can only be as wide as their content.</li>
+                    <li>The first column is the key column by default. Another column can be set as the key column instead. <sup><a href="#example-key-column">Example</a></sup></li>
                     <li>Javascript for progressive enhancement. <sup><a href="#javascript">Note</a></sup></li>
+                    <li>This component can be extended with more functionality via add-on: <a href="component-data-table-bulk-actions.html">Bulk actions</a></li>
                 </ul>
             </section>
             <section class="content">
@@ -407,17 +412,17 @@
                 <!-- Headings -->
                 <div class="item headings">
                     <div><a href="">Key</a></div>
-                    <div class="text-center"><a href="">Value</a></div>
-                    <div class="text-right"><a href="" class="icon-arrow_downward">Number</a></div>
+                    <div><a href="" class="icon-arrow_downward">Value</a></div>
+                    <div class="text-right"><a href="">Number</a></div>
                     <div class="text-right"><a href="">Date</a></div>
                     <div></div>
                 </div>
                 <!-- Item -->
                 <div class="item">
                     <div>Cell A1</div>
-                    <div class="text-center">A2 center</div>
-                    <div class="sorted text-right">A3 right</div>
-                    <div class="text-right">A4 right</div>
+                    <div class="sorted">A2</div>
+                    <div class="text-right">A3</div>
+                    <div class="text-right">A4</div>
                     <details>
                         <summary></summary>
                         <nav>
@@ -430,8 +435,8 @@
                 <!-- Item -->
                 <div class="item">
                     <div>Cell B1</div>
-                    <div class="text-center">B2</div>
-                    <div class="sorted text-right">B3</div>
+                    <div class="sorted">B2</div>
+                    <div class="text-right">B3</div>
                     <div class="text-right">B4</div>
                     <details>
                         <summary></summary>
@@ -445,8 +450,8 @@
                 <!-- Item -->
                 <div class="item">
                     <div>Cell C1</div>
-                    <div class="text-center">C2</div>
-                    <div class="sorted text-right">C3</div>
+                    <div class="sorted">C2</div>
+                    <div class="text-right">C3</div>
                     <div class="text-right">C4</div>
                     <details>
                         <summary></summary>
@@ -477,17 +482,17 @@
                 <!-- Headings -->
                 <div class="item headings">
                     <div><a href="">Key</a></div>
-                    <div class="text-center"><a href="">Value</a></div>
-                    <div class="text-right"><a href="" class="icon-arrow_downward">Number</a></div>
+                    <div><a href="" class="icon-arrow_downward">Value</a></div>
+                    <div class="text-right"><a href="">Number</a></div>
                     <div class="text-right"><a href="">Date</a></div>
                     <div></div>
                 </div>
                 <!-- Item -->
                 <div class="item">
                     <div>Cell A1</div>
-                    <div class="text-center" data-collapse="Value">A2 center</div>
-                    <div class="sorted text-right" data-collapse="Number">A3 right</div>
-                    <div class="text-right" data-collapse="Date">A4 right</div>
+                    <div class="sorted" data-collapse="Value">A2</div>
+                    <div class="text-right" data-collapse="Number">A3</div>
+                    <div class="text-right" data-collapse="Date">A4</div>
                     <details>
                         <summary></summary>
                         <nav>
@@ -500,8 +505,8 @@
                 <!-- Item -->
                 <div class="item">
                     <div>Cell B1</div>
-                    <div class="text-center" data-collapse="Value">B2</div>
-                    <div class="sorted text-right" data-collapse="Number">B3</div>
+                    <div class="sorted" data-collapse="Value">B2</div>
+                    <div class="text-right" data-collapse="Number">B3</div>
                     <div class="text-right" data-collapse="Date">B4</div>
                     <details>
                         <summary></summary>
@@ -515,68 +520,8 @@
                 <!-- Item -->
                 <div class="item">
                     <div>Cell C1</div>
-                    <div class="text-center" data-collapse="Value">C2</div>
-                    <div class="sorted text-right" data-collapse="Number">C3</div>
-                    <div class="text-right" data-collapse="Date">C4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-            </div>
-            <!-- Example: Key column minimum width -->
-            <h5>Key column minimum width</h5>
-            <p>Set a different minimum width to the key column (the first column). By default it is the same as the minimum width of its content.</p>
-            <div class="data collapse" style="--key-column-min-width: 50%;">
-                <!-- Header-->
-                <header><h5>Header</h5></header>
-                <!-- Headings -->
-                <div class="item headings">
-                    <div><a href="">Key</a></div>
-                    <div class="text-center"><a href="">Value</a></div>
-                    <div class="text-right"><a href="" class="icon-arrow_downward">Number</a></div>
-                    <div class="text-right"><a href="">Date</a></div>
-                    <div></div>
-                </div>
-                <!-- Item -->
-                <div class="item">
-                    <div>Cell A1 long long text with many words text to display the effect</div>
-                    <div class="text-center" data-collapse="Value">A2 center long text to display the effect</div>
-                    <div class="sorted text-right" data-collapse="Number">A3 right long text to display the effect</div>
-                    <div class="text-right" data-collapse="Date">A4 right long text to display the effect</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item">
-                    <div>Cell B1</div>
-                    <div class="text-center" data-collapse="Value">B2</div>
-                    <div class="sorted text-right" data-collapse="Number">B3</div>
-                    <div class="text-right" data-collapse="Date">B4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item">
-                    <div>Cell C1</div>
-                    <div class="text-center" data-collapse="Value">C2</div>
-                    <div class="sorted text-right" data-collapse="Number">C3</div>
+                    <div class="sorted" data-collapse="Value">C2</div>
+                    <div class="text-right" data-collapse="Number">C3</div>
                     <div class="text-right" data-collapse="Date">C4</div>
                     <details>
                         <summary></summary>
@@ -591,9 +536,9 @@
             <!-- Example: Data list -->
             <h5>Data list</h5>
             <p>
-                For simpler (and shorter) content, such as time tables or price lists.
+                For simpler and shorter content, such as time tables or price lists.
                 Not full width. All columns can only be as wide as their content.
-                Date data list can have the same options (headings, header etc) as for other data tables.
+                A data list can have the same options (headings, header etc) as for other data tables.
             </p>
             <div class="data list">
                 <!-- Headings -->
@@ -621,6 +566,149 @@
                     <div>C3</div>
                 </div>
             </div>
+            <!-- Example: Key column -->
+            <h5><a id="example-key-column"></a>Key column</h5>
+            <p>
+                Column number 1 (the first column) is the key column by default. Another column, up to number 5, can be set as the key column instead. <span class="comment">(Column 3)</span>
+            </p>
+            <div class="data key-column-4">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Value</a></div>
+                    <div><a href="">Date</a></div>
+                    <div><a href="">Key</a></div>
+                    <div class="text-right"><a href="">Number</a></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>A1</div>
+                    <div>A2</div>
+                    <div>Cell A3</div>
+                    <div class="text-right">A4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>B1</div>
+                    <div>B2</div>
+                    <div>Cell B3</div>
+                    <div class="text-right">B4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>C2</div>
+                    <div>C2</div>
+                    <div>Cell C3</div>
+                    <div class="text-right">C4</div>
+                </div>
+            </div>
+            <!-- Example: Key column minimum width -->
+            <h5>Key column minimum width</h5>
+            <p>Set a different minimum width to the key column. By default it is the same as the minimum width of its content.</p>
+            <div class="data" style="--key-column-min-width: 50%;">
+                <!-- Header-->
+                <header><h5>Header</h5></header>
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div class="text-center"><a href="">Value</a></div>
+                    <div class="text-right"><a href="">Number</a></div>
+                    <div class="text-right"><a href="">Date</a></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1 long long text with many words text to display the effect</div>
+                    <div class="text-center" data-collapse="Value">A2 center long text to display the effect</div>
+                    <div class="text-right" data-collapse="Number">A3 right long text to display the effect</div>
+                    <div class="text-right" data-collapse="Date">A4 right long text to display the effect</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div class="text-center" data-collapse="Value">B2</div>
+                    <div class="text-right" data-collapse="Number">B3</div>
+                    <div class="text-right" data-collapse="Date">B4</div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div class="text-center" data-collapse="Value">C2</div>
+                    <div class="text-right" data-collapse="Number">C3</div>
+                    <div class="text-right" data-collapse="Date">C4</div>
+                </div>
+            </div>
+            <!-- Example: Key column overflow -->
+            <h5>Key column overflow</h5>
+            <p>
+                The key column can manage strings that are wider than the column (e.g. long words, urls or user input) in different ways:
+            </p>
+            <ul>
+                <li>Overflow (default)</li>
+                <li>Clip with ellipsis (<code>&hellip;</code>)</li>
+                <li>Break and wrap to a new line</li>
+            </ul>
+            <p class="comment icon-info">Only overflowing strings will be affected. All text will wrap normally on breaking spaces (e.g. space or hyphen).</p>
+            <p class="comment icon-lightbulb">The width of the data tables below have been limited to show the effect.</p>
+            <section style="max-width: 37ch;">
+                <div class="data clip-key-column-overflow">
+                    <!-- Header-->
+                    <header><h5>Clip with ellipsis</h5></header>
+                    <!-- Headings -->
+                    <div class="item headings">
+                        <div><a href="">Key</a></div>
+                        <div><a href="">Value</a></div>
+                        <div><a href="">Number</a></div>
+                        <div><a href="">Date</a></div>
+                    </div>
+                    <!-- Item -->
+                    <div class="item">
+                        <div><a href="https://github.com/JohnModig/">https://github.com/JohnModig/</a></div>
+                        <div>A2</div>
+                        <div>A3</div>
+                        <div>A4</div>
+                    </div>
+                    <!-- Item -->
+                    <div class="item">
+                        <div>GitHub profile: <a href="https://github.com/JohnModig/">https://github.com/JohnModig/</a></div>
+                        <div>B2</div>
+                        <div>B3</div>
+                        <div>B4</div>
+                    </div>
+                </div>
+            </section>
+            <section style="max-width: 37ch;">
+                <div class="data break-key-column-overflow">
+                    <!-- Header-->
+                    <header><h5>Break and wrap</h5></header>
+                    <!-- Headings -->
+                    <div class="item headings">
+                        <div><a href="">Key</a></div>
+                        <div><a href="">Value</a></div>
+                        <div><a href="">Number</a></div>
+                        <div><a href="">Date</a></div>
+                    </div>
+                    <!-- Item -->
+                    <div class="item">
+                        <div><a href="https://github.com/JohnModig/">https://github.com/JohnModig/</a></div>
+                        <div>A2</div>
+                        <div>A3</div>
+                        <div>A4</div>
+                    </div>
+                    <!-- Item -->
+                    <div class="item">
+                        <div>GitHub profile: <a href="https://github.com/JohnModig/">https://github.com/JohnModig/</a></div>
+                        <div>B2</div>
+                        <div>B3</div>
+                        <div>B4</div>
+                    </div>
+                </div>
+            </section>
+            <hr />
+            <h4>Add-ons</h4>
+            <p>
+                This component can be extended with more functionality via add-on: <a href="component-data-table-bulk-actions.html">Bulk actions</a>
+            </p>
             <hr />
             <h4><a id="javascript"></a>Javascript</h4>
             <p>

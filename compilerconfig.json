@@ -18,5 +18,9 @@
   {
     "outputFile": "dist/css/components/slider.css",
     "inputFile": "src/components/_slider.scss"
+  },
+  {
+    "outputFile": "dist/css/components/data-table.bulk-actions.css",
+    "inputFile": "src/components/_data-table.bulk-actions.scss"
   }
 ]

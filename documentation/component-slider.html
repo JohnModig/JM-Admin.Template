@@ -94,6 +94,7 @@
                 <a class="icon-bookmark" href="component-details.html">Details</a>
 				<a class="icon-bookmark" href="component-loader.html">Loader</a>
                 <a class="icon-bookmark" href="component-data-table.html">Data table</a>
+				<a class="icon-bookmark" href="component-data-table-bulk-actions.html">Data table bulk actions</a>
                 <hr />
 				<h5>Optional</h5>
                 <a class="icon-bookmark" href="component-badge.html">Badge</a>
@@ -114,6 +115,9 @@
                 <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
 				<a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
                 <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
+				<hr />
+				<h5>Add-ons</h5>
+				<a class="icon-bookmark" href="component-data-table-bulk-actions.html">Data table bulk actions</a>
             </nav>
         </aside>
         <article>
@@ -148,20 +152,18 @@
                 <h5>Advanced</h5>
                 <p>Create a <code class="language-javascript">Slider</code> object with detailed configuration:</p>
                 <p>
-                    <code class="language-javascript">
-                        const mySlider = new Slider({
-                        element: '#mySlider',
-                        gap: '100px',
-                        navigationStyle: 'prevNext',
-                        steps: ['Introduktion', 'Detaljer', 'Summering'],
-                        appendElement: 'a.success',
-                        text: {
-                        Slide: 'Bild',
-                        Previous: 'Föregående',
-                        Next: 'Nästa'
-                        }
-                        });
-                    </code>
+                    <code class="language-javascript">const mySlider = new Slider({
+    element: '#mySlider',
+    gap: '100px',
+    navigationStyle: 'prevNext',
+    steps: ['Introduktion', 'Detaljer', 'Summering'],
+    appendElement: 'a.success',
+    text: {
+        Slide: 'Bild',
+        Previous: 'Föregående',
+        Next: 'Nästa'
+    }
+});</code>
                 </p>
             </section>
             <h3>Examples</h3>

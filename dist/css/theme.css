@@ -55,6 +55,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-toggle_on:before {
+  content: "\e9f6"; }
+
+.icon-toggle_off:before {
+  content: "\e9f5"; }
+
 .icon-fullscreen_exit:before {
   content: "\e5d1"; }
 
@@ -1166,6 +1172,8 @@ div.data {
         border-right: var(--border-light); }
       div.data div.item > *.sorted {
         padding-left: calc(1.1428em*1.5 + var(--padding-buttons)); }
+      div.data div.item > *:not(:last-child):empty[class^="icon-"], div.data div.item > *:not(:last-child):empty[class*=" icon-"] {
+        padding-right: 0; }
       div.data div.item > * > *:last-child {
         margin-bottom: 0; }
     div.data div.item:first-child > * {
@@ -1264,6 +1272,95 @@ div.data {
             right: 0; }
         div.data.collapse div.item:has( > details:last-child) > *:first-child {
           padding-right: calc(var(--padding-buttons)*2 + 1em); } }
+  div.data.key-column-2 {
+    grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - 2), minmax(min-content, max-content)); }
+    div.data.key-column-2.list {
+      grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 2), minmax(min-content, max-content)); }
+  div.data.key-column-3 {
+    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - 3), minmax(min-content, max-content)); }
+    div.data.key-column-3.list {
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 3), minmax(min-content, max-content)); }
+  div.data.key-column-4 {
+    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - 4), minmax(min-content, max-content)); }
+    div.data.key-column-4.list {
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 4), minmax(min-content, max-content)); }
+  div.data.key-column-5 {
+    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - 5), minmax(min-content, max-content)); }
+    div.data.key-column-5.list {
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 5), minmax(min-content, max-content)); }
+  div.data.break-key-column-overflow, div.data.clip-key-column-overflow {
+    --key-column-min-width: 3ch;
+    grid-template-columns: minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 1), minmax(min-content, max-content)); }
+    div.data.break-key-column-overflow.key-column-2, div.data.clip-key-column-overflow.key-column-2 {
+      grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 2), minmax(min-content, max-content)); }
+      div.data.break-key-column-overflow.key-column-2.list, div.data.clip-key-column-overflow.key-column-2.list {
+        grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 2), minmax(min-content, max-content)); }
+    div.data.break-key-column-overflow.key-column-3, div.data.clip-key-column-overflow.key-column-3 {
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 3), minmax(min-content, max-content)); }
+      div.data.break-key-column-overflow.key-column-3.list, div.data.clip-key-column-overflow.key-column-3.list {
+        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 3), minmax(min-content, max-content)); }
+    div.data.break-key-column-overflow.key-column-4, div.data.clip-key-column-overflow.key-column-4 {
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 4), minmax(min-content, max-content)); }
+      div.data.break-key-column-overflow.key-column-4.list, div.data.clip-key-column-overflow.key-column-4.list {
+        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 4), minmax(min-content, max-content)); }
+    div.data.break-key-column-overflow.key-column-5, div.data.clip-key-column-overflow.key-column-5 {
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 5), minmax(min-content, max-content)); }
+      div.data.break-key-column-overflow.key-column-5.list, div.data.clip-key-column-overflow.key-column-5.list {
+        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 5), minmax(min-content, max-content)); }
+  div.data.break-key-column-overflow div.item > *:nth-child(1) {
+    overflow-wrap: break-word;
+    overflow-x: hidden; }
+  div.data.break-key-column-overflow.key-column-2 div.item > *:nth-child(1) {
+    overflow-wrap: initial;
+    overflow-x: initial; }
+  div.data.break-key-column-overflow.key-column-2 div.item > *:nth-child(2) {
+    overflow-wrap: break-word;
+    overflow-x: hidden; }
+  div.data.break-key-column-overflow.key-column-3 div.item > *:nth-child(1) {
+    overflow-wrap: initial;
+    overflow-x: initial; }
+  div.data.break-key-column-overflow.key-column-3 div.item > *:nth-child(3) {
+    overflow-wrap: break-word;
+    overflow-x: hidden; }
+  div.data.break-key-column-overflow.key-column-4 div.item > *:nth-child(1) {
+    overflow-wrap: initial;
+    overflow-x: initial; }
+  div.data.break-key-column-overflow.key-column-4 div.item > *:nth-child(4) {
+    overflow-wrap: break-word;
+    overflow-x: hidden; }
+  div.data.break-key-column-overflow.key-column-5 div.item > *:nth-child(1) {
+    overflow-wrap: initial;
+    overflow-x: initial; }
+  div.data.break-key-column-overflow.key-column-5 div.item > *:nth-child(5) {
+    overflow-wrap: break-word;
+    overflow-x: hidden; }
+  div.data.clip-key-column-overflow div.item > *:nth-child(1) {
+    text-overflow: ellipsis;
+    overflow-x: hidden; }
+  div.data.clip-key-column-overflow.key-column-2 div.item > *:nth-child(1) {
+    text-overflow: initial;
+    overflow-x: initial; }
+  div.data.clip-key-column-overflow.key-column-2 div.item > *:nth-child(2) {
+    text-overflow: ellipsis;
+    overflow-x: hidden; }
+  div.data.clip-key-column-overflow.key-column-3 div.item > *:nth-child(1) {
+    text-overflow: initial;
+    overflow-x: initial; }
+  div.data.clip-key-column-overflow.key-column-3 div.item > *:nth-child(3) {
+    text-overflow: ellipsis;
+    overflow-x: hidden; }
+  div.data.clip-key-column-overflow.key-column-4 div.item > *:nth-child(1) {
+    text-overflow: initial;
+    overflow-x: initial; }
+  div.data.clip-key-column-overflow.key-column-4 div.item > *:nth-child(4) {
+    text-overflow: ellipsis;
+    overflow-x: hidden; }
+  div.data.clip-key-column-overflow.key-column-5 div.item > *:nth-child(1) {
+    text-overflow: initial;
+    overflow-x: initial; }
+  div.data.clip-key-column-overflow.key-column-5 div.item > *:nth-child(5) {
+    text-overflow: ellipsis;
+    overflow-x: hidden; }
 
 div.data + section.align.pagination {
   padding-right: var(--padding-buttons); }

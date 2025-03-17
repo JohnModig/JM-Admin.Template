@@ -42,7 +42,6 @@ div.data {
                 grid-column: 1;
                 border-left: var(--border-light);
             }
-
             &:last-child {
                 border-right: var(--border-light);
             }
@@ -50,7 +49,13 @@ div.data {
             &.sorted {
                 padding-left: calc(1.1428em*1.5 + var(--padding-buttons))
             }
-
+            // Icon only cell
+            &:not(:last-child):empty {
+                &[class^="icon-"], &[class*=" icon-"] {
+                    padding-right: 0;
+                }
+            }
+            // Content margin
             & > *:last-child {
                 margin-bottom: 0;
             }
@@ -230,6 +235,101 @@ div.data {
                     & > *:first-child {
                         padding-right: calc(var(--padding-buttons)*2 + 1em);
                     }
+                }
+            }
+        }
+    }
+    // Key column position
+    // 1 is default, 2-5 can be set
+    $maxIndex: 4;
+
+    @for $i from 1 through $maxIndex {
+        $val: ();
+
+        &.key-column-#{$i + 1} {
+            @for $j from 1 through $i {
+                $val: append($val, minmax(min-content, max-content));
+            }
+
+            grid-template-columns: $val minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - #{$i + 1}), minmax(min-content, max-content));
+
+            &.list {
+                grid-template-columns: $val minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - #{$i + 1}), minmax(min-content, max-content));
+            }
+        }
+    }
+    // Manage overflow in key column
+    // 1: Set column widths to prevent overflow
+    &.break-key-column-overflow, &.clip-key-column-overflow {
+        // Key column position: 1 (default)
+        --key-column-min-width: 3ch;
+        grid-template-columns: minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 1),minmax(min-content,max-content));
+        // Key column position: 2-5
+        @for $i from 1 through $maxIndex {
+            $val: ();
+
+            &.key-column-#{$i + 1} {
+                @for $j from 1 through $i {
+                    $val: append($val, minmax(min-content, max-content));
+                }
+
+                grid-template-columns: $val minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - #{$i + 1}), minmax(min-content, max-content));
+
+                &.list {
+                    grid-template-columns: $val minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - #{$i + 1}), minmax(min-content, max-content));
+                }
+            }
+        }
+    }
+    // 2: Select overflow effect
+    // Overflow effect: Break words
+    // Affects only long words that are overflowing the columns.
+    // The affected words will break on column max width.
+    // Other words will not break. All words will wrap normally.
+    &.break-key-column-overflow {
+        // Key column position: 1 (default)
+        div.item > *:nth-child(1) {
+            overflow-wrap: break-word;
+            overflow-x: hidden;
+        }
+        // Key column position: 2-5
+        @for $i from 1 through $maxIndex {
+            &.key-column-#{$i + 1} {
+                // Reset first column
+                div.item > *:nth-child(1) {
+                    overflow-wrap: initial;
+                    overflow-x: initial;
+                }
+                // Apply styles to key column
+                div.item > *:nth-child(#{$i + 1}) {
+                    overflow-wrap: break-word;
+                    overflow-x: hidden;
+                }
+            }
+        }
+    }
+    // Overflow effect: Crop words
+    // Affects only long words that are overflowing the columns.
+    // The affected words will be cropped with an ellipsis added to the end.
+    // Other words will not be cropped. All words will wrap normally.
+    &.clip-key-column-overflow {
+        // Key column position: 1 (default)
+        div.item > *:nth-child(1) {
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+        }
+        // Key column position: 2-5
+        @for $i from 1 through $maxIndex {
+            &.key-column-#{$i + 1} {
+                // Reset first column
+                div.item > *:nth-child(1) {
+                    text-overflow: initial;
+                    overflow-x: initial;
+                }
+                // Apply styles to key column
+                div.item > *:nth-child(#{$i + 1}) {
+                    text-overflow: ellipsis;
+                    overflow-x: hidden;
                 }
             }
         }
