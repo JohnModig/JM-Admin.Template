@@ -48,6 +48,10 @@ section.bulk-actions {
             }
         }
     }
+    // Align
+    &.align {
+        --column-gap: calc(var(--padding-buttons) * 2);
+    }
 
     p.hidden, details.hidden {
         display: none;

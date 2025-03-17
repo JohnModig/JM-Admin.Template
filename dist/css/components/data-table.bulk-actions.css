@@ -29,5 +29,7 @@ section.bulk-actions {
   @media screen and (max-width: 599px) {
     section.bulk-actions:not(.hidden) + div.data.collapse > header, section.bulk-actions:not(.hidden) + form > div.data.collapse > header {
       padding-left: var(--padding-buttons); } }
+  section.bulk-actions.align {
+    --column-gap: calc(var(--padding-buttons) * 2); }
   section.bulk-actions p.hidden, section.bulk-actions details.hidden {
     display: none; }
