@@ -1365,6 +1365,11 @@ div.data {
 div.data + section.align.pagination {
   padding-right: var(--padding-buttons); }
 
+section.align.sorting {
+  padding-left: var(--padding-buttons); }
+  section.align.sorting a {
+    color: inherit; }
+
 section.content.dark div.data div.item:hover > * {
   background-color: rgba(255, 255, 255, 0.7); }
 

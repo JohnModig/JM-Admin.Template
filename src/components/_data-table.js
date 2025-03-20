@@ -12,7 +12,9 @@
     - Menues are opened on hover (besides click).
     
     - Generates a menu for sorting in the header for small screens (on 
-      collapsible data tables with header and headings).
+      collapsible data tables with headings). If the data table doesn't have 
+      a header, the sorting menu for small screens will be placed above the 
+      data table.
 
 \*---------------------------------------------------------------------------*/
 
@@ -94,8 +96,18 @@
         var headings = el.querySelectorAll('div.item.headings:first-of-type a');
         var sortedHeading = el.querySelector('div.item.headings:first-of-type a[class^="icon-arrow_"], div.item.headings:first-of-type a[class*=" icon-arrow_"], div.item.headings:first-of-type a:has(>[class^="icon-arrow_"])');
         var sortedHeadingNode = Array.from(headings).find((node) => node.isSameNode(sortedHeading) === true);
-        if (header === null || headings.length < 1 || sortedHeadingNode === undefined) {
+        if(headings.length < 1 || sortedHeadingNode === undefined) {
             continue;
+        }
+        var section = null;
+        if (header === null) {
+            section = document.createElement('section');
+            section.className = 'align small show-for-phone-only sorting';
+            el.insertAdjacentElement('beforebegin', section);
+        }
+        else {
+            header.classList.add('align');
+            header.classList.add('header');
         }
         if (headings.length === 1) {
             // One sorting link, use a single link
@@ -105,7 +117,12 @@
                 node.classList.add('small');
             }
             node.classList.add('show-for-phone-only');
-            header.insertAdjacentElement('beforeend', node);
+            if (header === null) {
+                section.insertAdjacentElement('beforeend', node);
+            }
+            else {
+                header.insertAdjacentElement('beforeend', node);
+            }
         }
         else if (headings.length > 1) {
             // Multiple sorting links
@@ -128,6 +145,9 @@
             // Insert last or before context menu
             if (headerLastLink !== null && headerLastLink.querySelector('summary:empty') !== null) {
                 headerLastLink.insertAdjacentElement('beforebegin', nodeA);
+            }
+            else if (header === null) {
+                section.insertAdjacentElement('beforeend', nodeA);
             }
             else {
                 header.insertAdjacentElement('beforeend', nodeA);
@@ -152,11 +172,12 @@
             if (headerLastLink !== null && headerLastLink.querySelector('summary:empty') !== null) {
                 headerLastLink.insertAdjacentElement('beforebegin', nodeDetails);
             }
+            else if (header === null) {
+                section.insertAdjacentElement('beforeend', nodeDetails);
+            }
             else {
                 header.insertAdjacentElement('beforeend', nodeDetails);
             }
         }
-        header.classList.add('align');
-        header.classList.add('header');
     }
 })();

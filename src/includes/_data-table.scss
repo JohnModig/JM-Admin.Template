@@ -341,6 +341,15 @@ div.data + section.align.pagination {
     padding-right: var(--padding-buttons);
 }
 
+// Sorting
+section.align.sorting {
+    padding-left: var(--padding-buttons);
+
+    a {
+        color: inherit;
+    }
+}
+
 // Cells in dark content section
 section.content.dark {
     div.data div.item:hover {

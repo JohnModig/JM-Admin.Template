@@ -13,6 +13,8 @@
 section.bulk-actions {
     padding-left: var(--padding-buttons);
     border-left: 1px solid transparent;
+    font-size: .875rem;
+
     // Master checkbox
     input[type=checkbox] {
         // Tri state
@@ -55,5 +57,45 @@ section.bulk-actions {
 
     p.hidden, details.hidden {
         display: none;
+    }
+}
+
+// Bulk actions in header
+div.data > header.bulk-actions {
+    --column-gap: calc(var(--padding-buttons) * 2);
+    background-color: transparent;
+    padding-top: 0;
+    border-radius: 0;
+    border: none;
+
+    section {
+        padding-left: 0;
+    }
+
+    & + div.item > * {
+
+        border-top: var(--border-light);
+
+        &:first-child {
+            border-top-left-radius: var(--border-radius-button);
+        }
+
+        &:last-child {
+            border-top-right-radius: var(--border-radius-button);
+        }
+    }
+}
+@include for-phone-only {
+    div.data.collapse > header.bulk-actions {
+        & + div.item.headings + div.item, & + div.item:not(.headings) {
+            border-top: var(--border-light);
+            border-top-right-radius: var(--border-radius-button);
+            border-top-left-radius: var(--border-radius-button);
+
+            & > * {
+                border: none;
+                border-radius: 0;
+            }
+        }
     }
 }

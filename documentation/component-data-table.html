@@ -472,6 +472,7 @@
                 <li>Columns collapse to full width rows.</li>
                 <li>Headings are hidden.</li>
                 <li>Headings are replaced with a menu in the header for sorting <sup>(via <a href="#javascript">Javascript</a>)</sup>.</li>
+                <li>If the data table doesn't have a header, the sorting menu for small screens will be placed above the data table.</li>
                 <li>All elements are left aligned.</li>
                 <li>Context menues are positioned in upper right corner.</li>
                 <li>A text label can be added to a cell via the <code class="language-html">data-collapse</code> attribute.</li>
@@ -533,6 +534,64 @@
                     </details>
                 </div>
             </div>
+            <!-- Example: Collapse without header -->
+            <h5>Collapse without header</h5>
+            <div class="data collapse">
+                <!-- Headings -->
+                <div class="item headings">
+                    <div><a href="">Key</a></div>
+                    <div><a href="" class="icon-arrow_downward">Value</a></div>
+                    <div class="text-right"><a href="">Number</a></div>
+                    <div class="text-right"><a href="">Date</a></div>
+                    <div></div>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell A1</div>
+                    <div class="sorted" data-collapse="Value">A2</div>
+                    <div class="text-right" data-collapse="Number">A3</div>
+                    <div class="text-right" data-collapse="Date">A4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell B1</div>
+                    <div class="sorted" data-collapse="Value">B2</div>
+                    <div class="text-right" data-collapse="Number">B3</div>
+                    <div class="text-right" data-collapse="Date">B4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+                <!-- Item -->
+                <div class="item">
+                    <div>Cell C1</div>
+                    <div class="sorted" data-collapse="Value">C2</div>
+                    <div class="text-right" data-collapse="Number">C3</div>
+                    <div class="text-right" data-collapse="Date">C4</div>
+                    <details>
+                        <summary></summary>
+                        <nav>
+                            <a href="">View</a>
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        </nav>
+                    </details>
+                </div>
+            </div>
+
             <!-- Example: Data list -->
             <h5>Data list</h5>
             <p>

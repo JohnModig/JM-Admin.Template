@@ -258,25 +258,41 @@ var DataTableBulkActions = function (config) {
             this.UI.form.append(this.input);
         }
 
+        // Header present?
+        var header = null;
+        if (this.input.firstElementChild && this.input.firstElementChild.nodeName === 'HEADER') {
+            // Header exists
+            header = this.input.firstElementChild;
+            header.classList.add('align')
+            header.classList.add('header')
+        }
+        else {
+            // No header - create one
+            header = document.createElement("header");
+            header.className = 'align header bulk-actions';
+            // Add section to header
+            header.append(this.UI.section);
+            // Add sorting menu to header
+            if (this.UI.form.previousElementSibling && this.UI.form.previousElementSibling.matches('section.sorting')) {
+                var sorting = this.UI.form.previousElementSibling;
+                sorting.classList.remove('small');
+                header.append(sorting);
+            }
+            this.input.prepend(header);
+        }
+
         // Toggle link
         if (configuration.hideable !== false) {
-            if (this.input.firstElementChild.nodeName === 'HEADER') {
-                if (!this.input.firstElementChild.classList.contains('align')) {
-                    this.input.firstElementChild.classList.add('align')
-                    this.input.firstElementChild.classList.add('header')
-                }
-                this.UI.toggleLink = document.createElement('a');
-                this.UI.toggleLink.href = document.location.href;
-                this.UI.toggleLink.innerHTML = this.UI.text.select;
-                this.UI.toggleLink.className = 'vertical-center';
-                this.UI.toggleLink.addEventListener('click', (e) => {
-                    this.toggle();
-                    e.preventDefault();
-                });
-                if (this.input.children.length > 1) {
-                    this.input.firstElementChild.append(this.UI.toggleLink);
-                }
-            }
+            // Create the toggle link
+            this.UI.toggleLink = document.createElement('a');
+            this.UI.toggleLink.href = document.location.href;
+            this.UI.toggleLink.innerHTML = this.UI.text.select;
+            this.UI.toggleLink.className = 'vertical-center';
+            this.UI.toggleLink.addEventListener('click', (e) => {
+                this.toggle();
+                e.preventDefault();
+            });
+            header.append(this.UI.toggleLink);
         }
 
         // Hidden?
