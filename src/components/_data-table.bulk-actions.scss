@@ -60,7 +60,7 @@ section.bulk-actions {
     }
 }
 
-// Bulk actions in header
+// Bulk actions in header (created when no header is present on data table)
 div.data > header.bulk-actions {
     --column-gap: calc(var(--padding-buttons) * 2);
     background-color: transparent;
@@ -69,11 +69,11 @@ div.data > header.bulk-actions {
     border: none;
 
     section {
-        padding-left: 0;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     & + div.item > * {
-
         border-top: var(--border-light);
 
         &:first-child {
@@ -84,17 +84,52 @@ div.data > header.bulk-actions {
             border-top-right-radius: var(--border-radius-button);
         }
     }
+
+    &:has(section.hidden) {
+        & ~ div.item {
+            input[type=checkbox] {
+                display: none;
+            }
+
+            & > *:first-child {
+                padding-right: 0;
+            }
+
+            & > *:nth-child(2) {
+                padding-left: 0;
+            }
+        }
+    }
 }
 @include for-phone-only {
-    div.data.collapse > header.bulk-actions {
-        & + div.item.headings + div.item, & + div.item:not(.headings) {
-            border-top: var(--border-light);
-            border-top-right-radius: var(--border-radius-button);
-            border-top-left-radius: var(--border-radius-button);
+    div.data.collapse {
+
+        & > header.bulk-actions {
+            & + div.item.headings + div.item, & + div.item:not(.headings) {
+                border-top: var(--border-light);
+                border-top-right-radius: var(--border-radius-button);
+                border-top-left-radius: var(--border-radius-button);
+
+                & > * {
+                    border: none;
+                    border-radius: 0;
+                }
+            }
+        }
+
+        div.item {
+            input[type=checkbox] {
+                margin: 0 0 var(--padding-buttons) 0;
+            }
 
             & > * {
                 border: none;
                 border-radius: 0;
+                padding: 0 var(--padding-buttons) !important;
+            }
+
+            &:has(> details:last-child) > *:nth-child(2) {
+                padding-right: calc(var(--padding-buttons)*2 + 1em) !important;
             }
         }
     }

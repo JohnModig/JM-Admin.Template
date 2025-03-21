@@ -343,7 +343,13 @@ div.data + section.align.pagination {
 
 // Sorting
 section.align.sorting {
-    padding-left: var(--padding-buttons);
+    font-size: .875rem;
+    padding: 0 0 0 var(--padding-buttons);
+
+    &.right {
+        padding: 0 var(--padding-buttons) 0 0;
+        margin: 0 0 var(--padding-buttons) 0;
+    }
 
     a {
         color: inherit;

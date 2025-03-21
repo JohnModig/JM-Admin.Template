@@ -102,7 +102,7 @@
         var section = null;
         if (header === null) {
             section = document.createElement('section');
-            section.className = 'align small show-for-phone-only sorting';
+            section.className = 'align right show-for-phone-only sorting';
             el.insertAdjacentElement('beforebegin', section);
         }
         else {

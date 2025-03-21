@@ -1366,7 +1366,11 @@ div.data + section.align.pagination {
   padding-right: var(--padding-buttons); }
 
 section.align.sorting {
-  padding-left: var(--padding-buttons); }
+  font-size: .875rem;
+  padding: 0 0 0 var(--padding-buttons); }
+  section.align.sorting.right {
+    padding: 0 var(--padding-buttons) 0 0;
+    margin: 0 0 var(--padding-buttons) 0; }
   section.align.sorting a {
     color: inherit; }
 
