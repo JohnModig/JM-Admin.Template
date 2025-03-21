@@ -13,6 +13,8 @@
     - Send POST requests with data from the data-id attribute of the selected 
       records.
 
+    - Works with all variants of the Data table component.
+
 \*---------------------------------------------------------------------------*/
 
 var DataTableBulkActions = function (config) {
