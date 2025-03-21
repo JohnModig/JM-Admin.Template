@@ -42,6 +42,7 @@ div.data {
                 grid-column: 1;
                 border-left: var(--border-light);
             }
+
             &:last-child {
                 border-right: var(--border-light);
             }
@@ -251,10 +252,10 @@ div.data {
                 $val: append($val, minmax(min-content, max-content));
             }
 
-            grid-template-columns: $val minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - #{$i + 1}), minmax(min-content, max-content));
+            grid-template-columns: $val minmax(var(--key-column-min-width), auto) repeat(#{m}ax(calc(var(--columns) - #{$i + 1}), 1), minmax(min-content, max-content));
 
             &.list {
-                grid-template-columns: $val minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - #{$i + 1}), minmax(min-content, max-content));
+                grid-template-columns: $val minmax(var(--key-column-min-width), max-content) repeat(#{m}ax(calc(var(--columns) - #{$i + 1}), 1), minmax(min-content, max-content));
             }
         }
     }
@@ -263,7 +264,7 @@ div.data {
     &.break-key-column-overflow, &.clip-key-column-overflow {
         // Key column position: 1 (default)
         --key-column-min-width: 3ch;
-        grid-template-columns: minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 1),minmax(min-content,max-content));
+        grid-template-columns: minmax(var(--key-column-min-width), 1fr) repeat(#{m}ax(calc(var(--columns) - 1), 1), minmax(min-content,max-content));
         // Key column position: 2-5
         @for $i from 1 through $maxIndex {
             $val: ();
@@ -273,10 +274,10 @@ div.data {
                     $val: append($val, minmax(min-content, max-content));
                 }
 
-                grid-template-columns: $val minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - #{$i + 1}), minmax(min-content, max-content));
+                grid-template-columns: $val minmax(var(--key-column-min-width), 1fr) repeat(#{m}ax(calc(var(--columns) - #{$i + 1}), 1), minmax(min-content, max-content));
 
                 &.list {
-                    grid-template-columns: $val minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - #{$i + 1}), minmax(min-content, max-content));
+                    grid-template-columns: $val minmax(var(--key-column-min-width), max-content) repeat(#{m}ax(calc(var(--columns) - #{$i + 1}), 1), minmax(min-content, max-content));
                 }
             }
         }

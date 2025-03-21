@@ -1273,40 +1273,40 @@ div.data {
         div.data.collapse div.item:has( > details:last-child) > *:first-child {
           padding-right: calc(var(--padding-buttons)*2 + 1em); } }
   div.data.key-column-2 {
-    grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - 2), minmax(min-content, max-content)); }
+    grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(max(calc(var(--columns) - 2), 1), minmax(min-content, max-content)); }
     div.data.key-column-2.list {
-      grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 2), minmax(min-content, max-content)); }
+      grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(max(calc(var(--columns) - 2), 1), minmax(min-content, max-content)); }
   div.data.key-column-3 {
-    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - 3), minmax(min-content, max-content)); }
+    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(max(calc(var(--columns) - 3), 1), minmax(min-content, max-content)); }
     div.data.key-column-3.list {
-      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 3), minmax(min-content, max-content)); }
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(max(calc(var(--columns) - 3), 1), minmax(min-content, max-content)); }
   div.data.key-column-4 {
-    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - 4), minmax(min-content, max-content)); }
+    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(max(calc(var(--columns) - 4), 1), minmax(min-content, max-content)); }
     div.data.key-column-4.list {
-      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 4), minmax(min-content, max-content)); }
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(max(calc(var(--columns) - 4), 1), minmax(min-content, max-content)); }
   div.data.key-column-5 {
-    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - 5), minmax(min-content, max-content)); }
+    grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), auto) repeat(max(calc(var(--columns) - 5), 1), minmax(min-content, max-content)); }
     div.data.key-column-5.list {
-      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 5), minmax(min-content, max-content)); }
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(max(calc(var(--columns) - 5), 1), minmax(min-content, max-content)); }
   div.data.break-key-column-overflow, div.data.clip-key-column-overflow {
     --key-column-min-width: 3ch;
-    grid-template-columns: minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 1), minmax(min-content, max-content)); }
+    grid-template-columns: minmax(var(--key-column-min-width), 1fr) repeat(max(calc(var(--columns) - 1), 1), minmax(min-content, max-content)); }
     div.data.break-key-column-overflow.key-column-2, div.data.clip-key-column-overflow.key-column-2 {
-      grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 2), minmax(min-content, max-content)); }
+      grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(max(calc(var(--columns) - 2), 1), minmax(min-content, max-content)); }
       div.data.break-key-column-overflow.key-column-2.list, div.data.clip-key-column-overflow.key-column-2.list {
-        grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 2), minmax(min-content, max-content)); }
+        grid-template-columns: minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(max(calc(var(--columns) - 2), 1), minmax(min-content, max-content)); }
     div.data.break-key-column-overflow.key-column-3, div.data.clip-key-column-overflow.key-column-3 {
-      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 3), minmax(min-content, max-content)); }
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(max(calc(var(--columns) - 3), 1), minmax(min-content, max-content)); }
       div.data.break-key-column-overflow.key-column-3.list, div.data.clip-key-column-overflow.key-column-3.list {
-        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 3), minmax(min-content, max-content)); }
+        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(max(calc(var(--columns) - 3), 1), minmax(min-content, max-content)); }
     div.data.break-key-column-overflow.key-column-4, div.data.clip-key-column-overflow.key-column-4 {
-      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 4), minmax(min-content, max-content)); }
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(max(calc(var(--columns) - 4), 1), minmax(min-content, max-content)); }
       div.data.break-key-column-overflow.key-column-4.list, div.data.clip-key-column-overflow.key-column-4.list {
-        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 4), minmax(min-content, max-content)); }
+        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(max(calc(var(--columns) - 4), 1), minmax(min-content, max-content)); }
     div.data.break-key-column-overflow.key-column-5, div.data.clip-key-column-overflow.key-column-5 {
-      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(calc(var(--columns) - 5), minmax(min-content, max-content)); }
+      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), 1fr) repeat(max(calc(var(--columns) - 5), 1), minmax(min-content, max-content)); }
       div.data.break-key-column-overflow.key-column-5.list, div.data.clip-key-column-overflow.key-column-5.list {
-        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(calc(var(--columns) - 5), minmax(min-content, max-content)); }
+        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(var(--key-column-min-width), max-content) repeat(max(calc(var(--columns) - 5), 1), minmax(min-content, max-content)); }
   div.data.break-key-column-overflow div.item > *:nth-child(1) {
     overflow-wrap: break-word;
     overflow-x: hidden; }
