@@ -11,9 +11,32 @@
 // Breakpoints
 @import "../includes/breakpoints";
 
+/*
+
+    Future updates when supported: Use container style query for key column
+
+    Container style queries is not yet supported by FireFox. That's why this method is not in production. 
+    https://bugzilla.mozilla.org/show_bug.cgi?id=1795622
+
+// Custom property: Key column
+@property --key-column {
+    syntax: "<integer>";
+    inherits: true;
+    initial-value: 1;
+}
+// Container query
+@container style(--key-column) {
+    div.data {
+        border: 3px solid red; // For testing
+        grid-template-columns: repeat(calc(var(--key-column) - 1), minmax(min-content, max-content)) minmax(var(--key-column-min-width), auto) repeat(calc(var(--columns) - var(--key-column)), minmax(min-content, max-content));
+    }
+}
+*/
+
 // Data table
 div.data {
     --columns: 100;
+    --key-column: 1;
     --key-column-min-width: min-content;
     display: grid;
     // Old, with "fr" instead of "auto" - not as good (key column too small when much data): grid-template-columns: minmax(var(--key-column-min-width), 1fr) repeat(var(--columns), minmax(min-content, max-content));
@@ -240,99 +263,38 @@ div.data {
             }
         }
     }
-    // Key column position
-    // 1 is default, 2-5 can be set
-    $maxIndex: 4;
+    // Change key column
+    &.change-key-column {
+        grid-template-columns: repeat(max(calc(var(--key-column) - 1), 1), minmax(min-content, max-content)) minmax(var(--key-column-min-width), auto) repeat(max(calc(var(--columns) - var(--key-column)), 1), minmax(min-content, max-content));
 
-    @for $i from 1 through $maxIndex {
-        $val: ();
-
-        &.key-column-#{$i + 1} {
-            @for $j from 1 through $i {
-                $val: append($val, minmax(min-content, max-content));
-            }
-
-            grid-template-columns: $val minmax(var(--key-column-min-width), auto) repeat(#{m}ax(calc(var(--columns) - #{$i + 1}), 1), minmax(min-content, max-content));
-
-            &.list {
-                grid-template-columns: $val minmax(var(--key-column-min-width), max-content) repeat(#{m}ax(calc(var(--columns) - #{$i + 1}), 1), minmax(min-content, max-content));
-            }
+        &.list {
+            grid-template-columns: repeat(max(calc(var(--key-column) - 1), 1), minmax(min-content, max-content)) minmax(var(--key-column-min-width), max-content) repeat(max(calc(var(--columns) - var(--key-column)), 1), minmax(min-content, max-content));
         }
     }
     // Manage overflow in key column
-    // 1: Set column widths to prevent overflow
+    // 1: Set key column min width to prevent overflow
     &.break-key-column-overflow, &.clip-key-column-overflow {
-        // Key column position: 1 (default)
         --key-column-min-width: 3ch;
-        grid-template-columns: minmax(var(--key-column-min-width), 1fr) repeat(#{m}ax(calc(var(--columns) - 1), 1), minmax(min-content,max-content));
-        // Key column position: 2-5
-        @for $i from 1 through $maxIndex {
-            $val: ();
-
-            &.key-column-#{$i + 1} {
-                @for $j from 1 through $i {
-                    $val: append($val, minmax(min-content, max-content));
-                }
-
-                grid-template-columns: $val minmax(var(--key-column-min-width), 1fr) repeat(#{m}ax(calc(var(--columns) - #{$i + 1}), 1), minmax(min-content, max-content));
-
-                &.list {
-                    grid-template-columns: $val minmax(var(--key-column-min-width), max-content) repeat(#{m}ax(calc(var(--columns) - #{$i + 1}), 1), minmax(min-content, max-content));
-                }
-            }
-        }
     }
     // 2: Select overflow effect
-    // Overflow effect: Break words
+    // a: Overflow effect: Break words
     // Affects only long words that are overflowing the columns.
     // The affected words will break on column max width.
     // Other words will not break. All words will wrap normally.
     &.break-key-column-overflow {
-        // Key column position: 1 (default)
-        div.item > *:nth-child(1) {
+        div.item > * {
             overflow-wrap: break-word;
             overflow-x: hidden;
         }
-        // Key column position: 2-5
-        @for $i from 1 through $maxIndex {
-            &.key-column-#{$i + 1} {
-                // Reset first column
-                div.item > *:nth-child(1) {
-                    overflow-wrap: initial;
-                    overflow-x: initial;
-                }
-                // Apply styles to key column
-                div.item > *:nth-child(#{$i + 1}) {
-                    overflow-wrap: break-word;
-                    overflow-x: hidden;
-                }
-            }
-        }
     }
-    // Overflow effect: Crop words
+    // b: Overflow effect: Crop words
     // Affects only long words that are overflowing the columns.
     // The affected words will be cropped with an ellipsis added to the end.
     // Other words will not be cropped. All words will wrap normally.
     &.clip-key-column-overflow {
-        // Key column position: 1 (default)
-        div.item > *:nth-child(1) {
+        div.item > * {
             text-overflow: ellipsis;
             overflow-x: hidden;
-        }
-        // Key column position: 2-5
-        @for $i from 1 through $maxIndex {
-            &.key-column-#{$i + 1} {
-                // Reset first column
-                div.item > *:nth-child(1) {
-                    text-overflow: initial;
-                    overflow-x: initial;
-                }
-                // Apply styles to key column
-                div.item > *:nth-child(#{$i + 1}) {
-                    text-overflow: ellipsis;
-                    overflow-x: hidden;
-                }
-            }
         }
     }
 }
@@ -353,7 +315,7 @@ section.align.sorting {
     }
 
     a {
-        color: inherit;
+        color: inherit; 
     }
 }
 

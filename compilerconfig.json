@@ -2,7 +2,7 @@
   {
     "outputFile": "dist/css/theme.css",
     "inputFile": "src/theme.scss"
-  },
+    },
   {
     "outputFile": "dist/css/components/choices.css",
     "inputFile": "src/components/_choices.scss"
