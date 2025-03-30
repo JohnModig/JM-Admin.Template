@@ -1317,11 +1317,19 @@ div.data.change-key-column.list {
 div.data.break-key-column-overflow, div.data.clip-key-column-overflow {
   --key-column-min-width: 3ch;
 }
-div.data.break-key-column-overflow div.item > * {
+div.data.break-key-column-overflow:not(.change-key-column) div.item > *:nth-child(1) {
   overflow-wrap: break-word;
   overflow-x: hidden;
 }
-div.data.clip-key-column-overflow div.item > * {
+div.data.break-key-column-overflow.change-key-column div.item > *.key-column {
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+}
+div.data.clip-key-column-overflow:not(.change-key-column) div.item > *:nth-child(1) {
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+div.data.clip-key-column-overflow.change-key-column div.item > *.key-column {
   text-overflow: ellipsis;
   overflow-x: hidden;
 }

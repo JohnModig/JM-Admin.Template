@@ -282,9 +282,19 @@ div.data {
     // The affected words will break on column max width.
     // Other words will not break. All words will wrap normally.
     &.break-key-column-overflow {
-        div.item > * {
-            overflow-wrap: break-word;
-            overflow-x: hidden;
+        // Default key column
+        &:not(.change-key-column) {
+            div.item > *:nth-child(1) {
+                overflow-wrap: break-word;
+                overflow-x: hidden;
+            }
+        }
+        // Changed key column
+        &.change-key-column {
+            div.item > *.key-column {
+                overflow-wrap: break-word;
+                overflow-x: hidden;
+            }
         }
     }
     // b: Overflow effect: Crop words
@@ -292,9 +302,19 @@ div.data {
     // The affected words will be cropped with an ellipsis added to the end.
     // Other words will not be cropped. All words will wrap normally.
     &.clip-key-column-overflow {
-        div.item > * {
-            text-overflow: ellipsis;
-            overflow-x: hidden;
+        // Default key column
+        &:not(.change-key-column) {
+            div.item > *:nth-child(1) {
+                text-overflow: ellipsis;
+                overflow-x: hidden;
+            }
+        }
+        // Changed key column
+        &.change-key-column {
+            div.item > *.key-column {
+                text-overflow: ellipsis;
+                overflow-x: hidden;
+            }
         }
     }
 }
