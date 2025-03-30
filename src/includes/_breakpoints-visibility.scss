@@ -11,7 +11,7 @@
 \*---------------------------------------------------------------------------*/
 
 // Breakpoints
-@import "../includes/breakpoints";
+@use "../includes/breakpoints";
 
 // Variable
 @mixin hide {
@@ -19,97 +19,97 @@
 }
 
 .show-for-phone-only {
-    @include for-tablet-portrait-up {
+    @include breakpoints.for-tablet-portrait-up {
         @include hide;
     }
 }
 
 .show-for-tablet-portrait-up {
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         @include hide;
     }
 }
 
 .show-for-tablet-portrait-only {
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         @include hide;
     }
 
-    @include for-tablet-landscape-up {
+    @include breakpoints.for-tablet-landscape-up {
         @include hide;
     }
 }
 
 .show-for-tablet-landscape-up {
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         @include hide;
     }
 
-    @include for-tablet-portait-only {
+    @include breakpoints.for-tablet-portait-only {
         @include hide;
     }
 }
 
 .show-for-tablet-landscape-only {
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         @include hide;
     }
 
-    @include for-tablet-portait-only {
+    @include breakpoints.for-tablet-portait-only {
         @include hide;
     }
 
-    @include for-desktop-up {
+    @include breakpoints.for-desktop-up {
         @include hide;
     }
 }
 
 .show-for-desktop-up {
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         @include hide;
     }
 
-    @include for-tablet-portait-only {
+    @include breakpoints.for-tablet-portait-only {
         @include hide;
     }
 
-    @include for-tablet-landscape-only {
+    @include breakpoints.for-tablet-landscape-only {
         @include hide;
     }
 }
 
 .show-for-desktop-only {
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         display: none !important;
     }
 
-    @include for-tablet-portait-only {
+    @include breakpoints.for-tablet-portait-only {
         display: none !important;
     }
 
-    @include for-tablet-landscape-only {
+    @include breakpoints.for-tablet-landscape-only {
         display: none !important;
     }
 
-    @include for-big-desktop-up {
+    @include breakpoints.for-big-desktop-up {
         display: none !important;
     }
 }
 
 .show-for-big-desktop-up {
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         display: none !important;
     }
 
-    @include for-tablet-portait-only {
+    @include breakpoints.for-tablet-portait-only {
         display: none !important;
     }
 
-    @include for-tablet-landscape-only {
+    @include breakpoints.for-tablet-landscape-only {
         display: none !important;
     }
 
-    @include for-desktop-only {
+    @include breakpoints.for-desktop-only {
         display: none !important;
     }
 }

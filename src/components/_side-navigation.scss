@@ -15,7 +15,7 @@
 \*---------------------------------------------------------------------------*/
 
 // Breakpoints
-@import "../includes/breakpoints";
+@use "../includes/breakpoints";
 
 #side-navigation {
     // Navigation
@@ -170,7 +170,7 @@ header label[for='side-navigation'] {
     & + a {
         margin-left: calc(var(--grid-gap) + var(--padding-buttons));
 
-        @include for-phone-only {
+        @include breakpoints.for-phone-only {
             margin-left: var(--grid-gap);
         }
     }

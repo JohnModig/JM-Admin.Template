@@ -57,7 +57,7 @@ span.badge, a.badge, details.badge summary {
         font-size: inherit;
         line-height: inherit;
         background-color: white;
-        margin: calc(1px - var(--padding-buttons) - 1px) 0 calc(1px - var(--padding-buttons) - 1px) 0;
+        margin: calc(1px - var(--padding-buttons) - 1px) 0 calc(1px - var(--padding-buttons) - 1px) 0 !important;
         padding: var(--padding-buttons);
         vertical-align: text-bottom;
         border-right: var(--border-light);

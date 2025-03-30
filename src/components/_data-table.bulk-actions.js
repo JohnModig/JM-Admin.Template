@@ -181,22 +181,20 @@ var DataTableBulkActions = function (config) {
 
         // Change key column
         var changedKeyColumn = false;
-        for (var className of this.input.classList) {
-            var classNameMatch = className.match(/key-column-([2-5])/);
-            if (classNameMatch) {
-                // Update style (key column)
-                this.input.classList.remove(classNameMatch[0]);
-                this.input.classList.add(`key-column-${parseInt(classNameMatch[1]) + 1}`);
+        if (this.input.classList.contains('change-key-column')) {
+            var keyColumn = this.input.style.getPropertyValue('--key-column');
+            if (keyColumn) {
+                this.input.style.setProperty('--key-column', parseInt(keyColumn) + 1);
                 changedKeyColumn = true;
-                break;
             }
         }
         if (!changedKeyColumn) {
-            this.input.classList.add('key-column-2');
+            this.input.classList.add('change-key-column');
+            this.input.style.setProperty('--key-column', '2');
         }
 
         // Change attribute for number of columns
-        var prop = this.input.style.getPropertyValue('--columns')
+        var prop = this.input.style.getPropertyValue('--columns');
         if (prop) {
             this.input.style.setProperty('--columns', parseInt(prop) + 1);
         }

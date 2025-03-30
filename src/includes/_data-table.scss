@@ -9,7 +9,7 @@
 \*---------------------------------------------------------------------------*/
 
 // Breakpoints
-@import "../includes/breakpoints";
+@use "../includes/breakpoints";
 
 /*
 
@@ -168,7 +168,7 @@ div.data {
         grid-template-columns: repeat(var(--columns), minmax(min-content, max-content));
     }
     // Collapse columns on small screens
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         &.collapse {
             display: block;
 

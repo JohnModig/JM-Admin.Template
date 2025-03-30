@@ -30,24 +30,21 @@
 
 
 // Breakpoints
-@import "../includes/breakpoints";
+@use "../includes/breakpoints";
 
 $TopVisible: calc(-100% - 10px);
 
 [data-tooltip] {
     position: relative;
     cursor: pointer;
-
     // Better positioning for inline elements
     &:is(span,dfn,abbr,del,em,strong) {
         display: inline-block;
     }
-
     // Override browser font style
-    &:is(dfn){
+    &:is(dfn) {
         font-style: inherit;
     }
-
     // Tooltip box
     &:after {
         position: absolute;
@@ -149,7 +146,7 @@ $TopVisible: calc(-100% - 10px);
         width: 200px;
     }
 
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         &[data-tooltip-options~="left-for-small"] {
             &:after {
                 left: 0;

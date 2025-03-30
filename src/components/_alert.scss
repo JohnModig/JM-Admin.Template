@@ -17,70 +17,70 @@
 \*---------------------------------------------------------------------------*/
 
 // Colors
-@import "../includes/colors";
+@use "../includes/colors";
 
 .alert {
 
     &.success {
-        color: darken($color-success, 3);
-        background-color: change-color($color-success, $alpha: 0.10);
-        border-color: change-color(darken($color-success, 4), $alpha: 0.5);
+        color: #{darken(colors.$color-success, 3)};
+        background-color: #{change-color(colors.$color-success, $alpha: 0.10)};
+        border-color: #{change-color(darken(colors.$color-success, 4), $alpha: 0.5)};
         // Colors for certain elements
         header {
-            background-color: change-color($color-success, $alpha: 0.15);
+            background-color: #{change-color(colors.$color-success, $alpha: 0.15)};
         }
         // Links
         &:is(a) {
             &:hover, &:focus {
-                background-color: $color-success;
+                background-color: #{colors.$color-success};
                 color: white;
             }
         }
     }
 
     &.error {
-        color: darken($color-error, 3);
-        background-color: change-color($color-error, $alpha: 0.10);
-        border-color: change-color(darken($color-error, 2), $alpha: 0.5);
+        color: #{darken(colors.$color-error, 3)};
+        background-color: #{change-color(colors.$color-error, $alpha: 0.10)};
+        border-color: #{change-color(darken(colors.$color-error, 2), $alpha: 0.5)};
         // Colors for certain elements
         header {
-            background-color: change-color($color-error, $alpha: 0.15);
-            border-bottom-color: change-color(darken($color-warning, 2), $alpha: 0.3);
+            background-color: #{change-color(colors.$color-error, $alpha: 0.15)};
+            border-bottom-color: #{change-color(darken(colors.$color-warning, 2), $alpha: 0.3)};
         }
         // Links
         &:is(a) {
             &:hover, &:focus {
-                background-color: $color-error;
+                background-color: #{colors.$color-error};
                 color: white;
             }
         }
     }
 
     &.warning {
-        color: darken($color-warning, 13);
-        background-color: change-color($color-warning, $alpha: 0.15);
-        border-color: change-color(darken($color-warning, 8), $alpha: 0.5);
+        color: #{darken(colors.$color-warning, 13)};
+        background-color: #{change-color(colors.$color-warning, $alpha: 0.15)};
+        border-color: #{change-color(darken(colors.$color-warning, 8), $alpha: 0.5)};
         // Colors for certain elements
         header {
-            background-color: change-color($color-warning, $alpha: 0.20);
-            border-bottom-color: change-color(darken($color-warning, 8), $alpha: 0.3);
+            background-color: #{change-color(colors.$color-warning, $alpha: 0.20)};
+            border-bottom-color: #{change-color(darken(colors.$color-warning, 8), $alpha: 0.3)};
         }
         // Links
         &:is(a) {
             &:hover, &:focus {
-                background-color: $color-warning;
+                background-color: #{colors.$color-warning};
                 color: white;
             }
         }
     }
 
     &.info {
-        color: darken($color-info, 3);
-        background-color: change-color($color-info, $alpha: 0.10);
-        border-color: change-color(darken($color-info, 2), $alpha: 0.5);
+        color: #{darken(colors.$color-info, 3)};
+        background-color: #{change-color(colors.$color-info, $alpha: 0.10)};
+        border-color: #{change-color(darken(colors.$color-info, 2), $alpha: 0.5)};
         // Colors for certain elements
         header {
-            background-color: change-color($color-info, $alpha: 0.15);
+            background-color: #{change-color(colors.$color-info, $alpha: 0.15)};
         }
         // Initially, links have a similar color (blue) as the info text. So it's hard to see that they are links if they are inside an info alert element. Set another color to prevent this.
         a:not(.close[class^="icon-"]:empty, .close[class*=" icon-"]:empty) {
@@ -89,7 +89,7 @@
         // Links
         &:is(a) {
             &:hover, &:focus {
-                background-color: $color-info;
+                background-color: #{colors.$color-info};
                 color: white;
             }
         }

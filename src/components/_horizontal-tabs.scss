@@ -28,7 +28,7 @@
 
 
 // Breakpoints
-@import "../includes/breakpoints";
+@use "../includes/breakpoints";
 
 html, body {
     overflow-x: hidden;
@@ -86,7 +86,7 @@ html, body {
             vertical-align: bottom;
             scroll-snap-align: start;
 
-            @include for-phone-only {
+            @include breakpoints.for-phone-only {
                 font-size: .8125rem;
             }
         }

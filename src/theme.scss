@@ -8,22 +8,81 @@
 
 \*---------------------------------------------------------------------------*/
 
+/*-----------------------
+    Includes
+-----------------------*/
+
 // Breakpoints
-@import "includes/breakpoints";
+@use "includes/breakpoints";
 
 // Icon font
-@import "includes/icons";
+@use "includes/icons";
 
 // Colors
-@import "includes/colors";
+@use "includes/colors";
+
+// Content section
+@use "includes/content-section";
+
+// Align
+@use "includes/align";
+
+// Details
+@use "includes/details";
+
+// Forms
+@use "includes/forms";
+
+// Loader
+@use "includes/loader";
+
+// Data table
+@use "includes/data-table";
+
+// Breakpoints visibility
+@use "includes/breakpoints-visibility";
+
+// Top header
+@use "includes/top-header";
+
+/*-----------------------
+    Components
+-----------------------*/
+
+// Horizontal tabs
+@use "components/horizontal-tabs";
+
+// Badge
+@use "components/badge";
+
+// Tag
+@use "components/tag";
+
+// Side navigation
+@use "components/side-navigation";
+
+// Overlay labels
+@use "components/overlay-labels";
+
+// Vertical labels
+@use "components/vertical-labels";
+
+// Horizontal labels
+@use "components/horizontal-labels";
+
+// Flex grid
+@use "components/flex-grid";
+
+// Alert
+@use "components/alert";
 
 // Global variables
 
 :root {
     // Colors
-    --color-text: $color-text;
-    --color-text-light: adjust-color($color-text, $lightness: 19, $saturation: -10);
-    --color-text-semi-transparent: change-color($color-text, $alpha: 0.65);
+    --color-text: #{colors.$color-text};
+    --color-text-light: #{adjust-color(colors.$color-text, $lightness: 19%, $saturation: -10%)};
+    --color-text-semi-transparent: #{change-color(colors.$color-text, $alpha: 0.65%)};
     --color-link: #0969da;
     --color-link-background-hover: rgba(208, 215, 222, 0.32);
     --color-tag-background: #ddf4ff;
@@ -34,10 +93,10 @@
     --color-top-header-link-foreground-hover: var(--color-text);
     --color-scrollbar-foreground: rgba(0,0,0,0.15);
     --color-scrollbar-background: transparent;
-    --color-success: $color-success;
-    --color-error: $color-error;
-    --color-info: $color-info;
-    --color-warning: $color-warning;
+    --color-success: #{colors.$color-success};
+    --color-error: #{colors.$color-error};
+    --color-info: #{colors.$color-info};
+    --color-warning: #{colors.$color-warning};
     // Borders
     --border-light: 1px solid rgba(27, 31, 36, 0.15);
     --border-medium: 1px solid rgba(27, 31, 36, 0.3);
@@ -60,7 +119,7 @@
     // Sizes
     --size-container-max-width: 1300px;
 
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         --padding-container-horizontal: 10px;
         --padding-container-vertical: 10px;
     }
@@ -316,31 +375,6 @@ img {
     }
 }
 
-// Content section
-@import "includes/content-section";
-
-// Align
-@import "includes/align";
-
-// Details
-@import "includes/details";
-
-// Forms
-@import "includes/forms";
-
-// Loader
-@import "includes/loader";
-
-// Data table
-@import "includes/data-table";
-
-// Breakpoints visibility
-@import "includes/breakpoints-visibility";
-
-// Top header
-@import "includes/top-header";
-
-
 // Header (all)
 header {
     // position: relative; - Don't use, it makes overflow-y: hidden
@@ -396,7 +430,7 @@ main {
         }
     }
     // Layout: Header, content, sidebar
-    @include for-tablet-portrait-up {
+    @include breakpoints.for-tablet-portrait-up {
         &.header-content-sidebar {
             // Grid layout
             @include main-grid-layout;
@@ -405,7 +439,7 @@ main {
         }
     }
     // Layout: Header, sidebar, content
-    @include for-tablet-portrait-up {
+    @include breakpoints.for-tablet-portrait-up {
         &.header-sidebar-content {
             // Grid layout
             @include main-grid-layout;
@@ -414,7 +448,7 @@ main {
         }
     }
     // Layout: Sidebar, header, content
-    @include for-tablet-portrait-up {
+    @include breakpoints.for-tablet-portrait-up {
         &.sidebar-header-content {
             // Grid layout
             @include main-grid-layout;
@@ -425,7 +459,7 @@ main {
     }
     // Layout: Header, badges, content, sidebar
     &.header-badges-content-sidebar {
-        @include for-tablet-portrait-up {
+        @include breakpoints.for-tablet-portrait-up {
             // Grid layout
             @include main-grid-layout;
             grid-template-columns: 2fr #{m}inmax(200px, 1fr);
@@ -449,14 +483,14 @@ main {
     }
     // Layout: Navigation, content
     &.navigation-content {
-        @include for-tablet-portrait-up {
+        @include breakpoints.for-tablet-portrait-up {
             // Grid layout
             @include main-grid-layout;
             grid-template-columns: #{m}inmax(max-content, 1fr) 3fr;
             grid-template-areas: "sidebar article";
         }
 
-        @include for-phone-only {
+        @include breakpoints.for-phone-only {
             & > aside {
                 border-bottom: var(--border-light);
                 padding-bottom: var(--margin-paragraph-bottom);
@@ -485,7 +519,7 @@ main {
         border-bottom: var(--border-light);
         padding-bottom: var(--margin-paragraph-bottom);
 
-        @include for-phone-only {
+        @include breakpoints.for-phone-only {
             border-bottom: none;
             padding-bottom: 0;
         }
@@ -497,7 +531,7 @@ main {
         border-bottom: var(--border-light);
         padding-bottom: var(--margin-paragraph-bottom);
 
-        @include for-phone-only {
+        @include breakpoints.for-phone-only {
             border-bottom: none;
             padding-bottom: 0;
         }
@@ -574,6 +608,7 @@ main {
         *:first-child {
             margin-top: 0;
         }
+
         *:last-child {
             margin-bottom: 0;
         }
@@ -608,33 +643,4 @@ body > footer {
     }
 }
 
-/*-----------------------
-    Components
------------------------*/
 
-// Horizontal tabs
-@import "components/horizontal-tabs";
-
-// Badge
-@import "components/badge";
-
-// Tag
-@import "components/tag";
-
-// Side navigation
-@import "components/side-navigation";
-
-// Overlay labels
-@import "components/overlay-labels";
-
-// Vertical labels
-@import "components/vertical-labels";
-
-// Horizontal labels
-@import "components/horizontal-labels";
-
-// Flex grid
-@import "components/flex-grid";
-
-// Alert
-@import "components/alert";

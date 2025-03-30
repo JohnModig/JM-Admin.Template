@@ -1,15 +1,6 @@
 ﻿@charset "UTF-8";
 /*---------------------------------------------------------------------------*\
 
-    JM Admin
-
-    Admin template for web apps.
-
-    https://github.com/JohnModig/JM-Admin.Template
-
-\*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
-
     Breakpoints
 
     Mandatory code to be included in the main scss file.
@@ -349,272 +340,6 @@
     and making variants of the colors.
 
 \*---------------------------------------------------------------------------*/
-:root {
-  --color-text: $color-text;
-  --color-text-light: adjust-color($color-text, $lightness: 19, $saturation: -10);
-  --color-text-semi-transparent: change-color($color-text, $alpha: 0.65);
-  --color-link: #0969da;
-  --color-link-background-hover: rgba(208, 215, 222, 0.32);
-  --color-tag-background: #ddf4ff;
-  --color-header-background: #f6f8fa;
-  --color-top-header-background: var(--color-header-background);
-  --color-top-header-foreground: var(--color-text);
-  --color-top-header-link-background-hover: var(--color-link-background-hover);
-  --color-top-header-link-foreground-hover: var(--color-text);
-  --color-scrollbar-foreground: rgba(0,0,0,0.15);
-  --color-scrollbar-background: transparent;
-  --color-success: $color-success;
-  --color-error: $color-error;
-  --color-info: $color-info;
-  --color-warning: $color-warning;
-  --border-light: 1px solid rgba(27, 31, 36, 0.15);
-  --border-medium: 1px solid rgba(27, 31, 36, 0.3);
-  --border-solid: 2px solid #d0d7de;
-  --border-radius-button: 6px;
-  --font-monospace: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
-  --font-body: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
-  --padding-container-horizontal: 22px;
-  --padding-container-vertical: 15px;
-  --padding-buttons: .4375rem;
-  --grid-gap: 10px;
-  --margin-paragraph-bottom: 1.125rem;
-  --outline-buttons: 2px solid var(--color-link);
-  --box-shadow-light: 0 1px 2px rgba(0,0,0,0.06);
-  --box-shadow-medium: 0 1px 5px rgba(0,0,0,0.12);
-  --size-container-max-width: 1300px;
-}
-@media screen and (max-width: 599px) {
-  :root {
-    --padding-container-horizontal: 10px;
-    --padding-container-vertical: 10px;
-  }
-}
-
-body {
-  position: relative;
-  background-color: white;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  color: var(--color-text);
-  font-family: var(--font-body);
-  display: flex;
-  flex-direction: column;
-  -webkit-text-size-adjust: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
-}
-
-h1, h2, h3, h4, h5 {
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-p, ul, ol {
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.3;
-  margin: 0 0 var(--margin-paragraph-bottom) 0;
-}
-
-h1 {
-  font-size: 1.375rem;
-  margin: 0 0 var(--margin-paragraph-bottom) 0;
-}
-
-h2 {
-  font-size: 1.25rem;
-  margin: 0 0 var(--margin-paragraph-bottom) 0;
-}
-
-h3 {
-  font-size: 1.125rem;
-  margin: 0 0 var(--margin-paragraph-bottom) 0;
-}
-
-h4 {
-  font-size: 1rem;
-  margin: 0 0 var(--margin-paragraph-bottom) 0;
-}
-
-h5 {
-  font-size: 0.875rem;
-  margin: 0 0 var(--margin-paragraph-bottom) 0;
-}
-
-sup, sub {
-  font-size: max(0.6em, 10px);
-}
-
-ul, ol {
-  padding: 0 0 0 1.5em;
-  margin: 0 0 var(--margin-paragraph-bottom) 0;
-}
-ul > li:not(:last-child), ol > li:not(:last-child) {
-  margin-bottom: var(--margin-paragraph-bottom);
-}
-
-p.comment {
-  font-size: 0.75rem;
-  color: var(--color-text-light);
-}
-
-strong {
-  font-weight: 600;
-}
-
-span.comment {
-  font-size: max(0.75em, 0.75rem);
-  font-weight: 400;
-  filter: brightness(2);
-}
-
-:is(h1, h2, h3, h4, h5) strong {
-  font-weight: 700;
-}
-:is(h1, h2, h3, h4, h5) sup {
-  display: inline-block;
-  vertical-align: top;
-  color: var(--color-text-light);
-  line-height: 1;
-  padding: calc(var(--padding-buttons) / 2) var(--padding-buttons);
-  border: var(--border-light);
-  border-radius: calc(var(--padding-buttons) / 2 + 0.5em);
-  margin-left: 0.25em;
-}
-:is(h1, h2, h3, h4, h5) sup:first-child {
-  margin-left: 0;
-}
-
-code {
-  font-family: var(--font-monospace) !important;
-  font-weight: normal;
-  font-size: max(0.9286em, 11px) !important;
-  display: inline-block;
-  vertical-align: middle;
-  background-color: var(--color-link-background-hover) !important;
-  color: var(--color-text);
-  margin: -1px 0;
-  padding: 1px 0.25em !important;
-  white-space: pre !important;
-  border-radius: 2px !important;
-  overflow-y: auto;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-article > code {
-  display: block;
-  font-size: 0.8125rem !important;
-  line-height: 1.3 !important;
-  padding: var(--padding-buttons) !important;
-  border-radius: var(--border-radius-button) !important;
-  margin: 0 0 var(--margin-paragraph-bottom) 0;
-}
-
-hr {
-  height: 1px;
-  overflow: hidden;
-  margin: var(--margin-paragraph-bottom) 0 var(--margin-paragraph-bottom) 0;
-  padding: 0;
-  border: none;
-  border-bottom: var(--border-light);
-}
-
-.small {
-  font-size: 0.75rem;
-}
-
-.light {
-  color: var(--color-text-light);
-}
-
-.thin {
-  font-weight: 100;
-}
-
-.normal {
-  font-weight: 400;
-}
-
-.strong {
-  font-weight: 600;
-}
-
-.no-margin-bottom {
-  margin-bottom: 0 !important;
-}
-
-.semi-transparent {
-  opacity: 0.5;
-}
-
-.readability-width {
-  max-width: 60ch !important;
-}
-
-a {
-  color: var(--color-link);
-  text-decoration: none;
-}
-a:hover, a:focus {
-  text-decoration: underline;
-}
-a:focus-visible {
-  outline: var(--outline-buttons);
-}
-
-:is(h1, h2, h3, h4, h5) a {
-  color: inherit;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
-:is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label)[class^=icon-]:before, :is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label)[class*=" icon-"]:before {
-  font-size: 1.1428em;
-  display: inline-block;
-  vertical-align: baseline;
-  color: inherit;
-  opacity: 0.8;
-}
-:is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label)[class^=icon-]:not(:empty):before, :is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label)[class*=" icon-"]:not(:empty):before {
-  margin-right: 0.375em;
-}
-
-a:where([class^="icon-"], &[class*=" icon-"]):empty {
-  text-decoration: none;
-  color: inherit;
-}
-a:where([class^="icon-"], &[class*=" icon-"]):empty:hover, a:where([class^="icon-"], &[class*=" icon-"]):empty:focus {
-  text-decoration: none;
-  color: var(--color-link);
-}
-
-:is(sub, sup)[class^=icon-]:not(:empty):before, :is(sub, sup)[class*=" icon-"]:not(:empty):before {
-  margin-right: 0.25em;
-}
-
-img {
-  max-width: 100%;
-}
-img.round {
-  border-radius: 50%;
-}
-img.centered {
-  display: block;
-  margin: 0 auto var(--margin-paragraph-bottom) auto !important;
-}
-
 /*---------------------------------------------------------------------------*\
 
     Content section
@@ -1363,7 +1088,7 @@ section.content.dark button.transparent, section.content.dark input[type=submit]
   border-bottom-color: var(--color-link);
   border-radius: 50%;
   animation: loading-rotation 1s linear infinite;
-  margin: 0 0 0 0.5em;
+  margin: 0 0.5em 0 0.5em;
 }
 .loading:after:is(article, aside, section, div, form) {
   display: block;
@@ -1388,16 +1113,6 @@ section.content.dark button.transparent, section.content.dark input[type=submit]
     Mandatory code to be included in the main scss file.
 
     Display sets of data across rows and columns.
-
-\*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
-
-    Breakpoints
-
-    Mandatory code to be included in the main scss file.
-
-    Handles the breakpoints as SASS mixins. Influenced by David Gilbertson: 
-    https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
 
 \*---------------------------------------------------------------------------*/
 /*
@@ -1642,16 +1357,6 @@ section.content.dark div.data div.item:hover > * {
     all breakpoints in the theme.
 
 \*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
-
-    Breakpoints
-
-    Mandatory code to be included in the main scss file.
-
-    Handles the breakpoints as SASS mixins. Influenced by David Gilbertson: 
-    https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
-
-\*---------------------------------------------------------------------------*/
 @media screen and (min-width: 600px) {
   .show-for-phone-only {
     display: none !important;
@@ -1770,16 +1475,6 @@ section.content.dark div.data div.item:hover > * {
     usually contains logotype and important links, e.g. user profile.
 
 \*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
-
-    Breakpoints
-
-    Mandatory code to be included in the main scss file.
-
-    Handles the breakpoints as SASS mixins. Influenced by David Gilbertson: 
-    https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
-
-\*---------------------------------------------------------------------------*/
 body > header {
   position: static;
   padding: var(--padding-container-vertical) var(--padding-container-horizontal);
@@ -1848,258 +1543,6 @@ body > header:has(> div.horizontal-tabs:last-child) {
   padding-bottom: 0;
 }
 
-header {
-  background-color: var(--color-header-background);
-  border-bottom: var(--border-light);
-  font-size: 0.875rem;
-  margin: 0;
-}
-
-main header > *, dialog header > * {
-  margin-bottom: 0;
-}
-main header a, dialog header a {
-  color: inherit;
-}
-
-main {
-  padding: var(--padding-container-vertical) var(--padding-container-horizontal);
-  width: 100%;
-  box-sizing: border-box;
-  max-width: var(--size-container-max-width);
-  margin: 0 auto;
-  display: block;
-  flex: 1 0 auto;
-  align-content: flex-start;
-}
-main > * + * {
-  margin-top: var(--margin-paragraph-bottom);
-}
-main > *.no-margin-bottom + * {
-  margin-top: 0;
-}
-@media screen and (min-width: 600px) {
-  main.header-content-sidebar {
-    display: grid;
-    grid-column-gap: var(--padding-container-horizontal);
-    grid-row-gap: var(--margin-paragraph-bottom);
-    grid-template-columns: 2fr minmax(200px, 1fr);
-    grid-template-areas: "header header" "article sidebar";
-  }
-  main.header-content-sidebar > * + * {
-    margin-top: 0;
-  }
-  main.header-content-sidebar > * {
-    margin: 0;
-  }
-}
-@media screen and (min-width: 600px) {
-  main.header-sidebar-content {
-    display: grid;
-    grid-column-gap: var(--padding-container-horizontal);
-    grid-row-gap: var(--margin-paragraph-bottom);
-    grid-template-columns: minmax(200px, 1fr) 2fr;
-    grid-template-areas: "header header" "sidebar article";
-  }
-  main.header-sidebar-content > * + * {
-    margin-top: 0;
-  }
-  main.header-sidebar-content > * {
-    margin: 0;
-  }
-}
-@media screen and (min-width: 600px) {
-  main.sidebar-header-content {
-    display: grid;
-    grid-column-gap: var(--padding-container-horizontal);
-    grid-row-gap: var(--margin-paragraph-bottom);
-    grid-template-columns: minmax(200px, 1fr) 3fr;
-    grid-template-areas: "sidebar header" "sidebar article";
-    grid-template-rows: auto 1fr;
-  }
-  main.sidebar-header-content > * + * {
-    margin-top: 0;
-  }
-  main.sidebar-header-content > * {
-    margin: 0;
-  }
-}
-@media screen and (min-width: 600px) {
-  main.header-badges-content-sidebar {
-    display: grid;
-    grid-column-gap: var(--padding-container-horizontal);
-    grid-row-gap: var(--margin-paragraph-bottom);
-    grid-template-columns: 2fr minmax(200px, 1fr);
-    grid-template-areas: "header badges" "article sidebar";
-  }
-  main.header-badges-content-sidebar > * + * {
-    margin-top: 0;
-  }
-  main.header-badges-content-sidebar > * {
-    margin: 0;
-  }
-  main.header-badges-content-sidebar > section.badges {
-    text-align: right;
-  }
-  main.header-badges-content-sidebar > section.badges:after {
-    content: "";
-    height: 0;
-    overflow: auto;
-    border-bottom: var(--border-light);
-    width: var(--padding-container-horizontal);
-    position: absolute;
-    bottom: -1px;
-    left: calc(1px - var(--padding-container-horizontal) - 1px);
-  }
-}
-@media screen and (min-width: 600px) {
-  main.navigation-content {
-    display: grid;
-    grid-column-gap: var(--padding-container-horizontal);
-    grid-row-gap: var(--margin-paragraph-bottom);
-    grid-template-columns: minmax(max-content, 1fr) 3fr;
-    grid-template-areas: "sidebar article";
-  }
-  main.navigation-content > * + * {
-    margin-top: 0;
-  }
-  main.navigation-content > * {
-    margin: 0;
-  }
-}
-@media screen and (max-width: 599px) {
-  main.navigation-content > aside {
-    border-bottom: var(--border-light);
-    padding-bottom: var(--margin-paragraph-bottom);
-  }
-}
-main.centered-content {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-}
-main.centered-content *:first-child {
-  margin-top: 0;
-}
-main.centered-content *:last-child {
-  margin-bottom: 0;
-}
-main > section.header {
-  grid-area: header;
-  border-bottom: var(--border-light);
-  padding-bottom: var(--margin-paragraph-bottom);
-}
-@media screen and (max-width: 599px) {
-  main > section.header {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-}
-main > section.badges {
-  grid-area: badges;
-  position: relative;
-  border-bottom: var(--border-light);
-  padding-bottom: var(--margin-paragraph-bottom);
-}
-@media screen and (max-width: 599px) {
-  main > section.badges {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-}
-main article {
-  grid-area: article;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-main aside {
-  grid-area: sidebar;
-}
-main aside > nav {
-  padding: 0 8px;
-}
-main aside > nav > a {
-  display: block;
-  position: relative;
-  font-size: 0.875rem;
-  padding: var(--padding-buttons);
-  color: var(--color-text);
-  border-radius: var(--border-radius-button);
-}
-main aside > nav > a:hover, main aside > nav > a:focus {
-  background-color: var(--color-link-background-hover);
-  text-decoration: none;
-}
-main aside > nav > a.current {
-  background-color: var(--color-link-background-hover);
-  font-weight: 600;
-}
-main aside > nav > a.current:after {
-  content: "";
-  display: block;
-  position: absolute;
-  overflow: hidden;
-  left: -8px;
-  top: 3px;
-  bottom: 3px;
-  width: 4px;
-  background-color: var(--color-link);
-  border-radius: 2px;
-}
-main aside > nav > h5 {
-  font-size: 0.75rem;
-  color: var(--color-text-light);
-  padding: var(--padding-buttons);
-  margin: 0;
-}
-main aside > nav > hr {
-  height: calc(var(--padding-buttons) * 2);
-  line-height: calc(var(--padding-buttons) * 2);
-  font-size: calc(var(--padding-buttons) * 2);
-  margin: 0 -8px calc(var(--padding-buttons) * 2) -8px;
-}
-main section {
-  margin: 0 0 var(--margin-paragraph-bottom) 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-main article *:first-child, main aside *:first-child, main section *:first-child {
-  margin-top: 0;
-}
-main article *:last-child, main aside *:last-child, main section *:last-child {
-  margin-bottom: 0;
-}
-
-body > footer {
-  padding: calc(var(--padding-container-vertical) * 3) var(--padding-container-horizontal) var(--padding-container-vertical) var(--padding-container-horizontal);
-  display: flex;
-  gap: var(--padding-container-horizontal);
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--color-text-light);
-}
-body > footer > * {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 1ch;
-}
-body > footer a {
-  color: var(--color-text-light);
-}
-body > footer a:hover, body > footer a:focus {
-  color: var(--color-link);
-}
-
-/*-----------------------
-    Components
------------------------*/
 /*---------------------------------------------------------------------------*\
 
     Horizontal tabs
@@ -2125,16 +1568,6 @@ body > footer a:hover, body > footer a:focus {
 
     Influenced by Material Design and Adam Argyle:
     https://web.dev/building-a-tabs-component/
-
-\*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
-
-    Breakpoints
-
-    Mandatory code to be included in the main scss file.
-
-    Handles the breakpoints as SASS mixins. Influenced by David Gilbertson: 
-    https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
 
 \*---------------------------------------------------------------------------*/
 html, body {
@@ -2324,7 +1757,7 @@ span.badge > label, a.badge > label, details.badge summary > label {
   font-size: inherit;
   line-height: inherit;
   background-color: white;
-  margin: calc(1px - var(--padding-buttons) - 1px) 0 calc(1px - var(--padding-buttons) - 1px) 0;
+  margin: calc(1px - var(--padding-buttons) - 1px) 0 calc(1px - var(--padding-buttons) - 1px) 0 !important;
   padding: var(--padding-buttons);
   vertical-align: text-bottom;
   border-right: var(--border-light);
@@ -2519,16 +1952,6 @@ section.badges[class^=icon-]:before, section.badges[class*=" icon-"]:before {
 
     CSS only, no Javascript. Opening/closing works with keyboard, mouse and 
     touch.
-
-\*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
-
-    Breakpoints
-
-    Mandatory code to be included in the main scss file.
-
-    Handles the breakpoints as SASS mixins. Influenced by David Gilbertson: 
-    https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
 
 \*---------------------------------------------------------------------------*/
 #side-navigation {
@@ -2835,16 +2258,6 @@ header label[for=side-navigation] + a {
       (https://v1.tailwindcss.com/components/forms).
 
 \*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
-
-    Breakpoints
-
-    Mandatory code to be included in the main scss file.
-
-    Handles the breakpoints as SASS mixins. Influenced by David Gilbertson: 
-    https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
-
-\*---------------------------------------------------------------------------*/
 .vertical-label {
   margin: 0 0 var(--margin-paragraph-bottom) 0;
   font-size: 0.875rem;
@@ -2872,16 +2285,6 @@ section.content.dark.vertical-label label[for], section.content.dark .vertical-l
 
     - Influenced by Tailwind CSS inline form:  
       (https://v1.tailwindcss.com/components/forms).
-
-\*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
-
-    Breakpoints
-
-    Mandatory code to be included in the main scss file.
-
-    Handles the breakpoints as SASS mixins. Influenced by David Gilbertson: 
-    https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
 
 \*---------------------------------------------------------------------------*/
 .horizontal-label {
@@ -3013,16 +2416,6 @@ section.content.dark.horizontal-label > label, section.content.dark .horizontal-
     - Closing function (removes the element).
 
 \*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
-
-    Colors
-
-    Mandatory code to be included in the main scss file.
-
-    SASS variables of colors used in the app. These are use for manipulating 
-    and making variants of the colors.
-
-\*---------------------------------------------------------------------------*/
 .alert.success {
   color: #1c7c37;
   background-color: rgba(31, 136, 61, 0.1);
@@ -3079,4 +2472,534 @@ section.content.dark.horizontal-label > label, section.content.dark .horizontal-
 .alert.fade-out {
   transition: opacity 0.4s ease-in;
   opacity: 0;
+}
+
+/*---------------------------------------------------------------------------*\
+
+    JM Admin
+
+    Admin template for web apps.
+
+    https://github.com/JohnModig/JM-Admin.Template
+
+\*---------------------------------------------------------------------------*/
+/*-----------------------
+    Includes
+-----------------------*/
+/*-----------------------
+    Components
+-----------------------*/
+:root {
+  --color-text: #24292f;
+  --color-text-light: #575a5d;
+  --color-text-semi-transparent: rgba(36, 41, 47, 0.65);
+  --color-link: #0969da;
+  --color-link-background-hover: rgba(208, 215, 222, 0.32);
+  --color-tag-background: #ddf4ff;
+  --color-header-background: #f6f8fa;
+  --color-top-header-background: var(--color-header-background);
+  --color-top-header-foreground: var(--color-text);
+  --color-top-header-link-background-hover: var(--color-link-background-hover);
+  --color-top-header-link-foreground-hover: var(--color-text);
+  --color-scrollbar-foreground: rgba(0,0,0,0.15);
+  --color-scrollbar-background: transparent;
+  --color-success: #1f883d;
+  --color-error: #b01030;
+  --color-info: #0969da;
+  --color-warning: #da7f09;
+  --border-light: 1px solid rgba(27, 31, 36, 0.15);
+  --border-medium: 1px solid rgba(27, 31, 36, 0.3);
+  --border-solid: 2px solid #d0d7de;
+  --border-radius-button: 6px;
+  --font-monospace: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  --font-body: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+  --padding-container-horizontal: 22px;
+  --padding-container-vertical: 15px;
+  --padding-buttons: .4375rem;
+  --grid-gap: 10px;
+  --margin-paragraph-bottom: 1.125rem;
+  --outline-buttons: 2px solid var(--color-link);
+  --box-shadow-light: 0 1px 2px rgba(0,0,0,0.06);
+  --box-shadow-medium: 0 1px 5px rgba(0,0,0,0.12);
+  --size-container-max-width: 1300px;
+}
+@media screen and (max-width: 599px) {
+  :root {
+    --padding-container-horizontal: 10px;
+    --padding-container-vertical: 10px;
+  }
+}
+
+body {
+  position: relative;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p, ul, ol {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+
+h1 {
+  font-size: 1.375rem;
+  margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+
+h3 {
+  font-size: 1.125rem;
+  margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+
+h4 {
+  font-size: 1rem;
+  margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+
+h5 {
+  font-size: 0.875rem;
+  margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+
+sup, sub {
+  font-size: max(0.6em, 10px);
+}
+
+ul, ol {
+  padding: 0 0 0 1.5em;
+  margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+ul > li:not(:last-child), ol > li:not(:last-child) {
+  margin-bottom: var(--margin-paragraph-bottom);
+}
+
+p.comment {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+strong {
+  font-weight: 600;
+}
+
+span.comment {
+  font-size: max(0.75em, 0.75rem);
+  font-weight: 400;
+  filter: brightness(2);
+}
+
+:is(h1, h2, h3, h4, h5) strong {
+  font-weight: 700;
+}
+:is(h1, h2, h3, h4, h5) sup {
+  display: inline-block;
+  vertical-align: top;
+  color: var(--color-text-light);
+  line-height: 1;
+  padding: calc(var(--padding-buttons) / 2) var(--padding-buttons);
+  border: var(--border-light);
+  border-radius: calc(var(--padding-buttons) / 2 + 0.5em);
+  margin-left: 0.25em;
+}
+:is(h1, h2, h3, h4, h5) sup:first-child {
+  margin-left: 0;
+}
+
+code {
+  font-family: var(--font-monospace) !important;
+  font-weight: normal;
+  font-size: max(0.9286em, 11px) !important;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: var(--color-link-background-hover) !important;
+  color: var(--color-text);
+  margin: -1px 0;
+  padding: 1px 0.25em !important;
+  white-space: pre !important;
+  border-radius: 2px !important;
+  overflow-y: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+article > code {
+  display: block;
+  font-size: 0.8125rem !important;
+  line-height: 1.3 !important;
+  padding: var(--padding-buttons) !important;
+  border-radius: var(--border-radius-button) !important;
+  margin: 0 0 var(--margin-paragraph-bottom) 0;
+}
+
+hr {
+  height: 1px;
+  overflow: hidden;
+  margin: var(--margin-paragraph-bottom) 0 var(--margin-paragraph-bottom) 0;
+  padding: 0;
+  border: none;
+  border-bottom: var(--border-light);
+}
+
+.small {
+  font-size: 0.75rem;
+}
+
+.light {
+  color: var(--color-text-light);
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.semi-transparent {
+  opacity: 0.5;
+}
+
+.readability-width {
+  max-width: 60ch !important;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+a:focus-visible {
+  outline: var(--outline-buttons);
+}
+
+:is(h1, h2, h3, h4, h5) a {
+  color: inherit;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+:is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label)[class^=icon-]:before, :is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label)[class*=" icon-"]:before {
+  font-size: 1.1428em;
+  display: inline-block;
+  vertical-align: baseline;
+  color: inherit;
+  opacity: 0.8;
+}
+:is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label)[class^=icon-]:not(:empty):before, :is(h1, h2, h3, h4, h5, p, li, a, span, summary, div, section, label)[class*=" icon-"]:not(:empty):before {
+  margin-right: 0.375em;
+}
+
+a:where([class^="icon-"], &[class*=" icon-"]):empty {
+  text-decoration: none;
+  color: inherit;
+}
+a:where([class^="icon-"], &[class*=" icon-"]):empty:hover, a:where([class^="icon-"], &[class*=" icon-"]):empty:focus {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+:is(sub, sup)[class^=icon-]:not(:empty):before, :is(sub, sup)[class*=" icon-"]:not(:empty):before {
+  margin-right: 0.25em;
+}
+
+img {
+  max-width: 100%;
+}
+img.round {
+  border-radius: 50%;
+}
+img.centered {
+  display: block;
+  margin: 0 auto var(--margin-paragraph-bottom) auto !important;
+}
+
+header {
+  background-color: var(--color-header-background);
+  border-bottom: var(--border-light);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+main header > *, dialog header > * {
+  margin-bottom: 0;
+}
+main header a, dialog header a {
+  color: inherit;
+}
+
+main {
+  padding: var(--padding-container-vertical) var(--padding-container-horizontal);
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--size-container-max-width);
+  margin: 0 auto;
+  display: block;
+  flex: 1 0 auto;
+  align-content: flex-start;
+}
+main > * + * {
+  margin-top: var(--margin-paragraph-bottom);
+}
+main > *.no-margin-bottom + * {
+  margin-top: 0;
+}
+@media screen and (min-width: 600px) {
+  main.header-content-sidebar {
+    display: grid;
+    grid-column-gap: var(--padding-container-horizontal);
+    grid-row-gap: var(--margin-paragraph-bottom);
+    grid-template-columns: 2fr minmax(200px, 1fr);
+    grid-template-areas: "header header" "article sidebar";
+  }
+  main.header-content-sidebar > * + * {
+    margin-top: 0;
+  }
+  main.header-content-sidebar > * {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  main.header-sidebar-content {
+    display: grid;
+    grid-column-gap: var(--padding-container-horizontal);
+    grid-row-gap: var(--margin-paragraph-bottom);
+    grid-template-columns: minmax(200px, 1fr) 2fr;
+    grid-template-areas: "header header" "sidebar article";
+  }
+  main.header-sidebar-content > * + * {
+    margin-top: 0;
+  }
+  main.header-sidebar-content > * {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  main.sidebar-header-content {
+    display: grid;
+    grid-column-gap: var(--padding-container-horizontal);
+    grid-row-gap: var(--margin-paragraph-bottom);
+    grid-template-columns: minmax(200px, 1fr) 3fr;
+    grid-template-areas: "sidebar header" "sidebar article";
+    grid-template-rows: auto 1fr;
+  }
+  main.sidebar-header-content > * + * {
+    margin-top: 0;
+  }
+  main.sidebar-header-content > * {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  main.header-badges-content-sidebar {
+    display: grid;
+    grid-column-gap: var(--padding-container-horizontal);
+    grid-row-gap: var(--margin-paragraph-bottom);
+    grid-template-columns: 2fr minmax(200px, 1fr);
+    grid-template-areas: "header badges" "article sidebar";
+  }
+  main.header-badges-content-sidebar > * + * {
+    margin-top: 0;
+  }
+  main.header-badges-content-sidebar > * {
+    margin: 0;
+  }
+  main.header-badges-content-sidebar > section.badges {
+    text-align: right;
+  }
+  main.header-badges-content-sidebar > section.badges:after {
+    content: "";
+    height: 0;
+    overflow: auto;
+    border-bottom: var(--border-light);
+    width: var(--padding-container-horizontal);
+    position: absolute;
+    bottom: -1px;
+    left: calc(1px - var(--padding-container-horizontal) - 1px);
+  }
+}
+@media screen and (min-width: 600px) {
+  main.navigation-content {
+    display: grid;
+    grid-column-gap: var(--padding-container-horizontal);
+    grid-row-gap: var(--margin-paragraph-bottom);
+    grid-template-columns: minmax(max-content, 1fr) 3fr;
+    grid-template-areas: "sidebar article";
+  }
+  main.navigation-content > * + * {
+    margin-top: 0;
+  }
+  main.navigation-content > * {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 599px) {
+  main.navigation-content > aside {
+    border-bottom: var(--border-light);
+    padding-bottom: var(--margin-paragraph-bottom);
+  }
+}
+main.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+main.centered-content *:first-child {
+  margin-top: 0;
+}
+main.centered-content *:last-child {
+  margin-bottom: 0;
+}
+main > section.header {
+  grid-area: header;
+  border-bottom: var(--border-light);
+  padding-bottom: var(--margin-paragraph-bottom);
+}
+@media screen and (max-width: 599px) {
+  main > section.header {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+main > section.badges {
+  grid-area: badges;
+  position: relative;
+  border-bottom: var(--border-light);
+  padding-bottom: var(--margin-paragraph-bottom);
+}
+@media screen and (max-width: 599px) {
+  main > section.badges {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+main article {
+  grid-area: article;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+main aside {
+  grid-area: sidebar;
+}
+main aside > nav {
+  padding: 0 8px;
+}
+main aside > nav > a {
+  display: block;
+  position: relative;
+  font-size: 0.875rem;
+  padding: var(--padding-buttons);
+  color: var(--color-text);
+  border-radius: var(--border-radius-button);
+}
+main aside > nav > a:hover, main aside > nav > a:focus {
+  background-color: var(--color-link-background-hover);
+  text-decoration: none;
+}
+main aside > nav > a.current {
+  background-color: var(--color-link-background-hover);
+  font-weight: 600;
+}
+main aside > nav > a.current:after {
+  content: "";
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  left: -8px;
+  top: 3px;
+  bottom: 3px;
+  width: 4px;
+  background-color: var(--color-link);
+  border-radius: 2px;
+}
+main aside > nav > h5 {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  padding: var(--padding-buttons);
+  margin: 0;
+}
+main aside > nav > hr {
+  height: calc(var(--padding-buttons) * 2);
+  line-height: calc(var(--padding-buttons) * 2);
+  font-size: calc(var(--padding-buttons) * 2);
+  margin: 0 -8px calc(var(--padding-buttons) * 2) -8px;
+}
+main section {
+  margin: 0 0 var(--margin-paragraph-bottom) 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+main article *:first-child, main aside *:first-child, main section *:first-child {
+  margin-top: 0;
+}
+main article *:last-child, main aside *:last-child, main section *:last-child {
+  margin-bottom: 0;
+}
+
+body > footer {
+  padding: calc(var(--padding-container-vertical) * 3) var(--padding-container-horizontal) var(--padding-container-vertical) var(--padding-container-horizontal);
+  display: flex;
+  gap: var(--padding-container-horizontal);
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-text-light);
+}
+body > footer > * {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 1ch;
+}
+body > footer a {
+  color: var(--color-text-light);
+}
+body > footer a:hover, body > footer a:focus {
+  color: var(--color-link);
 }

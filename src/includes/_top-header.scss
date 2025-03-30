@@ -10,7 +10,7 @@
 \*---------------------------------------------------------------------------*/
 
 // Breakpoints
-@import "../includes/breakpoints";
+@use "../includes/breakpoints";
 
 // Top header
 body > header {
@@ -62,7 +62,7 @@ body > header {
                 }
             }
 
-            @include for-phone-only {
+            @include breakpoints.for-phone-only {
                 span:first-of-type {
                     display: block;
                     height: 0;

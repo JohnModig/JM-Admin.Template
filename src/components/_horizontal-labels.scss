@@ -12,7 +12,7 @@
 \*---------------------------------------------------------------------------*/
 
 // Breakpoints
-@import "../includes/breakpoints";
+@use "../includes/breakpoints";
 
 .horizontal-label {
     display: grid;
@@ -53,7 +53,7 @@
         grid-column: 2;
     }
 
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
         &.collapse {
             display: block;
 

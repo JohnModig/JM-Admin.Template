@@ -1,10 +1,5 @@
-﻿/*---------------------------------------------------------------------------*    
-    Data table bulk actions (add-on)
+﻿/*---------------------------------------------------------------------------*\
 
-    Extended functionality to component: Data table
-
-\*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*    
     Breakpoints
 
     Mandatory code to be included in the main scss file.
@@ -13,63 +8,94 @@
     https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
 
 \*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+
+    Data table bulk actions (add-on)
+
+    Extended functionality to component: Data table
+
+\*---------------------------------------------------------------------------*/
 section.bulk-actions {
   padding-left: var(--padding-buttons);
   border-left: 1px solid transparent;
-  font-size: .875rem; }
-  section.bulk-actions input[type=checkbox].partly:checked {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' width='24' height='24' fill='%2324292f'><rect fill='%2324292f' x='230' y='-530' width='500' height='100' /></svg>"); }
-  section.bulk-actions.hidden {
-    display: none !important; }
-    section.bulk-actions.hidden + div.data > div.item > div:first-child, section.bulk-actions.hidden + form > div.data > div.item > div:first-child {
-      padding: 0 !important; }
-      section.bulk-actions.hidden + div.data > div.item > div:first-child input[type=checkbox], section.bulk-actions.hidden + form > div.data > div.item > div:first-child input[type=checkbox] {
-        display: none; }
-  section.bulk-actions:not(.hidden) + div.data > header, section.bulk-actions:not(.hidden) + form > div.data > header {
-    padding-left: calc(var(--padding-buttons) * 3 + 1.1rem); }
-  @media screen and (max-width: 599px) {
-    section.bulk-actions:not(.hidden) + div.data.collapse > header, section.bulk-actions:not(.hidden) + form > div.data.collapse > header {
-      padding-left: var(--padding-buttons); } }
-  section.bulk-actions.align {
-    --column-gap: calc(var(--padding-buttons) * 2); }
-  section.bulk-actions p.hidden, section.bulk-actions details.hidden {
-    display: none; }
+  font-size: 0.875rem;
+}
+section.bulk-actions input[type=checkbox].partly:checked {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' width='24' height='24' fill='%2324292f'><rect fill='%2324292f' x='230' y='-530' width='500' height='100' /></svg>");
+}
+section.bulk-actions.hidden {
+  display: none !important;
+}
+section.bulk-actions.hidden + div.data > div.item > div:first-child, section.bulk-actions.hidden + form > div.data > div.item > div:first-child {
+  padding: 0 !important;
+}
+section.bulk-actions.hidden + div.data > div.item > div:first-child input[type=checkbox], section.bulk-actions.hidden + form > div.data > div.item > div:first-child input[type=checkbox] {
+  display: none;
+}
+section.bulk-actions:not(.hidden) + div.data > header, section.bulk-actions:not(.hidden) + form > div.data > header {
+  padding-left: calc(var(--padding-buttons) * 3 + 1.1rem);
+}
+@media screen and (max-width: 599px) {
+  section.bulk-actions:not(.hidden) + div.data.collapse > header, section.bulk-actions:not(.hidden) + form > div.data.collapse > header {
+    padding-left: var(--padding-buttons);
+  }
+}
+section.bulk-actions.align {
+  --column-gap: calc(var(--padding-buttons) * 2);
+}
+section.bulk-actions p.hidden, section.bulk-actions details.hidden {
+  display: none;
+}
 
 div.data > header.bulk-actions {
   --column-gap: calc(var(--padding-buttons) * 2);
   background-color: transparent;
   padding-top: 0;
   border-radius: 0;
-  border: none; }
-  div.data > header.bulk-actions section {
-    padding: 0 !important;
-    margin: 0 !important; }
-  div.data > header.bulk-actions + div.item > * {
-    border-top: var(--border-light); }
-    div.data > header.bulk-actions + div.item > *:first-child {
-      border-top-left-radius: var(--border-radius-button); }
-    div.data > header.bulk-actions + div.item > *:last-child {
-      border-top-right-radius: var(--border-radius-button); }
-  div.data > header.bulk-actions:has(section.hidden) ~ div.item input[type=checkbox] {
-    display: none; }
-  div.data > header.bulk-actions:has(section.hidden) ~ div.item > *:first-child {
-    padding-right: 0; }
-  div.data > header.bulk-actions:has(section.hidden) ~ div.item > *:nth-child(2) {
-    padding-left: 0; }
+  border: none;
+}
+div.data > header.bulk-actions section {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+div.data > header.bulk-actions + div.item > * {
+  border-top: var(--border-light);
+}
+div.data > header.bulk-actions + div.item > *:first-child {
+  border-top-left-radius: var(--border-radius-button);
+}
+div.data > header.bulk-actions + div.item > *:last-child {
+  border-top-right-radius: var(--border-radius-button);
+}
+div.data > header.bulk-actions:has(section.hidden) ~ div.item input[type=checkbox] {
+  display: none;
+}
+div.data > header.bulk-actions:has(section.hidden) ~ div.item > *:first-child {
+  padding-right: 0;
+}
+div.data > header.bulk-actions:has(section.hidden) ~ div.item > *:nth-child(2) {
+  padding-left: 0;
+}
 
 @media screen and (max-width: 599px) {
   div.data.collapse > header.bulk-actions + div.item.headings + div.item, div.data.collapse > header.bulk-actions + div.item:not(.headings) {
     border-top: var(--border-light);
     border-top-right-radius: var(--border-radius-button);
-    border-top-left-radius: var(--border-radius-button); }
-    div.data.collapse > header.bulk-actions + div.item.headings + div.item > *, div.data.collapse > header.bulk-actions + div.item:not(.headings) > * {
-      border: none;
-      border-radius: 0; }
+    border-top-left-radius: var(--border-radius-button);
+  }
+  div.data.collapse > header.bulk-actions + div.item.headings + div.item > *, div.data.collapse > header.bulk-actions + div.item:not(.headings) > * {
+    border: none;
+    border-radius: 0;
+  }
   div.data.collapse div.item input[type=checkbox] {
-    margin: 0 0 var(--padding-buttons) 0; }
+    margin: 0 0 var(--padding-buttons) 0;
+  }
   div.data.collapse div.item > * {
     border: none;
     border-radius: 0;
-    padding: 0 var(--padding-buttons) !important; }
-  div.data.collapse div.item:has( > details:last-child) > *:nth-child(2) {
-    padding-right: calc(var(--padding-buttons)*2 + 1em) !important; } }
+    padding: 0 var(--padding-buttons) !important;
+  }
+  div.data.collapse div.item:has(> details:last-child) > *:nth-child(2) {
+    padding-right: calc(var(--padding-buttons) * 2 + 1em) !important;
+  }
+}

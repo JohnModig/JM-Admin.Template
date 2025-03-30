@@ -7,14 +7,13 @@
 \*---------------------------------------------------------------------------*/
 
 // Breakpoints
-@import "../includes/breakpoints";
+@use "../includes/breakpoints";
 
 // Bulk actions
 section.bulk-actions {
     padding-left: var(--padding-buttons);
     border-left: 1px solid transparent;
     font-size: .875rem;
-
     // Master checkbox
     input[type=checkbox] {
         // Tri state
@@ -43,7 +42,7 @@ section.bulk-actions {
                 padding-left: calc(var(--padding-buttons) * 3 + 1.1rem);
             }
 
-            @include for-phone-only {
+            @include breakpoints.for-phone-only {
                 &.collapse > header {
                     padding-left: var(--padding-buttons);
                 }
@@ -101,7 +100,7 @@ div.data > header.bulk-actions {
         }
     }
 }
-@include for-phone-only {
+@include breakpoints.for-phone-only {
     div.data.collapse {
 
         & > header.bulk-actions {
