@@ -2385,7 +2385,7 @@ section.content.dark.horizontal-label > label, section.content.dark .horizontal-
 }
 .flex-grid > * {
   flex: 1 1 var(--min-column-width);
-  margin-bottom: 0;
+  margin: 0 !important;
 }
 .flex-grid > * > *:last-child {
   margin-bottom: 0;
