@@ -301,13 +301,17 @@ button, a.button {
         font-size: 1.25rem;
     }
 }
+a.button {
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+}
 select {
     cursor: pointer;
 
     &.full-width {
         width: 100%;
     }
-
     // Single select
     &:not([multiple]) {
         // Arrow - SVG background image

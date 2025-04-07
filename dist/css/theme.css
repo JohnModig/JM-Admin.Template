@@ -871,6 +871,10 @@ button.xx-large, a.button.xx-large {
   font-size: 1.25rem;
 }
 
+a.button:hover, a.button:focus {
+  text-decoration: none;
+}
+
 select {
   cursor: pointer;
 }
