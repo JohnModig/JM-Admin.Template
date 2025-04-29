@@ -1762,7 +1762,7 @@ span.badge[class^=icon-]:before, span.badge[class*=" icon-"]:before, a.badge[cla
   font-size: 1rem;
   line-height: 1rem;
   vertical-align: text-bottom;
-  margin: 0;
+  margin: 0 !important;
 }
 span.badge > label, a.badge > label, details.badge summary > label {
   display: inline-block;
@@ -1847,10 +1847,11 @@ details.badge summary:after {
   display: inline-block;
   transition: 0.2s transform;
   transform: translateY(0.1em);
+  margin: 0 !important;
 }
 details.badge summary[class^=icon-]:empty:after, details.badge summary[class*=" icon-"]:empty:after {
   transform: none;
-  margin-left: -0.2em;
+  margin-left: -0.2em !important;
 }
 details.badge summary:empty:not([class^=icon-], [class*=" icon-"]):after {
   content: "\e91c";
