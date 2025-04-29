@@ -1779,7 +1779,7 @@ span.badge > label:last-child, a.badge > label:last-child, details.badge summary
   border-top-right-radius: var(--border-radius-button);
   border-bottom-right-radius: var(--border-radius-button);
   border-right: none;
-  margin-right: calc(1px - var(--padding-buttons) - 1px);
+  margin-right: calc(1px - var(--padding-buttons) - 1px) !important;
 }
 span.badge > span[class^=icon-], span.badge > span[class*=" icon-"], a.badge > span[class^=icon-], a.badge > span[class*=" icon-"], details.badge summary > span[class^=icon-], details.badge summary > span[class*=" icon-"] {
   display: inline-block;
@@ -1868,7 +1868,7 @@ details.badge summary > label:last-child {
   border-right: var(--border-light);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  margin-right: 0;
+  margin-right: 0 !important;
 }
 details.badge summary > label:last-child:after {
   content: none;

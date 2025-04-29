@@ -67,7 +67,7 @@ span.badge, a.badge, details.badge summary {
             border-top-right-radius: var(--border-radius-button);
             border-bottom-right-radius: var(--border-radius-button);
             border-right: none;
-            margin-right: calc(1px - var(--padding-buttons) - 1px)
+            margin-right: calc(1px - var(--padding-buttons) - 1px) !important;
         }
     }
 
@@ -178,7 +178,7 @@ details.badge {
             border-right: var(--border-light);
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
-            margin-right: 0;
+            margin-right: 0 !important;
 
             &:after {
                 content: none;
