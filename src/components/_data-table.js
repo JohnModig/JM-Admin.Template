@@ -46,14 +46,6 @@
         if (!summary) {
             continue;
         }
-        // Close when out of focus = only one menu opened at the same time
-        summary.addEventListener('blur', function () {
-            // Don't close if it has a focused child node
-            if (this.parentElement.matches(':focus-within')) {
-                return;
-            }
-            this.parentElement.removeAttribute('open');
-        });
         // Open menu on hover
         el.addEventListener('mouseover', function () {
             let attr = this.getAttribute('open');
@@ -61,29 +53,38 @@
                 // Already opened, but not by hover
                 return;
             }
-            // Close other opened context menues
-            let els = document.querySelectorAll('div.data details[open]:has(summary:empty)');
-            for (var el of els) {
-                el.removeAttribute('open');
-            }
             // Open the menu and flag it as open by hover (so we know if it should be closed on mouseout)
             this.setAttribute('open', 'mouseover');
-        });
+        }, true);
         // Close when hovered, but not when clicked
         el.addEventListener('mouseout', function () {
             let attr = this.getAttribute('open');
             if (attr === 'mouseover') {
                 this.removeAttribute('open');
             }
-        });
+        }, true);
         // Don't close on click when hovered
         el.addEventListener('click', function (e) {
+            if (e.target.nodeName === 'A') {
+                return;
+            }
             let attr = this.getAttribute('open');
             if (attr !== null && attr === 'mouseover') {
-                if (e.target.nodeName !== 'A') {
-                    e.preventDefault();
-                }
+                e.preventDefault();
                 this.setAttribute('open', '');
+            }
+        });
+        // Toggle event
+        el.addEventListener('toggle', (e) => {
+            if (e.currentTarget.open) {
+                // Close other opened context menues
+                let els = document.querySelectorAll('div.data details[open]:has(summary:empty)');
+                for (var el of els) {
+                    if (el === e.currentTarget) {
+                        continue;
+                    }
+                    el.removeAttribute('open');
+                }
             }
         });
     };
@@ -96,7 +97,7 @@
         var headings = el.querySelectorAll('div.item.headings:first-of-type a');
         var sortedHeading = el.querySelector('div.item.headings:first-of-type a[class^="icon-arrow_"], div.item.headings:first-of-type a[class*=" icon-arrow_"], div.item.headings:first-of-type a:has(>[class^="icon-arrow_"])');
         var sortedHeadingNode = Array.from(headings).find((node) => node.isSameNode(sortedHeading) === true);
-        if(headings.length < 1 || sortedHeadingNode === undefined) {
+        if (headings.length < 1 || sortedHeadingNode === undefined) {
             continue;
         }
         var section = null;
