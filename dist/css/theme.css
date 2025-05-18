@@ -1927,7 +1927,7 @@ section.badges[class^=icon-]:before, section.badges[class*=" icon-"]:before {
   margin: 0;
 }
 .tag:where(span:not(.token), a)[class^=icon-]:before, .tag:where(span:not(.token), a)[class*=" icon-"]:before, .tag:where(span:not(.token), a) span[class^=icon-]:before, .tag:where(span:not(.token), a) span[class*=" icon-"]:before {
-  line-height: 1.166em;
+  line-height: inherit;
   vertical-align: text-bottom;
 }
 .tag:where(span:not(.token), a).highlighted {
