@@ -32,9 +32,9 @@
     vertical-align: middle;
     margin: 0;
     // Icons
-    &[class^="icon-"], &[class*=" icon-"] {
+    &[class^="icon-"], &[class*=" icon-"], span[class^="icon-"], span[class*=" icon-"] {
         &:before {
-            line-height: 1rem;
+            line-height: 1.166em;
             vertical-align: text-bottom;
         }
     }

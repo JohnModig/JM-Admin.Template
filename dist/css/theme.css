@@ -1926,8 +1926,8 @@ section.badges[class^=icon-]:before, section.badges[class*=" icon-"]:before {
   vertical-align: middle;
   margin: 0;
 }
-.tag:where(span:not(.token), a)[class^=icon-]:before, .tag:where(span:not(.token), a)[class*=" icon-"]:before {
-  line-height: 1rem;
+.tag:where(span:not(.token), a)[class^=icon-]:before, .tag:where(span:not(.token), a)[class*=" icon-"]:before, .tag:where(span:not(.token), a) span[class^=icon-]:before, .tag:where(span:not(.token), a) span[class*=" icon-"]:before {
+  line-height: 1.166em;
   vertical-align: text-bottom;
 }
 .tag:where(span:not(.token), a).highlighted {
