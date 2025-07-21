@@ -53,10 +53,18 @@ const dialog = {
                 console.error('Could not open dialog (element not found).');
                 return;
             }
-            dialog.master.create();
-            dialog.master.setHtml(el.innerHTML);
-            dialog.master.showModal();
-            dialog.master.focusOnCloseButton(keyboardEvent);
+            if (el.nodeName === 'DIALOG') {
+                dialog.master.close();
+                dialog.other.prepare(el);
+                el.showModal();
+                dialog.other.focusOnCloseButton(el, keyboardEvent);
+            }
+            else {
+                dialog.master.create();
+                dialog.master.setHtml(el.innerHTML);
+                dialog.master.showModal();
+                dialog.master.focusOnCloseButton(keyboardEvent);
+            }
         },
         // Fetch html from url and show in the master dialog element.
         url: function (href, keyboardEvent = false) {
@@ -65,7 +73,6 @@ const dialog = {
             dialog.master.addLoader();
             dialog.master.showModal();
             dialog.master.focusOnCloseButton(keyboardEvent);
-
             // Fetch
             fetch(href, { headers: { "X-Requested-With": "Fetch" } })
                 .then((response) => {
@@ -139,7 +146,7 @@ const dialog = {
             // Create Html
             let el = document.createElement('dialog');
             el.id = dialog.master.id;
-            el.innerHTML = '<div><form method="dialog" tabindex="0"><button></button></form><div></div></div>';
+            el.innerHTML = dialog.settings.template;
             document.body.insertAdjacentElement('beforeend', el);
             dialog.master.clear();
             // Close dialog when clicking on backdrop
@@ -174,8 +181,10 @@ const dialog = {
                 });
             }
         },
-        showModal: function () {
-            let el = document.getElementById(dialog.master.id);
+        showModal: function (el) {
+            if (!el) {
+                el = document.getElementById(dialog.master.id);
+            }
             if (!el) {
                 return;
             }
@@ -223,9 +232,42 @@ const dialog = {
             }
         }
     },
+    // Functions for other dialog elements
+    other: {
+        prepare: function (el) {
+            // Already prepared?
+            if (!el || el.getAttribute(`${dialog.settings.attribute}-ready`) !== null) {
+                return;
+            }
+            // Add template if needed
+            if (el.firstElementChild === null || el.firstElementChild.nodeName !== 'DIV') {
+                el.insertAdjacentHTML('afterbegin', dialog.settings.template);
+                [...el.childNodes].forEach((item, index) => {
+                    if (index > 0) {
+                        el.firstElementChild.lastElementChild.appendChild(item);
+                    }
+                });
+            }
+            // Close dialog when clicking on backdrop
+            el.addEventListener("click", function (e) {
+                if (e.target === this) {
+                    this.close();
+                }
+            });
+            // Mark as prepared
+            el.setAttribute(`${dialog.settings.attribute}-ready`, '');
+        },
+        focusOnCloseButton: function (el, focus) {
+            let closeButton = el.querySelector(`${focus ? 'button' : 'form[tabindex]'}`)
+            if (closeButton) {
+                closeButton.focus();
+            }
+        }
+    },
     // Settings
     settings: {
         attribute: 'data-dialog',
+        template: '<div><form method="dialog" tabindex="0"><button></button></form><div></div></div>'
     }
 };
 
