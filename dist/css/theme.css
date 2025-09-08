@@ -1989,7 +1989,7 @@ section.badges[class^=icon-]:before, section.badges[class*=" icon-"]:before {
   border-radius: 0 var(--border-radius-button) var(--border-radius-button) 0;
   padding: var(--padding-container-vertical) var(--padding-container-horizontal);
   box-shadow: var(--box-shadow-medium);
-  transform: translate(-100%, 0);
+  transform: translate(calc(-100% - 5px), 0);
   z-index: 9;
   display: flex;
   flex-direction: column;
@@ -2498,7 +2498,7 @@ section.content.dark.horizontal-label > label, section.content.dark .horizontal-
 
 \*---------------------------------------------------------------------------*/
 /*-----------------------
-    Includes 
+    Includes
 -----------------------*/
 /*-----------------------
     Components
