@@ -53,7 +53,7 @@ const dialog = {
                 console.error('Could not open dialog (element not found).');
                 return;
             }
-            if (el.nodeName === 'DIALOG' && document.getElementById(dialog.master.id).contains(el) === false) {
+            if (el.nodeName === 'DIALOG' && document.getElementById(dialog.master.id) !== null && document.getElementById(dialog.master.id).contains(el) === false) {
                 dialog.master.close();
                 dialog.other.prepare(el);
                 el.showModal();
