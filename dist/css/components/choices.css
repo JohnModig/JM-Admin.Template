@@ -28,15 +28,26 @@
   border-radius: var(--border-radius-button);
   padding: calc(var(--padding-buttons) * 0.8571) var(--padding-buttons);
   margin: 0;
+  flex-wrap: wrap;
+  row-gap: 5px;
 }
 
 .choices__input {
-  padding: 0 0 0 5px;
-  font-size: 0.875rem;
-  line-height: 1;
+  padding: 0 0 2px 5px;
+  font-size: 14px;
+  line-height: normal;
+  font-weight: 400;
   background-color: transparent !important;
   box-shadow: none !important;
   margin: 0;
+  min-width: 1ch;
+  width: 1ch;
+  align-self: flex-end;
+}
+
+input.choices__input:is([type=search]) {
+  min-width: 1ch;
+  width: 1ch;
 }
 
 .is-open .choices__inner {
@@ -66,6 +77,7 @@
   display: inline-flex;
   flex-wrap: wrap;
   gap: 5px;
+  max-width: calc(100% - 1ch);
 }
 
 .choices__list--multiple .choices__item {

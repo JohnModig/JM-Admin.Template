@@ -33,15 +33,30 @@
     border-radius: var(--border-radius-button);
     padding: calc(var(--padding-buttons) * 0.8571) var(--padding-buttons);
     margin: 0;
+    // Wrapping (for search)
+    flex-wrap: wrap;
+    row-gap: 5px;
 }
 .choices__input {
-    padding: 0 0 0 5px; // Left: same as gap
-    font-size: .875rem;
-    line-height: 1;
+    padding: 0 0 2px 5px; // Left: same as gap
+    font-size: 14px; // Same as option
+    line-height: normal;
+    font-weight: 400;
     // Reset
     background-color: transparent !important;
     box-shadow: none !important;
     margin: 0;
+    min-width: 1ch;
+    width: 1ch;
+    align-self: flex-end;
+    // Expand with content
+    // - not enough support yet
+    // field-sizing: content;
+}
+// Override JM admin without using !important (it is set inline via js)
+input.choices__input:is([type=search]) {
+    min-width: 1ch; 
+    width: 1ch;
 }
 .is-open .choices__inner {
     border-radius: var(--border-radius-button) var(--border-radius-button) 0 0;
@@ -67,6 +82,8 @@
     display: inline-flex;
     flex-wrap: wrap;
     gap: 5px;
+    // Fit search
+    max-width: calc(100% - 1ch);
 }
 .choices__list--multiple .choices__item {
     // Reset:
