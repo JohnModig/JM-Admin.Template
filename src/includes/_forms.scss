@@ -480,11 +480,9 @@ label {
         margin-right: 1ch;
     }
 }
-// Margins between elements on line wrap
+// Form wrapper
 form {
-    font-size: .875rem;
-    line-height: calc(var(--padding-buttons) + 1.1rem + var(--padding-buttons) + 4px); // Border + margin between elements on line wrap
-    margin: 0 0 var(--margin-paragraph-bottom) 0;
+    margin: 0;
 }
 // Validation
 $color-error: rgb(176,16,48);
