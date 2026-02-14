@@ -152,7 +152,7 @@ div.data {
     }
     // Sorted column with small headings
     &:has(div.item.headings.small) div.item > *.sorted {
-        padding-left: calc(.875rem + var(--padding-buttons) + var(--padding-buttons));
+        padding-left: calc(.857rem + var(--padding-buttons) + var(--padding-buttons));
     }
     // Header
     & > header {

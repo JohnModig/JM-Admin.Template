@@ -1224,7 +1224,7 @@ div.data div.item > *.sorted {
   padding-left: calc(1rem + var(--padding-buttons) + var(--padding-buttons));
 }
 div.data:has(div.item.headings.small) div.item > *.sorted {
-  padding-left: calc(0.875rem + var(--padding-buttons) + var(--padding-buttons));
+  padding-left: calc(0.857rem + var(--padding-buttons) + var(--padding-buttons));
 }
 div.data > header {
   grid-column: 1/-1;
