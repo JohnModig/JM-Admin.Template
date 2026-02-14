@@ -1175,9 +1175,6 @@ div.data div.item > *:first-child {
 div.data div.item > *:last-child {
   border-right: var(--border-light);
 }
-div.data div.item > *.sorted {
-  padding-left: calc(1.7142em + var(--padding-buttons));
-}
 div.data div.item > *:not(:last-child):empty[class^=icon-], div.data div.item > *:not(:last-child):empty[class*=" icon-"] {
   padding-right: 0;
 }
@@ -1223,6 +1220,12 @@ div.data div.item > details:last-child > nav {
 div.data div.item > details:last-child > nav a {
   white-space: nowrap;
 }
+div.data div.item > *.sorted {
+  padding-left: calc(1rem + var(--padding-buttons) + var(--padding-buttons));
+}
+div.data:has(div.item.headings.small) div.item > *.sorted {
+  padding-left: calc(0.875rem + var(--padding-buttons) + var(--padding-buttons));
+}
 div.data > header {
   grid-column: 1/-1;
   padding: var(--padding-buttons);
@@ -1258,7 +1261,7 @@ div.data.list {
     text-align: left !important;
   }
   div.data.collapse div.item > *.sorted {
-    padding-left: var(--padding-buttons);
+    padding-left: var(--padding-buttons) !important;
   }
   div.data.collapse div.item > *[data-collapse]:before {
     content: attr(data-collapse) ": ";

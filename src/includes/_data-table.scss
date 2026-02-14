@@ -69,10 +69,6 @@ div.data {
             &:last-child {
                 border-right: var(--border-light);
             }
-            // Sorted column (padding to align with icon in heading)
-            &.sorted {
-                padding-left: calc(1.1428em*1.5 + var(--padding-buttons))
-            }
             // Icon only cell
             &:not(:last-child):empty {
                 &[class^="icon-"], &[class*=" icon-"] {
@@ -150,6 +146,14 @@ div.data {
             }
         }
     }
+    // Sorted column (padding to align with icon in heading)
+    div.item > *.sorted {
+        padding-left: calc(1rem + var(--padding-buttons) + var(--padding-buttons))
+    }
+    // Sorted column with small headings
+    &:has(div.item.headings.small) div.item > *.sorted {
+        padding-left: calc(.875rem + var(--padding-buttons) + var(--padding-buttons));
+    }
     // Header
     & > header {
         grid-column: 1 / -1; // Full width
@@ -188,8 +192,9 @@ div.data {
                     padding-bottom: 0.15em;
                     text-align: left !important;
 
+                    // Sorted column: reset
                     &.sorted {
-                        padding-left: var(--padding-buttons);
+                        padding-left: var(--padding-buttons) !important;
                     }
 
                     &[data-collapse]:before {
