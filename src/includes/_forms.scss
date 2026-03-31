@@ -191,11 +191,15 @@ input {
             }
         }
     }
-    // Fix height and text alignment for iOS
-    &[type="date"], &[type="time"], &[type="datetime-local"] {
+    // Fix height for iOS
+    &[type="date"], input[type="time"], input[type="datetime-local"] {
         min-height: 1.1rem;
         box-sizing: content-box;
-        text-align: left;
+    }
+    // Fix text alignment for iOS
+    // https: //stackoverflow.com/questions/37457097/input-type-date-text-alignright-ios-devices
+    &[type="date"]::-webkit-date-and-time-value, input[type="time"]::-webkit-date-and-time-value, input[type="datetime-local"]::-webkit-date-and-time-value {
+        text-align: inherit;
     }
     // Fix min-width for iOS
     &[type="date"] {
