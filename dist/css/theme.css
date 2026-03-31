@@ -933,6 +933,7 @@ select[multiple] {
 select[multiple] option {
   padding: 2px var(--padding-buttons);
   background-color: transparent;
+  min-height: 1.1rem;
 }
 select[multiple] option:checked {
   background-color: white;

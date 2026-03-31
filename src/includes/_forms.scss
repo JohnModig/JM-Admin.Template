@@ -375,6 +375,9 @@ select {
             padding: 2px var(--padding-buttons);
             background-color: transparent;
 
+            // Fix min-height for iOS
+            min-height: 1.1rem;
+
             &:checked {
                 background-color: white;
                 border: var(--border-medium);
