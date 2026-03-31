@@ -778,7 +778,7 @@ input[type=range] + datalist option:last-child {
 input[type=date], input[type=time], input[type=datetime-local] {
   min-height: 1.1rem;
   box-sizing: content-box;
-  text-align: inherit;
+  text-align: left;
 }
 input[type=date] {
   min-width: 13ch;

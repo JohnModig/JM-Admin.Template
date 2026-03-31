@@ -195,7 +195,7 @@ input {
     &[type="date"], &[type="time"], &[type="datetime-local"] {
         min-height: 1.1rem;
         box-sizing: content-box;
-        text-align: inherit;
+        text-align: left;
     }
     // Fix min-width for iOS
     &[type="date"] {
