@@ -193,8 +193,7 @@ input {
     }
     // Fix height for iOS
     &[type="date"], &[type="time"], &[type="datetime-local"] {
-        min-height: 1.1rem;
-        box-sizing: content-box;
+        min-height: calc(var(--padding-buttons) * 0.8571 * 2 + 1px + 1.1rem);
     }
     // Fix text alignment for iOS
     // https: //stackoverflow.com/questions/37457097/input-type-date-text-alignright-ios-devices
@@ -368,15 +367,15 @@ select {
     }
     // Multiple select
     &[multiple] {
-        padding: calc(var(--padding-buttons) * 0.8571 - 3px) 0;
+        padding: calc(var(--padding-buttons) * 0.8571) 0;
         overflow: visible auto;
+
+        // Fix height for iOS
+        min-height: calc(var(--padding-buttons) * 0.8571 * 2 + 1px + 1.1rem);
 
         option {
             padding: 2px var(--padding-buttons);
             background-color: transparent;
-
-            // Fix min-height for iOS
-            min-height: 1.1rem;
 
             &:checked {
                 background-color: white;

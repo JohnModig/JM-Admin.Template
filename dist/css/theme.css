@@ -776,8 +776,7 @@ input[type=range] + datalist option:last-child {
   grid-column: span 1;
 }
 input[type=date], input[type=time], input[type=datetime-local] {
-  min-height: 1.1rem;
-  box-sizing: content-box;
+  min-height: calc(var(--padding-buttons) * 0.8571 * 2 + 1px + 1.1rem);
 }
 input[type=date]::-webkit-date-and-time-value, input[type=time]::-webkit-date-and-time-value, input[type=datetime-local]::-webkit-date-and-time-value {
   text-align: inherit;
@@ -927,13 +926,13 @@ select:not([multiple]) option {
   */
 }
 select[multiple] {
-  padding: calc(var(--padding-buttons) * 0.8571 - 3px) 0;
+  padding: calc(var(--padding-buttons) * 0.8571) 0;
   overflow: visible auto;
+  min-height: calc(var(--padding-buttons) * 0.8571 * 2 + 1px + 1.1rem);
 }
 select[multiple] option {
   padding: 2px var(--padding-buttons);
   background-color: transparent;
-  min-height: 1.1rem;
 }
 select[multiple] option:checked {
   background-color: white;
