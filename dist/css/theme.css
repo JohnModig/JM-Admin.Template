@@ -775,6 +775,19 @@ input[type=range] + datalist option:last-child {
   margin-right: -2px;
   grid-column: span 1;
 }
+input[type=date], input[type=time], input[type=datetime-local] {
+  min-height: 1.1rem;
+  box-sizing: content-box;
+}
+input[type=date] {
+  min-width: 15ch;
+}
+input[type=time] {
+  min-width: 8ch;
+}
+input[type=datetime-local] {
+  min-width: 20ch;
+}
 
 textarea {
   width: 100%;

@@ -191,6 +191,21 @@ input {
             }
         }
     }
+    // Fix height for iOS
+    &[type="date"], &[type="time"], &[type="datetime-local"] {
+        min-height: 1.1rem;
+        box-sizing: content-box;
+    }
+    // Fix min-width for iOS
+    &[type="date"] {
+        min-width: 15ch;
+    }
+    &[type="time"] {
+        min-width: 8ch;
+    }
+    &[type="datetime-local"] {
+        min-width: 20ch;
+    }
 }
 textarea {
     width: 100%;
