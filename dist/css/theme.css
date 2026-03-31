@@ -926,12 +926,11 @@ select:not([multiple]) option {
   */
 }
 select[multiple] {
-  padding: calc(var(--padding-buttons) * 0.8571) 0;
   overflow: visible auto;
   min-height: calc(var(--padding-buttons) * 0.8571 * 2 + 1px + 1.1rem);
 }
 select[multiple] option {
-  padding: 2px var(--padding-buttons);
+  padding: 2px 0;
   background-color: transparent;
 }
 select[multiple] option:checked {
