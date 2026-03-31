@@ -191,20 +191,23 @@ input {
             }
         }
     }
-    // Fix height for iOS
+    // Fix height and text alignment for iOS
     &[type="date"], &[type="time"], &[type="datetime-local"] {
         min-height: 1.1rem;
         box-sizing: content-box;
+        text-align: inherit;
     }
     // Fix min-width for iOS
     &[type="date"] {
-        min-width: 15ch;
+        min-width: 13ch;
     }
+
     &[type="time"] {
-        min-width: 8ch;
+        min-width: 6ch;
     }
+
     &[type="datetime-local"] {
-        min-width: 20ch;
+        min-width: 18ch;
     }
 }
 textarea {

@@ -778,15 +778,16 @@ input[type=range] + datalist option:last-child {
 input[type=date], input[type=time], input[type=datetime-local] {
   min-height: 1.1rem;
   box-sizing: content-box;
+  text-align: inherit;
 }
 input[type=date] {
-  min-width: 15ch;
+  min-width: 13ch;
 }
 input[type=time] {
-  min-width: 8ch;
+  min-width: 6ch;
 }
 input[type=datetime-local] {
-  min-width: 20ch;
+  min-width: 18ch;
 }
 
 textarea {
