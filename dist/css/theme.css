@@ -939,6 +939,12 @@ select[multiple] option:checked {
   border: var(--border-medium);
   border-radius: 1em;
 }
+select[multiple] option:first-child {
+  padding-top: 0;
+}
+select[multiple] option:last-child {
+  padding-bottom: 0;
+}
 
 /*
     Input elements cannot have :before or :after content. 

@@ -369,7 +369,6 @@ select {
     &[multiple] {
         padding: calc(var(--padding-buttons) * 0.8571) 0;
         overflow: visible auto;
-
         // Fix height for iOS
         min-height: calc(var(--padding-buttons) * 0.8571 * 2 + 1px + 1.1rem);
 
@@ -381,6 +380,14 @@ select {
                 background-color: white;
                 border: var(--border-medium);
                 border-radius: 1em;
+            }
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
             }
         }
     }
