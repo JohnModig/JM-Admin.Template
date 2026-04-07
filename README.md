@@ -11,7 +11,7 @@ Admin template for web apps.
 * Easy to adjust to new projects.
 * [Component-based](https://johnmodig.github.io/JM-Admin.Template/documentation/components.html) – only use what you need.
 * CSS *mostly* – javascript is rarely used and only for progressive enhancement.
-* Aims to use plain ubloated Html with only a few CSS classes.
+* Aims to use plain ubloated Html with only a few CSS classes (*class-light*).
 
 ### In production
 
