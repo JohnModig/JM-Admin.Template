@@ -17,19 +17,18 @@
 </head>
 <body>
 
-	<!-- Optional component: Side navigation -->
+    <!-- Optional component: Side navigation -->
     <input type="checkbox" id="side-navigation" onkeydown="if (event.keyCode == 13) this.click();" />
     <nav>
-		<label for="side-navigation" role="button" class="icon-clear"></label>
-		<a class="icon-visibility current" href="index.html">Documentation</a>
-		<hr />
-		<h5>GitHub</h5>
-		<a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
-		<a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
-	</nav>
+        <label for="side-navigation" role="button" class="icon-clear"></label>
+        <a class="icon-visibility current" href="index.html">Documentation</a>
+        <hr />
+        <h5>GitHub</h5>
+        <a class="icon-launch" href="https://github.com/JohnModig/JM-Admin.Template">Repository</a>
+        <a class="icon-shield" href="https://github.com/JohnModig/">The creator</a>
+    </nav>
     <!-- End component -->
-
-	<!-- Header -->
+    <!-- Header -->
     <header>
         <div>
             <!-- Optional component: Side navigation (trigger button) -->
@@ -59,26 +58,26 @@
                             https://2.gravatar.com/avatar/9e324ffafdb1c51b2af3ccf98d1661859efd87a6d073db3df0c77e1490727bb5?size=64 2x">
             </a>
         </div>
-    	<!-- Optional component: Horizontal tabs -->
-		<div class="horizontal-tabs">
-	        <nav>
-	            <details>
-	                <summary class="icon-lightbulb">Example pages</summary>
-	                <nav>
-	                    <a href="example-page-data.html">Data</a>
-	                    <a href="example-page-login.html">Login</a>
-						<a href="example-page-cards.html">Cards</a>
-						<a href="example-page-headlines.html">Headlines</a>
-	                </nav>
-	            </details>
-	            <a href="components.html" class="icon-bookmark current">Components</a>
-	            <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
-	            <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
-	        </nav>
-		</div>
-		<!-- End component -->
-	</header>
-	
+        <!-- Optional component: Horizontal tabs -->
+        <div class="horizontal-tabs">
+            <nav>
+                <details>
+                    <summary class="icon-lightbulb">Example pages</summary>
+                    <nav>
+                        <a href="example-page-data.html">Data</a>
+                        <a href="example-page-login.html">Login</a>
+                        <a href="example-page-cards.html">Cards</a>
+                        <a href="example-page-headlines.html">Headlines</a>
+                    </nav>
+                </details>
+                <a href="components.html" class="icon-bookmark current">Components</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template/releases/latest" class="icon-download">Download</a>
+                <a href="https://github.com/JohnModig/JM-Admin.Template" class="icon-code">Source code</a>
+            </nav>
+        </div>
+        <!-- End component -->
+    </header>
+
     <!-- Main -->
     <main class="navigation-content">
         <aside>
@@ -116,9 +115,9 @@
                 <a class="icon-bookmark" href="component-overlay-labels.html">Overlay labels</a>
                 <a class="icon-bookmark" href="component-vertical-labels.html">Vertical labels</a>
                 <a class="icon-bookmark" href="component-horizontal-labels.html">Horizontal labels</a>
-				<hr />
-				<h5>Add-ons</h5>
-				<a class="icon-bookmark current" href="component-data-table-bulk-actions.html">Data table bulk actions</a>
+                <hr />
+                <h5>Add-ons</h5>
+                <a class="icon-bookmark current" href="component-data-table-bulk-actions.html">Data table bulk actions</a>
             </nav>
         </aside>
         <article>
@@ -146,46 +145,54 @@
                 <header><h5 class="icon-check">Implementation <sup>Javascript</sup></h5></header>
                 <h5>Basic</h5>
                 <p>Create a <code class="language-javascript">DataTableBulkActions</code> object with minimal configuration and a single link:</p>
-                <p><code class="language-javascript">const myDataTableBulkActions = new DataTableBulkActions({
-    input: '#myDataTable',
-    links: [
-        {
-            url: '/download',
-            text: 'Download'
-        }
-    ]
-});</code></p>
+                <p>
+                    <code class="language-javascript">
+                        const myDataTableBulkActions = new DataTableBulkActions({
+                        input: '#myDataTable',
+                        links: [
+                        {
+                        url: '/download',
+                        text: 'Download'
+                        }
+                        ]
+                        });
+                    </code>
+                </p>
                 <h5>Advanced</h5>
                 <p>Create a <code class="language-javascript">DataTableBulkActions</code> object with detailed configuration, other language (Swedish) and multiple links:</p>
-                <p><code class="language-javascript">const myDataTableBulkActions = new DataTableBulkActions({
-    input: '#myDataTable',
-    hidden: true,
-    text: {
-        singleSelected: 'vald',
-        multipleSelected: 'valda',
-        noneSelected: 'ingen vald',
-        select: 'Välj',
-        show: 'Visa',
-        hide: 'Dölj'
-    },
-    links: [
-        {
-            url: '/download',
-            text: 'Ladda ned',
-            class: 'icon-download'
-        },
-        {
-            url: '/star',
-            text: 'Lägg till stjärna',
-            class: 'icon-star'
-        },
-        {
-            url: '/delete',
-            text: 'Ta bort',
-            class: 'icon-delete'
-        }
-    ]
-});</code></p>
+                <p>
+                    <code class="language-javascript">
+                        const myDataTableBulkActions = new DataTableBulkActions({
+                        input: '#myDataTable',
+                        hidden: true,
+                        text: {
+                        singleSelected: 'vald',
+                        multipleSelected: 'valda',
+                        noneSelected: 'ingen vald',
+                        select: 'Välj',
+                        show: 'Visa',
+                        hide: 'Dölj'
+                        },
+                        links: [
+                        {
+                        url: '/download',
+                        text: 'Ladda ned',
+                        class: 'icon-download'
+                        },
+                        {
+                        url: '/star',
+                        text: 'Lägg till stjärna',
+                        class: 'icon-star'
+                        },
+                        {
+                        url: '/delete',
+                        text: 'Ta bort',
+                        class: 'icon-delete'
+                        }
+                        ]
+                        });
+                    </code>
+                </p>
             </section>
             <h3>Examples</h3>
             <p class="comment icon-info">View source for Html code.</p>
@@ -194,382 +201,394 @@
             <h5>
                 Always visible
             </h5>
-            <div class="data" id="component1">
-                <!-- Header-->
-                <header><h5>Header</h5></header>
-                <!-- Headings -->
-                <div class="item headings">
-                    <div><a href="">Key</a></div>
-                    <div><a href="" class="icon-arrow_downward">Value</a></div>
-                    <div class="text-right"><a href="">Number</a></div>
-                    <div class="text-right"><a href="">Date</a></div>
-                    <div></div>
+            <section>
+                <div class="data" id="component1">
+                    <!-- Header-->
+                    <header><h5>Header</h5></header>
+                    <!-- Headings -->
+                    <div class="item headings">
+                        <div><a href="">Key</a></div>
+                        <div><a href="" class="icon-arrow_downward">Value</a></div>
+                        <div class="text-right"><a href="">Number</a></div>
+                        <div class="text-right"><a href="">Date</a></div>
+                        <div></div>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="1">
+                        <div>Cell A1</div>
+                        <div class="sorted" data-collapse="Value">A2</div>
+                        <div class="text-right" data-collapse="Number">A3</div>
+                        <div class="text-right" data-collapse="Date">A4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="">View</a>
+                                <a href="">Edit</a>
+                                <a href="">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="2">
+                        <div>Cell B1</div>
+                        <div class="sorted" data-collapse="Value">B2</div>
+                        <div class="text-right" data-collapse="Number">B3</div>
+                        <div class="text-right" data-collapse="Date">B4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="">View</a>
+                                <a href="">Edit</a>
+                                <a href="">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="3">
+                        <div>Cell C1</div>
+                        <div class="sorted" data-collapse="Value">C2</div>
+                        <div class="text-right" data-collapse="Number">C3</div>
+                        <div class="text-right" data-collapse="Date">C4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="">View</a>
+                                <a href="">Edit</a>
+                                <a href="">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
                 </div>
-                <!-- Item -->
-                <div class="item" data-id="1">
-                    <div>Cell A1</div>
-                    <div class="sorted" data-collapse="Value">A2</div>
-                    <div class="text-right" data-collapse="Number">A3</div>
-                    <div class="text-right" data-collapse="Date">A4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="2">
-                    <div>Cell B1</div>
-                    <div class="sorted" data-collapse="Value">B2</div>
-                    <div class="text-right" data-collapse="Number">B3</div>
-                    <div class="text-right" data-collapse="Date">B4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="3">
-                    <div>Cell C1</div>
-                    <div class="sorted" data-collapse="Value">C2</div>
-                    <div class="text-right" data-collapse="Number">C3</div>
-                    <div class="text-right" data-collapse="Date">C4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-            </div>
+            </section>
             <!-- Example: Visible by default -->
             <h5>
                 Visible by default
             </h5>
-            <div class="data" id="component2">
-                <!-- Header-->
-                <header><h5>Header</h5></header>
-                <!-- Headings -->
-                <div class="item headings">
-                    <div><a href="">Key</a></div>
-                    <div><a href="" class="icon-arrow_downward">Value</a></div>
-                    <div class="text-right"><a href="">Number</a></div>
-                    <div class="text-right"><a href="">Date</a></div>
-                    <div></div>
+            <section>
+                <div class="data" id="component2">
+                    <!-- Header-->
+                    <header><h5>Header</h5></header>
+                    <!-- Headings -->
+                    <div class="item headings">
+                        <div><a href="">Key</a></div>
+                        <div><a href="" class="icon-arrow_downward">Value</a></div>
+                        <div class="text-right"><a href="">Number</a></div>
+                        <div class="text-right"><a href="">Date</a></div>
+                        <div></div>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="1">
+                        <div>Cell A1</div>
+                        <div class="sorted" data-collapse="Value">A2</div>
+                        <div class="text-right" data-collapse="Number">A3</div>
+                        <div class="text-right" data-collapse="Date">A4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="">View</a>
+                                <a href="">Edit</a>
+                                <a href="">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="2">
+                        <div>Cell B1</div>
+                        <div class="sorted" data-collapse="Value">B2</div>
+                        <div class="text-right" data-collapse="Number">B3</div>
+                        <div class="text-right" data-collapse="Date">B4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="">View</a>
+                                <a href="">Edit</a>
+                                <a href="">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="3">
+                        <div>Cell C1</div>
+                        <div class="sorted" data-collapse="Value">C2</div>
+                        <div class="text-right" data-collapse="Number">C3</div>
+                        <div class="text-right" data-collapse="Date">C4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="">View</a>
+                                <a href="">Edit</a>
+                                <a href="">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
                 </div>
-                <!-- Item -->
-                <div class="item" data-id="1">
-                    <div>Cell A1</div>
-                    <div class="sorted" data-collapse="Value">A2</div>
-                    <div class="text-right" data-collapse="Number">A3</div>
-                    <div class="text-right" data-collapse="Date">A4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="2">
-                    <div>Cell B1</div>
-                    <div class="sorted" data-collapse="Value">B2</div>
-                    <div class="text-right" data-collapse="Number">B3</div>
-                    <div class="text-right" data-collapse="Date">B4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="3">
-                    <div>Cell C1</div>
-                    <div class="sorted" data-collapse="Value">C2</div>
-                    <div class="text-right" data-collapse="Number">C3</div>
-                    <div class="text-right" data-collapse="Date">C4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-            </div>
+            </section>
             <!-- Example: Hidden by default -->
             <h5>
                 Hidden by default
             </h5>
-            <div class="data" id="component3">
-                <!-- Header-->
-                <header><h5>Header</h5></header>
-                <!-- Headings -->
-                <div class="item headings">
-                    <div><a href="">Key</a></div>
-                    <div><a href="" class="icon-arrow_downward">Value</a></div>
-                    <div class="text-right"><a href="">Number</a></div>
-                    <div class="text-right"><a href="">Date</a></div>
-                    <div></div>
+            <section>
+                <div class="data" id="component3">
+                    <!-- Header-->
+                    <header><h5>Header</h5></header>
+                    <!-- Headings -->
+                    <div class="item headings">
+                        <div><a href="">Key</a></div>
+                        <div><a href="" class="icon-arrow_downward">Value</a></div>
+                        <div class="text-right"><a href="">Number</a></div>
+                        <div class="text-right"><a href="">Date</a></div>
+                        <div></div>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="1">
+                        <div>Cell A1</div>
+                        <div class="sorted" data-collapse="Value">A2</div>
+                        <div class="text-right" data-collapse="Number">A3</div>
+                        <div class="text-right" data-collapse="Date">A4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="">View</a>
+                                <a href="">Edit</a>
+                                <a href="">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="2">
+                        <div>Cell B1</div>
+                        <div class="sorted" data-collapse="Value">B2</div>
+                        <div class="text-right" data-collapse="Number">B3</div>
+                        <div class="text-right" data-collapse="Date">B4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="">View</a>
+                                <a href="">Edit</a>
+                                <a href="">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="3">
+                        <div>Cell C1</div>
+                        <div class="sorted" data-collapse="Value">C2</div>
+                        <div class="text-right" data-collapse="Number">C3</div>
+                        <div class="text-right" data-collapse="Date">C4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="">View</a>
+                                <a href="">Edit</a>
+                                <a href="">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
                 </div>
-                <!-- Item -->
-                <div class="item" data-id="1">
-                    <div>Cell A1</div>
-                    <div class="sorted" data-collapse="Value">A2</div>
-                    <div class="text-right" data-collapse="Number">A3</div>
-                    <div class="text-right" data-collapse="Date">A4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="2">
-                    <div>Cell B1</div>
-                    <div class="sorted" data-collapse="Value">B2</div>
-                    <div class="text-right" data-collapse="Number">B3</div>
-                    <div class="text-right" data-collapse="Date">B4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="3">
-                    <div>Cell C1</div>
-                    <div class="sorted" data-collapse="Value">C2</div>
-                    <div class="text-right" data-collapse="Number">C3</div>
-                    <div class="text-right" data-collapse="Date">C4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="">View</a>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-            </div>
+            </section>
             <!-- Example: Collapsed data table, icons on links -->
             <h5>
                 Collapsed data table, icons on links
             </h5>
-            <div class="data collapse" id="component4">
-                <!-- Header-->
-                <header><h5>Header</h5></header>
-                <!-- Headings -->
-                <div class="item headings">
-                    <div><a href="">Key</a></div>
-                    <div><a href="" class="icon-arrow_downward">Value</a></div>
-                    <div class="text-right"><a href="">Number</a></div>
-                    <div class="text-right"><a href="">Date</a></div>
-                    <div></div>
+            <section>
+                <div class="data collapse" id="component4">
+                    <!-- Header-->
+                    <header><h5>Header</h5></header>
+                    <!-- Headings -->
+                    <div class="item headings">
+                        <div><a href="">Key</a></div>
+                        <div><a href="" class="icon-arrow_downward">Value</a></div>
+                        <div class="text-right"><a href="">Number</a></div>
+                        <div class="text-right"><a href="">Date</a></div>
+                        <div></div>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="1">
+                        <div>Cell A1</div>
+                        <div class="sorted" data-collapse="Value">A2</div>
+                        <div class="text-right" data-collapse="Number">A3</div>
+                        <div class="text-right" data-collapse="Date">A4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="" class="icon-visibility">View</a>
+                                <a href="" class="icon-edit">Edit</a>
+                                <a href="" class="icon-delete">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="2">
+                        <div>Cell B1</div>
+                        <div class="sorted" data-collapse="Value">B2</div>
+                        <div class="text-right" data-collapse="Number">B3</div>
+                        <div class="text-right" data-collapse="Date">B4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="" class="icon-visibility">View</a>
+                                <a href="" class="icon-edit">Edit</a>
+                                <a href="" class="icon-delete">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="3">
+                        <div>Cell C1</div>
+                        <div class="sorted" data-collapse="Value">C2</div>
+                        <div class="text-right" data-collapse="Number">C3</div>
+                        <div class="text-right" data-collapse="Date">C4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="" class="icon-visibility">View</a>
+                                <a href="" class="icon-edit">Edit</a>
+                                <a href="" class="icon-delete">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
                 </div>
-                <!-- Item -->
-                <div class="item" data-id="1">
-                    <div>Cell A1</div>
-                    <div class="sorted" data-collapse="Value">A2</div>
-                    <div class="text-right" data-collapse="Number">A3</div>
-                    <div class="text-right" data-collapse="Date">A4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="" class="icon-visibility">View</a>
-                            <a href="" class="icon-edit">Edit</a>
-                            <a href="" class="icon-delete">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="2">
-                    <div>Cell B1</div>
-                    <div class="sorted" data-collapse="Value">B2</div>
-                    <div class="text-right" data-collapse="Number">B3</div>
-                    <div class="text-right" data-collapse="Date">B4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="" class="icon-visibility">View</a>
-                            <a href="" class="icon-edit">Edit</a>
-                            <a href="" class="icon-delete">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="3">
-                    <div>Cell C1</div>
-                    <div class="sorted" data-collapse="Value">C2</div>
-                    <div class="text-right" data-collapse="Number">C3</div>
-                    <div class="text-right" data-collapse="Date">C4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="" class="icon-visibility">View</a>
-                            <a href="" class="icon-edit">Edit</a>
-                            <a href="" class="icon-delete">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-            </div>
+            </section>
             <!-- Example: Collapsed data table without header -->
             <h5>
                 Collapsed data table without header
             </h5>
-            <div class="data collapse" id="component5">
-                <!-- Headings -->
-                <div class="item headings">
-                    <div><a href="">Key</a></div>
-                    <div><a href="" class="icon-arrow_downward">Value</a></div>
-                    <div class="text-right"><a href="">Number</a></div>
-                    <div class="text-right"><a href="">Date</a></div>
-                    <div></div>
+            <section>
+                <div class="data collapse" id="component5">
+                    <!-- Headings -->
+                    <div class="item headings">
+                        <div><a href="">Key</a></div>
+                        <div><a href="" class="icon-arrow_downward">Value</a></div>
+                        <div class="text-right"><a href="">Number</a></div>
+                        <div class="text-right"><a href="">Date</a></div>
+                        <div></div>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="1">
+                        <div>Cell A1</div>
+                        <div class="sorted" data-collapse="Value">A2</div>
+                        <div class="text-right" data-collapse="Number">A3</div>
+                        <div class="text-right" data-collapse="Date">A4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="" class="icon-visibility">View</a>
+                                <a href="" class="icon-edit">Edit</a>
+                                <a href="" class="icon-delete">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="2">
+                        <div>Cell B1</div>
+                        <div class="sorted" data-collapse="Value">B2</div>
+                        <div class="text-right" data-collapse="Number">B3</div>
+                        <div class="text-right" data-collapse="Date">B4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="" class="icon-visibility">View</a>
+                                <a href="" class="icon-edit">Edit</a>
+                                <a href="" class="icon-delete">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="3">
+                        <div>Cell C1</div>
+                        <div class="sorted" data-collapse="Value">C2</div>
+                        <div class="text-right" data-collapse="Number">C3</div>
+                        <div class="text-right" data-collapse="Date">C4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="" class="icon-visibility">View</a>
+                                <a href="" class="icon-edit">Edit</a>
+                                <a href="" class="icon-delete">Delete</a>
+                            </nav>
+                        </details>
+                    </div>
                 </div>
-                <!-- Item -->
-                <div class="item" data-id="1">
-                    <div>Cell A1</div>
-                    <div class="sorted" data-collapse="Value">A2</div>
-                    <div class="text-right" data-collapse="Number">A3</div>
-                    <div class="text-right" data-collapse="Date">A4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="" class="icon-visibility">View</a>
-                            <a href="" class="icon-edit">Edit</a>
-                            <a href="" class="icon-delete">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="2">
-                    <div>Cell B1</div>
-                    <div class="sorted" data-collapse="Value">B2</div>
-                    <div class="text-right" data-collapse="Number">B3</div>
-                    <div class="text-right" data-collapse="Date">B4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="" class="icon-visibility">View</a>
-                            <a href="" class="icon-edit">Edit</a>
-                            <a href="" class="icon-delete">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="3">
-                    <div>Cell C1</div>
-                    <div class="sorted" data-collapse="Value">C2</div>
-                    <div class="text-right" data-collapse="Number">C3</div>
-                    <div class="text-right" data-collapse="Date">C4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="" class="icon-visibility">View</a>
-                            <a href="" class="icon-edit">Edit</a>
-                            <a href="" class="icon-delete">Delete</a>
-                        </nav>
-                    </details>
-                </div>
-            </div>
+            </section>
             <!-- Example: Different language (Swedish) -->
             <h5>
                 Different language (Swedish)
             </h5>
-            <div class="data collapse" id="component6">
-                <!-- Header-->
-                <header><h5>Rubrik</h5></header>
-                <!-- Headings -->
-                <div class="item headings">
-                    <div><a href="">Nyckelvärde</a></div>
-                    <div><a href="" class="icon-arrow_downward">Värde</a></div>
-                    <div class="text-right"><a href="">Nummer</a></div>
-                    <div class="text-right"><a href="">Datum</a></div>
-                    <div></div>
+            <section>
+                <div class="data collapse" id="component6">
+                    <!-- Header-->
+                    <header><h5>Rubrik</h5></header>
+                    <!-- Headings -->
+                    <div class="item headings">
+                        <div><a href="">Nyckelvärde</a></div>
+                        <div><a href="" class="icon-arrow_downward">Värde</a></div>
+                        <div class="text-right"><a href="">Nummer</a></div>
+                        <div class="text-right"><a href="">Datum</a></div>
+                        <div></div>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="1">
+                        <div>Cell A1</div>
+                        <div class="sorted" data-collapse="Värde">A2</div>
+                        <div class="text-right" data-collapse="Nummer">A3</div>
+                        <div class="text-right" data-collapse="Datum">A4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="" class="icon-visibility">Visa</a>
+                                <a href="" class="icon-edit">Ändra</a>
+                                <a href="" class="icon-delete">Ta bort</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="2">
+                        <div>Cell B1</div>
+                        <div class="sorted" data-collapse="Värde">B2</div>
+                        <div class="text-right" data-collapse="Nummer">B3</div>
+                        <div class="text-right" data-collapse="Datum">B4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="" class="icon-visibility">Visa</a>
+                                <a href="" class="icon-edit">Ändra</a>
+                                <a href="" class="icon-delete">Ta bort</a>
+                            </nav>
+                        </details>
+                    </div>
+                    <!-- Item -->
+                    <div class="item" data-id="3">
+                        <div>Cell C1</div>
+                        <div class="sorted" data-collapse="Värde">C2</div>
+                        <div class="text-right" data-collapse="Nummer">C3</div>
+                        <div class="text-right" data-collapse="Datum">C4</div>
+                        <details>
+                            <summary></summary>
+                            <nav>
+                                <a href="" class="icon-visibility">Visa</a>
+                                <a href="" class="icon-edit">Ändra</a>
+                                <a href="" class="icon-delete">Ta bort</a>
+                            </nav>
+                        </details>
+                    </div>
                 </div>
-                <!-- Item -->
-                <div class="item" data-id="1">
-                    <div>Cell A1</div>
-                    <div class="sorted" data-collapse="Värde">A2</div>
-                    <div class="text-right" data-collapse="Nummer">A3</div>
-                    <div class="text-right" data-collapse="Datum">A4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="" class="icon-visibility">Visa</a>
-                            <a href="" class="icon-edit">Ändra</a>
-                            <a href="" class="icon-delete">Ta bort</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="2">
-                    <div>Cell B1</div>
-                    <div class="sorted" data-collapse="Värde">B2</div>
-                    <div class="text-right" data-collapse="Nummer">B3</div>
-                    <div class="text-right" data-collapse="Datum">B4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="" class="icon-visibility">Visa</a>
-                            <a href="" class="icon-edit">Ändra</a>
-                            <a href="" class="icon-delete">Ta bort</a>
-                        </nav>
-                    </details>
-                </div>
-                <!-- Item -->
-                <div class="item" data-id="3">
-                    <div>Cell C1</div>
-                    <div class="sorted" data-collapse="Värde">C2</div>
-                    <div class="text-right" data-collapse="Nummer">C3</div>
-                    <div class="text-right" data-collapse="Datum">C4</div>
-                    <details>
-                        <summary></summary>
-                        <nav>
-                            <a href="" class="icon-visibility">Visa</a>
-                            <a href="" class="icon-edit">Ändra</a>
-                            <a href="" class="icon-delete">Ta bort</a>
-                        </nav>
-                    </details>
-                </div>
-            </div>
+            </section>
         </article>
     </main>
 
-	<!-- Footer -->
-	<footer>
-		<a href="index.html" class="image">
-			<img alt="Logotype"
-				src="images/logo.svg"
-				style="height: 1.25rem; opacity: 0.6;" />
-			JM Admin
-		</a>
-		<span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
-		<a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
-	</footer>
+    <!-- Footer -->
+    <footer>
+        <a href="index.html" class="image">
+            <img alt="Logotype"
+                 src="images/logo.svg"
+                 style="height: 1.25rem; opacity: 0.6;" />
+            JM Admin
+        </a>
+        <span>Copyright &copy; 2024 <a href="https://github.com/JohnModig/">John Modig</a></span>
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License</a>
+    </footer>
 
-	<!-- Component: Data table -->
+    <!-- Component: Data table -->
     <script src="../dist/javascript/data-table.min.js"></script>
     <!-- End component -->
     <!-- Optional component: Horizontal tabs -->
